@@ -1,0 +1,9 @@
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credentials*.json
+*token*.json
+*.token
+.claude/settings.local.json

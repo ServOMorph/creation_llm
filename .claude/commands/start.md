@@ -1,0 +1,79 @@
+---
+description: Charge le contexte d'une zone en début de session
+argument-hint: [zone]
+model: haiku
+---
+
+# /start [zone]
+
+## Zones valides et dossiers réels
+
+Lire `.claude/zones.md` pour obtenir la table des alias → dossiers réels.
+
+
+## Procédure
+
+1. Lire l'argument fourni ($ARGUMENTS).
+   - Si absent : utiliser le working directory courant comme dossier cible (zone implicite).
+   - Si présent mais non reconnu dans la table ci-dessus :
+     répondre "Erreur : zone inconnue. Zones valides : <liste des alias>"
+     et s'arrêter.
+   - Si présent et reconnu : résoudre le dossier via la table.
+
+2. Vérifier que `<dossier>/_contexte/signals.md` et `<dossier>/_contexte/contexte.md` existent.
+   Si absents : proposer d'initialiser la structure `_contexte/` pour cette zone (créer
+   `contexte.md` et `signals.md` vides) et s'arrêter.
+
+2b. Si `<dossier>/agent_role.md` existe : le charger et l'afficher intégralement,
+    avant `signals.md`. Ce fichier n'existe que pour les zones-agents ; une zone
+    racine classique n'en a pas.
+
+2c. Si `<dossier>/_contexte/memory.md` existe : le charger (mémoire propre à cette
+    zone, écrite via `/create_memory <alias_zone> <contenu>`).
+
+3. Charger dans l'ordre :
+   1. `_contexte/signals.md` — actions ouvertes, blocages, dernière session (priorité absolue)
+   2. `_contexte/contexte.md` — contexte stable
+   3. `roadmap*.md` — si un fichier correspondant existe dans `<dossier>`, le charger
+
+   > **Économie tokens :** si `signals.md` suffit à répondre à la question immédiate,
+   > `contexte.md` peut être chargé à la demande plutôt que systématiquement.
+   > En cas de doute : le charger.
+
+3-bis. **Hook de zone — Pré-synthèse.** Si `<dossier>/_contexte/on_start.md` existe : le charger et
+   exécuter les instructions de sa section « Pré-synthèse » si elle est présente. Rien à faire si le
+   fichier est absent ou si cette section n'y figure pas. Non bloquant : en cas d'échec d'une
+   commande du hook, le signaler en une ligne et poursuivre `/start`. Contrat des sections :
+   `on_start_TEMPLATE.md` du kit.
+
+4. Afficher le contenu intégral de `signals.md` (sans résumé ni reformulation).
+
+4b. Pour chaque action listée dans `signals.md` qui contient un champ `réf:`, lire les fichiers
+    référencés avant d'afficher la synthèse. Si une action semble ambiguë mais qu'une `réf:` existe,
+    lire la référence en priorité plutôt que de demander des précisions.
+
+    Ajouter ensuite, à partir des autres fichiers chargés : la phase en cours si roadmap active,
+    et le point d'attention immédiat.
+
+4c. **Contrôle de classement.** Après l'affichage intégral de l'étape 4 (qui n'est jamais filtré
+    ni réduit), repérer les éléments manifestement mal classés dans `signals.md` :
+    - une action dont tous les `réf:` pointent dans le dossier d'une autre zone de `zones.md` ;
+    - à la racine, une action métier d'une zone (non transversale) ;
+    - une action dont l'objet ou la `réf:` figure aussi dans le `signals.md` de la zone
+      propriétaire (lire seulement ce fichier, pour les cas candidats).
+    Les lister dans un bloc « Éléments possiblement mal classés » : élément, zone probable,
+    doublon constaté oui/non. Ne rien déplacer ni supprimer : le reclassement se fait par
+    `/close` (étape 3-bis) sur décision de l'utilisateur. Aucun candidat : ne pas afficher le bloc.
+
+5. Afficher en fin de réponse : 🎉🎉🎉
+
+5-bis. **Hook de zone — Post-synthèse.** Si `<dossier>/_contexte/on_start.md` existe et contient une
+   section « Post-synthèse » : l'exécuter maintenant, juste après l'affichage de l'étape 5. Rien à
+   faire sinon. Non bloquant. Un hook Post-synthèse peut légitimement ne pas rendre la main
+   (enchaînement d'une autre commande) — c'est permis.
+
+<!-- SPECIFICITES PROJET : DEBUT (préservé par /update, ne pas toucher hors de ce bloc) -->
+<!-- Convention : toute règle liée à une étape précise de la Procédure ci-dessus doit la
+     référencer explicitement par son numéro (ex: "Étape 3 : ..."), plutôt que compter sur la
+     position physique de cette zone (toujours en fin de fichier). -->
+<!-- SPECIFICITES PROJET : FIN -->
