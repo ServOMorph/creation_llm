@@ -35,6 +35,7 @@ class TrainConfig:
     log_interval: int = 10
     seed: int = 1337
     resume: bool = False
+    init_from: str = ""
 
 
 def get_lr(step, cfg):
@@ -45,20 +46,25 @@ def get_lr(step, cfg):
     return min_lr + 0.5 * (1 + math.cos(math.pi * min(progress, 1.0))) * (cfg.lr - min_lr)
 
 
-def get_batch(data, batch_size, block_size, device, gen):
-    ix = torch.randint(len(data) - block_size - 1, (batch_size,), generator=gen).tolist()
+def doc_starts(data, block_size, eot_id=0):
+    starts = np.flatnonzero(data == eot_id)
+    return starts[starts < len(data) - block_size - 1]
+
+
+def get_batch(data, batch_size, block_size, device, gen, starts):
+    ix = starts[torch.randint(len(starts), (batch_size,), generator=gen).numpy()].tolist()
     x = torch.stack([torch.from_numpy(data[i : i + block_size].astype(np.int64)) for i in ix])
     y = torch.stack([torch.from_numpy(data[i + 1 : i + 1 + block_size].astype(np.int64)) for i in ix])
     return x.to(device), y.to(device)
 
 
 @torch.no_grad()
-def evaluate(model, data, cfg, block_size, autocast):
+def evaluate(model, data, cfg, block_size, autocast, starts):
     model.eval()
     gen = torch.Generator().manual_seed(0)
     losses = []
     for _ in range(cfg.eval_batches):
-        x, y = get_batch(data, cfg.batch_size, block_size, cfg.device, gen)
+        x, y = get_batch(data, cfg.batch_size, block_size, cfg.device, gen, starts)
         with autocast:
             _, loss = model(x, y)
         losses.append(loss.item())
@@ -91,6 +97,8 @@ def train(cfg, mcfg):
 
     train_data = np.memmap(cfg.train_bin, dtype=np.uint16, mode="r")
     val_data = np.memmap(cfg.val_bin, dtype=np.uint16, mode="r")
+    train_starts = doc_starts(train_data, mcfg.block_size)
+    val_starts = doc_starts(val_data, mcfg.block_size)
 
     model = GPT(mcfg).to(cfg.device)
     opt = torch.optim.AdamW(
@@ -106,6 +114,8 @@ def train(cfg, mcfg):
         model.load_state_dict(ckpt["model"])
         opt.load_state_dict(ckpt["optimizer"])
         step = ckpt["step"]
+    elif cfg.init_from:
+        model.load_state_dict(torch.load(cfg.init_from, map_location=cfg.device)["model"])
 
     log_path = ckpt_dir / "log.csv"
     new_log = not (cfg.resume and log_path.exists())
@@ -127,7 +137,7 @@ def train(cfg, mcfg):
         opt.zero_grad(set_to_none=True)
         acc = 0.0
         for _ in range(cfg.accum_steps):
-            x, y = get_batch(train_data, cfg.batch_size, mcfg.block_size, cfg.device, gen)
+            x, y = get_batch(train_data, cfg.batch_size, mcfg.block_size, cfg.device, gen, train_starts)
             with autocast:
                 _, loss = model(x, y)
             (loss / cfg.accum_steps).backward()
@@ -140,7 +150,7 @@ def train(cfg, mcfg):
 
         val = ""
         if step % cfg.eval_interval == 0 or step == cfg.max_steps:
-            last_val = evaluate(model, val_data, cfg, mcfg.block_size, autocast)
+            last_val = evaluate(model, val_data, cfg, mcfg.block_size, autocast, val_starts)
             val = f"{last_val:.4f}"
         if step % cfg.log_interval == 0 or val:
             dt = time.time() - t0

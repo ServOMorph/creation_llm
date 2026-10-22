@@ -7,7 +7,7 @@ import torch
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from model import GPTConfig  # noqa: E402
-from train import TrainConfig, get_lr, train  # noqa: E402
+from train import TrainConfig, doc_starts, get_batch, get_lr, train  # noqa: E402
 
 MCFG = GPTConfig(vocab_size=64, block_size=32, n_layer=2, n_head=4, n_embd=64)
 
@@ -35,6 +35,16 @@ def make_cfg(tmp_path, **kw):
     return TrainConfig(**base)
 
 
+def test_batches_start_at_document_boundary():
+    data = np.array([0, 5, 6, 7, 0, 8, 9, 0, 1, 2, 3, 4, 5, 6], dtype=np.uint16)
+    starts = doc_starts(data, block_size=4)
+    assert starts.tolist() == [0, 4, 7]
+    gen = torch.Generator().manual_seed(0)
+    x, y = get_batch(data, 16, 4, "cpu", gen, starts)
+    assert torch.all(x[:, 0] == 0)
+    assert torch.equal(x[:, 1:], y[:, :-1])
+
+
 def test_lr_schedule():
     cfg = TrainConfig(lr=1e-3, warmup_steps=10, max_steps=100, min_lr_ratio=0.1)
     assert get_lr(0, cfg) < get_lr(9, cfg) <= 1e-3
@@ -48,6 +58,15 @@ def test_training_reduces_loss(tmp_path):
     assert val_loss < 0.5 * np.log(MCFG.vocab_size)
     assert (Path(cfg.ckpt_dir) / "ckpt.pt").exists()
     assert (Path(cfg.ckpt_dir) / "log.csv").exists()
+
+
+def test_init_from(tmp_path):
+    cfg = make_cfg(tmp_path, max_steps=40)
+    _, trained_val = train(cfg, MCFG)
+    cfg2 = make_cfg(tmp_path, max_steps=1, lr=1e-9, warmup_steps=1, ckpt_dir=str(tmp_path / "ckpt2"), init_from=str(Path(cfg.ckpt_dir) / "ckpt.pt"))
+    _, init_val = train(cfg2, MCFG)
+    assert abs(init_val - trained_val) < 0.05
+    assert torch.load(tmp_path / "ckpt2" / "ckpt.pt")["step"] == 1
 
 
 def test_resume(tmp_path):
