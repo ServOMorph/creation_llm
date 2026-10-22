@@ -13,6 +13,7 @@ def default_device():
 
 
 def main():
+    sys.stdout.reconfigure(encoding="utf-8")
     p = argparse.ArgumentParser(description="LLM français from scratch")
     sub = p.add_subparsers(dest="cmd", required=True)
 
