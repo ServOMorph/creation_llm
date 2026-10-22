@@ -7,3 +7,8 @@ credentials*.json
 *token*.json
 *.token
 .claude/settings.local.json
+
+.venv/
+data/
+__pycache__/
+checkpoints/
