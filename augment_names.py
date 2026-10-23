@@ -7,12 +7,14 @@ ROOT = Path(__file__).parent
 DATA = ROOT / "data"
 
 MASC = """Adam Adrien Alexandre Alexis Antoine Armand Arthur Augustin Axel Baptiste Basile Benjamin Benoît Bastien
-Camille Célestin Charles Clément Corentin Damien Daniel David Denis Diego Dimitri Édouard Élie Eliott Émile Enzo
+Célestin Charles Clément Corentin Damien Daniel David Denis Diego Dimitri Édouard Élie Eliott Émile Enzo
 Ethan Étienne Evan Fabien Félix Florian François Gabin Gabriel Gaël Gaspard Gaston Georges Gilles Grégoire Guillaume
 Gustave Henri Hector Isaac Ivan Jacques Jean Jérémie Jonas Joseph Jules Julien Justin Kylian Lazare Léon Léandre
 Liam Lorenzo Louis Luc Malo Marc Marcel Marius Martin Mathis Matteo Maxence Maxime Milo Nathanaël Noé Nolan Octave
 Olivier Oscar Pablo Pascal Philippe Pierre Quentin Raphaël Robin Romain Romuald Samuel Simon Stéphane Sylvain
-Théo Théodore Thibault Timothée Valentin Victor Vincent Xavier Yann Yanis Yves Zacharie""".split()
+Théo Théodore Thibault Timothée Valentin Victor Vincent Xavier Yann Yanis Yves Zacharie
+Léo Lucas Tom Paul Hugo Nathan Louis Jules Gabin Mathéo Timéo Lenny Nino Rayan Ibrahim Mohamed Youssef
+Thomas Nicolas Sébastien Julien Mathieu Hugues Aymeric Marin Elias Tiago Kenzo Naël Ilyes Amir""".split()
 
 FEM = """Adèle Agathe Alice Aline Amandine Amélie Anaïs Anna Annabelle Apolline Ariane Aurélie Aurore Axelle Bérénice
 Blanche Capucine Carla Caroline Cécile Céleste Charlotte Clémence Colette Constance Coralie Daphné Delphine Diane
@@ -20,11 +22,13 @@ Blanche Capucine Carla Caroline Cécile Céleste Charlotte Clémence Colette Con
 Hortense Inès Irène Iris Jade Jeanne Joséphine Judith Juliette Justine Laure Laurine Léonie Lina Lise Louise Lucie
 Lucille Madeleine Maëlle Manon Margaux Marguerite Marie Marine Marion Mathilde Maya Mélanie Mélissa Mila Mona Nadia
 Naomi Nina Noémie Océane Olivia Pauline Pénélope Rose Rosalie Salomé Sarah Solène Suzanne Sylvie Thaïs Valentine
-Véronique Victoire Violette Yasmine Yvonne""".split()
+Véronique Victoire Violette Yasmine Yvonne
+Julie Emma Chloé Zoé Sophie Lili Mina Léa Jade Lola Ambre Romane Nora Rosa Lisa Clara Margot Agnès
+Sofia Lya Aya Inaya Assia Léna Anna Ella Livia Héloïse Clémentine Bérangère Ophélie Perrine""".split()
 
-NEUTRE = "Alix Andrea Ange Charlie Dominique Eden Lou Noa Sacha Sasha Morgan".split()
+NEUTRE = "Camille Alix Andrea Ange Charlie Dominique Eden Lou Noa Sacha Sasha Morgan".split()
 
-EXCLUDED = {"Léo", "Mina", "Julie", "Lucas", "Tom", "Sophie", "Chloé", "Pompon", "Paul", "Bip", "Emma", "Hugo", "Lili", "Nathan", "Zoé"}
+EXCLUDED = set()
 
 PATTERN = re.compile(r"\b(nommée?|appelée?|s'appelait|s’appelait) ([A-ZÀ-Ý][a-zà-ÿ]+)")
 
@@ -51,7 +55,7 @@ def augment(text, rng, p=0.8):
     return text
 
 
-def main(src=DATA / "train.jsonl", dst=DATA / "train_aug.jsonl", seed=0):
+def main(src=DATA / "train.jsonl", dst=DATA / "train_aug.jsonl", seed=1):
     rng = random.Random(seed)
     with open(src, encoding="utf-8") as f, open(dst, "w", encoding="utf-8") as out:
         for line in f:

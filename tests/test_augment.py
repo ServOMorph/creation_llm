@@ -24,11 +24,15 @@ def test_feminine_and_neutral():
     assert out.split("s'appelait ")[1].split(".")[0] in NEUTRE
 
 
-def test_never_uses_benchmark_names():
+def test_never_uses_excluded_names():
     rng = random.Random(2)
     for _ in range(500):
         out = augment("Un garçon nommé Lulu et une fille nommée Mimi.", rng, p=1.0)
         assert not any(name in out.split() for name in EXCLUDED)
+
+
+def test_name_pools_have_no_duplicates_across_genders():
+    assert not set(MASC) & set(FEM)
 
 
 def test_word_boundaries_and_no_name():
