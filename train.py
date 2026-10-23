@@ -36,6 +36,7 @@ class TrainConfig:
     seed: int = 1337
     resume: bool = False
     init_from: str = ""
+    align_docs: bool = False
 
 
 def get_lr(step, cfg):
@@ -51,8 +52,15 @@ def doc_starts(data, block_size, eot_id=0):
     return starts[starts < len(data) - block_size - 1]
 
 
-def get_batch(data, batch_size, block_size, device, gen, starts):
-    ix = starts[torch.randint(len(starts), (batch_size,), generator=gen).numpy()].tolist()
+def all_starts(data, block_size):
+    return None
+
+
+def get_batch(data, batch_size, block_size, device, gen, starts=None):
+    if starts is None:
+        ix = torch.randint(len(data) - block_size - 1, (batch_size,), generator=gen).tolist()
+    else:
+        ix = starts[torch.randint(len(starts), (batch_size,), generator=gen).numpy()].tolist()
     x = torch.stack([torch.from_numpy(data[i : i + block_size].astype(np.int64)) for i in ix])
     y = torch.stack([torch.from_numpy(data[i + 1 : i + 1 + block_size].astype(np.int64)) for i in ix])
     return x.to(device), y.to(device)
@@ -97,8 +105,9 @@ def train(cfg, mcfg):
 
     train_data = np.memmap(cfg.train_bin, dtype=np.uint16, mode="r")
     val_data = np.memmap(cfg.val_bin, dtype=np.uint16, mode="r")
-    train_starts = doc_starts(train_data, mcfg.block_size)
-    val_starts = doc_starts(val_data, mcfg.block_size)
+    starts_fn = doc_starts if cfg.align_docs else all_starts
+    train_starts = starts_fn(train_data, mcfg.block_size)
+    val_starts = starts_fn(val_data, mcfg.block_size)
 
     model = GPT(mcfg).to(cfg.device)
     opt = torch.optim.AdamW(

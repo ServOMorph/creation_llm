@@ -55,7 +55,7 @@ def generate(model, ids, max_new_tokens=200, temperature=0.8, top_k=50, top_p=0.
     return x[0].tolist()
 
 
-def complete(model, tok, prompt, **kw):
-    ids = [EOT_ID] + tok.encode(prompt).ids
+def complete(model, tok, prompt, prefix_eot=False, **kw):
+    ids = ([EOT_ID] if prefix_eot else []) + tok.encode(prompt).ids
     out = generate(model, ids, **kw)
     return tok.decode([i for i in out if i != EOT_ID])
