@@ -1,6 +1,8 @@
+import argparse
 import json
 import random
 import re
+import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).parent
@@ -63,5 +65,29 @@ def main(src=DATA / "train.jsonl", dst=DATA / "train_aug.jsonl", seed=1):
             out.write(json.dumps({"text": text}, ensure_ascii=False) + "\n")
 
 
+def build(seeds, out):
+    from tokenizers import Tokenizer
+
+    from prepare_tokens import encode_file
+
+    tok = Tokenizer.from_file(str(ROOT / "tokenizer.json"))
+    total = 0
+    with open(out, "wb") as dst:
+        for seed in seeds:
+            jsonl = DATA / f"train_aug_s{seed}.jsonl"
+            part = jsonl.with_suffix(".bin")
+            main(dst=jsonl, seed=seed)
+            total += encode_file(tok, jsonl, part)
+            with open(part, "rb") as src:
+                shutil.copyfileobj(src, dst)
+            part.unlink()
+            jsonl.unlink()
+    return total
+
+
 if __name__ == "__main__":
-    main()
+    p = argparse.ArgumentParser()
+    p.add_argument("--seeds", type=int, nargs="+", default=[1])
+    p.add_argument("--out", default=str(DATA / "train_aug.bin"))
+    args = p.parse_args()
+    print("tokens", build(args.seeds, Path(args.out)))

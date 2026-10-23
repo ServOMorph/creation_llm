@@ -18,7 +18,7 @@ def distinct_n(tokens, n=3):
     return len(set(grams)) / len(grams) if grams else 0.0
 
 
-def run_eval(ckpt_path, device, max_new_tokens=150, eval_batches=200, report=REPORT, temperature=0.7, prefix_eot=False):
+def run_eval(ckpt_path, device, max_new_tokens=150, eval_batches=200, report=REPORT, temperature=0.7, prefix_eot=False, seed=SEED):
     model, step = load_model(ckpt_path, device)
     tok = load_tokenizer()
     cfg = TrainConfig(device=device, eval_batches=eval_batches)
@@ -34,13 +34,14 @@ def run_eval(ckpt_path, device, max_new_tokens=150, eval_batches=200, report=REP
         f"- Loss de validation : {val_loss:.4f}",
         f"- Perplexité de validation : {math.exp(val_loss):.2f}",
         f"- Température : {temperature}",
+        f"- Graine : {seed}",
         "",
     ]
     ratios = []
     for i, prompt in enumerate(prompts):
-        text = complete(model, tok, prompt, prefix_eot=prefix_eot, max_new_tokens=max_new_tokens, temperature=temperature, top_k=50, top_p=0.95, seed=SEED + i)
+        text = complete(model, tok, prompt, prefix_eot=prefix_eot, max_new_tokens=max_new_tokens, temperature=temperature, top_k=50, top_p=0.95, seed=seed + i)
         ratios.append(distinct_n(tok.encode(text).ids))
         lines += [f"## Prompt {i + 1}", "", text, ""]
-    lines.insert(7,f"- Diversité moyenne (3-grammes distincts) : {sum(ratios) / len(ratios):.3f}")
+    lines.insert(7, f"- Diversité moyenne (3-grammes distincts) : {sum(ratios) / len(ratios):.3f}")
     report.write_text("\n".join(lines), encoding="utf-8")
     return val_loss, ratios
