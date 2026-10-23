@@ -40,8 +40,13 @@ def main():
         from model import GPTConfig
         from train import parse_args, train
 
+        mp = argparse.ArgumentParser()
+        mp.add_argument("--n-layer", type=int, default=GPTConfig.n_layer)
+        mp.add_argument("--n-embd", type=int, default=GPTConfig.n_embd)
+        mp.add_argument("--n-head", type=int, default=GPTConfig.n_head)
+        margs, rest = mp.parse_known_args(rest)
         cfg = parse_args(rest)
-        train(cfg, GPTConfig())
+        train(cfg, GPTConfig(n_layer=margs.n_layer, n_embd=margs.n_embd, n_head=margs.n_head))
     elif args.cmd == "generate":
         from generate import complete, load_model, load_tokenizer
 

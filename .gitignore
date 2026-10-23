@@ -13,3 +13,4 @@ data/
 __pycache__/
 checkpoints/
 checkpoints_v2/
+checkpoints_v3/
