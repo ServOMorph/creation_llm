@@ -29,5 +29,27 @@ Exécution en autonomie : accord VRAM donné par l'utilisateur, enchaînement de
 - Évaluation : perplexité + benchmark de prompts verrouillés
 - Gate : v1 génère du français lisible (sans garantie de cohérence)
 
-## Phase 6+ — Améliorations itératives [TODO]
-Pistes, à prioriser après v1 : corpus élargi (Wikipédia FR, FineWeb-2 FR), optimiseur Muon, modèle plus grand (~120M), SFT / forme assistant (v1 = complétion de texte, pas de chat), contexte plus long.
+## Phase 6 — Itérations modèle d'histoires (v2 à v8) [TODO]
+- v1-v7 : 33,6M puis 97,5M, augmentation des prénoms, 6 époques cumulées ; v8 : extension de profondeur 12 -> 18 couches (LLaMA Pro, arXiv 2401.02415), présentations variées
+- Évaluation : 3 jeux de 20 prompts x 3 graines, lecture avec grille fixe (erreur majeure / limite / mineure)
+- Constat : ~40 % d'erreurs strictes sur des prompts nouveaux, contre ~85 % pour la référence LeCarnet-21M ; plafond lié à la pauvreté du corpus (2M histoires stéréotypées, 365M tokens répétés)
+- Gate (décidé par l'utilisateur) : v8 retenue si au moins égale à v7 et meilleure que LeCarnet-21M sur le jeu scellé
+
+## Phase 7 — Corpus français généraliste [TODO]
+- Sources : FineWeb2-HQ fra_Latn (epfml, top 10 % qualité, 32M docs, colonne text seule), Wikipédia FR (wikimedia/wikipedia 20231101.fr, 2,56M articles), Vikidia FR et FR simple (FrancophonIA/Vikidia-EnFr), LeCarnet (histoires)
+- Pipeline : téléchargement par lots, nettoyage, déduplication exacte, mélange pondéré, tokenisation en .bin
+- Tokenizer BPE 32k entraîné sur le mélange (8k insuffisant hors histoires)
+- Gate : >= 5 milliards de tokens prêts, tests tokenizer (aller-retour, compression)
+
+## Phase 8 — Recette d'entraînement efficace [TODO]
+- A/B courts (même budget de tokens) : AdamW vs Muon (torch.optim.Muon, matrices cachées) + AdamW (embeddings, tête) ; torch.compile si disponible sous Windows
+- Fenêtres de contexte 1024, micro-batch adapté à ~4 Go de VRAM, reprise testée
+- Gate : recette retenue sur loss de validation à budget égal
+
+## Phase 9 — Modèle généraliste v9 (~150M, plusieurs jours) [TODO]
+- Pré-entraînement sur 5-10 milliards de tokens, par tranches reprenables (pause VRAM possible à tout moment)
+- Évaluation : perplexité par domaine, benchmarks FR (FrenchBench, CroissantLLM), jeux de prompts d'histoires
+- Gate : meilleur que v8 sur les histoires nouvelles et perplexité FR générale en baisse continue
+
+## Phase 10+ — Suite [TODO]
+Pistes : annealing final sur données de haute qualité, SFT / forme assistant, contexte plus long, value embeddings / U-net (modded-nanogpt).

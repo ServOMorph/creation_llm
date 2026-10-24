@@ -50,9 +50,18 @@ def main():
         mp.add_argument("--n-layer", type=int, default=GPTConfig.n_layer)
         mp.add_argument("--n-embd", type=int, default=GPTConfig.n_embd)
         mp.add_argument("--n-head", type=int, default=GPTConfig.n_head)
+        mp.add_argument("--block-size", type=int, default=GPTConfig.block_size)
+        mp.add_argument("--vocab-size", type=int, default=GPTConfig.vocab_size)
         margs, rest = mp.parse_known_args(rest)
         cfg = parse_args(rest)
-        train(cfg, GPTConfig(n_layer=margs.n_layer, n_embd=margs.n_embd, n_head=margs.n_head))
+        mcfg = GPTConfig(
+            vocab_size=margs.vocab_size,
+            block_size=margs.block_size,
+            n_layer=margs.n_layer,
+            n_embd=margs.n_embd,
+            n_head=margs.n_head,
+        )
+        train(cfg, mcfg)
     elif args.cmd == "generate":
         from generate import complete, load_model, load_tokenizer
 
