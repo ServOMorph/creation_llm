@@ -39,6 +39,7 @@ class TrainConfig:
     align_docs: bool = False
     optimizer: str = "adamw"
     compile: bool = False
+    tokenizer: str = str(ROOT / "tokenizer.json")
 
 
 class MultiOptimizer:

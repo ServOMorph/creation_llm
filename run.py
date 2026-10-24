@@ -69,7 +69,7 @@ def main():
         print(
             complete(
                 model,
-                load_tokenizer(),
+                load_tokenizer(model.tokenizer_path),
                 args.prompt,
                 max_new_tokens=args.max_new_tokens,
                 temperature=args.temperature,

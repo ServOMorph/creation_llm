@@ -14,11 +14,14 @@ def load_model(ckpt_path, device):
     model = GPT(GPTConfig(**ckpt["model_cfg"])).to(device)
     model.load_state_dict(ckpt["model"])
     model.eval()
+    train_cfg = ckpt.get("train_cfg", {})
+    model.tokenizer_path = train_cfg.get("tokenizer", str(ROOT / "tokenizer.json"))
+    model.val_bin = train_cfg.get("val_bin", str(ROOT / "data" / "validation.bin"))
     return model, ckpt["step"]
 
 
-def load_tokenizer():
-    return Tokenizer.from_file(str(ROOT / "tokenizer.json"))
+def load_tokenizer(path=ROOT / "tokenizer.json"):
+    return Tokenizer.from_file(str(path))
 
 
 def sample_next(logits, temperature, top_k, top_p, gen):

@@ -1,11 +1,10 @@
 import math
 from pathlib import Path
 
-import numpy as np
 import torch
 
 from generate import complete, load_model, load_tokenizer
-from train import TrainConfig, all_starts, evaluate
+from train import TrainConfig, all_starts, evaluate, load_data
 
 ROOT = Path(__file__).parent
 PROMPTS = ROOT / "prompts_eval.txt"
@@ -20,9 +19,9 @@ def distinct_n(tokens, n=3):
 
 def run_eval(ckpt_path, device, max_new_tokens=150, eval_batches=200, report=REPORT, temperature=0.7, prefix_eot=False, seed=SEED, best_of=1, prompts_path=PROMPTS):
     model, step = load_model(ckpt_path, device)
-    tok = load_tokenizer()
-    cfg = TrainConfig(device=device, eval_batches=eval_batches)
-    val_data = np.memmap(cfg.val_bin, dtype=np.uint16, mode="r")
+    tok = load_tokenizer(model.tokenizer_path)
+    cfg = TrainConfig(device=device, eval_batches=eval_batches, batch_size=max(1, 8192 // model.cfg.block_size))
+    val_data = load_data(model.val_bin)
     autocast = torch.autocast(device.split(":")[0], dtype=torch.bfloat16, enabled=device.startswith("cuda"))
     val_loss = evaluate(model, val_data, cfg, model.cfg.block_size, autocast, all_starts(val_data, model.cfg.block_size))
 
