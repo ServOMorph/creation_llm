@@ -57,15 +57,45 @@ def augment(text, rng, p=0.8):
     return text
 
 
-def main(src=DATA / "train.jsonl", dst=DATA / "train_aug.jsonl", seed=1):
+INTRO = re.compile(r"\b(un|une) ((?:[a-zà-ÿ-]+ ){1,3})(nommée?|appelée?) ([A-ZÀ-Ý][a-zà-ÿ]+)")
+INTRO_WEIGHTS = (0.4, 0.2, 0.2, 0.2)
+VOWELS = "aeiouyhàâéèêëîïôûü"
+
+
+def intro_variant(match, kind):
+    art, words, _, name = match.groups()
+    words = words.strip()
+    if kind == 1:
+        return f"{name}, {art} {words}"
+    if kind == 2:
+        return f"{art} {words} qui s'appelait {name}"
+    if kind == 3:
+        definite = "l'" if words[0] in VOWELS else ("le " if art == "un" else "la ")
+        return f"{definite}{words} {name}"
+    return match.group(0)
+
+
+def vary_intro(text, rng, weights=INTRO_WEIGHTS):
+    def repl(m):
+        kind = rng.choices(range(4), weights=weights)[0]
+        if kind == 2 and text[m.end() : m.end() + 4] == " qui":
+            kind = 0
+        return intro_variant(m, kind)
+
+    return INTRO.sub(repl, text)
+
+
+def main(src=DATA / "train.jsonl", dst=DATA / "train_aug.jsonl", seed=1, vary=False):
     rng = random.Random(seed)
     with open(src, encoding="utf-8") as f, open(dst, "w", encoding="utf-8") as out:
         for line in f:
             text = augment(json.loads(line)["text"], rng)
+            if vary:
+                text = vary_intro(text, rng)
             out.write(json.dumps({"text": text}, ensure_ascii=False) + "\n")
 
 
-def build(seeds, out):
+def build(seeds, out, vary=False):
     from tokenizers import Tokenizer
 
     from prepare_tokens import encode_file
@@ -76,7 +106,7 @@ def build(seeds, out):
         for seed in seeds:
             jsonl = DATA / f"train_aug_s{seed}.jsonl"
             part = jsonl.with_suffix(".bin")
-            main(dst=jsonl, seed=seed)
+            main(dst=jsonl, seed=seed, vary=vary)
             total += encode_file(tok, jsonl, part)
             with open(part, "rb") as src:
                 shutil.copyfileobj(src, dst)
@@ -89,5 +119,6 @@ if __name__ == "__main__":
     p = argparse.ArgumentParser()
     p.add_argument("--seeds", type=int, nargs="+", default=[1])
     p.add_argument("--out", default=str(DATA / "train_aug.bin"))
+    p.add_argument("--vary-intro", action="store_true")
     args = p.parse_args()
-    print("tokens", build(args.seeds, Path(args.out)))
+    print("tokens", build(args.seeds, Path(args.out), vary=args.vary_intro))
