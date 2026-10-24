@@ -28,6 +28,7 @@ def main():
     g.add_argument("--top-k", type=int, default=50)
     g.add_argument("--top-p", type=float, default=0.95)
     g.add_argument("--seed", type=int, default=None)
+    g.add_argument("--best-of", type=int, default=1)
 
     e = sub.add_parser("eval", help="perplexité + prompts verrouillés -> eval_report.md")
     e.add_argument("--ckpt", default=str(DEFAULT_CKPT))
@@ -37,6 +38,8 @@ def main():
     e.add_argument("--eval-batches", type=int, default=200)
     e.add_argument("--report", default=str(ROOT / "eval_report.md"))
     e.add_argument("--prefix-eot", action="store_true")
+    e.add_argument("--best-of", type=int, default=1)
+    e.add_argument("--prompts", default=str(ROOT / "prompts_eval.txt"))
 
     args, rest = p.parse_known_args()
     if args.cmd == "train":
@@ -64,12 +67,13 @@ def main():
                 top_k=args.top_k,
                 top_p=args.top_p,
                 seed=args.seed,
+                best_of=args.best_of,
             )
         )
     else:
         from evaluate import run_eval
 
-        val_loss, _ = run_eval(args.ckpt, args.device, report=Path(args.report), temperature=args.temperature, prefix_eot=args.prefix_eot, seed=args.seed, eval_batches=args.eval_batches)
+        val_loss, _ = run_eval(args.ckpt, args.device, report=Path(args.report), temperature=args.temperature, prefix_eot=args.prefix_eot, seed=args.seed, eval_batches=args.eval_batches, best_of=args.best_of, prompts_path=args.prompts)
         print(f"loss validation {val_loss:.4f} ; rapport : {args.report}")
 
 

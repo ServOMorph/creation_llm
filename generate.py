@@ -38,24 +38,50 @@ def sample_next(logits, temperature, top_k, top_p, gen):
     return torch.multinomial(probs, 1, generator=gen)
 
 
+def prefill(model, x):
+    caches = [{} for _ in model.blocks]
+    logits, _ = model(x, caches=caches)
+    return logits[:, -1, :].float(), caches
+
+
 @torch.no_grad()
-def generate(model, ids, max_new_tokens=200, temperature=0.8, top_k=50, top_p=0.95, seed=None):
+def sample(model, ids, n=1, max_new_tokens=200, temperature=0.8, top_k=50, top_p=0.95, seed=None):
     device = next(model.parameters()).device
     block = model.cfg.block_size
     gen = None
     if seed is not None:
         gen = torch.Generator(device=device).manual_seed(seed)
-    x = torch.tensor([ids], dtype=torch.long, device=device)
+    x = torch.tensor([ids] * n, dtype=torch.long, device=device)
+    logits, caches = prefill(model, x[:, -block:])
+    outs = [list(ids) for _ in range(n)]
+    score = torch.zeros(n, device=device)
+    length = torch.zeros(n, device=device)
+    done = torch.zeros(n, dtype=torch.bool, device=device)
     for _ in range(max_new_tokens):
-        logits, _ = model(x[:, -block:])
-        nxt = sample_next(logits[:, -1, :].float(), temperature, top_k, top_p, gen)
-        x = torch.cat([x, nxt], dim=1)
-        if nxt.item() == EOT_ID:
+        nxt = sample_next(logits, temperature, top_k, top_p, gen)
+        active = ~done
+        score += torch.log_softmax(logits, dim=-1).gather(1, nxt).squeeze(1) * active
+        length += active
+        for i in active.nonzero().flatten().tolist():
+            outs[i].append(nxt[i].item())
+        done |= nxt.squeeze(1) == EOT_ID
+        if done.all():
             break
-    return x[0].tolist()
+        x = torch.cat([x, nxt], dim=1)
+        if caches[0]["k"].size(2) < block:
+            out, _ = model(nxt, caches=caches)
+            logits = out[:, -1, :].float()
+        else:
+            logits, caches = prefill(model, x[:, -block:])
+    return outs, score / length.clamp(min=1)
 
 
-def complete(model, tok, prompt, prefix_eot=False, **kw):
+def generate(model, ids, max_new_tokens=200, temperature=0.8, top_k=50, top_p=0.95, seed=None):
+    return sample(model, ids, 1, max_new_tokens, temperature, top_k, top_p, seed)[0][0]
+
+
+def complete(model, tok, prompt, prefix_eot=False, best_of=1, **kw):
     ids = ([EOT_ID] if prefix_eot else []) + tok.encode(prompt).ids
-    out = generate(model, ids, **kw)
+    outs, scores = sample(model, ids, n=best_of, **kw)
+    out = outs[int(scores.argmax())]
     return tok.decode([i for i in out if i != EOT_ID])

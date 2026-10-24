@@ -5,7 +5,7 @@ import torch
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from generate import EOT_ID, generate, sample_next  # noqa: E402
+from generate import EOT_ID, generate, sample, sample_next  # noqa: E402
 from model import GPT, GPTConfig  # noqa: E402
 
 CFG = GPTConfig(vocab_size=64, block_size=32, n_layer=2, n_head=4, n_embd=64)
@@ -60,3 +60,24 @@ def test_stops_on_eot():
     out = generate(m, [5, 6], max_new_tokens=20, temperature=0)
     assert out[-1] == EOT_ID
     assert len(out) < 22
+
+
+def test_sample_returns_n_candidates_with_scores():
+    m = make_model()
+    outs, scores = sample(m, [5, 6], n=4, max_new_tokens=12, temperature=1.0, seed=0)
+    assert len(outs) == 4 and scores.shape == (4,)
+    assert all(o[:2] == [5, 6] for o in outs)
+    assert torch.all(torch.isfinite(scores)) and torch.all(scores <= 0)
+
+
+def test_cached_generation_matches_uncached_greedy():
+    m = make_model()
+    ids = [5, 6, 7]
+    x = torch.tensor([ids])
+    with torch.no_grad():
+        for _ in range(10):
+            nxt = m(x)[0][:, -1, :].argmax(dim=-1, keepdim=True)
+            x = torch.cat([x, nxt], dim=1)
+            if nxt.item() == EOT_ID:
+                break
+    assert generate(m, ids, max_new_tokens=10, temperature=0) == x[0].tolist()

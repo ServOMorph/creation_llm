@@ -18,7 +18,7 @@ def distinct_n(tokens, n=3):
     return len(set(grams)) / len(grams) if grams else 0.0
 
 
-def run_eval(ckpt_path, device, max_new_tokens=150, eval_batches=200, report=REPORT, temperature=0.7, prefix_eot=False, seed=SEED):
+def run_eval(ckpt_path, device, max_new_tokens=150, eval_batches=200, report=REPORT, temperature=0.7, prefix_eot=False, seed=SEED, best_of=1, prompts_path=PROMPTS):
     model, step = load_model(ckpt_path, device)
     tok = load_tokenizer()
     cfg = TrainConfig(device=device, eval_batches=eval_batches)
@@ -26,7 +26,7 @@ def run_eval(ckpt_path, device, max_new_tokens=150, eval_batches=200, report=REP
     autocast = torch.autocast(device.split(":")[0], dtype=torch.bfloat16, enabled=device.startswith("cuda"))
     val_loss = evaluate(model, val_data, cfg, model.cfg.block_size, autocast, all_starts(val_data, model.cfg.block_size))
 
-    prompts = [p for p in PROMPTS.read_text(encoding="utf-8").splitlines() if p.strip()]
+    prompts = [p for p in Path(prompts_path).read_text(encoding="utf-8").splitlines() if p.strip()]
     lines = [
         "# Rapport d'évaluation",
         "",
@@ -35,13 +35,15 @@ def run_eval(ckpt_path, device, max_new_tokens=150, eval_batches=200, report=REP
         f"- Perplexité de validation : {math.exp(val_loss):.2f}",
         f"- Température : {temperature}",
         f"- Graine : {seed}",
+        f"- Candidats par prompt (best-of) : {best_of}",
+        f"- Prompts : {Path(prompts_path).name}",
         "",
     ]
     ratios = []
     for i, prompt in enumerate(prompts):
-        text = complete(model, tok, prompt, prefix_eot=prefix_eot, max_new_tokens=max_new_tokens, temperature=temperature, top_k=50, top_p=0.95, seed=seed + i)
+        text = complete(model, tok, prompt, prefix_eot=prefix_eot, best_of=best_of, max_new_tokens=max_new_tokens, temperature=temperature, top_k=50, top_p=0.95, seed=seed + i)
         ratios.append(distinct_n(tok.encode(text).ids))
         lines += [f"## Prompt {i + 1}", "", text, ""]
-    lines.insert(7, f"- Diversité moyenne (3-grammes distincts) : {sum(ratios) / len(ratios):.3f}")
+    lines.insert(9, f"- Diversité moyenne (3-grammes distincts) : {sum(ratios) / len(ratios):.3f}")
     report.write_text("\n".join(lines), encoding="utf-8")
     return val_loss, ratios

@@ -80,3 +80,29 @@ def test_overfit_single_batch():
         opt.step()
     assert loss.item() < 0.1
     assert loss.item() < first.item() * 0.05
+
+
+def test_kv_cache_matches_full_forward():
+    torch.manual_seed(0)
+    m = GPT(TINY)
+    for p in m.parameters():
+        torch.nn.init.normal_(p, std=0.1)
+    m.eval()
+    x = torch.randint(0, TINY.vocab_size, (2, 12))
+    with torch.no_grad():
+        full, _ = m(x)
+        caches = [{} for _ in m.blocks]
+        steps = [m(x[:, :5], caches=caches)[0]]
+        for t in range(5, 12):
+            steps.append(m(x[:, t : t + 1], caches=caches)[0])
+    assert torch.allclose(full, torch.cat(steps, dim=1), atol=1e-5)
+
+
+def test_kv_cache_rejects_multi_token_append():
+    m = GPT(TINY).eval()
+    caches = [{} for _ in m.blocks]
+    x = torch.randint(0, TINY.vocab_size, (1, 6))
+    with torch.no_grad():
+        m(x[:, :3], caches=caches)
+        with pytest.raises(ValueError):
+            m(x[:, 3:], caches=caches)

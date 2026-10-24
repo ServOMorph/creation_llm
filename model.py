@@ -40,12 +40,20 @@ class CausalSelfAttention(nn.Module):
         self.proj = nn.Linear(cfg.n_embd, cfg.n_embd, bias=False)
         nn.init.zeros_(self.proj.weight)
 
-    def forward(self, x, cos, sin):
+    def forward(self, x, cos, sin, cache=None):
         B, T, C = x.shape
         q, k, v = self.qkv(x).view(B, T, 3, self.n_head, self.head_dim).permute(2, 0, 3, 1, 4)
-        q = apply_rope(rms_norm(q), cos[:T], sin[:T])
-        k = apply_rope(rms_norm(k), cos[:T], sin[:T])
-        y = F.scaled_dot_product_attention(q, k, v, is_causal=True)
+        pos = 0 if cache is None or "k" not in cache else cache["k"].size(2)
+        if pos and T > 1:
+            raise ValueError("le cache KV n'accepte qu'un token à la fois après le préremplissage")
+        q = apply_rope(rms_norm(q), cos[pos : pos + T], sin[pos : pos + T])
+        k = apply_rope(rms_norm(k), cos[pos : pos + T], sin[pos : pos + T])
+        if cache is not None:
+            if pos:
+                k = torch.cat([cache["k"], k], dim=2)
+                v = torch.cat([cache["v"], v], dim=2)
+            cache["k"], cache["v"] = k, v
+        y = F.scaled_dot_product_attention(q, k, v, is_causal=pos == 0)
         return self.proj(y.transpose(1, 2).reshape(B, T, C))
 
 
@@ -66,8 +74,8 @@ class Block(nn.Module):
         self.attn = CausalSelfAttention(cfg)
         self.mlp = MLP(cfg)
 
-    def forward(self, x, cos, sin):
-        x = x + self.attn(rms_norm(x), cos, sin)
+    def forward(self, x, cos, sin, cache=None):
+        x = x + self.attn(rms_norm(x), cos, sin, cache)
         return x + self.mlp(rms_norm(x))
 
 
@@ -82,10 +90,10 @@ class GPT(nn.Module):
         self.register_buffer("rope_cos", cos, persistent=False)
         self.register_buffer("rope_sin", sin, persistent=False)
 
-    def forward(self, idx, targets=None):
+    def forward(self, idx, targets=None, caches=None):
         x = rms_norm(self.wte(idx))
-        for block in self.blocks:
-            x = block(x, self.rope_cos, self.rope_sin)
+        for i, block in enumerate(self.blocks):
+            x = block(x, self.rope_cos, self.rope_sin, None if caches is None else caches[i])
         cap = self.cfg.logit_cap
         logits = cap * torch.tanh(self.lm_head(rms_norm(x)) / cap)
         if targets is None:
