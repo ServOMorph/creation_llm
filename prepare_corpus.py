@@ -171,6 +171,7 @@ if __name__ == "__main__":
     p.add_argument("--n-files", type=int, default=64)
     p.add_argument("--workers", type=int, default=4)
     p.add_argument("--only", nargs="*")
+    p.add_argument("--val-docs", type=int, default=10_000)
     args = p.parse_args()
     if args.step == "fw2hq":
         fetch_fw2hq(args.n_files, args.workers)
@@ -183,4 +184,4 @@ if __name__ == "__main__":
     elif args.step == "tokenizer":
         train_tokenizer()
     else:
-        encode_sources(only=args.only)
+        encode_sources(val_docs=args.val_docs, only=args.only)
