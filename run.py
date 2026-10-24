@@ -34,6 +34,7 @@ def main():
     e.add_argument("--device", default=default_device())
     e.add_argument("--temperature", type=float, default=0.7)
     e.add_argument("--seed", type=int, default=1234)
+    e.add_argument("--eval-batches", type=int, default=200)
     e.add_argument("--report", default=str(ROOT / "eval_report.md"))
     e.add_argument("--prefix-eot", action="store_true")
 
@@ -68,7 +69,7 @@ def main():
     else:
         from evaluate import run_eval
 
-        val_loss, _ = run_eval(args.ckpt, args.device, report=Path(args.report), temperature=args.temperature, prefix_eot=args.prefix_eot, seed=args.seed)
+        val_loss, _ = run_eval(args.ckpt, args.device, report=Path(args.report), temperature=args.temperature, prefix_eot=args.prefix_eot, seed=args.seed, eval_batches=args.eval_batches)
         print(f"loss validation {val_loss:.4f} ; rapport : {args.report}")
 
 
