@@ -5,7 +5,7 @@ from pathlib import Path
 import torch
 
 ROOT = Path(__file__).parent
-DEFAULT_CKPT = ROOT / "checkpoints" / "ckpt.pt"
+DEFAULT_CKPT = ROOT / "checkpoints_v8" / "ckpt.pt"
 
 
 def default_device():
