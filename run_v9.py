@@ -1,4 +1,4 @@
-import subprocess
+import os
 import sys
 from pathlib import Path
 
@@ -21,4 +21,8 @@ ARGS = [
 ]
 
 if __name__ == "__main__":
-    sys.exit(subprocess.call([sys.executable, str(ROOT / "run.py"), "train", *ARGS, *sys.argv[1:]], cwd=ROOT))
+    os.chdir(ROOT)
+    sys.argv = [str(ROOT / "run.py"), "train", *ARGS, *sys.argv[1:]]
+    import run
+
+    run.main()

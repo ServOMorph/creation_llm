@@ -1,0 +1,75 @@
+{
+  "french_bench_arc_challenge": {
+    "name": "french_bench_arc_challenge",
+    "alias": "french_bench_arc_challenge",
+    "sample_len": 1169,
+    "acc,none": 0.20786997433704021,
+    "acc_stderr,none": "N/A",
+    "acc_norm,none": 0.2446535500427716,
+    "acc_norm_stderr,none": "N/A"
+  },
+  "french_bench_hellaswag": {
+    "name": "french_bench_hellaswag",
+    "alias": "french_bench_hellaswag",
+    "sample_len": 9338,
+    "acc,none": 0.2571214392803598,
+    "acc_stderr,none": "N/A",
+    "acc_norm,none": 0.25605054615549366,
+    "acc_norm_stderr,none": "N/A"
+  },
+  "french_bench_grammar": {
+    "name": "french_bench_grammar",
+    "alias": "french_bench_grammar",
+    "sample_len": 119,
+    "acc,none": 0.5210084033613446,
+    "acc_stderr,none": "N/A"
+  },
+  "french_bench_vocab": {
+    "name": "french_bench_vocab",
+    "alias": "french_bench_vocab",
+    "sample_len": 119,
+    "acc,none": 0.4117647058823529,
+    "acc_stderr,none": "N/A"
+  },
+  "french_bench_reading_comp": {
+    "name": "french_bench_reading_comp",
+    "alias": "french_bench_reading_comp",
+    "sample_len": 71,
+    "acc,none": 0.2535211267605634,
+    "acc_stderr,none": "N/A"
+  },
+  "french_bench_boolqa": {
+    "name": "french_bench_boolqa",
+    "alias": "french_bench_boolqa",
+    "sample_len": 178,
+    "acc,none": 0.4550561797752809,
+    "acc_stderr,none": "N/A",
+    "acc_norm,none": 0.4550561797752809,
+    "acc_norm_stderr,none": "N/A"
+  },
+  "french_bench_fquadv2_bool": {
+    "name": "french_bench_fquadv2_bool",
+    "alias": "french_bench_fquadv2_bool",
+    "sample_len": 800,
+    "acc,none": 0.4975,
+    "acc_stderr,none": "N/A",
+    "acc_norm,none": 0.4975,
+    "acc_norm_stderr,none": "N/A"
+  },
+  "french_bench_topic_based_nli": {
+    "name": "french_bench_topic_based_nli",
+    "alias": "french_bench_topic_based_nli",
+    "sample_len": 600,
+    "acc,none": 0.3333333333333333,
+    "acc_stderr,none": "N/A",
+    "acc_norm,none": 0.3333333333333333,
+    "acc_norm_stderr,none": "N/A"
+  },
+  "french_bench_xnli": {
+    "name": "french_bench_xnli",
+    "alias": "french_bench_xnli",
+    "sample_len": 5010,
+    "acc,none": 0.3333333333333333,
+    "acc_stderr,none": "N/A"
+  }
+}
