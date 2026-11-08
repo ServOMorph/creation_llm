@@ -40,7 +40,7 @@ class CausalSelfAttention(nn.Module):
         self.proj = nn.Linear(cfg.n_embd, cfg.n_embd, bias=False)
         nn.init.zeros_(self.proj.weight)
 
-    def forward(self, x, cos, sin, cache=None):
+    def forward(self, x, cos, sin, cache=None, attn_mask=None):
         B, T, C = x.shape
         q, k, v = self.qkv(x).view(B, T, 3, self.n_head, self.head_dim).permute(2, 0, 3, 1, 4)
         pos = 0 if cache is None or "k" not in cache else cache["k"].size(2)
@@ -53,7 +53,10 @@ class CausalSelfAttention(nn.Module):
                 k = torch.cat([cache["k"], k], dim=2)
                 v = torch.cat([cache["v"], v], dim=2)
             cache["k"], cache["v"] = k, v
-        y = F.scaled_dot_product_attention(q, k, v, is_causal=pos == 0)
+        if attn_mask is not None:
+            y = F.scaled_dot_product_attention(q, k, v, attn_mask=attn_mask)
+        else:
+            y = F.scaled_dot_product_attention(q, k, v, is_causal=pos == 0)
         return self.proj(y.transpose(1, 2).reshape(B, T, C))
 
 
@@ -74,8 +77,8 @@ class Block(nn.Module):
         self.attn = CausalSelfAttention(cfg)
         self.mlp = MLP(cfg)
 
-    def forward(self, x, cos, sin, cache=None):
-        x = x + self.attn(rms_norm(x), cos, sin, cache)
+    def forward(self, x, cos, sin, cache=None, attn_mask=None):
+        x = x + self.attn(rms_norm(x), cos, sin, cache, attn_mask)
         return x + self.mlp(rms_norm(x))
 
 
@@ -90,10 +93,15 @@ class GPT(nn.Module):
         self.register_buffer("rope_cos", cos, persistent=False)
         self.register_buffer("rope_sin", sin, persistent=False)
 
-    def forward(self, idx, targets=None, caches=None):
+    def forward(self, idx, targets=None, caches=None, doc_ids=None):
+        attn_mask = None
+        if doc_ids is not None:
+            T = idx.size(1)
+            causal = torch.ones(T, T, dtype=torch.bool, device=idx.device).tril()
+            attn_mask = ((doc_ids[:, :, None] == doc_ids[:, None, :]) & causal)[:, None]
         x = rms_norm(self.wte(idx))
         for i, block in enumerate(self.blocks):
-            x = block(x, self.rope_cos, self.rope_sin, None if caches is None else caches[i])
+            x = block(x, self.rope_cos, self.rope_sin, None if caches is None else caches[i], attn_mask)
         cap = self.cfg.logit_cap
         logits = cap * torch.tanh(self.lm_head(rms_norm(x)) / cap)
         if targets is None:

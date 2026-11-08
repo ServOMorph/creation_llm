@@ -48,9 +48,10 @@ def prefill(model, x):
 
 
 @torch.no_grad()
-def sample(model, ids, n=1, max_new_tokens=200, temperature=0.8, top_k=50, top_p=0.95, seed=None):
+def sample(model, ids, n=1, max_new_tokens=200, temperature=0.8, top_k=50, top_p=0.95, seed=None, stop_ids=(EOT_ID,)):
     device = next(model.parameters()).device
     block = model.cfg.block_size
+    stop = torch.tensor(stop_ids, device=device)
     gen = None
     if seed is not None:
         gen = torch.Generator(device=device).manual_seed(seed)
@@ -67,7 +68,7 @@ def sample(model, ids, n=1, max_new_tokens=200, temperature=0.8, top_k=50, top_p
         length += active
         for i in active.nonzero().flatten().tolist():
             outs[i].append(nxt[i].item())
-        done |= nxt.squeeze(1) == EOT_ID
+        done |= torch.isin(nxt.squeeze(1), stop)
         if done.all():
             break
         x = torch.cat([x, nxt], dim=1)

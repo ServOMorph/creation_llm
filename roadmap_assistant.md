@@ -4,7 +4,7 @@ Objectif : transformer la v9 (modèle de base ~150M, contexte 1024, tokenizer 32
 Données : `kurakurai/luth-sft` (odc-by), téléchargé dans `data/sft/luth-sft/`.
 Contrainte permanente : aucun lancement sur la VRAM sans accord explicite de l'utilisateur.
 
-## Phase 1 — Format de conversation et tokenizer [EN COURS]
+## Phase 1 — Format de conversation et tokenizer [FAIT]
 - Format fixe : `<|user|>` question `<|assistant|>` réponse `<|endoftext|>`, tours enchaînés pour le multi-tours.
 - Ajout des balises au tokenizer 32k (`tokenizer_fr32k_chat.json`), sans modifier les ids existants.
 - Conversion du checkpoint v9 : embeddings et tête agrandis à 32 832 (multiple de 64), nouvelles lignes initialisées à la moyenne des embeddings existants.
@@ -14,7 +14,7 @@ Contrainte permanente : aucun lancement sur la VRAM sans accord explicite de l'u
 **⏸ Checkpoint** — Demander à l'utilisateur de faire `/compact` avant de continuer.
 Attendre sa réponse écrite. Ne pas commencer la phase suivante sans confirmation.
 
-## Phase 2 — Préparation des données [TODO]
+## Phase 2 — Préparation des données [FAIT]
 - Sources gardées : openhermes, smoltalk2, tulu3_persona_instruct, croissantllm, aya. Exclues : tulu3_persona_math, scholar (trop longues, hors de portée du modèle).
 - Filtrage : exemples de plus de 1024 tokens écartés, déduplication exacte des questions. Volume attendu : ~475k exemples, ~177M tokens.
 - Masque de loss : uniquement sur les tokens de réponse (balise `<|endoftext|>` finale comprise).
@@ -26,7 +26,7 @@ Attendre sa réponse écrite. Ne pas commencer la phase suivante sans confirmati
 **⏸ Checkpoint** — Demander à l'utilisateur de faire `/compact` avant de continuer.
 Attendre sa réponse écrite. Ne pas commencer la phase suivante sans confirmation.
 
-## Phase 3 — Entraînement SFT [TODO]
+## Phase 3 — Entraînement SFT [FAIT]
 - Adaptation de l'entraînement : chargement du checkpoint converti, loss masquée, batches de conversations empaquetées dans des fenêtres de 1024 sans attention croisée entre exemples (ou une conversation par fenêtre si plus simple).
 - Choix du learning rate par A/B courts (même budget de tokens) sur la loss de validation des réponses.
 - Entraînement complet : 2 passes (~7 h de GPU estimées à ~14k tokens/s), reprenable, pause VRAM possible à tout moment.
@@ -37,7 +37,7 @@ Attendre sa réponse écrite. Ne pas commencer la phase suivante sans confirmati
 **⏸ Checkpoint** — Demander à l'utilisateur de faire `/compact` avant de continuer.
 Attendre sa réponse écrite. Ne pas commencer la phase suivante sans confirmation.
 
-## Phase 4 — Évaluation et interface [TODO]
+## Phase 4 — Évaluation et interface [FAIT]
 - Évaluation à l'aveugle sur le jeu scellé : assistant contre v9 de base (même consigne en texte libre), 50 questions, 2 graines, notation A/B sur trois critères : compréhension de la question, exactitude, qualité du français.
 - Contrôle de non-régression : FrenchBench 0-shot (`eval_frenchbench.py`) sur l'assistant.
 - Lanceur `run_assistant.py` : conversation en ligne de commande, historique multi-tours tronqué au contexte.
