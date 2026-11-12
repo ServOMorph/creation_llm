@@ -1,0 +1,225 @@
+{
+ "model": "qwen3.5:latest",
+ "vram_gio": 5.25,
+ "taille_gio": 5.25,
+ "tok_s": 41.8,
+ "json_invalides": 0,
+ "sorties_signalees": 0,
+ "rows": [
+  {
+   "type": "politesse",
+   "entree": "Ferme la fenêtre.",
+   "sortie": "Pourriez-vous s'il vous plaît fermer la fenêtre ?",
+   "flags": []
+  },
+  {
+   "type": "politesse",
+   "entree": "Passe-moi ton stylo.",
+   "sortie": "\"Pourriez-vous me passer votre s'il vous plaît ?\"",
+   "flags": []
+  },
+  {
+   "type": "formel",
+   "entree": "T'inquiète, je m'en occupe demain.",
+   "sortie": "Ne vous inquiétez pas ; j'aurai pris soin de cela dès demain.",
+   "flags": []
+  },
+  {
+   "type": "formel",
+   "entree": "Le boss a dit que la réunion sautait.",
+   "sortie": "Le dirigeant a indiqué que la réunion était annulée.",
+   "flags": []
+  },
+  {
+   "type": "passe_compose",
+   "entree": "Nous partons en vacances et nous visitons Rome.",
+   "sortie": "Nous sommes partis en vacances et nous avons visité Rome.",
+   "flags": []
+  },
+  {
+   "type": "passe_compose",
+   "entree": "Elle descend l'escalier et elle sort.",
+   "sortie": "\"Elle a descendu l'escalier et elle est sortie.\"",
+   "flags": []
+  },
+  {
+   "type": "futur",
+   "entree": "Je vais au marché et j'achète des pommes.",
+   "sortie": "Je irai au marché et j'achèterai des pommes.",
+   "flags": []
+  },
+  {
+   "type": "pluriel",
+   "entree": "Le cheval blanc mange une pomme rouge.",
+   "sortie": "Les chevaux blancs mangent des pommes rouges.",
+   "flags": []
+  },
+  {
+   "type": "pluriel",
+   "entree": "Mon voisin a un beau jardin.",
+   "sortie": "Mes voisins ont de beaux jardins.",
+   "flags": []
+  },
+  {
+   "type": "question",
+   "entree": "Les élèves ont fini leurs devoirs.",
+   "sortie": "Les élèves ont-ils fini leurs devoirs ?",
+   "flags": []
+  },
+  {
+   "type": "question",
+   "entree": "Pierre travaille à la bibliothèque le mardi.",
+   "sortie": "Pierre travaille-t-il à la bibliothèque le mardi ?",
+   "flags": []
+  },
+  {
+   "type": "negation",
+   "entree": "Il a encore faim.",
+   "sortie": "Il n'a pas encore faim.",
+   "flags": []
+  },
+  {
+   "type": "simplifier",
+   "entree": "Les précipitations abondantes ont provoqué une crue de la rivière.",
+   "sortie": "Il a beaucoup plu et le fleuve est monté très haut.",
+   "flags": []
+  },
+  {
+   "type": "simplifier",
+   "entree": "Le médecin a prescrit un traitement antibiotique pendant une semaine.",
+   "sortie": "Le docteur a donné des médicaments contre les bactéries à prendre pendant sept jours.",
+   "flags": []
+  },
+  {
+   "type": "resume",
+   "entree": "Julie avait prévu un pique-nique au parc avec ses amis. Mais le matin, il s'est mis à pleuvoir très fort. Ils ont finalement mangé chez elle en regardant un film.",
+   "sortie": "Le pique-nique de Julie et ses amis a été annulé par la pluie, les obligeant à manger chez elle en visionnant un film.",
+   "flags": []
+  },
+  {
+   "type": "resume",
+   "entree": "La mairie a décidé de fermer la piscine municipale pendant deux mois. Des travaux de rénovation sont nécessaires car le bassin fuit. Elle rouvrira en septembre.",
+   "sortie": "La fermeture de deux mois de la piscine municipale est décidée par la mairie pour des raisons de travaux et d'urgence liés à une fuite, avec un réouverture prévue en septembre.",
+   "flags": []
+  },
+  {
+   "type": "paraphrase",
+   "entree": "Il pleut des cordes depuis ce matin.",
+   "sortie": "Il tombe de l'eau comme s'il y avait un tuyau qui coule, et ça dure depuis le petit matin.",
+   "flags": []
+  },
+  {
+   "type": "paraphrase",
+   "entree": "Ce film m'a beaucoup ému.",
+   "sortie": "\"Cette œuvre cinématographique a profondément touché mon cœur.\"",
+   "flags": []
+  },
+  {
+   "type": "correction",
+   "entree": "Les fille on manger des gâteaux hier soir.",
+   "sortie": "Les filles ont mangé des gâteaux hier soir.",
+   "flags": []
+  },
+  {
+   "type": "correction",
+   "entree": "Je suis aller au cinéma avec mes ami.",
+   "sortie": "\"Je suis allé(e) au cinéma avec mes amis.\"",
+   "flags": []
+  }
+ ],
+ "gen": [
+  {
+   "tache": "mettre une phrase à l'imparfait",
+   "exemples": [
+    {
+     "consigne": "Transformez la phrase suivante à l'imparfait.",
+     "entree": "Je bois un café chaque matin en lisant le journal. (Indiquez les verbes conjuguables)",
+     "sortie": "je buvais du café, je lisais"
+    },
+    {
+     "consigne": "Racontez ce que vous faisiez hier soir pendant la tempête.",
+     "entree": "(Contexte : Il pleuvait beaucoup. Je restai à l'intérieur.)",
+     "sortie": "il pleuvait"
+    },
+    {
+     "consigne": "Mettez au conditionnel présent les verbes entre parenthèses.",
+     "entree": "Si j'(avoir) plus de temps, je (travailler) moins dur. Nous (aller) à la plage si nous pouvions (être) là-bas maintenant !",
+     "sortie": "(j'aurais), (je travaillerais), (irions), (serions)"
+    },
+    {
+     "consigne": "Conjuguez le verbe entre parenthèses au futur simple.",
+     "entree": "Demain, nous (partir) tôt pour éviter les embouteillages. Vous (pouvoir) venir avec moi ?",
+     "sortie": "(nous partirons), ((vous pouvez))"
+    },
+    {
+     "consigne": "Conjuguez le verbe entre parenthèses au passé simple.",
+     "entree": "Lorsqu'il fut minuit, tous les enfants (dormir) profondément dans leur lit. Soudain, un bruit éclata !",
+     "sortie": "( dormirent )"
+    }
+   ],
+   "secondes": 12.4
+  },
+  {
+   "tache": "rendre une phrase plus polie",
+   "exemples": [
+    {
+     "consigne": "Transformez cette phrase directe en une demande polie.",
+     "entree": "Donne-moi le sel.",
+     "sortie": "\"Pourriez-vous s'il vous plaît me passer le sel ?\""
+    },
+    {
+     "consigna": "Exprimez votre désaccord de manière courtoise.",
+     "entree": "C'est faux, ce n'est pas du tout ça !",
+     "sortie": "\"Je ne suis pas entièrement d'accord avec cette affirmation.\""
+    },
+    {
+     "consigne": "Formulez une invitation en vous excusant au préalable.",
+     "entree": "Viens à la soirée samedi soir.",
+     "sortie": "\"Excuse-moi de te déranger, mais aurais-tu l'amabilité de venir à la soirée ce weekend ?\""
+    },
+    {
+     "consigne": "Rendrez cette remarque critique plus constructive et douce.",
+     "entree": "Tu as fait beaucoup d'erreurs dans ton rapport.",
+     "sortie": "\"Je pense qu'il y a quelques points à revoir pour améliorer la qualité de ce rapport.\""
+    },
+    {
+     "consigne": "Transformez une demande impolie en requête professionnelle.",
+     "entree": "Est-ce que tu peux m'envoyer le dossier ?",
+     "sortie": "\"Serait-il possible d'avoir accès au dossier, s'il vous plaît ?\""
+    }
+   ],
+   "secondes": 11.2
+  },
+  {
+   "tache": "transformer une phrase affirmative en question",
+   "exemples": [
+    {
+     "consigne": "Transformez cette phrase affirmative en une question utilisant 'Est-ce que'.",
+     "entree": "Tu portes un pull rouge aujourd'hui.",
+     "sortie": "Est-ce que tu portes un pull rouge aujourd'hui ?"
+    },
+    {
+     "consigna": "Formulez la version interrogative en inversant l'ordre du sujet et du verbe.",
+     "entree": "Il pleut beaucoup cette semaine.",
+     "sortie": "Pleut-il beaucoup cette semaine ?"
+    },
+    {
+     "consigne": "Transformez la phrase affirmative en question avec 'Pourquoi'.",
+     "entree": "Elles aiment manger des fruits frais tous les matins.",
+     "sortie": "Pourquoi elles n'aiment pas manger de fruits frais ? (Note : Pour cet exemple, je vais ajuster pour une logique correcte) Elles mangent beaucoup de légumes. -> Pourquoi ne mangez-vous jamais de viande le soir ?"
+    },
+    {
+     "consigne": "Créez un questionnement indirect à la forme affirmative.",
+     "entree": "J'ai terminé mon travail avant midi.",
+     "sortie": "Est-ce que j'avais terminé mon travail avant midi ?"
+    },
+    {
+     "consigne": "Transformez cette affirmation simple en une invitation polie sous forme de question.",
+     "entree": "Vous pouvez venir à la réunion demain.",
+     "sortie": "Pourriez-vous vous rendre à la réunion demain ?"
+    }
+   ],
+   "secondes": 11.5
+  }
+ ]
+}

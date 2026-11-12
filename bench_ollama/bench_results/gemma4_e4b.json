@@ -1,0 +1,225 @@
+{
+ "model": "gemma4:e4b",
+ "vram_gio": 3.06,
+ "taille_gio": 3.06,
+ "tok_s": 59.5,
+ "json_invalides": 0,
+ "sorties_signalees": 0,
+ "rows": [
+  {
+   "type": "politesse",
+   "entree": "Ferme la fenêtre.",
+   "sortie": "Pourriez-vous fermer la fenêtre, s'il vous plaît ?",
+   "flags": []
+  },
+  {
+   "type": "politesse",
+   "entree": "Passe-moi ton stylo.",
+   "sortie": "Pourriez-vous me passer votre stylo, s'il vous plaît ?",
+   "flags": []
+  },
+  {
+   "type": "formel",
+   "entree": "T'inquiète, je m'en occupe demain.",
+   "sortie": "Ne vous inquiétez pas, je m'en chargerai demain.",
+   "flags": []
+  },
+  {
+   "type": "formel",
+   "entree": "Le boss a dit que la réunion sautait.",
+   "sortie": "Le directeur a annoncé que la réunion était annulée.",
+   "flags": []
+  },
+  {
+   "type": "passe_compose",
+   "entree": "Nous partons en vacances et nous visitons Rome.",
+   "sortie": "Nous sommes partis en vacances et nous avons visité Rome.",
+   "flags": []
+  },
+  {
+   "type": "passe_compose",
+   "entree": "Elle descend l'escalier et elle sort.",
+   "sortie": "Elle est descendue l'escalier et elle est sortie.",
+   "flags": []
+  },
+  {
+   "type": "futur",
+   "entree": "Je vais au marché et j'achète des pommes.",
+   "sortie": "J'irai au marché et j'achèterai des pommes.",
+   "flags": []
+  },
+  {
+   "type": "pluriel",
+   "entree": "Le cheval blanc mange une pomme rouge.",
+   "sortie": "Les chevaux blancs mangent des pommes rouges.",
+   "flags": []
+  },
+  {
+   "type": "pluriel",
+   "entree": "Mon voisin a un beau jardin.",
+   "sortie": "Mes voisins ont de beaux jardins.",
+   "flags": []
+  },
+  {
+   "type": "question",
+   "entree": "Les élèves ont fini leurs devoirs.",
+   "sortie": "Est-ce que les élèves ont fini leurs devoirs ?",
+   "flags": []
+  },
+  {
+   "type": "question",
+   "entree": "Pierre travaille à la bibliothèque le mardi.",
+   "sortie": "Pierre travaille à la bibliothèque le mardi ?",
+   "flags": []
+  },
+  {
+   "type": "negation",
+   "entree": "Il a encore faim.",
+   "sortie": "Il n'a plus faim.",
+   "flags": []
+  },
+  {
+   "type": "simplifier",
+   "entree": "Les précipitations abondantes ont provoqué une crue de la rivière.",
+   "sortie": "Quand il a plu beaucoup, la rivière est devenue trop pleine et ça a fait déborder.",
+   "flags": []
+  },
+  {
+   "type": "simplifier",
+   "entree": "Le médecin a prescrit un traitement antibiotique pendant une semaine.",
+   "sortie": "Le docteur t'a donné des médicaments (des pilules) à prendre tous les jours pendant sept jours.",
+   "flags": []
+  },
+  {
+   "type": "resume",
+   "entree": "Julie avait prévu un pique-nique au parc avec ses amis. Mais le matin, il s'est mis à pleuvoir très fort. Ils ont finalement mangé chez elle en regardant un film.",
+   "sortie": "Le pique-nique prévu par Julie et ses amis au parc a été annulé en raison de la forte pluie, les obligeant à manger chez elle devant un film.",
+   "flags": []
+  },
+  {
+   "type": "resume",
+   "entree": "La mairie a décidé de fermer la piscine municipale pendant deux mois. Des travaux de rénovation sont nécessaires car le bassin fuit. Elle rouvrira en septembre.",
+   "sortie": "La piscine municipale sera fermée pour deux mois, jusqu'en septembre, en raison de travaux de rénovation nécessaires suite à une fuite du bassin.",
+   "flags": []
+  },
+  {
+   "type": "paraphrase",
+   "entree": "Il pleut des cordes depuis ce matin.",
+   "sortie": "Il pleut abondamment depuis le début de la journée.",
+   "flags": []
+  },
+  {
+   "type": "paraphrase",
+   "entree": "Ce film m'a beaucoup ému.",
+   "sortie": "Ce long métrage m'a profondément touché.",
+   "flags": []
+  },
+  {
+   "type": "correction",
+   "entree": "Les fille on manger des gâteaux hier soir.",
+   "sortie": "Les filles ont mangé des gâteaux hier soir.",
+   "flags": []
+  },
+  {
+   "type": "correction",
+   "entree": "Je suis aller au cinéma avec mes ami.",
+   "sortie": "Je suis allé(e) au cinéma avec mes amis.",
+   "flags": []
+  }
+ ],
+ "gen": [
+  {
+   "tache": "mettre une phrase à l'imparfait",
+   "exemples": [
+    {
+     "consigne": "Mettez cette phrase au temps de l'imparfait.",
+     "entree": "Hier, je mangeais une pomme et j'écoutais la radio.",
+     "sortie": "Hier, je mangais une pomme et j'écoutais la radio."
+    },
+    {
+     "consigne": "Transformez cette description au temps de l'imparfait.",
+     "entree": "Quand elle était petite, elle jouait dans le jardin avec ses poupées.",
+     "sortie": "Quand elle était petite, elle jouait dans le jardin avec ses poupées."
+    },
+    {
+     "consigne": "Mettez ce récit au temps de l'imparfait pour décrire une scène passée.",
+     "entree": "Le soleil brillait, les oiseaux chantaient et nous marchions lentement sur la plage.",
+     "sortie": "Le soleil brillait, les oiseaux chantaient et nous marchions lentement sur la plage."
+    },
+    {
+     "consigne": "Reformulez cette habitude passée en utilisant l'imparfait.",
+     "entree": "Tous les matins, mon père lisait le journal avant de partir au travail.",
+     "sortie": "Tous les matins, mon père lisait le journal avant de partir au travail."
+    },
+    {
+     "consigne": "Passer cette narration descriptive au temps de l'imparfait.",
+     "entree": "Les enfants couraient dans la cour et leurs rires résonnaient partout.",
+     "sortie": "Les enfants couraient dans la cour et leurs rires résonnaient partout."
+    }
+   ],
+   "secondes": 9.1
+  },
+  {
+   "tache": "rendre une phrase plus polie",
+   "exemples": [
+    {
+     "consigne": "Reformulez cette demande de manière plus courtoise.",
+     "entree": "Donne-moi le rapport avant midi.",
+     "sortie": "Serait-il possible de me transmettre le rapport avant midi, s'il vous plaît ?"
+    },
+    {
+     "consigne": "Adoucissez cette remarque pour qu'elle soit plus délicate.",
+     "entree": "Ton travail est vraiment médiocre.",
+     "sortie": "J'ai quelques suggestions constructives concernant ce travail ; nous pourrions peut-être améliorer certains points ensemble."
+    },
+    {
+     "consigne": "Transformez cette affirmation directe en une question plus polie, dans un contexte professionnel.",
+     "entree": "Vous ne savez pas comment ça marche ?",
+     "sortie": "Pourriez-vous m'éclairer sur le fonctionnement de ceci, s'il vous plaît ?"
+    },
+    {
+     "consigne": "Utilisez des formules de politesse pour exprimer votre désaccord avec douceur.",
+     "entree": "Je ne suis pas d'accord du tout avec cette idée.",
+     "sortie": "Je comprends votre point de vue, mais je souhaiterais nuancer ce propos car j'ai quelques réserves à ce sujet."
+    },
+    {
+     "consigne": "Modérez l'impératif pour demander un service personnellement.",
+     "entree": "Ferme la porte quand tu sors !",
+     "sortie": "Pourrais-tu penser à bien fermer la porte en partant, s'il te plaît ?"
+    }
+   ],
+   "secondes": 8.8
+  },
+  {
+   "tache": "transformer une phrase affirmative en question",
+   "exemples": [
+    {
+     "consigne": "Transformez cette phrase affirmative en question.",
+     "entree": "Tu vas au marché ce matin.",
+     "sortie": "Est-ce que tu vas au marché ce matin ?"
+    },
+    {
+     "consigne": "Reformulez cette déclaration en une interrogation courante.",
+     "entree": "Elle aime lire des romans policiers.",
+     "sortie": "Aime-t-elle lire des romans policiers ?"
+    },
+    {
+     "consigne": "Transformez la phrase suivante pour demander confirmation (question fermée).",
+     "entree": "Nous avons terminé notre travail hier soir.",
+     "sortie": "Avons-nous terminé notre travail hier soir ?"
+    },
+    {
+     "consigne": "Mettez cette affirmation sous forme interrogative, en utilisant l'intonation ou un mot interrogatif simple.",
+     "entree": "Vous parlez couramment anglais et espagnol ?",
+     "sortie": "Parlez-vous couramment anglais et espagnol ?"
+    },
+    {
+     "consigne": "Transformez cette affirmation quotidienne en une question directe.",
+     "entree": "Le train arrive à la gare dans dix minutes.",
+     "sortie": "Le train arrive à la gare dans dix minutes ?"
+    }
+   ],
+   "secondes": 7.7
+  }
+ ]
+}

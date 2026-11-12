@@ -1,0 +1,374 @@
+[
+ {
+  "type": "politesse",
+  "entree": "Grâce à Lili, le jardin devint encore plus beau et tous les insectes étaient très contents.",
+  "sortie": "Grâce à l'intervention de Lili, le jardin a acquis une beauté accrue et les insectes semblaient en être enchantés.",
+  "flags": []
+ },
+ {
+  "type": "passe_compose",
+  "entree": "Grâce à Lili, le jardin devint encore plus beau et tous les insectes étaient très contents.",
+  "sortie": "Grâce à Lili, le jardin est devenu encore plus beau et tous les insectes ont été très contents.",
+  "flags": []
+ },
+ {
+  "type": "futur",
+  "entree": "Le champignon était tout rouge et puer très fort.",
+  "sortie": "Le champignon sera tout rouge et puera très fort.",
+  "flags": []
+ },
+ {
+  "type": "pluriel",
+  "entree": "Le champignon était tout rouge et puer très fort.",
+  "sortie": "Les champignons étaient tous rouges et puaient très fort.",
+  "flags": []
+ },
+ {
+  "type": "question",
+  "entree": "Le manchot semblait perdu et avait l'air triste.",
+  "sortie": "Le manchot semblait-il perdu et avait-il l'air triste ?",
+  "flags": []
+ },
+ {
+  "type": "negation",
+  "entree": "Le manchot semblait perdu et avait l'air triste.",
+  "sortie": "Le manchot ne semblait pas perdu et n'avait pas l'air triste.",
+  "flags": []
+ },
+ {
+  "type": "simplifier",
+  "entree": "Dans un petit village, vivait une gentille petite fille nommée Clara.",
+  "sortie": "Dans un petit village, il y avait une petite fille gentille qui s'appelait Clara.",
+  "flags": []
+ },
+ {
+  "type": "paraphrase",
+  "entree": "Dans un petit village, vivait une gentille petite fille nommée Clara.",
+  "sortie": "Une charmante fillette du nom de Clara résidait dans un modeste hameau.",
+  "flags": []
+ },
+ {
+  "type": "present",
+  "entree": "Tina se sentit seule et retourna dans son tunnel, le cœur lourd.",
+  "sortie": "Tina se sent seule et retourne dans son tunnel, le cœur lourd.",
+  "flags": []
+ },
+ {
+  "type": "formel",
+  "entree": "Tina se sentit seule et retourna dans son tunnel, le cœur lourd.",
+  "sortie": "Accablée par une profonde solitude, Tina regagna son tunnel, le cœur lesté de mélancolie.",
+  "flags": []
+ },
+ {
+  "type": "politesse",
+  "entree": "En se regardant dans le miroir, il remarqua quelque chose de brillant sur sa joue.",
+  "sortie": "En se contemplant dans le miroir, il aperçut un éclat sur sa joue.",
+  "flags": []
+ },
+ {
+  "type": "passe_compose",
+  "entree": "En se regardant dans le miroir, il remarqua quelque chose de brillant sur sa joue.",
+  "sortie": "En se regardant dans le miroir, il a remarqué quelque chose de brillant sur sa joue.",
+  "flags": [
+   "recopie"
+  ]
+ },
+ {
+  "type": "futur",
+  "entree": "Emma aimait beaucoup jouer avec ses amis.",
+  "sortie": "Emma aimera beaucoup jouer avec ses amis.",
+  "flags": []
+ },
+ {
+  "type": "pluriel",
+  "entree": "Emma aimait beaucoup jouer avec ses amis.",
+  "sortie": "Les Emma aimaient beaucoup jouer avec leurs amis.",
+  "flags": []
+ },
+ {
+  "type": "question",
+  "entree": "Finalement, il réussit à éplucher toutes les carottes, mais il était très fatigué.",
+  "sortie": "A-t-il réussi à éplucher toutes les carottes malgré sa fatigue ?",
+  "flags": []
+ },
+ {
+  "type": "negation",
+  "entree": "Finalement, il réussit à éplucher toutes les carottes, mais il était très fatigué.",
+  "sortie": "Finalement, il ne réussit pas à éplucher toutes les carottes, mais il n'était pas très fatigué.",
+  "flags": []
+ },
+ {
+  "type": "simplifier",
+  "entree": "Lulu apprit beaucoup de choses grâce à son nouvel ami.",
+  "sortie": "Lulu a appris plein de choses avec son nouvel ami.",
+  "flags": []
+ },
+ {
+  "type": "paraphrase",
+  "entree": "Lulu apprit beaucoup de choses grâce à son nouvel ami.",
+  "sortie": "Lulu acquit de nombreuses connaissances grâce à sa nouvelle amitié.",
+  "flags": []
+ },
+ {
+  "type": "present",
+  "entree": "Léo promit de ne plus utiliser le stylo magique sans réfléchir.",
+  "sortie": "Léo promet de ne plus utiliser le stylo magique sans réfléchir.",
+  "flags": [
+   "recopie"
+  ]
+ },
+ {
+  "type": "formel",
+  "entree": "Léo promit de ne plus utiliser le stylo magique sans réfléchir.",
+  "sortie": "Léo s'engagea à ne plus manier le stylo magique de manière impulsive.",
+  "flags": []
+ },
+ {
+  "type": "politesse",
+  "entree": "Lucas décida de l'appeler Carré.",
+  "sortie": "Lucas choisit de l'appeler Carré.",
+  "flags": []
+ },
+ {
+  "type": "passe_compose",
+  "entree": "Lucas décida de l'appeler Carré.",
+  "sortie": "Lucas a décidé de l'appeler Carré.",
+  "flags": []
+ },
+ {
+  "type": "futur",
+  "entree": "Mais soudain, un grand vent se leva et éteignit la lampe.",
+  "sortie": "Mais soudain, un grand vent se lèvera et éteindra la lampe.",
+  "flags": []
+ },
+ {
+  "type": "pluriel",
+  "entree": "Mais soudain, un grand vent se leva et éteignit la lampe.",
+  "sortie": "Mais soudain, de grands vents se levèrent et éteignirent les lampes.",
+  "flags": []
+ },
+ {
+  "type": "question",
+  "entree": "Si tu le ramènes, il te donnera un vrai trésor !",
+  "sortie": "S'il te donnera un vrai trésor si tu le ramènes ?",
+  "flags": []
+ },
+ {
+  "type": "negation",
+  "entree": "Si tu le ramènes, il te donnera un vrai trésor !",
+  "sortie": "Si tu ne le ramènes pas, il ne te donnera pas un vrai trésor !",
+  "flags": []
+ },
+ {
+  "type": "simplifier",
+  "entree": "Elle se coucha et s'endormit.",
+  "sortie": "Elle s'est couchée et s'est endormie.",
+  "flags": []
+ },
+ {
+  "type": "paraphrase",
+  "entree": "Elle se coucha et s'endormit.",
+  "sortie": "Elle s'allongea et sombra dans le sommeil.",
+  "flags": []
+ },
+ {
+  "type": "present",
+  "entree": "Finalement, Léo décida de lâcher sa canne à pêche.",
+  "sortie": "Finalement, Léo décide de lâcher sa canne à pêche.",
+  "flags": [
+   "recopie"
+  ]
+ },
+ {
+  "type": "formel",
+  "entree": "Finalement, Léo décida de lâcher sa canne à pêche.",
+  "sortie": "In fine, Léo résolut de délaisser sa canne à pêche.",
+  "flags": []
+ },
+ {
+  "type": "politesse",
+  "entree": "Le tapis était si joli que Lulu décida de le ramener chez lui.",
+  "sortie": "Le tapis était si élégant que Lulu décida de le rapporter chez lui.",
+  "flags": []
+ },
+ {
+  "type": "passe_compose",
+  "entree": "Le tapis était si joli que Lulu décida de le ramener chez lui.",
+  "sortie": "Le tapis a été si joli que Lulu a décidé de le ramener chez lui.",
+  "flags": []
+ },
+ {
+  "type": "futur",
+  "entree": "Il a été bâti trop vaste pour la vie que l'homme peut y mettre .",
+  "sortie": "Il sera bâti trop vaste pour la vie que l'homme pourra y mettre.",
+  "flags": []
+ },
+ {
+  "type": "pluriel",
+  "entree": "Il a été bâti trop vaste pour la vie que l'homme peut y mettre .",
+  "sortie": "Ils ont été bâtis trop vastes pour les vies que les hommes peuvent y mettre.",
+  "flags": []
+ },
+ {
+  "type": "question",
+  "entree": "La pratique de la chasse par les premiers représentants du genre Homo fait encore débat au sein de la communauté scientifique,.",
+  "sortie": "La pratique de la chasse par les premiers représentants du genre Homo fait-elle encore débat au sein de la communauté scientifique ?",
+  "flags": []
+ },
+ {
+  "type": "negation",
+  "entree": "La pratique de la chasse par les premiers représentants du genre Homo fait encore débat au sein de la communauté scientifique,.",
+  "sortie": "La pratique de la chasse par les premiers représentants du genre Homo ne fait plus débat au sein de la communauté scientifique.",
+  "flags": []
+ },
+ {
+  "type": "simplifier",
+  "entree": "Des tableaux de Boucher, Carle van Loo, Lancret, Pater et Parrocel sont accrochés sur les boiseries colorées.",
+  "sortie": "Des tableaux de plusieurs artistes sont accrochés sur les murs colorés.",
+  "flags": []
+ },
+ {
+  "type": "paraphrase",
+  "entree": "Des tableaux de Boucher, Carle van Loo, Lancret, Pater et Parrocel sont accrochés sur les boiseries colorées.",
+  "sortie": "Des œuvres de Boucher, Carle van Loo, Lancret, Pater et Parrocel sont exposées sur les boiseries aux tons colorés.",
+  "flags": []
+ },
+ {
+  "type": "present",
+  "entree": "Groupe de chats se partageant des ordures devant les remparts de Rhodes.",
+  "sortie": "Un groupe de chats partage des ordures devant les remparts de Rhodes.",
+  "flags": []
+ },
+ {
+  "type": "formel",
+  "entree": "Groupe de chats se partageant des ordures devant les remparts de Rhodes.",
+  "sortie": "Une troupe de félins délaissant des détritus aux abords des remparts de Rhodes.",
+  "flags": []
+ },
+ {
+  "type": "politesse",
+  "entree": "Chat tenant un rongeur dans sa gueule.",
+  "sortie": "Un félin transportant un petit rongeur entre ses crocs.",
+  "flags": []
+ },
+ {
+  "type": "passe_compose",
+  "entree": "Chat tenant un rongeur dans sa gueule.",
+  "sortie": "Le chat a tenu un rongeur dans sa gueule.",
+  "flags": []
+ },
+ {
+  "type": "futur",
+  "entree": "En 2006, Sofia Coppola réalise Marie-Antoinette, qui reçoit l'Oscar des meilleurs costumes.",
+  "sortie": "En 2006, Sofia Coppola réalisera Marie-Antoinette, qui recevra l'Oscar des meilleurs costumes.",
+  "flags": []
+ },
+ {
+  "type": "pluriel",
+  "entree": "En 2006, Sofia Coppola réalise Marie-Antoinette, qui reçoit l'Oscar des meilleurs costumes.",
+  "sortie": "En 2006, les Sofia Coppola réalisent des Marie-Antoinette, qui reçoivent les Oscars des meilleurs costumes.",
+  "flags": []
+ },
+ {
+  "type": "question",
+  "entree": "En droit, la chasse est définie comme un prélèvement artificiel sur la faune terrestre.",
+  "sortie": "En droit, la chasse est-elle définie comme un prélèvement artificiel sur la faune terrestre ?",
+  "flags": []
+ },
+ {
+  "type": "negation",
+  "entree": "En droit, la chasse est définie comme un prélèvement artificiel sur la faune terrestre.",
+  "sortie": "En droit, la chasse n'est pas définie comme un prélèvement artificiel sur la faune terrestre.",
+  "flags": []
+ },
+ {
+  "type": "simplifier",
+  "entree": "Outre les médicaments (qui incluent maintenant des anti-dépresseurs), les animaux de compagnie bénéficient de soins vétérinaires.",
+  "sortie": "En plus des médicaments, les animaux sont soignés par un vétérinaire.",
+  "flags": []
+ },
+ {
+  "type": "paraphrase",
+  "entree": "Outre les médicaments (qui incluent maintenant des anti-dépresseurs), les animaux de compagnie bénéficient de soins vétérinaires.",
+  "sortie": "En plus des traitements médicamenteux (comprenant désormais des antidépresseurs), les animaux de compagnie reçoivent des soins vétérinaires.",
+  "flags": []
+ },
+ {
+  "type": "present",
+  "entree": "Certains disent alors qu’il « margotte , au sens figuré.",
+  "sortie": "Certains disent alors qu’il « margotte », au sens figuré.",
+  "flags": []
+ },
+ {
+  "type": "formel",
+  "entree": "Certains disent alors qu’il « margotte , au sens figuré.",
+  "sortie": "Certains affirment alors qu'il fait preuve de désinvolture, au sens figuré.",
+  "flags": []
+ },
+ {
+  "type": "politesse",
+  "entree": "On ignore le nom de l'architecte mais le maître maçon se nomme Nicolas Huaut.",
+  "sortie": "Bien que l'identité de l'architecte demeure inconnue, le maître maçon s'appelle Nicolas Huaut.",
+  "flags": []
+ },
+ {
+  "type": "passe_compose",
+  "entree": "On ignore le nom de l'architecte mais le maître maçon se nomme Nicolas Huaut.",
+  "sortie": "On a ignoré le nom de l'architecte mais le maître maçon s'est nommé Nicolas Huaut.",
+  "flags": []
+ },
+ {
+  "type": "futur",
+  "entree": "Les chauves-souris ont été longtemps persécutées en Occident à cause de leurs prétendus maléfices.",
+  "sortie": "Les chauves-souris seront longtemps persécutées en Occident à cause de leurs prétendus maléfices.",
+  "flags": []
+ },
+ {
+  "type": "pluriel",
+  "entree": "Les chauves-souris ont été longtemps persécutées en Occident à cause de leurs prétendus maléfices.",
+  "sortie": "Les chauves-souris ont été longtemps persécutées en Occident à cause de leurs prétendus maléfices.",
+  "flags": [
+   "recopie"
+  ]
+ },
+ {
+  "type": "question",
+  "entree": "Enfin, aucun de ces lieux ne bénéficient des effets désinfectants des rayons UV solaires.",
+  "sortie": "Aucun de ces lieux ne bénéficie-t-il des effets désinfectants des rayons UV solaires ?",
+  "flags": []
+ },
+ {
+  "type": "negation",
+  "entree": "Enfin, aucun de ces lieux ne bénéficient des effets désinfectants des rayons UV solaires.",
+  "sortie": "Enfin, aucun de ces lieux ne bénéficie des effets désinfectants des rayons UV solaires.",
+  "flags": [
+   "recopie"
+  ]
+ },
+ {
+  "type": "simplifier",
+  "entree": "La matière la plus couramment utilisée pour fabriquer les chaussures est le cuir.",
+  "sortie": "On utilise souvent du cuir pour fabriquer les chaussures.",
+  "flags": []
+ },
+ {
+  "type": "paraphrase",
+  "entree": "La matière la plus couramment utilisée pour fabriquer les chaussures est le cuir.",
+  "sortie": "Le cuir constitue la matière principale employée dans la confection des chaussures.",
+  "flags": []
+ },
+ {
+  "type": "present",
+  "entree": "Les braconniers sont craints surtout à cause de l'éventualité du port d'armes.",
+  "sortie": "Les braconniers sont craints surtout à cause de l'éventualité du port d'armes.",
+  "flags": [
+   "recopie"
+  ]
+ },
+ {
+  "type": "formel",
+  "entree": "Les braconniers sont craints surtout à cause de l'éventualité du port d'armes.",
+  "sortie": "Les braconniers suscitent une vive inquiétude, principalement en raison du risque potentiel lié à l'usage d'armes à feu.",
+  "flags": []
+ }
+]

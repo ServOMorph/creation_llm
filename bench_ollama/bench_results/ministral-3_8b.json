@@ -1,0 +1,241 @@
+{
+ "model": "ministral-3:8b",
+ "vram_gio": 5.12,
+ "taille_gio": 5.57,
+ "tok_s": 35.6,
+ "json_invalides": 14,
+ "sorties_signalees": 4,
+ "rows": [
+  {
+   "type": "politesse",
+   "entree": "Ferme la fenêtre.",
+   "sortie": "",
+   "flags": [
+    "vide"
+   ]
+  },
+  {
+   "type": "politesse",
+   "entree": "Passe-moi ton stylo.",
+   "sortie": "{\n  \"sortie\": {\n    \"version_formelle\": \"**Pourriez-vous me prêter votre stylo, s’il vous plaît ?**\",\n    \"version_courtoise_informelle\": \"**Est-ce que je peux emprunter ton stylo une minute ?**\"\n  }\n}",
+   "flags": []
+  },
+  {
+   "type": "formel",
+   "entree": "T'inquiète, je m'en occupe demain.",
+   "sortie": "**Pas de souci**, je me chargerai de cela demain avec la diligence requise.",
+   "flags": []
+  },
+  {
+   "type": "formel",
+   "entree": "Le boss a dit que la réunion sautait.",
+   "sortie": "**« La direction a annoncé l’annulation de la réunion. »**",
+   "flags": []
+  },
+  {
+   "type": "passe_compose",
+   "entree": "Nous partons en vacances et nous visitons Rome.",
+   "sortie": "{\n  \"sortie\": {\n    \"phrase_au_passe_compose\": \"Nous **sommes partis** en vacances et nous **avons visité** Rome.\"\n  }\n}",
+   "flags": []
+  },
+  {
+   "type": "passe_compose",
+   "entree": "Elle descend l'escalier et elle sort.",
+   "sortie": "{\n  \"sortie\": {\n    \"phrase_au_passe_compose\": \"Elle est **descendue** l'escalier et elle est **sortie**.\",\n    \"verbes_conjugues\": [\n      {\n        \"infinitif\": \"descendre\",\n        \"auxiliaire\": \"être\",\n        \"participe_passe\": \"descendue\"\n      },\n      {\n        \"infinitif\": \"sortir\",\n        \"auxiliaire\": \"être\",\n        \"participe_passe\": \"sortie\"\n      }\n    ]\n  }\n}",
+   "flags": []
+  },
+  {
+   "type": "futur",
+   "entree": "Je vais au marché et j'achète des pommes.",
+   "sortie": "{\n  \"sortie\": {\n    \"phrase_au_futur_simple\": \"J’irai au marché et j’achèterai des pommes.\"\n  }\n}",
+   "flags": []
+  },
+  {
+   "type": "pluriel",
+   "entree": "Le cheval blanc mange une pomme rouge.",
+   "sortie": "{\n  \"sortie\": {\n    \"phrase_au_pluriel\": \"Les chevaux blancs mangent des pommes rouges.\"\n  }\n}",
+   "flags": []
+  },
+  {
+   "type": "pluriel",
+   "entree": "Mon voisin a un beau jardin.",
+   "sortie": "{\n  \"sortie\": {\n    \"phrase_au_pluriel\": \"Mes voisins ont de beaux jardins.\"\n  }\n}",
+   "flags": []
+  },
+  {
+   "type": "question",
+   "entree": "Les élèves ont fini leurs devoirs.",
+   "sortie": "{\n  \"sortie\": {\n    \"question_ouverte\": \"Est-ce que les élèves ont fini leurs devoirs ?\",\n    \"question_tag\": \"Les élèves ont-ils fini leurs devoirs ?\"\n  }\n}",
+   "flags": [
+    "pas_de_?"
+   ]
+  },
+  {
+   "type": "question",
+   "entree": "Pierre travaille à la bibliothèque le mardi.",
+   "sortie": "{\n  \"sortie\": {\n    \"question_ouverte\": \"Quelle est l'activité de Pierre un mardi ?\",\n    \"question_interrogative_directe\": \"Pierre travaille-t-il à la bibliothèque **le mardi** ?\",\n    \"question_partielle\": \"**À quoi** Pierre consacre-t-il son temps **le mardi** ?\"\n  }\n}",
+   "flags": [
+    "pas_de_?"
+   ]
+  },
+  {
+   "type": "negation",
+   "entree": "Il a encore faim.",
+   "sortie": "{\n  \"sortie\": {\n    \"phrase_negative\": \"**Il n'a pas encore faim.**\",\n    \"explications\": {\n      \"auxiliaire\": \"Le verbe auxiliaire *avoir* est mis à la forme négative avec les particules **n'... pas**.\",\n      \"adverbe\": \"L'adverbe *encore* reste inchangé car il précise une notion de répétition, mais ne modifie pas le sens de la négation.\"\n    }\n  }\n}",
+   "flags": []
+  },
+  {
+   "type": "simplifier",
+   "entree": "Les précipitations abondantes ont provoqué une crue de la rivière.",
+   "sortie": "{\n\t\"sortie\": {\n\t\t\"phrase_simple\": \"Il a beaucoup plu et la rivière est montée très haut.\",\n\t\t\"explication_par_cas\": {\n\t\t\t\"précipitations\": \"la pluie ou la neige qui tombe du ciel\",\n\t\t\t\"crue\": \"quand l'eau de la rivière devient trop haute et déborde\"\n\t\t}\n\t}\n}",
+   "flags": []
+  },
+  {
+   "type": "simplifier",
+   "entree": "Le médecin a prescrit un traitement antibiotique pendant une semaine.",
+   "sortie": "{\n\t\"sortie\": {\n\t\t\"phrase_simple\": \"Le docteur a donné des médicaments pour guérir la maladie pendant **5 jours**.\",\n\t\t\"explications_ajoutées\": {\n\t\t\t\"antibiotiques\": \"des médicaments qui tuent les petites bêtes (les microbes) qui rendent malade.\",\n\t\t\t\"durée\": \"**une semaine** = 7 jours, mais ici c’est un peu moins pour simplifier.\"\n\t\t},\n\t\t\"ton_affectueux\": \"Le médecin t’aide à te sentir mieux très vite ! 😊\"\n\t}\n}",
+   "flags": []
+  },
+  {
+   "type": "resume",
+   "entree": "Julie avait prévu un pique-nique au parc avec ses amis. Mais le matin, il s'est mis à pleuvoir très fort. Ils ont finalement mangé chez elle en regardant un film.",
+   "sortie": "**Julie a annulé son pique-nique sous la pluie et organisé une soirée cinéma improvisée chez elle avec ses amis.**",
+   "flags": []
+  },
+  {
+   "type": "resume",
+   "entree": "La mairie a décidé de fermer la piscine municipale pendant deux mois. Des travaux de rénovation sont nécessaires car le bassin fuit. Elle rouvrira en septembre.",
+   "sortie": "**La mairie fermera sa piscine municipale jusqu’en septembre pour des travaux de rénovation du bassin qui présente une fuite.**",
+   "flags": []
+  },
+  {
+   "type": "paraphrase",
+   "entree": "Il pleut des cordes depuis ce matin.",
+   "sortie": "{\n  \"sortie\": [\n    {\n      \"expression\": \"Il tombe une averse à se mouiller les pieds.\",\n      \"variante\": \"C'est un déluge depuis le réveil.\"\n    },\n    {\n      \"expression\": \"L'eau coule à flots depuis ce matin.\",\n      \"variante\": \"On dirait que le ciel a ouvert ses robinets !\"\n    },\n    {\n      \"expression\": \"Il pleut des hallebardes sans discontinuer.\",\n      \"variante\": \"C'est une pluie battante qui ne s'arrête pas.\"\n    },\n    {\n      \"expression\": \"Les gouttes tombent comme des billes de plomb.\",\n      \"variante\": \"On a l'impression que le ciel se déchire !\"\n    },\n    {\n      \"expression\": \"Il pleut à se baigner, ce matin.\",\n      \"variante\": \"C'est une vraie trombe d'eau qui s'abat.\"\n    }\n  ]\n}",
+   "flags": []
+  },
+  {
+   "type": "paraphrase",
+   "entree": "Ce film m'a beaucoup ému.",
+   "sortie": "",
+   "flags": [
+    "vide"
+   ]
+  },
+  {
+   "type": "correction",
+   "entree": "Les fille on manger des gâteaux hier soir.",
+   "sortie": "{\n  \"sortie\": {\n    \"phrase_corrigee\": \"Les filles ont mangé des gâteaux hier soir.\",\n    \"explications\": {\n      \"faute_1\": {\n        \"mot_modifie\": \"fille\",\n        \"correction\": \"filles\",\n        \"explication\": \"Accord en nombre avec le sujet pluriel ('les').\"\n      },\n      \"faute_2\": {\n        \"verbe_modifie\": \"on manger\",\n        \"correction\": \"ont mangé\",\n        \"explication\": {\n          \"auxiliaire\": \"Le verbe auxiliaire 'être' ou 'avoir' est nécessaire pour former le passé composé. Ici, c'est 'avoir'.\",\n          \"accord\": \"'Mangé' s'accorde avec le sujet pluriel ('les filles').\"\n        }\n      },\n      \"faute_3\": {\n        \"mot_modifie\": \"gâteaux\",\n        \"correction\": \"pas de faute ici, mais précisé pour la cohérence.\",\n        \"explication\": \"Le mot est correctement utilisé.\"\n      }\n    }\n  }\n}",
+   "flags": []
+  },
+  {
+   "type": "correction",
+   "entree": "Je suis aller au cinéma avec mes ami.",
+   "sortie": "{\n  \"sortie\": {\n    \"phrase_corrigee\": \"Je suis **allé** au cinéma avec mes **amis**.\",\n    \"explications\": {\n      \"auxiliaire\": \"Le verbe 'être' doit être conjugué à l'auxiliaire du passé composé : *'suis allé(e)' (accord avec le sujet masculin singulier).\",\n      \"nom_propre\": \"'ami' prend un 's' au pluriel pour devenir 'amis'.\"\n    }\n  }\n}",
+   "flags": []
+  }
+ ],
+ "gen": [
+  {
+   "tache": "mettre une phrase à l'imparfait",
+   "exemples": [
+    {
+     "consigne": "Transformez la phrase suivante au passé en utilisant l’imparfait pour décrire une situation habituelle dans le passé. Utilisez un vocabulaire familial.",
+     "entrée": "**Phrases originales (passé composé/présent)** :\n1. 'Il mange du pain tous les matins avec sa famille.'\n2. 'Nous allons au parc pendant l’été pour nous amuser.'",
+     "sortie": {
+      "**Réponses attendues** :\n1. *'Chaque matin, il **mangeait** du pain en famille autour de la table, tandis que ma mère lui racontait des histoires.'* \n   *(Détails ajoutés pour enrichir : 'tous les matins', 'en famille', 'autour de la table', 'racontait')*\n\n2. *'L’été dernier, nous **allions** souvent au parc sous les grands chênes, où mon frère **courrait** après les enfants du quartier et moi **lisais** un livre à l’ombre.'* \n   *(Détails : lieu précis 'sous les grands chênes', actions parallèles 'courrait/lisais' pour varier le sujet)*\n\n**Pièges à éviter** :\n- Confondre imparfait ('habitude répétée') et passé composé ('action ponctuelle'). Ex. ❌ *'Nous allions hier'* (→ ici, on veut décrire une routine estivale).\n- Oublier les pronoms COD/COD indirects (*'je lui **expliquais**', pas '*j’expliquait***).\n\n**Variante pour débutants** : Donnez des phrases à trous avec des auxiliaires implicites:\n*Exemple:* *'Quand j’étais enfant, **... (prendre)** toujours mon goûter dans ma chambre avant les devoirs.' → Réponse: '**je prenais**.'’": "**Points clés** : Verbes de mouvement (*aller*), de perception (*voir*), ou d’état (*être*), accords des participes passés avec *avoir* (ici, imparfait = radical + -AIT/AIS/IONS/etc.)."
+     }
+    },
+    {
+     "consigne": "Mettez la phrase suivante à l’imparfait pour décrire une **situation météorologique ou un cadre naturel**, en ajoutant des détails sensoriels (odeurs, bruits, couleurs).",
+     "entrée": "**Phrases originales** :\n1. 'Il pleut et le vent souffle.'\n2. 'Le soleil brille sur les montagnes.'",
+     "sortie": {
+      "**Réponses attendues** :\n1. *'Des averses ** tombaient** en grosses gouttes sur la toiture de zinc, tandis que le vent ** sifflait** entre les branches nues des arbres, mêlant leurs murmures à l’odeur humide du terreau et à la mélancolie grise du ciel.'* \n   *(Métaphores : 'toile de zinc', 'murmures', couleurs implicites 'gris').\n\n2. *'Le soleil ** dorait** les pics neigeux, projetant des reflets dorés sur les flaques d’eau gelée des lacs d’altitude où se brisaient parfois les éclats cristallins des cascades.'* \n   *(Allitérations pour la musicalité : 'dorait/dore', détails tactiles 'flaques gelées', sons 'éclats cristallins').'\n\n**Indices pour guider** :\n- **Verbes clés** : *briller (→ 'le soleil brill**ait**), couler, glacer, embaumer, frémir (pour le vent).\n- **Connexions logiques** : Temporal ('pendant que'), causal ('à cause de quoi'). Ex. *'Alors que les nuages ** s’accumulaient** à l’horizon, les oiseaux ** migrateurs** se mettaient à chanter des mélodies désorientées.'*’": "**Points clés** : Imparfait pour les décors (fond) + participe présent/gerondif (*'en faisant danser la lumière...'* ) ou subjonctif imparfait (*'Il **fallait** croire que ce paysage **existait** seulement dans les légendes.')."
+     }
+    },
+    {
+     "consigne": "Réécrivez ces phrases **à l’imparfait pour évoquer une activité professionnelle ou un apprentissage**, en insérant des verbes d’opinion, de doute ou de conséquence.",
+     "entrée": "**Phrases originales** :\n1. 'Je comprends la leçon.'\n2. 'Le client demande une modification.'",
+     "sortie": {
+      "**Réponses attendues** :\n1. *'Au début, la théorie ** me semblait** aussi abstraite que des équations astronomiques, mais en répétant les exercices, je **comprenais** enfin comment les nombres ** s’assemblaient** comme des pièces de puzzle pour résoudre l’inconnue *x*… ou du moins, c’est ce qu’il **fallait** croire pendant mes nuits blanches.'*\n   *(Verbes d’opinion/doute : 'semblait', 'il fallait croire' + imparfait itératif 'je répétais').\n\n2. *'Chez M. Lefèvre, chaque client ** venait** avec ses exigences : celui-ci ** voulait** des boutons dorés sur mesure, celle-là ** exigeait** que la couture ** soit** invisible, et moi, jeune apprentie, je ** devais** trouver la solution avant que l’ourlet ** ne se dénoue** sous ses doigts impatients.'* \n   *(Imparfait + subjonctif pour les conditions : 'il fallait que la couture **soit** invisible').'\n\n**Consigne bonus** : *": "**Points clés** : Verbes de perception (*'paraître', 'sembler'), d’obligation (*'falloir', 'devoir'), ou conditionnels itératifs (*'toujours que… ne pas arriver à…').\n- **Pièges** : Éviter les verbes de ponctuation (passé composé) dans une description longue. Ex. ❌ *'Je comprends → j’ai compris soudainement'* (→ trop marquant)."
+     }
+    },
+    {
+     "consigne": "Transformez en **imparfait narratif** ces phrases pour décrire un **trajet ou un déplacement**, en ajoutant des verbes de mouvement, d’état et de réaction. Incluez une action secondaire.",
+     "entrée": "**Phrases originales** :\n1. 'Je prends le bus.'\n2. 'Il pleut à verse quand nous sortons.',",
+     "sortie": {
+      "**Réponses attendues** :\n1. *'Mon cœur ** battait** à tout rompre alors que je ** montais** sur les marchepieds pour ne pas rater l’arrêt de l’autobus 37, tandis que le conducteur ** allumait** déjà ses phares jaunes et criait : « Plus personne n’**entre**, ça part ! ». Dans un dernier élan désespéré, je ** glissais** mon ticket froissé sous le bras du contrôleur qui ** fixait** son écran sans sourciller… jusqu’à ce que la porte ** grince** avec soulagement.'* \n   *(Verbes de mouvement : 'monter/glisser', réaction ('battait'), description technique ('phares jaunes').\n\n2. *'Les gouttes ** fouettaient** les vitres comme des milliers d’aiguilles quand nous ** sortions**, nos parapluies trempés ** laissant** s’écouler l’eau en ruisseaux traînants sur le trottoir noir et luisant. Mon frère ** râlait** en trébuchant sur une flaque, mais moi, je ** retiens** mon souffle pour admirer comment les réverbères ** transformaient** la pluie en millions de diamants vacillants.'* \n   *(Métaphores : 'aiguilles', 'ruisseaux', 'diamants' + imparfait de description ('transformait') vs action ponctuelle implicite ('il trébuche').'\n\n**Variante avancée** : *Exemple à trous*:\n*Phrase originale :*'Elle **sort du magasin**.'\nRéponse attendue (avec détails) : *'Les écouteurs encore collés aux oreilles, elle ** sortait** en titubant sous le poids des paquets, tandis que la porte ** claquait** derrière elle comme un coup de canon, et le vendeur ** hurlait** depuis l’étage: « Retournez vérifier votre sac ! On vous ** avait dit** d’être vigilants ! »'*’": "**Points clés** : Imparfait pour les actions secondaires (*'laisseait s’écouler') + subjonctif dans les discours rapportés ('on nous avait dit').\n- **Verbes utiles** : *fouetter (la pluie), vaciller, claqu(e)(r), étreindre (un objet), traîner (les pieds)."
+     }
+    },
+    {
+     "consigne": "Réécrivez ces phrases **à l’imparfait pour décrire une scène fantastique ou un événement historique**, en utilisant des verbes de pouvoir, de magie, et en jouant sur les temps superposés (plus-que-parfait).",
+     "entrée": "**Phrases originales** :\n1. 'Le sortilège agit.'\n2. 'Napoléon traverse la montagne.',",
+     "sortie": {
+      "**Réponses attendues** :\n1. *'Dès que les mots ** sortaient** de ses lèvres, comme s’ils étaient tissés d’étoiles filantes, le sortilège ** agissait** : les ombres ** se diluaient** dans un brouillard violetté où dansaient des lucioles rouges, tandis que la lune, elle, ** se fendait** en deux pour libérer une lumière pâlie qui ** enveloppait** même les cicatrices invisibles de ses spectateurs.'*\n   *(Plus-que-parfait pour la cause : '**avaient été' (les étoiles) 'créées' avant l’action*).\n\n2. *'Napoléon, vêtu d’un manteau blanc comme neige, ** traversait** les sommets enneigés où les vents ** hurlaient** des légendes oubliées ; ses chevaux, leurs sabots ** martelant** la glace sans faire de bruit, ** semblaient** voler vers des vallées que personne n’** avait jamais** franchies avant lui. Derrière lui, l’armée ** avançait**, ses drapeaux ** flottant** comme des ailes de géants dans un ciel où les nuages ** prenaient** des formes de dragons endormis.'* \n   *(Superposition : PQP (*'avait jamais franchi') + imparfait itératif (*'semblaient voler').'\n\n**Consigne élargie** : *Ajoutez une description sensorielle à un verbe magique. Ex.*\n*'Le dragon ** rugissait**, et sa respiration ** soufflait** sur les flammes bleues qui ** noyaient** le bois du château dans une lueur écarlate.'*\n**Points clés** : Imparfait pour les décors + subjonctif imparfait pour l’hypothèse (*'Il **fallut** que les anciens ** savaient**…').\n- **Verbes clés** : *se fendre (la lune), flotter, marteler, noyer, hurler, créer.'": "**Pièges** : Éviter les verbes de ponctuation dans une scène longue. Ex. ❌ *'La montagne tremble → elle a tremblé soudainement'* (→ remplacez par un imparfait descriptif : 'sa pente ** se fissurait** comme une croûte de lait')."
+     }
+    }
+   ],
+   "secondes": 75.9
+  },
+  {
+   "tache": "rendre une phrase plus polie",
+   "exemples": [
+    {
+     "consigne": "Réécrivez ces phrases trop familières ou trop abruptes en formules d’invitation polies, adaptées à différents contextes (professionnel, amical, neutre). Utilisez des tournures variées (hypothèses, politesses renforcées, etc.).",
+     "entrée": "**Tu viens à mon anniversaire samedi ?** *(message à des amis proches)",
+     "sortie": {
+      "**Version polie (option 1, décontractée)**": "*J’organise une petite soirée ce samedi pour fêter mon anniversaire – tu es chaud·e pour y être ? On a prévu [activité], et je me disais que ça pourrait bien se passer avec toi en tête !*",
+      "*Version polie (option 2, plus formelle)***: *": true,
+      "sortie": {
+       "**Consigne**": "Transformez ces annonces ou notifications impersonnelles en messages chaleureux et personnalisés, adaptés à un public précis (clients, collègues, proches).",
+       "entrée": "**Lancement de notre nouveau service : répondez avant le 15 pour bénéficier d’une offre spéciale.** *(email marketing)*",
+       "sortie": {
+        "**Version polie**": "*Nous sommes ravis de vous annoncer le lancement officiel de **[Nom du Service]** ! Pour marquer le coup, nous réservons une offre exclusive aux premiers intéressé·e·s – et vous en faites partie. Répondez à ce mail avant le 15 pour réserver votre place (ou poser vos questions) : on se fera un plaisir de vous guider !*",
+        "*Justification*": -3.5
+       }
+      }
+     }
+    }
+   ],
+   "secondes": 44.9
+  },
+  {
+   "tache": "transformer une phrase affirmative en question",
+   "exemples": [
+    {
+     "consigne": "Transformez cette phrase affirmative en question **ouverte** (commencée par un verbe conjugué) sur le thème du travail. Utilisez un registrée soutenu.",
+     "entree": "Monsieur Dubois a préparé une présentation pour la réunion de demain matin.",
+     "sortie": "\"Avez-vous préparé, Monsieur Dubois, une présentation pour la réunion de demain matin ?\""
+    },
+    {
+     "consigne": "Transformez cette phrase affirmative en **question partitive** (avec 'de' + nom) sur le thème des loisirs créatifs.",
+     "entree": "Juliette achète du fil à tricoter dans ce magasin.",
+     "sortie": "\"Qu'est-ce que Juliette achète dans ce magasin ? (ou : De quoi Juliette a-t-elle besoin pour son projet de tricot ?)\""
+    },
+    {
+     "consigne": "Transformez cette phrase affirmative en question **alternative** (à choix binaires) sur le thème des transports.",
+     "entree": "Paul prendra le train pour aller à Lyon demain.",
+     "sortie": "\"Est-ce que Paul prendra **le train ou l'avion** pour aller à Lyon demain ?\""
+    },
+    {
+     "consigne": "Transformez cette phrase affirmative en question **tag-question** (question rhétorique formelle) sur un sujet médical.",
+     "entree": "Le médecin a prescrit trois médicaments à Madame Lefèvre ce matin.",
+     "sortie": "\"Madame Lefèvre, le médecin vous a donc prescrit trois médicaments ce matin, n'est-ce pas ?\""
+    },
+    {
+     "consigne": "Transformez cette phrase affirmative en question **spécifique** (interrogative indirecte) sur un sujet culinaire, intégrée dans une conversation quotidienne. Utilisez des pronoms relatifs ou des mots interrogatifs incorporés.",
+     "sortie_exemple_guide": [
+      "Combien de temps",
+      "Quelles épices",
+      "Avec quoi",
+      "Où as-tu trouvé",
+      "Pourquoi préfères"
+     ],
+     "entree": "Le soir, je prépare toujours un risotto aux champignons avec du fromage parmesan.",
+     "sortie": "\"Quels ingrédients utilises-tu spécialement pour ton risotto aux champignons ?\" *ou* \"Tu as mis combien de temps pour préparer ce risotto ?\"\n*(Choisir une des options ou créer une nouvelle question spécifique à partir du guide.)*"
+    }
+   ],
+   "secondes": 17.7
+  }
+ ]
+}

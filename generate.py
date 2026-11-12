@@ -47,8 +47,12 @@ def prefill(model, x):
     return logits[:, -1, :].float(), caches
 
 
+def penalize(logits, seen, penalty):
+    return torch.where(seen, torch.where(logits > 0, logits / penalty, logits * penalty), logits)
+
+
 @torch.no_grad()
-def sample(model, ids, n=1, max_new_tokens=200, temperature=0.8, top_k=50, top_p=0.95, seed=None, stop_ids=(EOT_ID,)):
+def sample(model, ids, n=1, max_new_tokens=200, temperature=0.8, top_k=50, top_p=0.95, seed=None, stop_ids=(EOT_ID,), repetition_penalty=1.0):
     device = next(model.parameters()).device
     block = model.cfg.block_size
     stop = torch.tensor(stop_ids, device=device)
@@ -61,8 +65,12 @@ def sample(model, ids, n=1, max_new_tokens=200, temperature=0.8, top_k=50, top_p
     score = torch.zeros(n, device=device)
     length = torch.zeros(n, device=device)
     done = torch.zeros(n, dtype=torch.bool, device=device)
+    seen = torch.zeros_like(logits, dtype=torch.bool)
     for _ in range(max_new_tokens):
+        if repetition_penalty != 1.0:
+            logits = penalize(logits, seen, repetition_penalty)
         nxt = sample_next(logits, temperature, top_k, top_p, gen)
+        seen.scatter_(1, nxt, True)
         active = ~done
         score += torch.log_softmax(logits, dim=-1).gather(1, nxt).squeeze(1) * active
         length += active

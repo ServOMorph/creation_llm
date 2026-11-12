@@ -1,0 +1,205 @@
+{
+ "model": "qwen2.5:7b",
+ "vram_gio": 4.42,
+ "taille_gio": 4.42,
+ "tok_s": 46.9,
+ "json_invalides": 0,
+ "sorties_signalees": 0,
+ "rows": [
+  {
+   "type": "politesse",
+   "entree": "Ferme la fenêtre.",
+   "sortie": "Pourriez-vous fermer la fenêtre, s'il vous plaît ?",
+   "flags": []
+  },
+  {
+   "type": "politesse",
+   "entree": "Passe-moi ton stylo.",
+   "sortie": "Pourrais-je avoir votre stylo, s'il vous plaît ?",
+   "flags": []
+  },
+  {
+   "type": "formel",
+   "entree": "T'inquiète, je m'en occupe demain.",
+   "sortie": "Ne vous inquiétez pas, je me chargerais de cela le lendemain.",
+   "flags": []
+  },
+  {
+   "type": "formel",
+   "entree": "Le boss a dit que la réunion sautait.",
+   "sortie": "Le responsable a indiqué que la réunion était annulée.",
+   "flags": []
+  },
+  {
+   "type": "passe_compose",
+   "entree": "Nous partons en vacances et nous visitons Rome.",
+   "sortie": "Nous avons partagé en vacances et nous avons visité Rome.",
+   "flags": []
+  },
+  {
+   "type": "passe_compose",
+   "entree": "Elle descend l'escalier et elle sort.",
+   "sortie": "Elle a descendu l'escalier et elle est sortie.",
+   "flags": []
+  },
+  {
+   "type": "futur",
+   "entree": "Je vais au marché et j'achète des pommes.",
+   "sortie": "Je irai au marché et j'achèterai des pommes.",
+   "flags": []
+  },
+  {
+   "type": "pluriel",
+   "entree": "Le cheval blanc mange une pomme rouge.",
+   "sortie": "Les chevaux blancs mangent des pommes rouges.",
+   "flags": []
+  },
+  {
+   "type": "pluriel",
+   "entree": "Mon voisin a un beau jardin.",
+   "sortie": "Les voisins ont beaux jardins.",
+   "flags": []
+  },
+  {
+   "type": "question",
+   "entree": "Les élèves ont fini leurs devoirs.",
+   "sortie": "Les élèves ont-ils fini leurs devoirs ?",
+   "flags": []
+  },
+  {
+   "type": "question",
+   "entree": "Pierre travaille à la bibliothèque le mardi.",
+   "sortie": "Pierre travaille-t-il à la bibliothèque le mardi ?",
+   "flags": []
+  },
+  {
+   "type": "negation",
+   "entree": "Il a encore faim.",
+   "sortie": "Il n'a pas encore faim.",
+   "flags": []
+  },
+  {
+   "type": "simplifier",
+   "entree": "Les précipitations abondantes ont provoqué une crue de la rivière.",
+   "sortie": "Il pleuvait beaucoup, donc la rivière a monté.",
+   "flags": []
+  },
+  {
+   "type": "simplifier",
+   "entree": "Le médecin a prescrit un traitement antibiotique pendant une semaine.",
+   "sortie": "Le docteur a dit d'prendre des médicaments pendant 7 jours.",
+   "flags": []
+  },
+  {
+   "type": "resume",
+   "entree": "Julie avait prévu un pique-nique au parc avec ses amis. Mais le matin, il s'est mis à pleuvoir très fort. Ils ont finalement mangé chez elle en regardant un film.",
+   "sortie": "Julie a dû annuler son pique-nique au parc en raison des pluies torrentielles et a organisé une soirée cinématographique chez elle avec ses amis.",
+   "flags": []
+  },
+  {
+   "type": "resume",
+   "entree": "La mairie a décidé de fermer la piscine municipale pendant deux mois. Des travaux de rénovation sont nécessaires car le bassin fuit. Elle rouvrira en septembre.",
+   "sortie": "La piscine municipale sera fermée pendant deux mois pour des travaux de rénovation du bassin fuyant, et rouvrira en septembre.",
+   "flags": []
+  },
+  {
+   "type": "paraphrase",
+   "entree": "Il pleut des cordes depuis ce matin.",
+   "sortie": "Il fait une pluie de guerre depuis ce matin.",
+   "flags": []
+  },
+  {
+   "type": "paraphrase",
+   "entree": "Ce film m'a beaucoup ému.",
+   "sortie": "Ce spectacle m'a profondément touché.",
+   "flags": []
+  },
+  {
+   "type": "correction",
+   "entree": "Les fille on manger des gâteaux hier soir.",
+   "sortie": "Les filles ont mangé des gâteaux hier soir.",
+   "flags": []
+  },
+  {
+   "type": "correction",
+   "entree": "Je suis aller au cinéma avec mes ami.",
+   "sortie": "Je suis allé au cinéma avec mes amis.",
+   "flags": []
+  }
+ ],
+ "gen": [
+  {
+   "tache": "mettre une phrase à l'imparfait",
+   "exemples": [
+    {
+     "consigne": "Écrire une phrase de situation courante en passant à l'imparfait.",
+     "entree": "Il fait beau, nous jouons au foot dans le parc.",
+     "sortie": "Il faisait beau, nous jouions au foot dans le parc."
+    },
+    {
+     "consigne": "Reformuler une phrase avec des actions répétées ou habitudes passées.",
+     "entree": "Elle préparait toujours son sac la veille pour l'école.",
+     "sortie": "Elle préparait son sac la veille pour l'école."
+    },
+    {
+     "consigne": "Construire une phrase avec un état continu dans le passé.",
+     "entree": "Le chat est sorti dans le jardin au soleil.",
+     "sortie": "Le chat était sorti dans le jardin au soleil."
+    },
+    {
+     "consigne": "Écrire une déclaration concernant la météo passée à l'imparfait.",
+     "entree": "La pluie a arrêté notre promenade.",
+     "sortie": "La pluie avait arrêté notre promenade."
+    },
+    {
+     "consigne": "Reproduire une situation hypothétique ou non réalisée à l'imparfait.",
+     "entree": "Si j'avais su, je serais venu.",
+     "sortie": "Si j'avais su, je viendrais."
+    }
+   ],
+   "secondes": 8.8
+  },
+  {
+   "tache": "rendre une phrase plus polie",
+   "exemples": [
+    {
+     "consigne": "Rendre une phrase d'invitation plus polie",
+     "entree": "Viens à mon anniversaire ce week-end !",
+     "sortie": "Aurais-je l'honneur de vous inviter à mon anniversaire ce week-end ?"
+    },
+    {
+     "consigne": "Rendre une demande en français plus courtoise",
+     "entree": "Pourrais-tu m'envoyer le document par mail ?",
+     "sortie": "Pouvez-vous bien me faire parvenir le document par e-mail, s'il vous plaît ?"
+    },
+    {
+     "consigne": "Rendre une phrase d'information plus polie",
+     "entree": "Il y a un meeting ce soir à 18h.",
+     "sortie": "Peut-être pourriez-vous prendre note qu'un meeting est organisé ce soir à 18 heures ?"
+    },
+    {
+     "consigne": "Rendre une phrase de demande d'information plus courtoise",
+     "entree": "Quel est le horaire d'ouverture du magasin demain ?",
+     "sortie": "Pourriez-vous m'informer quel sera le horaire d'ouverture du magasin demain, s'il vous plaît ?"
+    },
+    {
+     "consigne": "Rendre une phrase de demande en français plus élégante",
+     "entree": "Je veux que tu fasses ça maintenant !",
+     "sortie": "Pourriez-vous effectuer cette tâche dès que possible, s'il vous plaît ?"
+    }
+   ],
+   "secondes": 9.5
+  },
+  {
+   "tache": "transformer une phrase affirmative en question",
+   "exemples": [
+    {
+     "consigne": "Transformer une déclaration de comparaison en question.",
+     "entree": "Elle est plus grande que lui.",
+     "sortie": "Elle est-elle plus grande que lui ?"
+    }
+   ],
+   "secondes": 8.8
+  }
+ ]
+}

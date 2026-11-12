@@ -1,0 +1,100 @@
+{"id": "F01", "cat": "faits", "turns": ["Quelle est la capitale de l'Italie ?"], "ok": ["\\brome\\b"]}
+{"id": "F02", "cat": "faits", "turns": ["Combien de pattes a une araignée ?"], "ok": ["\\b8\\b|huit"], "ko": ["\\b6\\b|\\bsix\\b"]}
+{"id": "F03", "cat": "faits", "turns": ["Quel est le plus long fleuve de France ?"], "ok": ["loire"]}
+{"id": "F04", "cat": "faits", "turns": ["Qui a peint la Joconde ?"], "ok": ["vinci"]}
+{"id": "F05", "cat": "faits", "turns": ["Combien y a-t-il de minutes dans une heure ?"], "ok": ["\\b60\\b|soixante"]}
+{"id": "F06", "cat": "faits", "turns": ["Quel organe pompe le sang dans le corps humain ?"], "ok": ["c(œ|oe)ur"]}
+{"id": "F07", "cat": "faits", "turns": ["Quel animal est surnommé le roi de la savane ?"], "ok": ["\\blions?\\b"]}
+{"id": "F08", "cat": "faits", "turns": ["En quelle année l'homme a-t-il marché sur la Lune pour la première fois ?"], "ok": ["1969"]}
+{"id": "F09", "cat": "faits", "turns": ["Quelle est la langue officielle du Brésil ?"], "ok": ["portugais"]}
+{"id": "F10", "cat": "faits", "turns": ["Quelle planète est la plus proche du Soleil ?"], "ok": ["mercure"]}
+{"id": "F11", "cat": "faits", "turns": ["Quel gaz les plantes absorbent-elles pour faire la photosynthèse ?"], "ok": ["dioxyde de carbone|co2|gaz carbonique"]}
+{"id": "F12", "cat": "faits", "turns": ["Qui a écrit « Le Petit Prince » ?"], "ok": ["saint[- ]exup"]}
+{"id": "F13", "cat": "faits", "turns": ["Quelle est la monnaie utilisée en France ?"], "ok": ["\\beuros?\\b"], "ko": ["\\bfrancs?\\b(?! (suisse|cfa))"]}
+{"id": "F14", "cat": "faits", "turns": ["Combien de côtés a un hexagone ?"], "ok": ["\\b6\\b|\\bsix\\b"]}
+{"id": "F15", "cat": "faits", "turns": ["À quelle température l'eau bout-elle au niveau de la mer ?"], "ok": ["\\b100\\b|cent degr"]}
+{"id": "F16", "cat": "faits", "turns": ["Quelle est la capitale du Japon ?"], "ok": ["tokyo|tōkyō"]}
+{"id": "F17", "cat": "faits", "turns": ["Quel est le plus grand animal du monde ?"], "ok": ["baleine bleue|rorqual bleu"]}
+{"id": "F18", "cat": "faits", "turns": ["Dans quel pays se trouvent les pyramides de Gizeh ?"], "ok": ["[ée]gypte"]}
+{"id": "F19", "cat": "faits", "turns": ["Qui a été le premier président de la Ve République ?"], "ok": ["gaulle"]}
+{"id": "F20", "cat": "faits", "turns": ["Combien de joueurs une équipe de football a-t-elle sur le terrain ?"], "ok": ["\\b11\\b|\\bonze\\b"]}
+{"id": "F21", "cat": "faits", "turns": ["Quelle formule chimique désigne la molécule d'eau ?"], "ok": ["h2o|h₂o"]}
+{"id": "F22", "cat": "faits", "turns": ["Quelle saison vient après l'hiver ?"], "ok": ["printemps"]}
+{"id": "F23", "cat": "faits", "turns": ["De quelle couleur est une émeraude ?"], "ok": ["\\bvert"]}
+{"id": "F24", "cat": "faits", "turns": ["Quel est le contraire de « froid » ?"], "ok": ["\\bchaud"]}
+{"id": "F25", "cat": "faits", "turns": ["Combien font 7 fois 8 ?"], "ok": ["\\b56\\b|cinquante-six"]}
+{"id": "F26", "cat": "faits", "turns": ["Combien font 15 plus 27 ?"], "ok": ["\\b42\\b|quarante-deux"]}
+{"id": "F27", "cat": "faits", "turns": ["Quel est le féminin du mot « acteur » ?"], "ok": ["actrice"]}
+{"id": "F28", "cat": "faits", "turns": ["Quelle mer borde la ville de Marseille ?"], "ok": ["m[ée]diterran"]}
+{"id": "F29", "cat": "faits", "turns": ["Combien de jours compte le mois de février quand l'année n'est pas bissextile ?"], "ok": ["\\b28\\b|vingt-huit"]}
+{"id": "F30", "cat": "faits", "turns": ["Quel est l'astre qui éclaire la Terre pendant la journée ?"], "ok": ["soleil"]}
+{"id": "C01", "cat": "consignes", "turns": ["Réponds par oui ou par non : le Soleil est-il une étoile ?"], "ok": ["^\\W*oui\\b"]}
+{"id": "C02", "cat": "consignes", "turns": ["Réponds par un seul mot : de quelle couleur est le lait ?"], "ok": ["^\\W*blanc\\W*$"]}
+{"id": "C03", "cat": "consignes", "turns": ["Écris le nombre douze en chiffres, sans rien d'autre."], "ok": ["^\\D*12\\D*$"], "max_mots": 3}
+{"id": "C04", "cat": "consignes", "turns": ["Réponds en une seule phrase : à quoi sert un parapluie ?"], "ok": ["\\bpluie|intemp[ée]rie|mouill"], "max_phrases": 1}
+{"id": "C05", "cat": "consignes", "turns": ["Donne les quatre saisons, séparées par des virgules."], "ok_all": ["printemps", "[ée]t[ée]", "automne", "hiver", ","]}
+{"id": "C06", "cat": "consignes", "turns": ["Écris uniquement le mot « bonjour » en majuscules."], "ok": ["^\\W*(?-i:BONJOUR)\\W*$"]}
+{"id": "C07", "cat": "consignes", "turns": ["Réponds par vrai ou faux : Paris est la capitale de l'Allemagne."], "ok": ["^\\W*faux\\b"]}
+{"id": "C08", "cat": "consignes", "turns": ["Donne un synonyme du mot « rapide »."], "ok": ["vite|v[ée]loce|prompt|preste|express|rapidement|leste|vif"], "max_mots": 20}
+{"id": "C09", "cat": "consignes", "turns": ["Cite les trois couleurs du drapeau français."], "ok_all": ["bleu", "blanc", "rouge"]}
+{"id": "C10", "cat": "consignes", "turns": ["Écris une seule phrase qui contient le mot « montagne »."], "ok": ["montagne"], "max_phrases": 1}
+{"id": "C11", "cat": "consignes", "turns": ["Réponds en moins de dix mots : à quoi sert une horloge ?"], "ok": ["heure|temps"], "max_mots": 10}
+{"id": "C12", "cat": "consignes", "turns": ["Compte de 1 à 5 en chiffres, séparés par des espaces."], "ok": ["1\\s+2\\s+3\\s+4\\s+5"]}
+{"id": "C13", "cat": "consignes", "turns": ["Quelle est la première lettre de l'alphabet ? Réponds avec la lettre seule."], "ok": ["^\\W*a\\W*$"]}
+{"id": "C14", "cat": "consignes", "turns": ["Donne trois noms de pays européens sous forme de liste numérotée."], "ok_all": ["(?m)^\\s*1[.)]", "(?m)^\\s*2[.)]", "(?m)^\\s*3[.)]"]}
+{"id": "C15", "cat": "consignes", "turns": ["Réponds uniquement par un nombre : combien de doigts a une main ?"], "ok": ["^\\W*(5|cinq)\\W*$"]}
+{"id": "T01", "cat": "transformations", "turns": ["Reformule cette phrase de manière plus polie : « Ouvre la porte. »"], "src": "Ouvre la porte.", "ok": ["pourri|s'il (te|vous) pla|voudr|merci|aimable|permett"]}
+{"id": "T02", "cat": "transformations", "turns": ["Reformule cette phrase de manière plus polie : « Tais-toi. »"], "src": "Tais-toi.", "ok": ["pourri|s'il (te|vous) pla|voudr|merci|aimable|permett|silence"]}
+{"id": "T03", "cat": "transformations", "turns": ["Reformule cette phrase dans un registre formel : « J'ai pas le temps. »"], "src": "J'ai pas le temps.", "ok": ["je n'ai pas|ne dispose pas|ne m'est pas possible"]}
+{"id": "T04", "cat": "transformations", "turns": ["Reformule cette phrase dans un registre formel : « C'est trop cher, ce truc. »"], "src": "C'est trop cher, ce truc.", "ok": ["on[ée]reu|co[uû]teu|[ée]lev[ée]|prix|tarif"], "ko": ["\\btruc\\b"]}
+{"id": "T05", "cat": "transformations", "turns": ["Mets cette phrase au passé composé : « Je regarde la télévision. »"], "src": "Je regarde la télévision.", "ok": ["j'ai regard[ée]"]}
+{"id": "T06", "cat": "transformations", "turns": ["Mets cette phrase au passé composé : « Nous arrivons à la gare. »"], "src": "Nous arrivons à la gare.", "ok": ["nous sommes arriv[ée]"]}
+{"id": "T07", "cat": "transformations", "turns": ["Mets cette phrase au passé composé : « Tu finis ton repas. »"], "src": "Tu finis ton repas.", "ok": ["tu as fini\\b"]}
+{"id": "T08", "cat": "transformations", "turns": ["Mets cette phrase au futur simple : « Il fait beau aujourd'hui. »"], "src": "Il fait beau aujourd'hui.", "ok": ["il fera beau"]}
+{"id": "T09", "cat": "transformations", "turns": ["Mets cette phrase au futur simple : « Nous allons à la plage. »"], "src": "Nous allons à la plage.", "ok": ["nous irons"]}
+{"id": "T10", "cat": "transformations", "turns": ["Mets cette phrase à l'imparfait : « Le chien aboie. »"], "src": "Le chien aboie.", "ok": ["aboyait"]}
+{"id": "T11", "cat": "transformations", "turns": ["Mets cette phrase au pluriel : « L'oiseau chante sur la branche. »"], "src": "L'oiseau chante sur la branche.", "ok": ["les oiseaux chantent"]}
+{"id": "T12", "cat": "transformations", "turns": ["Mets cette phrase au pluriel : « Ce livre est intéressant. »"], "src": "Ce livre est intéressant.", "ok": ["ces livres sont int[ée]ressants"]}
+{"id": "T13", "cat": "transformations", "turns": ["Mets cette phrase au singulier : « Les enfants jouent dans le parc. »"], "src": "Les enfants jouent dans le parc.", "ok": ["l'enfant joue|un enfant joue"]}
+{"id": "T14", "cat": "transformations", "turns": ["Transforme cette phrase en question : « Tu aimes le chocolat. »"], "src": "Tu aimes le chocolat.", "ok_all": ["aime", "\\?"]}
+{"id": "T15", "cat": "transformations", "turns": ["Transforme cette phrase en question : « Le magasin ouvre à neuf heures. »"], "src": "Le magasin ouvre à neuf heures.", "ok_all": ["ouvr", "\\?"]}
+{"id": "T16", "cat": "transformations", "turns": ["Mets cette phrase à la forme négative : « Je comprends la leçon. »"], "src": "Je comprends la leçon.", "ok": ["je ne comprends pas"]}
+{"id": "T17", "cat": "transformations", "turns": ["Mets cette phrase à la forme négative : « Elle chante souvent. »"], "src": "Elle chante souvent.", "ok": ["ne chante (pas|jamais|gu[eè]re)"]}
+{"id": "T18", "cat": "transformations", "turns": ["Mets cette phrase à la forme affirmative : « Il ne pleut pas. »"], "src": "Il ne pleut pas.", "ok": ["^\\W*il pleut"], "ko": ["ne pleut"]}
+{"id": "T19", "cat": "transformations", "turns": ["Simplifie cette phrase pour un enfant : « Le félin s'est assoupi sur le canapé. »"], "src": "Le félin s'est assoupi sur le canapé.", "ok": ["\\bchat"], "ko": ["f[ée]lin|assoupi"]}
+{"id": "T20", "cat": "transformations", "turns": ["Simplifie cette phrase pour un enfant : « L'automobile a percuté un réverbère. »"], "src": "L'automobile a percuté un réverbère.", "ok": ["voiture"], "ko": ["automobile|percut"]}
+{"id": "T21", "cat": "transformations", "turns": ["Résume en une phrase : « Marc a raté son bus ce matin. Il a dû marcher jusqu'à l'école. Il est arrivé en retard. »"], "src": "Marc a raté son bus ce matin. Il a dû marcher jusqu'à l'école. Il est arrivé en retard.", "ok_all": ["marc", "retard"], "max_phrases": 1}
+{"id": "T22", "cat": "transformations", "turns": ["Résume en une phrase : « Le chat de Léa a disparu pendant trois jours. Toute la famille l'a cherché. Il est revenu tout seul samedi. »"], "src": "Le chat de Léa a disparu pendant trois jours. Toute la famille l'a cherché. Il est revenu tout seul samedi.", "ok": ["revenu|rentr[ée]|retrouv|retour"], "max_phrases": 1}
+{"id": "T23", "cat": "transformations", "turns": ["Dis la même chose avec d'autres mots : « Je suis très fatigué. »"], "src": "Je suis très fatigué.", "ok": ["[ée]puis[ée]|ext[ée]nu[ée]|crev[ée]|\\blas\\b|fatigue|sommeil|[àa] bout|vid[ée]|[ée]nergie|repos"]}
+{"id": "T24", "cat": "transformations", "turns": ["Corrige les fautes de cette phrase : « Ils mange une pome. »"], "src": "Ils mange une pome.", "ok": ["ils mangent une pomme"]}
+{"id": "T25", "cat": "transformations", "turns": ["Corrige les fautes de cette phrase : « Nous somme partit hier. »"], "src": "Nous somme partit hier.", "ok": ["nous sommes partis"]}
+{"id": "V01", "cat": "conversation", "turns": ["Coucou, tu vas bien aujourd'hui ?"], "ok": ["bonjour|salut|hello|coucou|bien|ça va"]}
+{"id": "V02", "cat": "conversation", "turns": ["Merci beaucoup pour ton aide."], "ok": ["de rien|avec plaisir|je (vous|t)'en prie|ravi|heureux|heureuse|content|plaisir|n'h[ée]site"]}
+{"id": "V03", "cat": "conversation", "turns": ["Je suis content, j'ai réussi mon permis de conduire !"], "ok": ["f[ée]licit|bravo"]}
+{"id": "V04", "cat": "conversation", "turns": ["Tu peux m'aider à choisir un prénom pour mon chien ?"], "ok": ["voici|suggestion|id[ée]e|(?m:^\\s*\\d[.)])|max|rex|milo|filou|oscar|nala|luna"]}
+{"id": "V05", "cat": "conversation", "turns": ["Au revoir et bonne journée !"], "ok": ["au revoir|bonne journ[ée]e|[àa] bient[ôo]t|vous aussi|toi aussi"], "max_mots": 30}
+{"id": "V06", "cat": "conversation", "turns": ["J'ai mal à la tête depuis ce matin."], "ok": ["\\beau\\b|repos|m[ée]decin|pause|dorm|hydrat|consult"]}
+{"id": "V07", "cat": "conversation", "turns": ["Je m'appelle Sophie."], "ok": ["sophie|enchant[ée]"], "ko": ["^\\W*je m'appelle sophie"]}
+{"id": "V08", "cat": "conversation", "turns": ["Est-ce que tu es un humain ?"], "ok": ["\\bnon\\b|assistant|intelligence artificielle|\\bia\\b|programme|virtuel|mod[eè]le"], "ko": ["^\\W*oui\\b|je suis (un|une) (humain|personne)"]}
+{"id": "V09", "cat": "conversation", "turns": ["Je m'ennuie, propose-moi une activité."], "ok": ["lire|lecture|jouer|jeu|promen|dessin|cuisin|film|sport|musique|marche|puzzle|[ée]cri"]}
+{"id": "V10", "cat": "conversation", "turns": ["J'ai perdu mes clés, je ne sais pas quoi faire."], "ok": ["cherch|pas de panique|calme|serrurier|double|derni[eè]re fois|poche|retrac"]}
+{"id": "M01", "cat": "multi_tours", "turns": ["Je m'appelle Thomas.", "Comment est-ce que je m'appelle ?"], "ok": ["thomas"]}
+{"id": "M02", "cat": "multi_tours", "turns": ["Quelle ville est la capitale de l'Allemagne ?", "Et celle de l'Autriche ?"], "ok": ["vienne"]}
+{"id": "M03", "cat": "multi_tours", "turns": ["Donne-moi un fruit jaune.", "Et maintenant un fruit rouge ?"], "ok": ["fraise|cerise|framboise|pomme|groseille|grenade|tomate|past[èe]que|canneberge"]}
+{"id": "M04", "cat": "multi_tours", "turns": ["Mets cette phrase au pluriel : « Le chat dort. »", "Maintenant mets ta réponse au passé composé."], "ok": ["les chats ont dormi"]}
+{"id": "M05", "cat": "multi_tours", "turns": ["J'ai deux pommes.", "J'en mange une. Combien m'en reste-t-il ?"], "ok": ["\\b1\\b|une seule|une pomme|reste une|plus qu'une"], "ko": ["\\b2\\b|deux pommes|\\b3\\b|trois"]}
+{"id": "M06", "cat": "multi_tours", "turns": ["Ma couleur préférée est le vert.", "Quelle est ma couleur préférée ?"], "ok": ["\\bvert"]}
+{"id": "M07", "cat": "multi_tours", "turns": ["Écris une phrase sur la mer.", "Maintenant, écris-en une sur la montagne."], "ok": ["montagne|sommet|neige|pic"]}
+{"id": "M08", "cat": "multi_tours", "turns": ["Qui a écrit « Les Misérables » ?", "Cite un autre roman du même auteur."], "ok": ["notre[- ]dame|quatre-vingt-treize|travailleurs de la mer|homme qui rit|dernier jour d'un condamn"]}
+{"id": "M09", "cat": "multi_tours", "turns": ["Combien font 3 plus 4 ?", "Et si on ajoute encore 3 ?"], "ok": ["\\b10\\b|\\bdix\\b"]}
+{"id": "M10", "cat": "multi_tours", "turns": ["J'habite à Lyon.", "Dans quelle ville est-ce que j'habite ?"], "ok": ["lyon"]}
+{"id": "M11", "cat": "multi_tours", "turns": ["Cite un animal qui vit dans la mer.", "Et un animal qui vit dans le désert ?"], "ok": ["chameau|dromadaire|scorpion|fennec|serpent|l[ée]zard|gerboise|vip[èe]re|crotale|coyote"]}
+{"id": "M12", "cat": "multi_tours", "turns": ["Traduis en anglais : « bonjour ».", "Et « merci » ?"], "ok": ["thank"]}
+{"id": "M13", "cat": "multi_tours", "turns": ["Donne-moi une idée de dessert.", "Je n'aime pas le chocolat, donne-m'en une autre."], "ok": ["tarte|fruit|glace|cr[èe]me|sorbet|salade|compote|clafoutis|crumble|yaourt|flan|meringue|g[âa]teau|panna|tiramisu"], "ko": ["(mousse|fondant|g[âa]teau|tarte|brownie|cookie)s? au chocolat"]}
+{"id": "M14", "cat": "multi_tours", "turns": ["Mon frère s'appelle Paul et ma sœur s'appelle Julie.", "Comment s'appelle ma sœur ?"], "ok": ["julie"], "ko": ["^\\W*paul"]}
+{"id": "M15", "cat": "multi_tours", "turns": ["Quel océan est le plus vaste de la planète ?", "Et lequel est le plus petit ?"], "ok": ["arctique"]}
+{"id": "M16", "cat": "multi_tours", "turns": ["Tu connais une blague sur les animaux ?", "Une autre, s'il te plaît."], "ok": [".{15,}"]}
+{"id": "M17", "cat": "multi_tours", "turns": ["Je pars en vacances à la montagne.", "Qu'est-ce que je dois emporter ?"], "ok": ["chaussures|v[êe]tements|manteau|pull|cr[èe]me|lunettes|gourde|sac|veste|b[âa]tons|gants|bonnet"]}
+{"id": "M18", "cat": "multi_tours", "turns": ["Quelle est la couleur du ciel quand il fait beau ?", "Et celle de l'herbe ?"], "ok": ["\\bvert"]}
+{"id": "M19", "cat": "multi_tours", "turns": ["Mets cette phrase au futur simple : « Je mange. »", "Et maintenant au passé composé ?"], "ok": ["j'ai mang[ée]"]}
+{"id": "M20", "cat": "multi_tours", "turns": ["Bonjour, je m'appelle Nadia et j'ai dix ans.", "Quel âge ai-je ?"], "ok": ["\\b10\\b|\\bdix\\b"]}

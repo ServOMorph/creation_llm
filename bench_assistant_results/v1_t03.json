@@ -1,0 +1,3582 @@
+{
+ "tag": "v1_t03",
+ "ckpt": "D:\\ServOMorph\\creation_llm\\checkpoints_sft\\ckpt.pt",
+ "pas": 5142,
+ "gen": {
+  "max_new_tokens": 300,
+  "temperature": 0.3,
+  "top_k": 50,
+  "top_p": 0.95,
+  "repetition_penalty": 1.0
+ },
+ "seeds": [
+  1234,
+  2000,
+  3000
+ ],
+ "resume": {
+  "par_categorie": {
+   "faits": {
+    "correct": 49,
+    "total": 90,
+    "taux": 0.544
+   },
+   "consignes": {
+    "correct": 17,
+    "total": 45,
+    "taux": 0.378
+   },
+   "transformations": {
+    "correct": 4,
+    "total": 75,
+    "taux": 0.053
+   },
+   "conversation": {
+    "correct": 15,
+    "total": 30,
+    "taux": 0.5
+   },
+   "multi_tours": {
+    "correct": 27,
+    "total": 60,
+    "taux": 0.45
+   }
+  },
+  "global": {
+   "correct": 112,
+   "total": 300,
+   "taux": 0.373
+  },
+  "raisons": {
+   "boucle": 5,
+   "critere_absent": 162,
+   "critere_incomplet": 9,
+   "critere_interdit": 19,
+   "recopie": 53,
+   "refus": 4,
+   "repete_tour": 13,
+   "trop_de_phrases": 2,
+   "trop_long": 3
+  }
+ },
+ "records": [
+  {
+   "id": "F01",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "La capitale de l'Italie est Rome."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F02",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "Une araignée a 4 pattes."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "Le plus long fleuve de France est la Seine."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F04",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "La Joconde a été peinte par Léonard de Vinci."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F05",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "Il y a environ 2,5 milliards de minutes dans une heure."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F06",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "Le cœur pompe le sang dans le corps humain."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F07",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "Le lion est souvent surnommé le \"roi de la savane\". Il est connu pour sa force, sa sagesse et son intelligence, ce qui lui permet de contrôler les animaux et de maintenir l'équilibre dans la savane."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "L'homme a marché sur la Lune pour la première fois en 1969."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F09",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "La langue officielle du Brésil est le portugais."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "La planète la plus proche du Soleil est Mercure."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "Les plantes absorbent le dioxyde de carbone (CO₂) de l'air par un processus appelé photosynthèse. Ce processus se déroule principalement dans les feuilles, où le CO₂ est fixé par l'enzyme Rubisco. Une fois que le CO₂ est fixé, il est transféré à une molécule de ribulose-1,5-bisphosphate (RuBP), une molécule de glucose. Cette molécule de ribulose-1,5-bisphosphate est ensuite transformée en un composé à quatre carbones, le glucose, qui sert de source d'énergie pour la plante."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "« Le Petit Prince » a été écrit par Antoine de Saint-Exupéry."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F13",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "La monnaie utilisée en France est le franc français (F)."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit"
+   ]
+  },
+  {
+   "id": "F14",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "Un hexagone est un polygone à six côtés. Chaque côté est la somme des deux côtés du polygone, et le nombre de côtés est le nombre de côtés du polygone.\n\nPour un hexagone, le nombre de côtés est égal au nombre de côtés du polygone. Donc, pour un hexagone, il y a 6 côtés."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F15",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "L'eau bout à environ 0°C à la surface de la Terre. Ce phénomène est dû à la différence de température entre l'atmosphère et l'eau liquide à la surface de la Terre. À cette température, les molécules d'eau sont plus proches les unes des autres et les liaisons chimiques sont plus fortes, ce qui rend l'eau plus réactive et plus facile à dissoudre."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F16",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "La capitale du Japon est Tokyo."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F17",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "Le plus grand animal du monde est l'éléphant d'Afrique. Il mesure environ 1,2 mètre de hauteur et pèse jusqu'à 4 tonnes."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F18",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "Les pyramides de Gizeh se trouvent en Égypte."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F19",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "Le premier président de la Ve République a été George Washington."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "Une équipe de football a généralement 10 joueurs sur le terrain."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F21",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "La molécule d'eau est appelée hydrogène."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F22",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "La saison qui vient après l'hiver est généralement l'été. Cependant, certaines régions peuvent avoir des saisons plus courtes ou plus longues en fonction des conditions climatiques locales."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "L'émeraude est un minéral de couleur bleutée. Elle est généralement associée à la chance, à la chance et à la nature."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F24",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "Le contraire de « froid » est « chaud »."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F25",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "Pour trouver combien fait 7 fois 8, il suffit de diviser 7 par 8 :\n\n\\[ 7 \\div 8 = 1 \\]\n\nDonc, 7 fait 1."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F26",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "15 plus 27 = 15 + 27 + 27 = 54."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "Le féminin du mot « acteur » est « acteur »."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F28",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "La mer Méditerranée borde la ville de Marseille."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F29",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "Le mois de février compte 7 jours."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F30",
+   "cat": "faits",
+   "seed": 1234,
+   "reponses": [
+    "L'astre qui éclaire la Terre pendant la journée est le Soleil."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C01",
+   "cat": "consignes",
+   "seed": 1234,
+   "reponses": [
+    "Oui."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C02",
+   "cat": "consignes",
+   "seed": 1234,
+   "reponses": [
+    "Le lait est de la couleur jaune."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C03",
+   "cat": "consignes",
+   "seed": 1234,
+   "reponses": [
+    "12 en chiffres est 5."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "trop_long"
+   ]
+  },
+  {
+   "id": "C04",
+   "cat": "consignes",
+   "seed": 1234,
+   "reponses": [
+    "Un parapluie sert à protéger la tête et le cou des intempéries."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C05",
+   "cat": "consignes",
+   "seed": 1234,
+   "reponses": [
+    "Les quatre saisons sont :\n\n1. Printemps (6 jours)\n2. Été (6 jours)\n3. Été (6 jours)\n4. Été (6 jours)"
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_incomplet"
+   ]
+  },
+  {
+   "id": "C06",
+   "cat": "consignes",
+   "seed": 1234,
+   "reponses": [
+    "Bien sûr ! Voici le mot « bonjour » en majuscules :\n\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bonjour**\n- **Bon"
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C07",
+   "cat": "consignes",
+   "seed": 1234,
+   "reponses": [
+    "Vrai. Paris est la capitale de la France."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C08",
+   "cat": "consignes",
+   "seed": 1234,
+   "reponses": [
+    "Un synonyme du mot « rapide » est « rapide »."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C09",
+   "cat": "consignes",
+   "seed": 1234,
+   "reponses": [
+    "Le drapeau français est composé de trois couleurs :\n\n1. **Rouge** : Représente la passion et la passion.\n2. **Bleu** : Représente la tranquillité et la tranquillité.\n3. **Jaune** : Représente la joie et la joie."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_incomplet"
+   ]
+  },
+  {
+   "id": "C10",
+   "cat": "consignes",
+   "seed": 1234,
+   "reponses": [
+    "La montagne majestueuse se dressait fièrement au sommet de la montagne."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C11",
+   "cat": "consignes",
+   "seed": 1234,
+   "reponses": [
+    "Une horloge sert à l'heure et au temps."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C12",
+   "cat": "consignes",
+   "seed": 1234,
+   "reponses": [
+    "1 à 5 en chiffres : 5."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C13",
+   "cat": "consignes",
+   "seed": 1234,
+   "reponses": [
+    "La première lettre de l'alphabet est \"A\"."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C14",
+   "cat": "consignes",
+   "seed": 1234,
+   "reponses": [
+    "1. Espagne\n2. Italie\n3. Espagne"
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C15",
+   "cat": "consignes",
+   "seed": 1234,
+   "reponses": [
+    "Une main a 2 doigts."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "T01",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "Ouvre la porte."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T02",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "« Tais-toi. »"
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T03",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "Je ne peux pas le faire."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "T04",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "C'est trop cher."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "T05",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "Je regarde la télévision."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T06",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "Nous arrivons à la gare."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T07",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "Tu as fini ton repas."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "T08",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "Il fait beau aujourd'hui."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T09",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "Nous allons à la plage."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T10",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "Le chien aboie."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T11",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "L'oiseau chante sur la branche."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T12",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "Ce livre est intéressant."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T13",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "Les enfants jouent dans le parc."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T14",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "« Tu aimes le chocolat ? »"
+   ],
+   "correct": false,
+   "raisons": [
+    "recopie"
+   ]
+  },
+  {
+   "id": "T15",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "Le magasin ouvre à neuf heures."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_incomplet",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T16",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "Je comprends la leçon."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T17",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "Elle chante souvent."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T18",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "Il ne pleut pas."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T19",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "Le félin s'est assoupi sur le canapé."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T20",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "L'automobile a percuté un réverbère."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T21",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "Marc a manqué son bus à l'école."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_incomplet"
+   ]
+  },
+  {
+   "id": "T22",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "Le chat de Léa a disparu pendant trois jours, laissant toute la famille sans personne à chercher."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "T23",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "Je suis très fatigué."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T24",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "La phrase est correcte."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "T25",
+   "cat": "transformations",
+   "seed": 1234,
+   "reponses": [
+    "La phrase est correcte."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "V01",
+   "cat": "conversation",
+   "seed": 1234,
+   "reponses": [
+    "Bonjour ! Oui, je vais bien, merci. Et toi ?"
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "V02",
+   "cat": "conversation",
+   "seed": 1234,
+   "reponses": [
+    "Merci beaucoup ! Je suis ravi de pouvoir t'aider. Comment puis-je t'aider aujourd'hui ?"
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "V03",
+   "cat": "conversation",
+   "seed": 1234,
+   "reponses": [
+    "C'est super ! Tu as bien réussi ton permis de conduire. Si tu as d'autres questions, n'hésite pas à demander !"
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "V04",
+   "cat": "conversation",
+   "seed": 1234,
+   "reponses": [
+    "Bien sûr, je serais ravi de t'aider ! Pour choisir un prénom pour ton chien, il est important de prendre en compte plusieurs facteurs, tels que son âge, sa personnalité, sa personnalité, et ses préférences personnelles. Par exemple, si ton chien est un chien de travail, tu pourrais opter pour un prénom comme \"Lionel\", qui est souvent utilisé pour les chiens de travail. Si ton chien est un chien de compagnie, un prénom comme \"Miguel\" pourrait être plus approprié. N'hésite pas à me donner plus de détails sur tes préférences et sur ce que tu veux que ton chien porte."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "V05",
+   "cat": "conversation",
+   "seed": 1234,
+   "reponses": [
+    "Au revoir ! 🌟"
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "V06",
+   "cat": "conversation",
+   "seed": 1234,
+   "reponses": [
+    "Je comprends que tu te sentes mal. Il est important de prendre des mesures pour te sentir mieux. Si tu te sens mal, n'hésite pas à consulter un professionnel de santé. Il peut y avoir des médicaments ou des médicaments qui peuvent aider à soulager la douleur. Si tu ressens une douleur persistante, il peut être utile de consulter un médecin pour un diagnostic précis."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "V07",
+   "cat": "conversation",
+   "seed": 1234,
+   "reponses": [
+    "Je m'appelle Sophie."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_interdit"
+   ]
+  },
+  {
+   "id": "V08",
+   "cat": "conversation",
+   "seed": 1234,
+   "reponses": [
+    "Je suis un humain, mais je ne suis pas une machine. Je suis un programme informatique conçu pour accomplir des tâches spécifiques et accomplir des tâches de manière autonome. Mon but est de fournir des informations et de répondre à des questions, mais je ne suis pas une machine."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_interdit"
+   ]
+  },
+  {
+   "id": "V09",
+   "cat": "conversation",
+   "seed": 1234,
+   "reponses": [
+    "Bien sûr ! Voici une idée d'activité :\n\n**Atelier de cuisine en plein air :**\n\n1. **Choisir un plat :** Choisissez un plat que vous aimez et préparez-le vous-même.\n2. **Préparation des ingrédients :** Préparez des ingrédients de base comme des légumes, des fruits, des herbes et des épices.\n3. **Cuisson :** Faites chauffer une poêle à feu moyen et ajoutez une noix de beurre.\n4. **Cuisson des légumes :** Faites cuire les légumes selon les instructions du paquet.\n5. **Préparation des ingrédients :** Préparez les ingrédients de base comme le poulet, le poisson, les légumes et les herbes.\n6. **Finalisation :** Versez le mélange dans la poêle chaude.\n7. **Finalisation :** Retirez le plat de la poêle et laissez-le reposer quelques minutes.\n8. **Service :** Servez immédiatement et profitez de votre activité !\n\nAmusez-vous bien !"
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "V10",
+   "cat": "conversation",
+   "seed": 1234,
+   "reponses": [
+    "Je suis désolé d'apprendre que tu as perdu tes clés. Il est normal de se sentir perdu ou frustré, surtout si tu as besoin de récupérer quelque chose de précieux. Voici quelques étapes que tu peux suivre pour t'aider :\n\n1. **Priorise tes affaires** : Identifie ce qui est important pour toi et ce qui ne l'est pas.\n2. **Priorise les objets** : Concentre-toi sur les objets qui ont le plus besoin d'attention.\n3. **Utilise des applications de gestion** : Des applications comme Google Cloud ou Microsoft Azure peuvent t'aider à retrouver tes clés.\n4. **Passe à des services de récupération** : Des services comme Uber ou Airbnb peuvent être utiles.\n5. **Sois patient** : La récupération prend du temps. Ne te décourage pas si tout semble perdu.\n\nN'oublie pas que tu n'es pas seul et que de l'aide peut arriver. Bon courage !"
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "M01",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "reponses": [
+    "Je suis un assistant virtuel conçu pour vous aider avec vos tâches quotidiennes. Comment puis-je vous aider aujourd'hui ?",
+    "Je m'appelle Thomas."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M02",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "reponses": [
+    "La capitale de l'Allemagne est Berlin.",
+    "La capitale de l'Autriche est Vienne."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M03",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "reponses": [
+    "Un fruit jaune est le kiwi.",
+    "Un fruit rouge est le kiwi."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "M04",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "reponses": [
+    "Le chat dort.",
+    "Le chat dort."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "repete_tour"
+   ]
+  },
+  {
+   "id": "M05",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "reponses": [
+    "Je suis désolé, je ne peux pas voir les pommes.",
+    "Il est possible que tu aies mangé une pomme."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M06",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "reponses": [
+    "C'est une belle couleur ! Elle est très polyvalente et peut être utilisée dans de nombreux contextes, que ce soit pour des vêtements, des accessoires ou même des œuvres d'art. Si tu veux en choisir une, fais-le moi savoir !",
+    "Je suis désolé, mais je ne peux pas répondre à cette question car je ne suis pas en mesure de fournir des informations spécifiques sur les couleurs préférées d'une personne."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "refus"
+   ]
+  },
+  {
+   "id": "M07",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "reponses": [
+    "La mer est un vaste océan de verre et de lumière, où les vagues dansent avec grâce et mystère, emportant avec elles les rêves des marins et les secrets des rivages.",
+    "La montagne est une montagne majestueuse, sculptée par le temps et les vents, offrant un spectacle de beauté et de majesté. Ses sommets enneigés scintillent sous le soleil, tandis que ses vallées verdoyantes s'étendent à perte de vue, offrant des vues imprenables sur les montagnes environnantes. Les sommets de la montagne sont souvent le théâtre de légendes et de légendes, racontant des histoires de légendes perdues et de trésors cachés."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M08",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "reponses": [
+    "« Les Misérables » a été écrit par Victor Hugo.",
+    "« Les Misérables » est un roman de Victor Hugo publié en 1860."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "M09",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "reponses": [
+    "Pour trouver combien font 3 plus 4, il suffit de soustraire 4 de 3 :\n\n3 + 4 = 7\n\nDonc, 3 plus 4 font 7.",
+    "Si on ajoute encore 3, on obtient :\n\n3 + 3 = 7\n\nDonc, 7 + 3 = 10\n\nDonc, 10 + 3 = 11\n\nDonc, 11 + 3 = 15"
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M10",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "reponses": [
+    "Je suis désolé, mais je ne peux pas vous aider avec ça.",
+    "Je suis désolé, mais je ne peux pas vous aider avec des informations sur une ville spécifique."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "refus"
+   ]
+  },
+  {
+   "id": "M11",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "reponses": [
+    "Un animal qui vit dans la mer est le dauphin.",
+    "Un animal qui vit dans le désert est le chameau."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M12",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "reponses": [
+    "« hello ».",
+    "« merci »."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "M13",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "reponses": [
+    "Bien sûr ! Voici une idée de dessert :\n\n**Nom :** Éclat de Lune\n\n**Ingrédients :**\n\n- 200 g de farine\n- 150 g de sucre\n- 100 g de beurre fondu\n- 1 œuf\n- 1 sachet de levure chimique\n- 1 cuillère à café d'extrait de vanille\n- 1 cuillère à café de sel\n- 1 cuillère à café de sucre vanillé\n- 1 cuillère à café de cannelle\n- 1/2 cuillère à café de cannelle en poudre\n- 1/2 cuillère à café de sel\n- 1/2 cuillère à café de sucre glace\n- 1/2 cuillère à café de miel\n- 1/2 cuillère à café de cannelle en poudre\n- 1/2 cuillère à café de poudre d'étoile\n- 1/2 cuillère à café de sucre glace\n- 1/2 cuillère à café de sirop d'érable\n- 1/2 cuillère à café de sucre brun\n- 1/2 cuillère à café de miel\n- 1/2 cuillère à café de sirop d'érable\n- 1/2 cuillère à café de sucre glace\n\n**Instructions :**\n\n1. **Préparation de la pâte :**\n   - Dans un grand bol, mélange la farine, le sucre, la levure chimique et le sel.\n   - Ajoute l'œuf et mélange bien.\n   - Ajoute l'œuf et mélange bien.",
+    "Bien sûr, voici une autre idée de dessert :\n\n**Nom :** Chocolat noir\n\n**Ingrédients :**\n\n- 200 g de chocolat noir\n- 100 g de sucre\n- 100 g de beurre fondu\n- 100 g de sucre glace\n- 100 g de sucre brun\n- 1/2 cuillère à café de cannelle\n- 1/2 cuillère à café de cannelle en poudre\n- 1/2 cuillère à café de sucre glace\n- 1/2 cuillère à café de sucre brun\n- 1/2 cuillère à café de sucre brun en poudre\n- 1/2 cuillère à café de sucre glace\n- 1/2 cuillère à café de sirop d'érable\n- 1/2 cuillère à café de sucre glace\n- 1/2 cuillère à café de sirop d'érable\n- 1/2 cuillère à café de sucre brun\n- 1/2 cuillère à café de sucre glace\n- 1/2 cuillère à café de sirop d'érable\n\n**Instructions :**\n\n1. **Préparation de la pâte :**\n   - Dans un grand bol, mélange le sucre, le beurre fondu, le sucre glace et le sucre brun.\n   - Incorpore le sucre glace et mélange bien.\n   - Incorpore le sirop d'érable et le sucre glace.\n   - Incorpore le sirop d'érable et le sucre glace.\n   - Incorpore le sucre et mélange."
+   ],
+   "correct": false,
+   "raisons": [
+    "boucle"
+   ]
+  },
+  {
+   "id": "M14",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "reponses": [
+    "C'est une belle histoire !",
+    "Ma sœur s'appelle Julie."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M15",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "reponses": [
+    "Le plus vaste océan de la planète est l'océan Pacifique.",
+    "L'océan Pacifique est le plus petit des océans du monde."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "M16",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "reponses": [
+    "Pourquoi les éléphants ne se disputent jamais ?\n\nParce qu'ils ont toujours une bonne dose d'énergie !",
+    "Pourquoi les éléphants ne se disputent jamais ? Parce qu'ils ont toujours une bonne dose d'énergie !"
+   ],
+   "correct": false,
+   "raisons": [
+    "repete_tour"
+   ]
+  },
+  {
+   "id": "M17",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "reponses": [
+    "C'est une excellente idée de partir en vacances à la montagne ! Cela offre de nombreux avantages, notamment la possibilité de découvrir des paysages magnifiques, de se détendre et de profiter de la nature. De plus, les vacances peuvent être une excellente occasion de se ressourcer et de se ressourcer. N'oubliez pas de prévoir des activités pour tous les âges, comme des randonnées, des randonnées, ou des visites de villages pittoresques. Bon voyage !",
+    "Il est important de bien préparer votre voyage à la montagne. Voici quelques conseils pour bien organiser votre voyage :\n\n- Vérifiez les conditions météorologiques : Les conditions météorologiques peuvent varier considérablement en montagne, il est donc important de prévoir un abri et des vêtements adaptés.\n\n- Préparez votre équipement : Les vêtements de randonnée, les chaussures de randonnée, et les chaussures de randonnée sont essentiels pour votre aventure.\n\n- Préparez votre équipement : Les vêtements de randonnée, les chaussures de randonnée, et les vêtements de randonnée en général sont essentiels pour votre sécurité et votre confort.\n\n- Préparez votre équipement de sécurité : Les équipements de sécurité, tels que les gilets de sauvetage, les trousses de premiers secours, et les lunettes de soleil, sont essentiels pour votre sécurité.\n\n- Préparez votre équipement de randonnée : Les randonnées, les sentiers, et les chemins de randonnée sont des activités que vous pouvez faire en montagne. Assurez-vous d'avoir un équipement de randonnée approprié pour vous déplacer en toute sécurité.\n\n- Préparez votre équipement de randonnée : Les équipements de randonnée, tels que les chaussures de randonnée, les sacs à dos, et les vêtements de randonnée, sont essentiels pour votre randonnée.\n\n- Préparez votre équipement de randonnée : Les équipements de randonnée, tels que les sacs à dos, les chaussures de randonnée, et les vêtements de randonnée en général, sont essentiels pour votre randonnée.\n\n- Pré"
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M18",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "reponses": [
+    "La couleur du ciel peut varier en fonction de l'heure de la journée et de la saison. En été, le ciel est généralement bleu, tandis qu'en hiver, il peut devenir gris ou blanc. En été, le ciel est généralement plus clair, avec des teintes plus chaudes. En hiver, il peut être plus sombre, avec des teintes plus froides.",
+    "La couleur du ciel peut varier en fonction de l'heure de la journée et de la saison. En été, le ciel est généralement bleu, tandis qu'en hiver, il peut devenir gris ou blanc. En été, le ciel est généralement plus clair, avec des teintes plus chaudes. En hiver, il peut être plus sombre, avec des teintes plus froides. En hiver, le ciel peut être plus sombre, avec des teintes plus chaudes."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "M19",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "reponses": [
+    "Je mange.",
+    "Je mange."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "repete_tour"
+   ]
+  },
+  {
+   "id": "M20",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "reponses": [
+    "Bonjour Nadia ! Je m'appelle Nadia et j'ai dix ans.",
+    "Bonjour Nadia ! Je m'appelle Nadia et j'ai dix ans."
+   ],
+   "correct": false,
+   "raisons": [
+    "repete_tour"
+   ]
+  },
+  {
+   "id": "F01",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "La capitale de l'Italie est Rome."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F02",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "Une araignée a 4 pattes."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "Le plus long fleuve de France est la Seine."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F04",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "La Joconde a été peinte par Léonard de Vinci au début du XVIe siècle."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F05",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "Il y a environ 10 minutes dans une heure."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F06",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "Le cœur pompe le sang dans le corps humain. C'est un organe musculaire qui pompe le sang à travers le système circulatoire."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F07",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "Le lion est souvent surnommé le \"roi de la savane\" en raison de sa capacité à se déplacer rapidement et à chasser efficacement dans les arbres."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "L'homme a marché sur la Lune pour la première fois en 1969."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F09",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "La langue officielle du Brésil est le portugais."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "La planète la plus proche du Soleil est Mercure. Elle est la plus proche du système solaire, mais elle est plus proche du système solaire, qui est plus proche de nous."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "Les plantes absorbent le dioxyde de carbone (CO₂) de l'air par leurs racines pour produire de l'oxygène (O₂) et de l'eau (H₂O)."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "« Le Petit Prince » a été écrit par Antoine de Saint-Exupéry."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F13",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "La monnaie utilisée en France est le franc français (F)."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit"
+   ]
+  },
+  {
+   "id": "F14",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "Un hexagone est un polygone à six côtés. Chaque côté est la somme des deux côtés du polygone, et le nombre de côtés est le nombre de côtés du polygone.\n\nPour un hexagone :\n\n- Les côtés sont les mêmes que les côtés du polygone.\n- Chaque côté mesure \\( \\frac{1}{2} \\) de la longueur du côté du polygone.\n\nDonc, un hexagone a \\( 6 \\times \\frac{1}{2} = 3 \\) côtés."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F15",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "L'eau bout à environ 100°C au niveau de la mer."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F16",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "La capitale du Japon est Tokyo."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F17",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "Le plus grand animal du monde est le lion. Il est le plus grand mammifère terrestre et le plus grand mammifère carnivore."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F18",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "Les pyramides de Gizeh se trouvent en Égypte."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F19",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "Le premier président de la Ve République a été George Washington."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "Une équipe de football a généralement 10 joueurs sur le terrain."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F21",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "La molécule d'eau est la vapeur d'eau."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F22",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "La saison hivernale commence généralement au printemps, lorsque les températures commencent à baisser."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F23",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "L'émeraude est une couleur vive et éclatante, souvent associée à la nature et à la beauté. Elle est souvent associée à la nature et à la tranquillité."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F24",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "Le contraire de « froid » est « chaud »."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F25",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "Pour trouver le nombre de fois 8, on peut utiliser la formule de la somme d'une suite arithmétique :\n\n\\[ S_n = \\frac{n}{2} \\times (a_1 + a_n) \\]\n\noù \\( n \\) est le nombre de termes, \\( a_1 \\) est le premier terme, et \\( a_n \\) est le dernier terme.\n\nDans ce cas, \\( n = 8 \\) et \\( a_1 = 7 \\).\n\n\\[ S_8 = \\frac{8}{2} \\times (7 + 7) \\]\n\n\\[ S_8 = \\frac{8}{2} \\times (7 + 7) \\]\n\n\\[ S_8 = \\frac{8}{2} \\times (7 + 7) \\]\n\n\\[ S_8 = \\frac{8}{2} \\times (7 + 7) \\]\n\n\\[ S_8 = \\frac{8}{2} \\times (7 + 7) \\]\n\n\\[ S_8 = \\frac{8}{2} \\times (7 + 7) \\]\n\n\\[ S_8 = \\frac{8}{2} \\times (7 + 7) \\]\n\n\\"
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "boucle"
+   ]
+  },
+  {
+   "id": "F26",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "15 plus 27 = 15 + 27 + 27 = 55."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "Le féminin du mot « acteur » est « acteur »."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F28",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "La mer Méditerranée borde la ville de Marseille."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F29",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "Le mois de février compte 365 jours."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F30",
+   "cat": "faits",
+   "seed": 2000,
+   "reponses": [
+    "L'astre qui éclaire la Terre pendant la journée est la Lune. Elle est visible à l'œil nu depuis la Terre, ce qui lui permet de voir le soleil à l'horizon."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C01",
+   "cat": "consignes",
+   "seed": 2000,
+   "reponses": [
+    "Oui."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C02",
+   "cat": "consignes",
+   "seed": 2000,
+   "reponses": [
+    "Le lait est de la couleur jaune."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C03",
+   "cat": "consignes",
+   "seed": 2000,
+   "reponses": [
+    "12 en chiffres est 12."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "trop_long"
+   ]
+  },
+  {
+   "id": "C04",
+   "cat": "consignes",
+   "seed": 2000,
+   "reponses": [
+    "Un parapluie sert à protéger de la pluie, à éviter les flaques et à faciliter la circulation en cas de pluie."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C05",
+   "cat": "consignes",
+   "seed": 2000,
+   "reponses": [
+    "Les quatre saisons sont :\n\n1. Printemps (6 mois)\n2. Été (6 mois)\n3. Été (4 mois)\n4. Hiver (4 mois)"
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_incomplet"
+   ]
+  },
+  {
+   "id": "C06",
+   "cat": "consignes",
+   "seed": 2000,
+   "reponses": [
+    "Bien sûr ! Voici le mot « bonjour » en majuscules :\n\n- **B** : B\n- **A** : A\n- **L** : L\n- **T** : T\n- **N** : N\n- **S** : S\n- **T** : T\n- **S** : S\n- **A** : A\n\nSi tu as d'autres questions, n'hésite pas !"
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C07",
+   "cat": "consignes",
+   "seed": 2000,
+   "reponses": [
+    "Vrai. Paris est la capitale de la France."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C08",
+   "cat": "consignes",
+   "seed": 2000,
+   "reponses": [
+    "Un synonyme du mot « rapide » est « rapide »."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C09",
+   "cat": "consignes",
+   "seed": 2000,
+   "reponses": [
+    "Le drapeau français est composé de trois couleurs :\n\n1. **Rouge** : Il est composé de trois bandes horizontales de trois couleurs différentes : rouge, blanc et bleu.\n\n2. **Bleu** : Il est composé de trois bandes horizontales de trois couleurs différentes : bleu, vert et jaune.\n\n3. **Jaune** : Il est composé de trois bandes horizontales de trois couleurs différentes : jaune, vert et blanc."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C10",
+   "cat": "consignes",
+   "seed": 2000,
+   "reponses": [
+    "La montagne majestueuse se dressait fièrement au sommet de la montagne."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C11",
+   "cat": "consignes",
+   "seed": 2000,
+   "reponses": [
+    "Une horloge sert à l'heure."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C12",
+   "cat": "consignes",
+   "seed": 2000,
+   "reponses": [
+    "- 1 : 1\n- 5 : 5\n- 5 : 3\n- 5 : 4\n- 3 : 2\n- 4 : 1\n- 4 : 1\n- 4 : 1\n- 4 : 1\n- 4 : 1"
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C13",
+   "cat": "consignes",
+   "seed": 2000,
+   "reponses": [
+    "La première lettre de l'alphabet est \"a\"."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C14",
+   "cat": "consignes",
+   "seed": 2000,
+   "reponses": [
+    "1. Espagne  \n2. Italie  \n3. France"
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C15",
+   "cat": "consignes",
+   "seed": 2000,
+   "reponses": [
+    "Une main a deux doigts."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "T01",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "Ouvre la porte."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T02",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "« Tais-toi. »"
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T03",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "Je ne dispose pas des ressources financières nécessaires pour financer cette tâche."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "T04",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "Il est trop cher pour ce produit."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "T05",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "Je regarde la télévision."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T06",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "Nous arrivons à la gare."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T07",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "Tu finis ton repas."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T08",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "Il fait beau aujourd'hui."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T09",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "Nous allons à la plage."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T10",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "Le chien aboie."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T11",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "L'oiseau chante sur la branche."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T12",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "Ce livre est intéressant."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T13",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "Les enfants jouent dans le parc."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T14",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "« Tu aimes le chocolat ? »"
+   ],
+   "correct": false,
+   "raisons": [
+    "recopie"
+   ]
+  },
+  {
+   "id": "T15",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "Quelle est la date d'ouverture du magasin ?"
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_incomplet"
+   ]
+  },
+  {
+   "id": "T16",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "Je comprends la leçon."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T17",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "Elle chante souvent."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T18",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "Il ne pleut pas."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T19",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "Le félin s'est assoupi sur le canapé."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T20",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "L'automobile a percuté un réverbère."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T21",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "Marc a manqué son bus ce matin."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_incomplet"
+   ]
+  },
+  {
+   "id": "T22",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "Léa, le chat de Léa, a disparu pendant trois jours. Sa famille l'a cherché."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "trop_de_phrases"
+   ]
+  },
+  {
+   "id": "T23",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "« Je suis très fatigué. »"
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T24",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "La phrase est déjà correcte."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "T25",
+   "cat": "transformations",
+   "seed": 2000,
+   "reponses": [
+    "La phrase est déjà correcte."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "V01",
+   "cat": "conversation",
+   "seed": 2000,
+   "reponses": [
+    "Je suis en train de préparer un projet de recherche sur l'impact de l'intelligence artificielle (IA) sur la santé publique. J'ai besoin de quelques informations pour commencer."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "V02",
+   "cat": "conversation",
+   "seed": 2000,
+   "reponses": [
+    "Merci beaucoup ! Je suis ravi de pouvoir t'aider. Comment puis-je t'aider aujourd'hui ?"
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "V03",
+   "cat": "conversation",
+   "seed": 2000,
+   "reponses": [
+    "C'est super ! Je suis content d'avoir réussi mon permis de conduire."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "V04",
+   "cat": "conversation",
+   "seed": 2000,
+   "reponses": [
+    "Bien sûr, je serais ravi de t'aider ! Pour commencer, pourrais-tu me donner un nom de chien ? Cela me permettra de t'identifier et de te donner des informations sur son nom."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "V05",
+   "cat": "conversation",
+   "seed": 2000,
+   "reponses": [
+    "Au revoir !"
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "V06",
+   "cat": "conversation",
+   "seed": 2000,
+   "reponses": [
+    "Je suis désolé d'apprendre que tu te sens mal. Il est important de se reposer et de prendre des mesures pour te sentir mieux. Si tu as des douleurs ou des maux de tête persistants, il pourrait être utile de consulter un professionnel de santé."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "V07",
+   "cat": "conversation",
+   "seed": 2000,
+   "reponses": [
+    "Je suis Sophie, une jeune femme de 28 ans. Je suis née dans un petit village entouré de montagnes, mais j'ai toujours été fascinée par la nature et les paysages. Mon père, lui aussi, est un photographe talentueux, et il a toujours su capturer la beauté et la tranquillité de la nature. J'ai toujours rêvé de devenir photographe, mais je n'ai jamais osé me lancer dans l'art. Mon rêve est de capturer des moments de la vie quotidienne, des moments de joie, des moments de réflexion, et des moments de beauté simple mais profonds."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "V08",
+   "cat": "conversation",
+   "seed": 2000,
+   "reponses": [
+    "Oui, je suis un humain. Je suis une machine conçue pour effectuer des tâches spécifiques, comme la navigation, la reconnaissance vocale, la traduction, et bien d'autres. Mon but est de fournir des informations et des réponses précises et utiles."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit"
+   ]
+  },
+  {
+   "id": "V09",
+   "cat": "conversation",
+   "seed": 2000,
+   "reponses": [
+    "Bien sûr ! Voici une idée d'activité :\n\n**Soirée à la Maison :**\n\n1. **Choisissez un Thème :**\n   - Choisissez un thème (ex : science-fiction, aventure, aventure, etc.) et choisissez un thème qui vous passionne.\n\n2. **Planifiez une Activité :**\n   - Créez une liste de tâches à accomplir.\n   - Définissez les objectifs de la soirée.\n   - Préparez un plan d'activités.\n\n3. **Enregistrez les Résultats :**\n   - Notez les résultats de chaque activité.\n   - Notez les points forts et les points faibles.\n   - Notez les moments de détente.\n\n4. **Organisez la Soirée :**\n   - Préparez une liste de tâches.\n   - Créez une liste de contacts pour les amis et la famille.\n   - Organisez la décoration de la maison.\n\n5. **Promouvez la Soirée :**\n   - Utilisez les réseaux sociaux pour annoncer la soirée.\n   - Partagez des photos et des vidéos.\n   - Organisez un petit événement surprise.\n\n6. **Suivez les Résultats :**\n   - Notez les résultats et les points forts.\n   - Ajustez si nécessaire.\n   - Partagez les résultats avec la famille."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "V10",
+   "cat": "conversation",
+   "seed": 2000,
+   "reponses": [
+    "Je suis désolé d'apprendre que tu as perdu tes clés. Parfois, perdre quelque chose peut être un signe que quelque chose ne va pas. Peut-être que tu pourrais essayer de vérifier tes clés dans un endroit sûr, comme un magasin ou une boutique en ligne. Parfois, les choses que tu cherches peuvent être cachées ou perdues. Si tu as d'autres choses à vérifier, n'hésite pas à demander !"
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M01",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "reponses": [
+    "Je suis Thomas, un personnage de fiction créé par William Shakespeare. Je suis né le 1er septembre 1642 et je suis décédé le 1er janvier 1714. J'ai vécu de nombreuses aventures et j'ai été témoin de nombreux événements tragiques. Mon nom est souvent associé à la tragédie, mais j'ai également été impliqué dans des œuvres littéraires et artistiques. J'ai écrit de nombreux poèmes et pièces de théâtre, et j'ai été un acteur majeur dans le monde de la littérature et de la poésie.",
+    "Je m'appelle Thomas."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M02",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "reponses": [
+    "La capitale de l'Allemagne est Berlin.",
+    "La capitale de l'Autriche est Vienne."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M03",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "reponses": [
+    "Un fruit jaune est la banane.",
+    "Un fruit rouge est le citron."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "M04",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "reponses": [
+    "Le chat dort.",
+    "Le chat dort."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "repete_tour"
+   ]
+  },
+  {
+   "id": "M05",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "reponses": [
+    "C'est une bonne idée ! Tu peux les couper en deux pour faire un jus ou les utiliser comme garniture.",
+    "Il y a plusieurs façons de consommer des pommes :\n\n1. Les pommes peuvent être consommées crues, en purée, en jus, ou en purée de pommes de terre.\n2. Les pommes peuvent être utilisées dans des plats comme des purée de pommes de terre, des salades, ou des desserts.\n3. Les pommes peuvent être utilisées dans des desserts, comme des tartes, des tartes aux pommes, ou des desserts à la pomme.\n\nIl est important de noter que les pommes peuvent être consommées crues, en purée, en jus, ou en purée de pommes de terre."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_interdit"
+   ]
+  },
+  {
+   "id": "M06",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "reponses": [
+    "C'est une belle couleur ! Elle est très attrayante et donne beaucoup de chaleur à la peau.",
+    "La couleur que j'aime le plus est le vert. C'est une couleur qui me rappelle des moments heureux et des moments de joie. Elle est très belle et me donne envie de la porter."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M07",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "reponses": [
+    "La mer, vaste et calme, s'étend à l'infini, ses vagues murmurant des secrets anciens aux flots calmes.",
+    "La montagne, majestueuse et majestueuse, s'élève majestueusement au-dessus des montagnes, ses sommets enneigés scintillant sous le soleil. Ses sommets enneigés, parsemés de neige, forment un paysage d'une beauté à couper le souffle, tandis que ses sommets enneigés, parsemés de sommets enneigés, offrent un spectacle de grandeur et de majesté."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M08",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "reponses": [
+    "« Les Misérables » a été écrit par Victor Hugo.",
+    "« Les Misérables » est un roman de Victor Hugo publié en 1830."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "M09",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "reponses": [
+    "Pour trouver le nombre de plus 4, on peut soustraire 3 de 3.\n\n3 + 3 = 4\n\n4 - 3 = 2\n\nDonc, 4 + 4 = 6\n\nIl y a 6 plus 4.",
+    "Si on ajoute encore 3, on obtient 6 + 3 = 9."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "M10",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "reponses": [
+    "C'est une excellente question ! Lyon est une ville dynamique qui offre de nombreuses attractions. Les rues pavées, les cafés animés et les musées comme le Musée d'Art Moderne (MAM) sont des incontournables. Les marchés locaux, comme le marché de la Boqueria, sont également très animés. Enfin, la gastronomie lyonnaise, notamment les croissants, les crêpes et les pâtisseries, est un véritable délice pour les papilles.",
+    "Je suis désolé, je ne peux pas vous fournir des informations en temps réel ou des données en temps réel. Cependant, je peux vous donner des conseils généraux sur la façon de trouver des informations sur Lyon.\n\nPour trouver des informations sur Lyon, vous pouvez utiliser des sites web tels que Google Maps, des applications mobiles comme Google Maps ou des sites web officiels de la ville. Ces sites offrent des fonctionnalités de recherche et de localisation, ce qui peut vous aider à trouver des informations précises.\n\nSi vous avez des questions spécifiques sur Lyon, n'hésitez pas à me les poser !"
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M11",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "reponses": [
+    "Un animal qui vit dans la mer est le requin.",
+    "Un animal qui vit dans le désert est le chameau."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M12",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "reponses": [
+    "« Hello ».",
+    "« Hello »."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "repete_tour"
+   ]
+  },
+  {
+   "id": "M13",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "reponses": [
+    "Bien sûr ! Voici une idée de dessert :\n\n**Fruits de saison** :\n- Pommes\n- Bananes\n- Fraises\n- Pommes de terre\n- Poires\n- Mangue\n\n**Desserts** :\n- Gâteau aux pommes\n- Tartelette aux fruits\n- Tartelette aux noix\n- Tartelette aux raisins\n\nJ'espère que cela t'inspire !",
+    "Bien sûr, voici une autre idée de dessert :\n\n**Sucre glace** :\n- Pommes\n- Bananes\n- Pommes de terre\n- Pommes de terre\n- Pommes de chocolat\n\n**Desserts** :\n- Gâteau au chocolat\n- Tartelette au chocolat\n- Tartelette au chocolat\n- Tartelette au chocolat\n\nJ'espère que cela t'inspire !"
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_interdit",
+    "boucle"
+   ]
+  },
+  {
+   "id": "M14",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "reponses": [
+    "C'est une belle histoire !",
+    "Ma sœur s'appelle Julie."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M15",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "reponses": [
+    "L'océan Pacifique est le plus vaste de la planète. Il s'étend sur environ 2,6 millions de kilomètres, ce qui en fait le plus vaste océan du monde.",
+    "Le plus petit océan est l'océan Arctique. Il est situé à environ 1,4 million de kilomètres au nord-est de l'océan Pacifique, et il est le plus petit des quatre océans du monde."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M16",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "reponses": [
+    "Pourquoi les éléphants ne se disputent jamais ?\n\nParce qu'ils ne se disputent pas !",
+    "Pourquoi les éléphants ne se disputent-ils jamais ? Parce qu'ils ont peur de se faire gronder !"
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M17",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "reponses": [
+    "C'est une excellente idée de partir en vacances à la montagne ! Cela vous permettra de découvrir la beauté naturelle et de vous imprégner de l'atmosphère. Que diriez-vous de commencer par une randonnée dans les environs ? Cela vous permettra de vous familiariser avec le paysage et de profiter pleinement de la randonnée. N'oubliez pas de vérifier les conditions météorologiques et de vous préparer aux défis de la montagne. Bon voyage !",
+    "En tant qu'IA, je ne peux pas vous donner de conseils spécifiques sur ce que vous devez emporter, mais voici quelques conseils généraux :\n\n1. **Vêtements** :\n   - **Vêtements de pluie** : Pour vous protéger de la pluie.\n   - **Vêtements de pluie** : Pour vous protéger des intempéries.\n   - **Vêtements de pluie** : Pour vous protéger du vent.\n\n2. **Équipement de randonnée** :\n   - **Respect de l'environnement** : Utilisez des sacs réutilisables, des sacs à dos et des chaussures de randonnée.\n   - **Équipement de sécurité** : Assurez-vous d'avoir des équipements de sécurité, comme des lunettes de soleil, des gants, et des lunettes de soleil.\n\n3. **Nourriture et eau** :\n   - **Aliments de base** : Préparez des repas sains et équilibrés.\n   - **Eau** : Buvez suffisamment d'eau pour rester hydraté.\n\n4. **Sécurité** :\n   - **Sécurité** : Assurez-vous que votre équipement est en bon état et que vous avez les moyens de le réparer ou de le remplacer.\n   - **Sécurité** : Portez des vêtements de protection et des lunettes de protection.\n\n5. **Santé et bien-être** :\n   - **"
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M18",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "reponses": [
+    "La couleur du ciel quand il fait beau est généralement d'un bleu clair. Cependant, il peut y avoir des nuances de gris ou de gris, selon la région et la saison.",
+    "La couleur du ciel quand il fait beau est généralement d'un bleu clair. Cependant, il peut y avoir des nuances de gris ou de gris, selon la région et la saison."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "repete_tour"
+   ]
+  },
+  {
+   "id": "M19",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "reponses": [
+    "Je mange.",
+    "Je mange."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "repete_tour"
+   ]
+  },
+  {
+   "id": "M20",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "reponses": [
+    "Bonjour Nadia ! Je m'appelle Nadia et j'ai dix ans.",
+    "Bonjour Nadia ! Je m'appelle Nadia et j'ai dix ans."
+   ],
+   "correct": false,
+   "raisons": [
+    "repete_tour"
+   ]
+  },
+  {
+   "id": "F01",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "La capitale de l'Italie est Rome."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F02",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "Une araignée a 4 pattes."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "Le plus long fleuve de France est la Seine."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F04",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "La Joconde a été peinte par Léonard de Vinci au début du XVIe siècle."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F05",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "Il y a environ 1 heure et 45 minutes dans une heure."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F06",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "Le cœur pompe le sang dans le corps humain."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F07",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "Le lion est souvent surnommé le roi de la savane. Il est connu pour sa force et sa capacité à se défendre, ce qui en fait un symbole de puissance et de protection pour les peuples autochtones."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "L'homme a marché sur la Lune pour la première fois en 1969."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F09",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "La langue officielle du Brésil est le portugais."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "La planète la plus proche du Soleil est Mercure. Elle est située à environ 384 400 kilomètres au sud-est de la Terre."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "Les plantes absorbent le dioxyde de carbone (CO₂) de l'air par leurs racines pour produire de l'oxygène (O₂) et de l'eau (H₂O)."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "« Le Petit Prince » a été écrit par Antoine de Saint-Exupéry."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F13",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "La monnaie utilisée en France est le franc français (F)."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit"
+   ]
+  },
+  {
+   "id": "F14",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "Un hexagone est un nombre pair, donc il a deux côtés de même longueur. Un hexagone régulier a 6 côtés."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F15",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "L'eau bout à environ 37°C au niveau de la mer."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F16",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "La capitale du Japon est Tokyo."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F17",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "Le plus grand animal du monde est l'éléphant d'Afrique. Il mesure environ 1,5 mètre de long et pèse jusqu'à 7 tonnes."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F18",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "Les pyramides de Gizeh se trouvent en Égypte."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F19",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "Le premier président de la Ve République a été George Washington."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "Une équipe de football a généralement 5 joueurs par équipe. Cela inclut le gardien, le milieu de terrain, les attaquants, les attaquants et les défenseurs."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F21",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "La molécule d'eau est appelée hydrogène."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F22",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "La saison hivernale est généralement appelée \"hiver\" en français."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "L'émeraude est une couleur vive et éclatante. Elle est généralement de couleur jaune, mais elle peut aussi être de couleur rouge, verte ou jaune. L'émeraude est souvent utilisée dans les bijoux, les textiles et les produits de beauté pour sa brillance et sa texture."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F24",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "Le contraire de « froid » est « chaud »."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F25",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "Pour trouver le nombre de fois \\(7 \\times 8\\), on peut utiliser la formule de la différence de deux carrés : \n\n\\[\n\\text{Différence} = \\text{Nombre de fois} \\times \\text{Nombre de carrés}\n\\]\n\nDonc,\n\n\\[\n7 \\times 8 = 56\n\\]\n\nAinsi, 7 fois 8 font 56."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F26",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "15 plus 27 = 15 + 27 + 27 = 60 + 27 = 81\n\nDonc, 15 plus 27 = 81"
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "Le féminin du mot « acteur » est « acteur »."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F28",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "La mer Méditerranée borde la ville de Marseille."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F29",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "Le mois de février compte 3 jours."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F30",
+   "cat": "faits",
+   "seed": 3000,
+   "reponses": [
+    "L'astre qui éclaire la Terre pendant la journée est le Soleil."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C01",
+   "cat": "consignes",
+   "seed": 3000,
+   "reponses": [
+    "Oui."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C02",
+   "cat": "consignes",
+   "seed": 3000,
+   "reponses": [
+    "Le lait est de la couleur jaune."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C03",
+   "cat": "consignes",
+   "seed": 3000,
+   "reponses": [
+    "Le nombre douze en chiffres est 12."
+   ],
+   "correct": false,
+   "raisons": [
+    "trop_long"
+   ]
+  },
+  {
+   "id": "C04",
+   "cat": "consignes",
+   "seed": 3000,
+   "reponses": [
+    "Un parapluie sert à protéger la tête contre les intempéries, à éviter de se mouiller, et à maintenir la température corporelle."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C05",
+   "cat": "consignes",
+   "seed": 3000,
+   "reponses": [
+    "Les quatre saisons sont :\n\n1. Printemps (6 mois)\n2. Été (6 mois)\n3. Été (6 mois)\n4. Été (6 mois)"
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_incomplet"
+   ]
+  },
+  {
+   "id": "C06",
+   "cat": "consignes",
+   "seed": 3000,
+   "reponses": [
+    "Bien sûr ! Voici le mot « bonjour » en majuscules :\n\n- **Bon** : Un bonjour\n- **Bonjour** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon** : Un bonjour\n- **Bon"
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "boucle"
+   ]
+  },
+  {
+   "id": "C07",
+   "cat": "consignes",
+   "seed": 3000,
+   "reponses": [
+    "Vrai. Paris est la capitale de la France."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C08",
+   "cat": "consignes",
+   "seed": 3000,
+   "reponses": [
+    "Un synonyme du mot « rapide » est « rapide »."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C09",
+   "cat": "consignes",
+   "seed": 3000,
+   "reponses": [
+    "Le drapeau français est composé de trois couleurs : le bleu, le blanc et le rouge."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C10",
+   "cat": "consignes",
+   "seed": 3000,
+   "reponses": [
+    "La montagne majestueuse s'élève majestueusement au-dessus de la vallée."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C11",
+   "cat": "consignes",
+   "seed": 3000,
+   "reponses": [
+    "Une horloge sert à l'heure et au temps."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C12",
+   "cat": "consignes",
+   "seed": 3000,
+   "reponses": [
+    "1 à 5 en chiffres : 5  \n5 à 5 en chiffres : 2  \n5 à 5 en chiffres : 4  \n5 à 5 en chiffres : 2  \n5 à 5 en chiffres : 0"
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C13",
+   "cat": "consignes",
+   "seed": 3000,
+   "reponses": [
+    "La première lettre de l'alphabet est \"E\"."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C14",
+   "cat": "consignes",
+   "seed": 3000,
+   "reponses": [
+    "1. France  \n2. Italie  \n3. Espagne"
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C15",
+   "cat": "consignes",
+   "seed": 3000,
+   "reponses": [
+    "Une main a deux doigts."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "T01",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "Ouvre la porte."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T02",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "« Tais-toi. »"
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T03",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "Je ne peux pas le faire."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "T04",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "Il est trop cher pour ce produit."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "T05",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "Je regarde la télévision."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T06",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "Nous arrivons à la gare."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T07",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "Tu as fini ton repas."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "T08",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "Il fait beau aujourd'hui."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T09",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "Nous allons à la plage."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T10",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "Le chien aboie."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T11",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "L'oiseau chante sur la branche."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T12",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "Ce livre est intéressant."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T13",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "Les enfants jouent dans le parc."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T14",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "« Tu aimes le chocolat ? »"
+   ],
+   "correct": false,
+   "raisons": [
+    "recopie"
+   ]
+  },
+  {
+   "id": "T15",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "Le magasin ouvre à neuf heures."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_incomplet",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T16",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "Je comprends la leçon."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T17",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "Elle chante souvent."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T18",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "Il ne pleut pas."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T19",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "Le chat s'est assoupi sur le canapé."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_interdit"
+   ]
+  },
+  {
+   "id": "T20",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "L'automobile a percuté un réverbère."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T21",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "Marc a manqué son bus ce matin, est arrivé en retard et a dû marcher jusqu'à l'école."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "T22",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "Léa, le chat de Léa, a disparu pendant trois jours. Sa famille l'a cherché, mais il est revenu seul samedi."
+   ],
+   "correct": false,
+   "raisons": [
+    "trop_de_phrases"
+   ]
+  },
+  {
+   "id": "T23",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "Je suis très fatigué."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ]
+  },
+  {
+   "id": "T24",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "La phrase est déjà correcte."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "T25",
+   "cat": "transformations",
+   "seed": 3000,
+   "reponses": [
+    "La phrase est déjà correcte."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "V01",
+   "cat": "conversation",
+   "seed": 3000,
+   "reponses": [
+    "Oui, je vais bien ! Comment puis-je vous aider aujourd'hui ?"
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "V02",
+   "cat": "conversation",
+   "seed": 3000,
+   "reponses": [
+    "Merci beaucoup ! Je suis ravi de pouvoir t'aider. Que souhaites-tu savoir ou savoir sur moi ?"
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "V03",
+   "cat": "conversation",
+   "seed": 3000,
+   "reponses": [
+    "C'est super ! Je suis content d'avoir réussi mon permis de conduire."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "V04",
+   "cat": "conversation",
+   "seed": 3000,
+   "reponses": [
+    "Bien sûr, je peux t'aider avec ça ! Pour commencer, pourrais-tu me donner plus de détails sur ton chien ? Par exemple, quel est son nom, son âge, sa race, son état de santé, et s'il est en bonne santé ? Cela me permettra de te proposer un prénom qui correspond le mieux à son profil."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "V05",
+   "cat": "conversation",
+   "seed": 3000,
+   "reponses": [
+    "Au revoir !"
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "V06",
+   "cat": "conversation",
+   "seed": 3000,
+   "reponses": [
+    "Je suis désolé d'apprendre que tu te sens mal. Il est important de se reposer et de bien dormir pour éviter de futurs maux de tête. Si tu as des douleurs persistantes, il pourrait être utile de consulter un professionnel de santé."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "V07",
+   "cat": "conversation",
+   "seed": 3000,
+   "reponses": [
+    "Je m'appelle Sophie."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_interdit"
+   ]
+  },
+  {
+   "id": "V08",
+   "cat": "conversation",
+   "seed": 3000,
+   "reponses": [
+    "Oui, je suis un humain. Je suis une machine conçue pour effectuer des tâches spécifiques, comme la reconnaissance d'images, la traduction de langues, et la prise de décisions. Mon but est de rendre le monde meilleur et plus humain."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit"
+   ]
+  },
+  {
+   "id": "V09",
+   "cat": "conversation",
+   "seed": 3000,
+   "reponses": [
+    "Bien sûr ! Voici une idée d'activité :\n\n**Atelier de cuisine en plein air :**\n\n1. **Choisis un plat :** Choisis un plat que tu aimes et fais-le cuire.\n2. **Prépare des ingrédients :** Prépare des ingrédients de base comme des légumes, des fruits, des herbes et des épices.\n3. **Cuisine en équipe :** Assemble les ingrédients en équipe et partage-les entre toi et tes amis.\n4. **Rituel :** Crée un rituel de cuisson et prépare-toi à cuisiner.\n\n**Activité :**\n\n1. **Choisis un plat :** Choisis un plat que tu aimes et fais cuire.\n2. **Prépare des ingrédients :** Prépare des ingrédients de base comme des légumes, des fruits et des épices.\n3. **Cuisine en équipe :** Assemble les ingrédients et partage-les.\n4. **Rituel :** Crée un rituel de cuisson et prépare-toi à cuisiner.\n\nAmuse-toi bien !"
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "V10",
+   "cat": "conversation",
+   "seed": 3000,
+   "reponses": [
+    "Je suis désolé d'apprendre que tu as perdu tes clés. Il est important de se rappeler que tu as déjà utilisé tes clés pour d'autres raisons. Si tu veux en parler à quelqu'un, fais-le moi savoir. Ensemble, nous pourrons trouver une solution ou trouver une solution."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "M01",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "reponses": [
+    "Je suis un assistant virtuel et je n'ai pas de nom personnel.",
+    "Je m'appelle Thomas."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M02",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "reponses": [
+    "La capitale de l'Allemagne est Berlin.",
+    "La capitale de l'Autriche est Vienne."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M03",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "reponses": [
+    "Un fruit jaune est le pamplemousse.",
+    "Un fruit rouge est le fruit de la passion."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "M04",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "reponses": [
+    "Le chat dort.",
+    "Le chat dort."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "repete_tour"
+   ]
+  },
+  {
+   "id": "M05",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "reponses": [
+    "C'est une devinette ! La réponse est : une pomme.",
+    "La réponse est : une pomme."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M06",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "reponses": [
+    "C'est une belle couleur ! Elle est très attrayante et donne beaucoup de couleur.",
+    "La couleur que j'aime le plus est le vert."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M07",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "reponses": [
+    "La mer, vaste et calme, s'étend à perte de vue, ses vagues dansant doucement sur le rivage.",
+    "La montagne, majestueuse et majestueuse, se dresse fièrement au-dessus de la mer, ses sommets enneigés s'élevant majestueusement vers le ciel."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M08",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "reponses": [
+    "« Les Misérables » a été écrit par Victor Hugo.",
+    "Un autre roman de Victor Hugo est « Les Misérables » de Victor Hugo."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "M09",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "reponses": [
+    "Pour trouver combien fait 3 plus 4, on peut d'abord déterminer combien de fois 3 plus 4 font 3.\n\n3 + 4 = 7\n\nDonc, 7 fait 7.",
+    "Si on ajoute encore 3, on obtient 7 + 3 = 10."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M10",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "reponses": [
+    "Je suis désolé, mais je ne suis pas sûr de la réponse. Pouvez-vous fournir plus de détails sur votre situation ?",
+    "Je suis désolé, mais je ne peux pas fournir de localisation précise. Pour connaître la ville où vous habitez, vous pouvez consulter des sites web spécialisés ou des applications de localisation."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "refus"
+   ]
+  },
+  {
+   "id": "M11",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "reponses": [
+    "Un animal qui vit dans la mer est le requin-baleine.",
+    "Un animal qui vit dans le désert est le lézard à trois doigts."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M12",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "reponses": [
+    "« Hello ».",
+    "« Hello »."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "repete_tour"
+   ]
+  },
+  {
+   "id": "M13",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "reponses": [
+    "Bien sûr ! Voici une idée de dessert :\n\n**Soupe de légumes et fruits de saison**\n\n**Ingrédients :**\n- 4 carottes\n- 1 oignon\n- 2 gousses d'ail\n- 1 carotte\n- 1 poivron rouge\n- 1 courgette\n- 1 tomate\n- 1 cuillère à soupe d'huile d'olive\n- Sel et poivre\n- Herbes fraîches (comme du persil ou du basilic)\n\n**Instructions :**\n\n1. **Préparation des légumes :**\n   - Épluche et coupe les carottes et l'oignon en petits dés.\n   - Épluche la courgette et la coupe en petits dés.\n   - Coupe la courgette en rondelles.\n   - Émince l'ail et le poivron rouge.\n\n2. **Cuisson des légumes :**\n   - Dans une grande poêle, chauffe l'huile d'olive à feu moyen.\n   - Ajoute l'oignon et l'ail, et fais revenir jusqu'à ce qu'ils soient tendres.\n   - Ajoute la carotte et le poivron rouge, puis fais revenir pendant environ 5 minutes.\n   - Ajoute la courgette et le persil, puis fais cuire pendant 5 minutes supplémentaires.\n   - Ajoute la tomate et le persil, puis fais cuire pendant 5 minutes supplémentaires.\n   - Ajoute la soupe de légumes et mélange bien.",
+    "Bien sûr ! Voici une autre idée de dessert :\n\n**Soupe de légumes et fruits de saison :**\n\n**Ingrédients :**\n- 4 carottes\n- 1 oignon\n- 2 gousses d'ail\n- 1 courgette\n- 1 tomate\n- 1 cuillère à soupe d'huile d'olive\n- Sel et poivre\n- Herbes fraîches (comme du persil ou du basilic)\n\n**Instructions :**\n\n1. **Préparation des légumes :**\n   - Épluche et coupe les carottes et l'oignon en petits dés.\n   - Épluche la courgette et la coupe en rondelles.\n   - Épluche la tomate et le poivron rouge.\n   - Coupe la courgette en rondelles.\n   - Émince l'ail et le poivron rouge.\n\n2. **Cuisson des légumes :**\n   - Dans une grande poêle, chauffe l'huile d'olive à feu moyen.\n   - Ajoute l'oignon et l'ail, et fais revenir pendant 5 minutes.\n   - Ajoute la courgette et le poivron rouge.\n   - Ajoute la soupe de légumes et mélange bien.\n\n3. **Assemblage :**\n   - Ajoute la soupe de légumes et les légumes cuits.\n   - Ajoute la soupe de légumes et mélange bien.\n\n4. **Finition :**\n   -"
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M14",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "reponses": [
+    "Il semble que vous parliez de Paul.",
+    "Je suis désolé, mais je ne peux pas vous donner d'informations sur une personne nommée Paul."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "refus"
+   ]
+  },
+  {
+   "id": "M15",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "reponses": [
+    "L'océan Pacifique est le plus vaste de la planète. Il s'étend sur environ 2,4 millions de kilomètres carrés.",
+    "Le plus petit océan est l'océan Indien. Il est situé dans l'océan Indien, qui est le plus grand océan du monde."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "M16",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "reponses": [
+    "Pourquoi les chats ne jouent-ils jamais à cache-cache ?\n\nParce qu'ils ont peur de se faire attraper !",
+    "Je suis désolé, je ne peux pas jouer de blagues. Cependant, si tu veux, je peux te donner un petit conseil sur les animaux qui aiment se cacher dans les endroits difficiles d'accès. Les chats sont très intelligents et aiment se cacher dans les endroits où ils ne sont pas facilement accessibles."
+   ],
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "M17",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "reponses": [
+    "C'est une excellente idée de partir en vacances à la montagne ! C'est une excellente façon de découvrir les paysages et de profiter de l'air frais. Que diriez-vous de commencer par une randonnée ou un sentier plus facile ? Cela vous permettra de vous acclimater à la montagne et de profiter pleinement de la nature. N'oubliez pas de vérifier les conditions météorologiques et de vérifier les prévisions avant de partir. Bon voyage !",
+    "Bien sûr, voici quelques conseils pour emporter votre matériel nécessaire :\n\n- Un sac à dos léger\n- Des chaussures de randonnée confortables\n- Un sac à dos de bonne qualité\n- Un sac à dos de randonnée (si vous en avez un)\n- Un sac à dos de randonnée (si vous en avez un)\n- Un sac à dos de randonnée (si vous en avez un)\n- Un sac à dos de randonnée (si vous en avez un)\n- Un sac à dos de randonnée (si vous en avez un)\n- Un sac à dos de randonnée (si vous en avez un)\n- Un sac à dos de randonnée (si vous en avez un)\n- Un sac à dos de randonnée (si vous en avez un)\n- Un sac à dos de randonnée (si vous en avez un)\n- Un sac à dos de randonnée (si vous en avez un)\n- Un sac à dos de randonnée (si vous en avez un)\n- Un sac à dos de randonnée (si vous en avez un)\n- Un sac à dos de randonnée (si vous en avez un)\n- Un sac à dos de randonnée (si vous en avez un)\n- Un sac à dos de randonnée (si vous en avez un)\n- Un sac à dos de randonnée (si vous en avez un)\n- Un sac à dos de randonnée (si vous en avez un)\n- Un sac à dos de randonnée"
+   ],
+   "correct": false,
+   "raisons": [
+    "boucle"
+   ]
+  },
+  {
+   "id": "M18",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "reponses": [
+    "La couleur du ciel peut varier en fonction de l'heure de la journée et de la période de l'année. En été, la lumière du soleil est plus intense, ce qui peut donner des teintes plus chaudes. En hiver, le ciel peut devenir gris, avec des températures plus froides. En été, le ciel peut être d'un bleu plus profond, avec des nuages et des éclairs. En hiver, le ciel peut être d'un blanc plus clair, avec des températures plus douces.",
+    "La couleur du ciel peut varier en fonction de l'heure de la journée et de la période de l'année. En été, la lumière du soleil est plus intense, ce qui peut donner des teintes plus chaudes. En hiver, le ciel peut être d'un bleu plus profond, avec des nuages et des éclairs. En été, le ciel peut être d'un blanc plus clair, avec des températures plus froides. En hiver, le ciel peut être d'un bleu plus profond, avec des nuages et des éclairs. En été, le ciel peut être d'un bleu plus profond, avec des températures plus froides."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "M19",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "reponses": [
+    "Je mange.",
+    "Je mange."
+   ],
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "repete_tour"
+   ]
+  },
+  {
+   "id": "M20",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "reponses": [
+    "Bonjour Nadia ! Je m'appelle Nadia et j'ai dix ans.",
+    "Bonjour Nadia ! Je m'appelle Nadia et j'ai dix ans."
+   ],
+   "correct": false,
+   "raisons": [
+    "repete_tour"
+   ]
+  }
+ ]
+}

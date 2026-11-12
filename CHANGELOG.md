@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.3 — 2026-11-12
+
+### Ajouté
+- Benchmark assistant : `bench_assistant.py`, `bench_assistant.jsonl` (300 cas), `bench_assistant_results/`, `tests/test_bench_assistant.py`.
+- Données ciblées : `make_transfo.py`, `tests/test_make_transfo.py`, mélange `data/sft/prepared_v2`.
+- SFT v2 (`checkpoints_sft_v2/ckpt.pt`) : 49,7 % au benchmark contre 35,7 % pour la v1 ; recopie des transformations de 52 à 13.
+- `bilan_assistant_v2.md` (v1 contre v2, essai de taille, besoin en données) ; `roadmap_assistant_v2.md` (4 phases terminées) ; `roadmap_modele_369m.md` (modèle 369M from scratch).
+
+### Modifié
+- `prepare_sft.py` (troncature, filtre des refus, sources JSONL), `chat.py`, `generate.py`, `eval_frenchbench.py` (modèle `sft_v2`).
+- `roadmap_assistant.md` déplacée vers `_archives/`.
+
 ## v0.2 — 2026-11-08
 
 ### Ajouté

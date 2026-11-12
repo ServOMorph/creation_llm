@@ -13,11 +13,14 @@ from prepare_sft import (  # noqa: E402
     MAX_LEN,
     SFT_OUT,
     build_example,
+    fitting_turns,
     has_reserved,
+    is_refusal,
     is_valid,
     load_holdout,
     load_split,
     prepare,
+    source_files,
     write_split,
 )
 
@@ -87,13 +90,70 @@ def test_prepare_filters_and_splits(tok, tmp_path):
     write_parquet(tmp_path / "luth_b-00000-of-00001.parquet", [conv("Question numéro 7 ?", "Doublon inter-sources.")])
     files = {"a": [tmp_path / "luth_a-00000-of-00001.parquet"], "b": [tmp_path / "luth_b-00000-of-00001.parquet"]}
     splits, stats = prepare(files, tok, max_len=100, val_size=5, holdout={"Scellée ?"}, batch=7)
-    assert stats["a"] == {"lignes": 35, "invalides": 0, "balises": 1, "trop_longs": 1, "doublons": 2, "holdout": 1, "gardés": 30}
+    assert stats["a"] == {"lignes": 35, "invalides": 0, "balises": 1, "refus": 0, "trop_longs": 1, "tronqués": 0, "doublons": 2, "holdout": 1, "gardés": 30, "répétition": 1, "train": 25}
     assert stats["b"]["doublons"] == 1 and stats["b"]["gardés"] == 0
     assert len(splits["val"]) == 5 and len(splits["train"]) == 25
     assert not {ex[1] for ex in splits["val"]} & {ex[1] for ex in splits["train"]}
     assert all(len(ex[2]) <= 100 for split in splits.values() for ex in split)
     again, _ = prepare(files, tok, max_len=100, val_size=5, holdout={"Scellée ?"}, batch=3)
     assert [ex[1] for ex in again["val"]] == [ex[1] for ex in splits["val"]]
+
+
+def test_is_refusal():
+    assert is_refusal(conv("Météo ?", "Je suis désolé, mais je ne peux pas accéder à internet."))
+    assert is_refusal(conv("Q ?", "En tant que modèle de langage, je n'ai pas d'avis."))
+    assert not is_refusal(conv("Q ?", "Voici la réponse : je ne peux pas dire mieux que Paris."))
+    assert not is_refusal(conv("Désolé, je ne peux pas venir.", "Ce n'est pas grave."))
+
+
+@needs_tok
+def test_prepare_drops_refusals(tok, tmp_path):
+    data = [conv("Météo ?", "Désolé, je ne peux pas accéder aux prévisions."), conv("Capitale ?", "Paris.")]
+    write_parquet(tmp_path / "luth_a-00000-of-00001.parquet", data)
+    files = {"a": [tmp_path / "luth_a-00000-of-00001.parquet"]}
+    _, stats = prepare(files, tok, val_size=0, drop_refusals=True)
+    assert stats["a"]["refus"] == 1 and stats["a"]["gardés"] == 1
+    _, stats = prepare(files, tok, val_size=0)
+    assert stats["a"]["refus"] == 0 and stats["a"]["gardés"] == 2
+
+
+@needs_tok
+def test_prepare_reads_jsonl_extra_source(tok, tmp_path):
+    import json
+
+    path = tmp_path / "transfo.jsonl"
+    path.write_text("".join(json.dumps({"id": str(i), "messages": conv(f"Mets au pluriel : chat {i}", f"chats {i}")}, ensure_ascii=False) + "\n" for i in range(4)), encoding="utf-8")
+    files = source_files(raw=tmp_path, extra=[path])
+    assert files["transfo"] == [path]
+    splits, stats = prepare({"transfo": files["transfo"]}, tok, val_size=1)
+    assert stats["transfo"]["gardés"] == 4 and len(splits["train"]) == 3
+    splits, stats = prepare({"transfo": files["transfo"]}, tok, val_size=1, repeat={"transfo": 4})
+    assert len(splits["val"]) == 1 and len(splits["train"]) == 12 and stats["transfo"]["train"] == 12
+    val_ids = {tuple(ex[2]) for ex in splits["val"]}
+    assert not val_ids & {tuple(ex[2]) for ex in splits["train"]}
+    assert len({tuple(ex[2]) for ex in splits["train"]}) == 3
+
+
+def test_fitting_turns_keeps_complete_pairs():
+    t = [[1] * 10, [2] * 10, [3] * 10, [4] * 100]
+    assert fitting_turns(t, 23) == 2
+    assert fitting_turns(t, 22) == 0
+    assert fitting_turns(t, 1000) == 4
+
+
+@needs_tok
+def test_prepare_truncates_long_multi_turn(tok, ids, tmp_path):
+    long_answer = " ".join(["mot"] * 400)
+    data = [conv("Bonjour ?", "Salut.", "Raconte ?", long_answer), conv("Long ?", long_answer, "Et ?", "Oui.")]
+    write_parquet(tmp_path / "luth_a-00000-of-00001.parquet", data)
+    files = {"a": [tmp_path / "luth_a-00000-of-00001.parquet"]}
+    splits, stats = prepare(files, tok, max_len=100, val_size=0, truncate=True)
+    assert stats["a"]["tronqués"] == 1 and stats["a"]["trop_longs"] == 1 and stats["a"]["gardés"] == 1
+    seq, mask = splits["train"][0][2], splits["train"][0][3]
+    assert tok.decode(seq.tolist(), skip_special_tokens=False) == f"{USER}Bonjour ?{ASSISTANT}Salut.{EOT}"
+    assert seq[-1] == ids[2] and mask[-1] == 1 and len(seq) == len(mask)
+    _, stats = prepare(files, tok, max_len=100, val_size=0)
+    assert stats["a"]["trop_longs"] == 2 and stats["a"]["tronqués"] == 0
 
 
 @needs_tok

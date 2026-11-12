@@ -1,0 +1,225 @@
+{
+ "model": "gemma3:4b",
+ "vram_gio": 2.68,
+ "taille_gio": 2.68,
+ "tok_s": 62.8,
+ "json_invalides": 0,
+ "sorties_signalees": 0,
+ "rows": [
+  {
+   "type": "politesse",
+   "entree": "Ferme la fenêtre.",
+   "sortie": "Pourriez-vous fermer la fenêtre, s'il vous plaît ?",
+   "flags": []
+  },
+  {
+   "type": "politesse",
+   "entree": "Passe-moi ton stylo.",
+   "sortie": "Pourriez-vous me passer votre stylo, s'il vous plaît ?",
+   "flags": []
+  },
+  {
+   "type": "formel",
+   "entree": "T'inquiète, je m'en occupe demain.",
+   "sortie": "Ne vous inquiétez pas, je me charge de cela demain.",
+   "flags": []
+  },
+  {
+   "type": "formel",
+   "entree": "Le boss a dit que la réunion sautait.",
+   "sortie": "Le responsable a indiqué que la réunion avait été annulée.",
+   "flags": []
+  },
+  {
+   "type": "passe_compose",
+   "entree": "Nous partons en vacances et nous visitons Rome.",
+   "sortie": "Nous sommes partis en vacances et nous avons visité Rome.",
+   "flags": []
+  },
+  {
+   "type": "passe_compose",
+   "entree": "Elle descend l'escalier et elle sort.",
+   "sortie": "Elle descend l'escalier et elle est sortie.",
+   "flags": []
+  },
+  {
+   "type": "futur",
+   "entree": "Je vais au marché et j'achète des pommes.",
+   "sortie": "Jeirai au marché et achèterai des pommes.",
+   "flags": []
+  },
+  {
+   "type": "pluriel",
+   "entree": "Le cheval blanc mange une pomme rouge.",
+   "sortie": "Les chevaux blancs mangent des pommes rouges.",
+   "flags": []
+  },
+  {
+   "type": "pluriel",
+   "entree": "Mon voisin a un beau jardin.",
+   "sortie": "Mes voisins ont un beau jardin.",
+   "flags": []
+  },
+  {
+   "type": "question",
+   "entree": "Les élèves ont fini leurs devoirs.",
+   "sortie": "Les élèves ont-ils fini leurs devoirs ?",
+   "flags": []
+  },
+  {
+   "type": "question",
+   "entree": "Pierre travaille à la bibliothèque le mardi.",
+   "sortie": "Pierre travaille-t-il à la bibliothèque le mardi ?",
+   "flags": []
+  },
+  {
+   "type": "negation",
+   "entree": "Il a encore faim.",
+   "sortie": "Il n'a plus faim.",
+   "flags": []
+  },
+  {
+   "type": "simplifier",
+   "entree": "Les précipitations abondantes ont provoqué une crue de la rivière.",
+   "sortie": "Il a beaucoup plu, et ça a fait monter le niveau de la rivière.",
+   "flags": []
+  },
+  {
+   "type": "simplifier",
+   "entree": "Le médecin a prescrit un traitement antibiotique pendant une semaine.",
+   "sortie": "Le docteur a donné des médicaments pour tuer les microbes pendant sept jours.",
+   "flags": []
+  },
+  {
+   "type": "resume",
+   "entree": "Julie avait prévu un pique-nique au parc avec ses amis. Mais le matin, il s'est mis à pleuvoir très fort. Ils ont finalement mangé chez elle en regardant un film.",
+   "sortie": "Le pique-nique prévu à l'extérieur a été annulé par la pluie, et Julie et ses amis ont opté pour une soirée cinéma chez elle.",
+   "flags": []
+  },
+  {
+   "type": "resume",
+   "entree": "La mairie a décidé de fermer la piscine municipale pendant deux mois. Des travaux de rénovation sont nécessaires car le bassin fuit. Elle rouvrira en septembre.",
+   "sortie": "La mairie ferme temporairement la piscine municipale pour des travaux de rénovation urgents liés à un fuite, avec une réouverture prévue en septembre.",
+   "flags": []
+  },
+  {
+   "type": "paraphrase",
+   "entree": "Il pleut des cordes depuis ce matin.",
+   "sortie": "Il neige à verse depuis ce matin.",
+   "flags": []
+  },
+  {
+   "type": "paraphrase",
+   "entree": "Ce film m'a beaucoup ému.",
+   "sortie": "Ce long métrage a profondément touché mon âme.",
+   "flags": []
+  },
+  {
+   "type": "correction",
+   "entree": "Les fille on manger des gâteaux hier soir.",
+   "sortie": "Les filles ont mangé des gâteaux hier soir.",
+   "flags": []
+  },
+  {
+   "type": "correction",
+   "entree": "Je suis aller au cinéma avec mes ami.",
+   "sortie": "Je suis allé au cinéma avec mes amis.",
+   "flags": []
+  }
+ ],
+ "gen": [
+  {
+   "tache": "mettre une phrase à l'imparfait",
+   "exemples": [
+    {
+     "consigne": "Transformez cette phrase en utilisant l'imparfait.",
+     "entree": "Je mange une pomme.",
+     "sortie": "J’mangais une pomme."
+    },
+    {
+     "consigne": "Rédigez la phrase à l'imparfait pour décrire une action passée.",
+     "entree": "Il regarde la télévision.",
+     "sortie": "Il regardait la télévision."
+    },
+    {
+     "consigne": "Utilisez l'imparfait pour exprimer une habitude ancienne.",
+     "entree": "Elle aime le chocolat.",
+     "sortie": "Elle aimait le chocolat."
+    },
+    {
+     "consigne": "Reformulez en utilisant l’imparfait pour créer un récit du passé.",
+     "entree": "Nous allons au cinéma.",
+     "sortie": "Nous allions au cinéma."
+    },
+    {
+     "consigne": "Mettez la phrase à l'imparfait, en tenant compte du contexte.",
+     "entree": "Il est fatigué.",
+     "sortie": "Il était fatigué."
+    }
+   ],
+   "secondes": 6.6
+  },
+  {
+   "tache": "rendre une phrase plus polie",
+   "exemples": [
+    {
+     "consigne": "Reformulez la phrase pour exprimer votre désaccord de manière plus douce.",
+     "entree": "Tu as tort !",
+     "sortie": "Je ne suis pas sûr d'être d'avis contraire. Pourrais-tu m'expliquer ton point de vue ?"
+    },
+    {
+     "consigne": "Rendez la phrase plus formelle, appropriée à une conversation professionnelle.",
+     "entree": "C'est vraiment trop compliqué !",
+     "sortie": "Je trouve que cette situation est particulièrement complexe et nécessiterait davantage de clarté."
+    },
+    {
+     "consigne": "Améliorez la phrase pour éviter un ton accusateur, même si vous êtes frustré.",
+     "entree": "Tu ne fais jamais ce qu'on te demande !",
+     "sortie": "J'ai remarqué que cela n'a pas été fait comme demandé. Pourrions-nous en discuter afin de trouver une solution ?"
+    },
+    {
+     "consigne": "Utilisez un vocabulaire plus délicat pour exprimer votre opinion sur un sujet sensible.",
+     "entree": "Ce film est nul !",
+     "sortie": "Je ne suis pas totalement satisfait de cette production. Je trouve certains aspects moins réussis que d'autres."
+    },
+    {
+     "consigne": "Rédigez la phrase de manière à montrer de l'empathie avant d'exprimer une critique constructive.",
+     "entree": "Ton travail est horrible !",
+     "sortie": "Je reconnais que tu as beaucoup travaillé sur ce projet. Pourrais-tu me dire quelles difficultés tu as rencontrées et comment je pourrais t’aider à l’améliorer ?"
+    }
+   ],
+   "secondes": 8.2
+  },
+  {
+   "tache": "transformer une phrase affirmative en question",
+   "exemples": [
+    {
+     "consigne": "Transformez la phrase affirmative en question en utilisant 'Est-ce que' au début.",
+     "entree": "Il est arrivé hier soir.",
+     "sortie": "Est-ce qu'il est arrivé hier soir ?"
+    },
+    {
+     "consigne": "Modifiez l'ordre des mots pour poser une question directe.",
+     "entree": "Elle aime le chocolat noir.",
+     "sortie": "Tu aimes le chocolat noir ?"
+    },
+    {
+     "consigne": "Changez la phrase affirmative en question en utilisant 'Que'.",
+     "entree": "Nous avons vu un film intéressant.",
+     "sortie": "Que avez-vous vu ?"
+    },
+    {
+     "consigne": "Formez une question interrogative en utilisant 'Y a-t-il' et la négation.",
+     "entree": "Il y a une voiture rouge devant.",
+     "sortie": "N'y a-t-il pas une voiture rouge devant ?"
+    },
+    {
+     "consigne": "Posez la question de manière informelle, en utilisant le 'tu'.",
+     "entree": "Vous êtes étudiant, n'est-ce pas ?",
+     "sortie": "Tu es étudiant, hein ?"
+    }
+   ],
+   "secondes": 6.8
+  }
+ ]
+}

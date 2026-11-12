@@ -16,13 +16,13 @@ def build_prompt(history, question, user_id, assistant_id, eot_id, budget):
 
 
 class Chat:
-    def __init__(self, model, tok, max_new_tokens=300, temperature=0.5, top_k=50, top_p=0.95):
+    def __init__(self, model, tok, max_new_tokens=300, temperature=0.5, top_k=50, top_p=0.95, repetition_penalty=1.0):
         self.model = model
         self.tok = tok
         self.user_id = tok.token_to_id(USER)
         self.assistant_id = tok.token_to_id(ASSISTANT)
         self.budget = model.cfg.block_size - max_new_tokens
-        self.gen_kw = dict(max_new_tokens=max_new_tokens, temperature=temperature, top_k=top_k, top_p=top_p)
+        self.gen_kw = dict(max_new_tokens=max_new_tokens, temperature=temperature, top_k=top_k, top_p=top_p, repetition_penalty=repetition_penalty)
         self.history = []
         self.dropped = 0
 

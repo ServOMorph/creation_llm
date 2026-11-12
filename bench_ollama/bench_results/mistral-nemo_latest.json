@@ -1,0 +1,249 @@
+{
+ "model": "mistral-nemo:latest",
+ "vram_gio": 5.88,
+ "taille_gio": 7.36,
+ "tok_s": 16.6,
+ "json_invalides": 0,
+ "sorties_signalees": 12,
+ "rows": [
+  {
+   "type": "politesse",
+   "entree": "Ferme la fenêtre.",
+   "sortie": "",
+   "flags": [
+    "vide"
+   ]
+  },
+  {
+   "type": "politesse",
+   "entree": "Passe-moi ton stylo.",
+   "sortie": "Pourriez-vous me prêter votre stylo, s'il vous plaît ?",
+   "flags": []
+  },
+  {
+   "type": "formel",
+   "entree": "T'inquiète, je m'en occupe demain.",
+   "sortie": "Ne vous inquiétez pas, je me chargerai de cela demain.",
+   "flags": []
+  },
+  {
+   "type": "formel",
+   "entree": "Le boss a dit que la réunion sautait.",
+   "sortie": "",
+   "flags": [
+    "vide"
+   ]
+  },
+  {
+   "type": "passe_compose",
+   "entree": "Nous partons en vacances et nous visitons Rome.",
+   "sortie": "",
+   "flags": [
+    "vide"
+   ]
+  },
+  {
+   "type": "passe_compose",
+   "entree": "Elle descend l'escalier et elle sort.",
+   "sortie": "",
+   "flags": [
+    "vide"
+   ]
+  },
+  {
+   "type": "futur",
+   "entree": "Je vais au marché et j'achète des pommes.",
+   "sortie": "",
+   "flags": [
+    "vide"
+   ]
+  },
+  {
+   "type": "pluriel",
+   "entree": "Le cheval blanc mange une pomme rouge.",
+   "sortie": "Les chevaux blancs mangent des pommes rouges.",
+   "flags": []
+  },
+  {
+   "type": "pluriel",
+   "entree": "Mon voisin a un beau jardin.",
+   "sortie": "Mes voisins ont de beaux jardins.",
+   "flags": []
+  },
+  {
+   "type": "question",
+   "entree": "Les élèves ont fini leurs devoirs.",
+   "sortie": "",
+   "flags": [
+    "vide"
+   ]
+  },
+  {
+   "type": "question",
+   "entree": "Pierre travaille à la bibliothèque le mardi.",
+   "sortie": "",
+   "flags": [
+    "vide"
+   ]
+  },
+  {
+   "type": "negation",
+   "entree": "Il a encore faim.",
+   "sortie": "Il n'a pas encore faim.",
+   "flags": []
+  },
+  {
+   "type": "simplifier",
+   "entree": "Les précipitations abondantes ont provoqué une crue de la rivière.",
+   "sortie": "",
+   "flags": [
+    "vide"
+   ]
+  },
+  {
+   "type": "simplifier",
+   "entree": "Le médecin a prescrit un traitement antibiotique pendant une semaine.",
+   "sortie": "",
+   "flags": [
+    "vide"
+   ]
+  },
+  {
+   "type": "resume",
+   "entree": "Julie avait prévu un pique-nique au parc avec ses amis. Mais le matin, il s'est mis à pleuvoir très fort. Ils ont finalement mangé chez elle en regardant un film.",
+   "sortie": "",
+   "flags": [
+    "vide"
+   ]
+  },
+  {
+   "type": "resume",
+   "entree": "La mairie a décidé de fermer la piscine municipale pendant deux mois. Des travaux de rénovation sont nécessaires car le bassin fuit. Elle rouvrira en septembre.",
+   "sortie": "",
+   "flags": [
+    "vide"
+   ]
+  },
+  {
+   "type": "paraphrase",
+   "entree": "Il pleut des cordes depuis ce matin.",
+   "sortie": "",
+   "flags": [
+    "vide"
+   ]
+  },
+  {
+   "type": "paraphrase",
+   "entree": "Ce film m'a beaucoup ému.",
+   "sortie": "Ce film m'a vraiment touché.",
+   "flags": []
+  },
+  {
+   "type": "correction",
+   "entree": "Les fille on manger des gâteaux hier soir.",
+   "sortie": "Les filles ont mangé des gâteaux hier soir.",
+   "flags": []
+  },
+  {
+   "type": "correction",
+   "entree": "Je suis aller au cinéma avec mes ami.",
+   "sortie": "Je suis allé au cinéma avec mes amis.",
+   "flags": []
+  }
+ ],
+ "gen": [
+  {
+   "tache": "mettre une phrase à l'imparfait",
+   "exemples": [
+    {
+     "consigne": "Mettre la phrase suivante à l'imparfait",
+     "entree": "Je mange une pomme.",
+     "sortie": "Je mangeais une pomme."
+    },
+    {
+     "consigne": "Transposer la phrase au passé composé",
+     "entree": "Il travaille dur toute la journée.",
+     "sortie": "Il a travaillé dur toute la journée."
+    },
+    {
+     "consigne": "Raconter ce qui se passait hier soir à cette heure-ci",
+     "entree": "Je regardais un film.",
+     "sortie": "Hier soir, à cette heure-ci, je regardais un film."
+    },
+    {
+     "consigne": "Faire la même action que dans la phrase, mais au passé composé",
+     "entree": "Elle lit un livre intéressant.",
+     "sortie": "Elle a lu un livre intéressant."
+    },
+    {
+     "consigne": "Expliquer comment tu passais ton temps il y a trois ans à cette époque de l'année",
+     "entree": "Je faisais du jogging tous les matins.",
+     "sortie": "Il y a trois ans, à cette époque de l'année, je faisais du jogging tous les matins."
+    }
+   ],
+   "secondes": 19.8
+  },
+  {
+   "tache": "rendre une phrase plus polie",
+   "exemples": [
+    {
+     "consigne": "Rendre la phrase plus polie",
+     "entree": "Passe-moi le sel.",
+     "sortie": "Pourriez-vous me passer le sel, s'il vous plaît ?"
+    },
+    {
+     "consigne": "Rendre la phrase plus polie",
+     "entree": "T'es en retard.",
+     "sortie": "Je suis désolé(e), mais je suis un peu en retard aujourd'hui."
+    },
+    {
+     "consigne": "Rendre la phrase plus polie",
+     "entree": "Je peux pas venir ce soir.",
+     "sortie": "Malheureusement, je ne pourrai pas me joindre à vous ce soir."
+    },
+    {
+     "consigne": "Rendre la phrase plus polie",
+     "entree": "Ferme la porte en sortant.",
+     "sortie": "Pourriez-vous avoir l'amabilité de fermer la porte derrière vous en sortant, s'il vous plaît ?"
+    },
+    {
+     "consigne": "Rendre la phrase plus polie",
+     "entree": "J'ai pas faim.",
+     "sortie": "Je vous remercie, mais je n'ai pas très faim pour le moment."
+    }
+   ],
+   "secondes": 18.3
+  },
+  {
+   "tache": "transformer une phrase affirmative en question",
+   "exemples": [
+    {
+     "consigne": "Transformer la phrase affirmative en question.",
+     "entree": "Je mange une pomme.",
+     "sortie": "Mange-je une pomme?"
+    },
+    {
+     "consigne": "Transformer la phrase affirmative en question.",
+     "entree": "Elle dort.",
+     "sortie": " Dort-elle?"
+    },
+    {
+     "consigne": "Transformer la phrase affirmative en question.",
+     "entree": "Nous allons au cinéma.",
+     "sortie": "Allons-nous au cinéma?"
+    },
+    {
+     "consigne": "Transformer la phrase affirmative en question.",
+     "entree": "Ils jouent au football.",
+     "sortie": " Jouent-ils au football?"
+    },
+    {
+     "consigne": "Transformer la phrase affirmative en question.",
+     "entree": "Tu comprends ce que je dis?",
+     "sortie": "Comprends-tu ce que je dis?"
+    }
+   ],
+   "secondes": 15.1
+  }
+ ]
+}
