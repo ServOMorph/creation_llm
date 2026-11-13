@@ -10,6 +10,7 @@ import numpy as np
 import torch
 
 from model import GPT, GPTConfig
+from vram_guard import PauseMonitor, TrainingPaused, write_state
 
 ROOT = Path(__file__).parent
 DATA = ROOT / "data"
@@ -40,6 +41,12 @@ class TrainConfig:
     optimizer: str = "adamw"
     compile: bool = False
     tokenizer: str = str(ROOT / "tokenizer.json")
+    grad_checkpoint: bool = False
+    vram_cap_gb: float = 0.0
+    save_minutes: float = 0.0
+    vram_session: str = ""
+    pause_check_s: float = 60.0
+    token_hours: float = 23.0
 
 
 class MultiOptimizer:
@@ -168,6 +175,11 @@ def train(cfg, mcfg):
     torch.manual_seed(cfg.seed)
     use_cuda = cfg.device.startswith("cuda")
     autocast = torch.autocast(cfg.device.split(":")[0], dtype=torch.bfloat16, enabled=use_cuda)
+    if use_cuda and cfg.vram_cap_gb > 0:
+        dev = torch.device(cfg.device)
+        index = dev.index if dev.index is not None else torch.cuda.current_device()
+        total = torch.cuda.get_device_properties(index).total_memory
+        torch.cuda.set_per_process_memory_fraction(min(1.0, cfg.vram_cap_gb * 2**30 / total), index)
     ckpt_dir = Path(cfg.ckpt_dir)
     ckpt_dir.mkdir(parents=True, exist_ok=True)
     ckpt_path = ckpt_dir / "ckpt.pt"
@@ -179,13 +191,15 @@ def train(cfg, mcfg):
     val_starts = None if isinstance(val_data, MixedSource) else starts_fn(val_data, mcfg.block_size)
 
     model = GPT(mcfg).to(cfg.device)
+    model.grad_checkpoint = cfg.grad_checkpoint
     opt = build_optimizer(model, cfg, use_cuda)
     step = 0
     if cfg.resume and ckpt_path.exists():
-        ckpt = torch.load(ckpt_path, map_location=cfg.device)
+        ckpt = torch.load(ckpt_path, map_location="cpu")
         model.load_state_dict(ckpt["model"])
         opt.load_state_dict(ckpt["optimizer"])
         step = ckpt["step"]
+        del ckpt
     elif cfg.init_from:
         model.load_state_dict(torch.load(cfg.init_from, map_location=cfg.device)["model"])
 
@@ -204,6 +218,9 @@ def train(cfg, mcfg):
     last_train, last_val = float("nan"), float("nan")
     t0 = time.time()
     tokens_since = 0
+    last_save, saved_step = time.time(), step
+    monitor = PauseMonitor(cfg.vram_session, cfg.pause_check_s, cfg.token_hours) if cfg.vram_session else None
+    state_path = ckpt_dir / "etat.json"
     model.train()
     while step < cfg.max_steps:
         lr = get_lr(step, cfg)
@@ -234,9 +251,25 @@ def train(cfg, mcfg):
             t0, tokens_since = time.time(), 0
             log.writerow([step, f"{acc:.4f}", val, f"{lr:.6f}", f"{tps:.0f}"])
             log_file.flush()
-            print(f"step {step} train {acc:.4f} val {val or '-'} lr {lr:.2e} {tps:.0f} tok/s", flush=True)
-        if step % cfg.save_interval == 0 or step == cfg.max_steps:
+            mem = (
+                f" pic {torch.cuda.max_memory_allocated() / 2**30:.2f} Go"
+                f" reserve {torch.cuda.max_memory_reserved() / 2**30:.2f} Go"
+                if use_cuda else ""
+            )
+            print(f"step {step} train {acc:.4f} val {val or '-'} lr {lr:.2e} {tps:.0f} tok/s{mem}", flush=True)
+        timed = cfg.save_minutes > 0 and time.time() - last_save >= cfg.save_minutes * 60
+        if step % cfg.save_interval == 0 or step == cfg.max_steps or timed:
             save_checkpoint(ckpt_path, raw_model, opt, step, mcfg, cfg)
+            last_save, saved_step = time.time(), step
+            write_state(state_path, step, "termine" if step == cfg.max_steps else "en_cours")
+        reason = monitor.reason() if monitor and step < cfg.max_steps else None
+        if reason:
+            if saved_step != step:
+                save_checkpoint(ckpt_path, raw_model, opt, step, mcfg, cfg)
+            write_state(state_path, step, reason)
+            log_file.close()
+            print(f"pause au pas {step} : {reason}", flush=True)
+            raise TrainingPaused(reason)
 
     log_file.close()
     return last_train, last_val

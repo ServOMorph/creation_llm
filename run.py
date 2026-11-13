@@ -52,6 +52,7 @@ def main():
         mp.add_argument("--n-head", type=int, default=GPTConfig.n_head)
         mp.add_argument("--block-size", type=int, default=GPTConfig.block_size)
         mp.add_argument("--vocab-size", type=int, default=GPTConfig.vocab_size)
+        mp.add_argument("--tie-embeddings", action="store_true")
         margs, rest = mp.parse_known_args(rest)
         cfg = parse_args(rest)
         mcfg = GPTConfig(
@@ -60,8 +61,14 @@ def main():
             n_layer=margs.n_layer,
             n_embd=margs.n_embd,
             n_head=margs.n_head,
+            tie_embeddings=margs.tie_embeddings,
         )
-        train(cfg, mcfg)
+        from vram_guard import PAUSE_CODE, TrainingPaused
+
+        try:
+            train(cfg, mcfg)
+        except TrainingPaused:
+            sys.exit(PAUSE_CODE)
     elif args.cmd == "generate":
         from generate import complete, load_model, load_tokenizer
 

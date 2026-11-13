@@ -3,6 +3,7 @@ from dataclasses import dataclass
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+from torch.utils.checkpoint import checkpoint
 
 
 @dataclass
@@ -13,6 +14,7 @@ class GPTConfig:
     n_head: int = 8
     n_embd: int = 512
     logit_cap: float = 30.0
+    tie_embeddings: bool = False
 
 
 def rms_norm(x):
@@ -89,9 +91,13 @@ class GPT(nn.Module):
         self.wte = nn.Embedding(cfg.vocab_size, cfg.n_embd)
         self.blocks = nn.ModuleList(Block(cfg) for _ in range(cfg.n_layer))
         self.lm_head = nn.Linear(cfg.n_embd, cfg.vocab_size, bias=False)
+        if cfg.tie_embeddings:
+            nn.init.normal_(self.wte.weight, std=1.0 / cfg.n_embd)
+            self.lm_head.weight = self.wte.weight
         cos, sin = precompute_rope(cfg.n_embd // cfg.n_head, cfg.block_size)
         self.register_buffer("rope_cos", cos, persistent=False)
         self.register_buffer("rope_sin", sin, persistent=False)
+        self.grad_checkpoint = False
 
     def forward(self, idx, targets=None, caches=None, doc_ids=None):
         attn_mask = None
@@ -100,8 +106,12 @@ class GPT(nn.Module):
             causal = torch.ones(T, T, dtype=torch.bool, device=idx.device).tril()
             attn_mask = ((doc_ids[:, :, None] == doc_ids[:, None, :]) & causal)[:, None]
         x = rms_norm(self.wte(idx))
+        recompute = self.grad_checkpoint and self.training and caches is None and torch.is_grad_enabled()
         for i, block in enumerate(self.blocks):
-            x = block(x, self.rope_cos, self.rope_sin, None if caches is None else caches[i], attn_mask)
+            if recompute:
+                x = checkpoint(block, x, self.rope_cos, self.rope_sin, None, attn_mask, use_reentrant=False)
+            else:
+                x = block(x, self.rope_cos, self.rope_sin, None if caches is None else caches[i], attn_mask)
         cap = self.cfg.logit_cap
         logits = cap * torch.tanh(self.lm_head(rms_norm(x)) / cap)
         if targets is None:

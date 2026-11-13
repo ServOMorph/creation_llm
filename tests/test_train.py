@@ -117,3 +117,24 @@ def test_training_on_mixed_sources(tmp_path):
     cfg = make_cfg(tmp_path, train_bin=spec, val_bin=spec)
     _, val = train(cfg, MCFG)
     assert val < 0.5 * np.log(MCFG.vocab_size)
+
+
+def test_grad_checkpoint_training_matches_and_resumes(tmp_path):
+    a, b = tmp_path / "a", tmp_path / "b"
+    a.mkdir()
+    b.mkdir()
+    ref = train(make_cfg(a, max_steps=10, optimizer="muon"), MCFG)
+    ck = train(make_cfg(b, max_steps=10, optimizer="muon", grad_checkpoint=True), MCFG)
+    assert abs(ref[0] - ck[0]) < 1e-4
+    train(make_cfg(b, max_steps=15, optimizer="muon", grad_checkpoint=True, resume=True), MCFG)
+    assert torch.load(b / "ckpt" / "ckpt.pt", map_location="cpu")["step"] == 15
+
+
+def test_tied_training_with_muon_and_resume(tmp_path):
+    from dataclasses import replace
+
+    mcfg = replace(MCFG, tie_embeddings=True)
+    _, val = train(make_cfg(tmp_path, max_steps=60, optimizer="muon", grad_checkpoint=True), mcfg)
+    assert val < 0.25 * np.log(mcfg.vocab_size)
+    train(make_cfg(tmp_path, max_steps=65, optimizer="muon", grad_checkpoint=True, resume=True), mcfg)
+    assert torch.load(tmp_path / "ckpt" / "ckpt.pt", map_location="cpu")["step"] == 65

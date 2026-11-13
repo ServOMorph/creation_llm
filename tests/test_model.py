@@ -106,3 +106,63 @@ def test_kv_cache_rejects_multi_token_append():
         m(x[:, :3], caches=caches)
         with pytest.raises(ValueError):
             m(x[:, 3:], caches=caches)
+
+
+def test_grad_checkpoint_same_loss_and_gradients():
+    torch.manual_seed(0)
+    ref = GPT(TINY)
+    for p in ref.parameters():
+        torch.nn.init.normal_(p, std=0.05)
+    ck = GPT(TINY)
+    ck.load_state_dict(ref.state_dict())
+    ck.grad_checkpoint = True
+    x = torch.randint(0, TINY.vocab_size, (2, 32))
+    y = torch.randint(0, TINY.vocab_size, (2, 32))
+    _, l1 = ref(x, y)
+    _, l2 = ck(x, y)
+    l1.backward()
+    l2.backward()
+    assert torch.allclose(l1, l2)
+    for (n, a), b in zip(ref.named_parameters(), ck.parameters()):
+        assert torch.allclose(a.grad, b.grad, atol=1e-6), n
+
+
+def test_grad_checkpoint_inactive_in_generation():
+    model = GPT(TINY).eval()
+    model.grad_checkpoint = True
+    x = torch.randint(0, TINY.vocab_size, (1, 8))
+    with torch.no_grad():
+        full, _ = model(x)
+        caches = [{} for _ in range(TINY.n_layer)]
+        cached, _ = model(x, caches=caches)
+    assert torch.allclose(full, cached, atol=1e-5)
+    assert all("k" in c for c in caches)
+
+
+def test_tied_embeddings_share_weights_and_save_params():
+    from dataclasses import replace
+
+    tied = GPT(replace(TINY, tie_embeddings=True))
+    untied = GPT(TINY)
+    assert tied.lm_head.weight is tied.wte.weight
+    assert untied.num_params() - tied.num_params() == TINY.vocab_size * TINY.n_embd
+    x = torch.randint(0, TINY.vocab_size, (2, 16))
+    _, loss = tied(x, x)
+    loss.backward()
+    assert tied.wte.weight.grad is not None
+    reloaded = GPT(replace(TINY, tie_embeddings=True))
+    reloaded.load_state_dict(tied.state_dict())
+    assert reloaded.lm_head.weight is reloaded.wte.weight
+    assert torch.equal(reloaded.wte.weight, tied.wte.weight)
+
+
+def test_tied_initial_loss_near_uniform():
+    import math
+    from dataclasses import replace
+
+    cfg = replace(TINY, vocab_size=1024, n_embd=128, tie_embeddings=True)
+    model = GPT(cfg)
+    x = torch.randint(0, cfg.vocab_size, (4, 32))
+    y = torch.randint(0, cfg.vocab_size, (4, 32))
+    _, loss = model(x, y)
+    assert abs(loss.item() - math.log(cfg.vocab_size)) < 0.5

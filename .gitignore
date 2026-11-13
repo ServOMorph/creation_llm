@@ -21,3 +21,10 @@ checkpoints_v7/
 checkpoints_v8/
 .hf_cache/
 checkpoints_v9/
+checkpoints_sft/
+checkpoints_sft_ab/
+checkpoints_sft_v2/
+checkpoints_sft_v2_ab/
+checkpoints_369m/
+*.out
+*.err
