@@ -1,0 +1,78 @@
+{
+ "n_sequences": 32,
+ "tokens_par_sequence": 1024,
+ "perte_moyenne": 2.4213808216154575,
+ "par_groupe": {
+  "attn.proj": {
+   "norme2_gradient_vrai": -0.0006287878154621142,
+   "erreur_type_jackknife": 0.0022543219677420207,
+   "moyenne_norme2_par_sequence": 0.777484650243423
+  },
+  "attn.qkv": {
+   "norme2_gradient_vrai": 0.0007148032774953858,
+   "erreur_type_jackknife": 0.0039429433925545565,
+   "moyenne_norme2_par_sequence": 1.615094275031879,
+   "B_etoile_sequences": 2258.4947811250136,
+   "B_etoile_tokens": 2312698.655872014,
+   "B_etoile_tokens_intervalle_2se": [
+    191269.470127886,
+    null
+   ]
+  },
+  "lm_head": {
+   "norme2_gradient_vrai": 0.00011949232729031272,
+   "erreur_type_jackknife": 0.0005232965988846545,
+   "moyenne_norme2_par_sequence": 0.41847406839951873,
+   "B_etoile_sequences": 3501.099907911364,
+   "B_etoile_tokens": 3585126.3057012367,
+   "B_etoile_tokens_intervalle_2se": [
+    366459.7195318046,
+    null
+   ]
+  },
+  "mlp.fc": {
+   "norme2_gradient_vrai": 0.00032860191434110373,
+   "erreur_type_jackknife": 0.0004511274479176698,
+   "moyenne_norme2_par_sequence": 0.9114388846977165,
+   "B_etoile_sequences": 2772.6870812980155,
+   "B_etoile_tokens": 2839231.571249168,
+   "B_etoile_tokens_intervalle_2se": [
+    757239.1953725562,
+    null
+   ]
+  },
+  "mlp.proj": {
+   "norme2_gradient_vrai": 0.0001281791972870953,
+   "erreur_type_jackknife": 0.00046644583247043163,
+   "moyenne_norme2_par_sequence": 0.4640433797133047,
+   "B_etoile_sequences": 3619.2706018976082,
+   "B_etoile_tokens": 3706133.096343151,
+   "B_etoile_tokens_intervalle_2se": [
+    446806.99578163435,
+    null
+   ]
+  },
+  "wte": {
+   "norme2_gradient_vrai": 3.807048973872692e-05,
+   "erreur_type_jackknife": 0.00011849273313198857,
+   "moyenne_norme2_par_sequence": 0.12150120816659182,
+   "B_etoile_sequences": 3190.480041376921,
+   "B_etoile_tokens": 3267051.562369967,
+   "B_etoile_tokens_intervalle_2se": [
+    451310.2776164676,
+    null
+   ]
+  }
+ },
+ "global": {
+  "norme2_gradient_vrai": 0.0007003593906905103,
+  "erreur_type_jackknife": 0.006855480829901934,
+  "moyenne_norme2_par_sequence": 4.3080364662524335,
+  "B_etoile_sequences": 6150.179699332624,
+  "B_etoile_tokens": 6297784.012116607,
+  "B_etoile_tokens_intervalle_2se": [
+   305084.6021181353,
+   null
+  ]
+ }
+}

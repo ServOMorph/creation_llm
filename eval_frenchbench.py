@@ -11,7 +11,7 @@ from tqdm import tqdm
 from generate import EOT_ID, load_model, load_tokenizer
 
 ROOT = Path(__file__).parent
-MODELS = {"v8": ROOT / "checkpoints_v8" / "ckpt.pt", "v9": ROOT / "checkpoints_v9" / "ckpt.pt", "sft": ROOT / "checkpoints_sft" / "ckpt.pt", "sft_v2": ROOT / "checkpoints_sft_v2" / "ckpt.pt"}
+MODELS = {"v8": ROOT / "checkpoints_v8" / "ckpt.pt", "v9": ROOT / "checkpoints_v9" / "ckpt.pt", "sft": ROOT / "checkpoints_sft" / "ckpt.pt", "sft_v2": ROOT / "checkpoints_sft_v2" / "ckpt.pt", "369m": ROOT / "checkpoints_369m" / "ckpt.pt", "sft_369m": ROOT / "checkpoints_sft_369m" / "ckpt.pt"}
 MC_TASKS = [
     "french_bench_arc_challenge", "french_bench_hellaswag", "french_bench_grammar", "french_bench_vocab",
     "french_bench_reading_comp", "french_bench_boolqa", "french_bench_fquadv2_bool",

@@ -1,0 +1,85 @@
+{
+ "octets_par_token": {
+  "fw2hq": 4.464835,
+  "wiki_fr": 4.3537675,
+  "lecarnet": 4.5799625,
+  "vikidia": 4.393,
+  "melange_harmonique": 4.4517729335046665
+ },
+ "ngrammes": {
+  "fw2hq": {
+   "unigramme_nats": 7.595720795077515,
+   "bigramme_nats": 5.475834915278445
+  },
+  "wiki_fr": {
+   "unigramme_nats": 7.712669268333188,
+   "bigramme_nats": 5.499483810195756
+  },
+  "lecarnet": {
+   "unigramme_nats": 6.8570085421212665,
+   "bigramme_nats": 3.8102974232718427
+  },
+  "vikidia": {
+   "unigramme_nats": 7.693300451745237,
+   "bigramme_nats": 5.406970805011659
+  },
+  "melange": {
+   "unigramme_nats": 7.51610266858135,
+   "bigramme_nats": 5.230539233001447
+  }
+ },
+ "v9": {
+  "pas": 91500,
+  "tokens": 5996544000,
+  "val_finale_nats": 2.5445,
+  "code_prequentiel_bits_par_token": 3.844231366532151,
+  "exces_prequentiel_bits": 1039164106.4473743,
+  "exces_bits_par_parametre": 5.415432343443231,
+  "exces_bits_par_token": 0.17329383499018342,
+  "debit_median_tok_s": 13547.0
+ },
+ "369m": {
+  "pas": 20920,
+  "tokens": 1371013120,
+  "val_finale_nats": 2.8537,
+  "code_prequentiel_bits_par_token": 4.120911748326271,
+  "exces_prequentiel_bits": 5337230.87888927,
+  "exces_bits_par_parametre": 0.01590618753102204,
+  "exces_bits_par_token": 0.003892910141435605,
+  "debit_median_tok_s": 6173.0
+ },
+ "couverture_369m": {
+  "fw2hq": {
+   "tokens": 4334618593,
+   "passes_equivalentes": 0.9909128906834825,
+   "jamais_vu_simule": 0.3679415,
+   "vu_1_fois": 0.3740433333333333,
+   "vu_2_fois_ou_plus": 0.25801516666666663,
+   "jamais_vu_theorique_exp(-e)": 0.3712376369058308
+  },
+  "wiki_fr": {
+   "tokens": 1891146362,
+   "passes_equivalentes": 0.9789786963088581,
+   "jamais_vu_simule": 0.38146383333333334,
+   "vu_1_fois": 0.3608425,
+   "vu_2_fois_ou_plus": 0.25769366666666665,
+   "jamais_vu_theorique_exp(-e)": 0.3756946012648635
+  },
+  "lecarnet": {
+   "tokens": 371205019,
+   "passes_equivalentes": 2.9925112623544563,
+   "jamais_vu_simule": 0.04976466666666667,
+   "vu_1_fois": 0.14684933333333333,
+   "vu_2_fois_ou_plus": 0.803386,
+   "jamais_vu_theorique_exp(-e)": 0.05016131021151074
+  },
+  "vikidia": {
+   "tokens": 54468057,
+   "passes_equivalentes": 2.719233403166924,
+   "jamais_vu_simule": 0.0641655,
+   "vu_1_fois": 0.18169883333333334,
+   "vu_2_fois_ou_plus": 0.7541356666666666,
+   "jamais_vu_theorique_exp(-e)": 0.0659252731658047
+  }
+ }
+}

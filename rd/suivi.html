@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suivi R&D creation_llm</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Mise en page : une colonne de sections, résumé en tête, grilles qui passent à une colonne sur téléphone. */
+:root{
+  --fond:#f3f5f6; --carte:#ffffff; --encre:#17232b; --doux:#566772; --trait:#d5dde2;
+  --accent:#0b6e78; --accent-doux:#d9eef0; --ref:#8a98a3;
+  --ok:#1f7a45; --ok-fond:#dff3e6; --cours:#9a5b00; --cours-fond:#fdeed2; --attente:#566772; --attente-fond:#e6ebee; --alerte:#a3312b; --alerte-fond:#f9e1df;
+  --titre:"Bricolage Grotesque","IBM Plex Sans",system-ui,sans-serif;
+  --texte:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --fond:#10181d; --carte:#18232a; --encre:#e6edf0; --doux:#9fb0ba; --trait:#2c3b44;
+    --accent:#4fc3cd; --accent-doux:#173a40; --ref:#7d8d97;
+    --ok:#6fd598; --ok-fond:#163524; --cours:#f0b65a; --cours-fond:#3b2c10; --attente:#9fb0ba; --attente-fond:#24323a; --alerte:#f08a82; --alerte-fond:#40201d;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --fond:#10181d; --carte:#18232a; --encre:#e6edf0; --doux:#9fb0ba; --trait:#2c3b44;
+  --accent:#4fc3cd; --accent-doux:#173a40; --ref:#7d8d97;
+  --ok:#6fd598; --ok-fond:#163524; --cours:#f0b65a; --cours-fond:#3b2c10; --attente:#9fb0ba; --attente-fond:#24323a; --alerte:#f08a82; --alerte-fond:#40201d;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--fond);color:var(--encre);font-family:var(--texte);font-size:16px;line-height:1.5}
+main{max-width:1040px;margin:0 auto;padding:28px 16px 56px;display:flex;flex-direction:column;gap:28px}
+h1{font-family:var(--titre);font-size:2rem;line-height:1.15;margin:0;text-wrap:balance}
+h2{font-family:var(--titre);font-size:1.25rem;margin:0 0 12px;text-wrap:balance}
+h3{font-size:1rem;margin:0;font-weight:600}
+p{margin:0;max-width:68ch}
+.sous{color:var(--doux);font-size:.9rem}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+header{display:flex;flex-direction:column;gap:8px}
+.entete-ligne{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;justify-content:space-between}
+.carte{background:var(--carte);border:1px solid var(--trait);border-radius:10px;padding:16px}
+.grille{display:grid;gap:12px}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g5{grid-template-columns:repeat(5,minmax(0,1fr))}
+@media (max-width:860px){.g4,.g5{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.g4,.g5,.g2{grid-template-columns:1fr}}
+.tuile{display:flex;flex-direction:column;gap:4px}
+.tuile .val{font-family:var(--titre);font-size:1.6rem;line-height:1.1}
+.pastille{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;padding:2px 10px;border-radius:999px;white-space:nowrap}
+.pastille::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.p-ok{color:var(--ok);background:var(--ok-fond)}
+.p-cours{color:var(--cours);background:var(--cours-fond)}
+.p-attente{color:var(--attente);background:var(--attente-fond)}
+.p-alerte{color:var(--alerte);background:var(--alerte-fond)}
+.pole{display:flex;flex-direction:column;gap:8px;border-left:4px solid var(--trait)}
+.pole.cours{border-left-color:var(--cours)}
+.pole.ok{border-left-color:var(--ok)}
+.pole code,.fichier{font-family:var(--mono);font-size:.82rem;color:var(--doux);overflow-wrap:anywhere}
+.etapes{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:860px){.etapes{grid-template-columns:1fr}}
+.etapes li{display:flex;flex-direction:column;gap:6px}
+.rang{font-family:var(--mono);font-size:.8rem;color:var(--doux)}
+.barre{height:10px;border-radius:999px;background:var(--attente-fond);overflow:hidden}
+.barre span{display:block;height:100%;background:var(--accent);border-radius:999px}
+.deroule{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:.92rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--trait);vertical-align:top}
+th{font-size:.8rem;color:var(--doux);font-weight:600}
+.vide{color:var(--doux);font-style:italic}
+.liste{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.liste li{display:flex;gap:12px;align-items:flex-start}
+.liste .quand{font-family:var(--mono);font-size:.8rem;color:var(--doux);min-width:104px;padding-top:3px}
+.decision{border-left:4px solid var(--alerte)}
+.legende{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.85rem;color:var(--doux);margin-top:6px}
+.legende i{display:inline-block;width:18px;height:3px;border-radius:2px;vertical-align:middle;margin-right:6px}
+svg text{font-family:var(--mono);font-size:11px;fill:var(--doux)}
+svg{display:block;width:100%;height:auto}
+.pile{display:flex;flex-direction:column;gap:12px}
+</style>
+</head>
+<body>
+<main>
+
+<header>
+  <div class="entete-ligne">
+    <h1>Suivi R&D creation_llm</h1>
+    <span class="pastille p-cours">Cycle 1 clos</span>
+  </div>
+  <p>La cellule R&D cherche des méthodes qui rendent un LLM français nettement meilleur sur une seule RTX 4060 8 Go. Une piste ne compte que si une expérience sur cette carte la confirme.</p>
+  <p class="sous">Dernière mise à jour : <span class="num">2026-11-17 14:35</span>. Cette page est republiée à chaque étape du cycle.</p>
+</header>
+
+<section class="grille g4" aria-label="Résumé">
+  <div class="carte tuile"><span class="sous">Rapports remis</span><span class="val num">5 / 5</span><span class="sous">4 rapports de pôle et la contre-expertise</span></div>
+  <div class="carte tuile"><span class="sous">Pistes examinées</span><span class="val num">43</span><span class="sous">verdicts dans rd/selection.md</span></div>
+  <div class="carte tuile"><span class="sous">Expériences menées</span><span class="val num">3 / 5</span><span class="sous">1 confirmée (passage pertinent), 2 en échec</span></div>
+  <div class="carte tuile"><span class="sous">Pré-entraînement 369M</span><span class="val num">20,9 %</span><span class="sous">pas 23 590 sur 113 000</span></div>
+</section>
+
+<section>
+  <h2>Étapes du cycle 1</h2>
+  <ol class="etapes">
+    <li class="carte"><span class="rang">Étape 1</span><h3>Veille et mathématiques</h3><span class="pastille p-cours">Fait</span><span class="sous">Quatre rapports remis le 17 novembre, dont une veille sur le mélange d'experts et les laboratoires chinois.</span></li>
+    <li class="carte"><span class="rang">Étape 2</span><h3>Contre-expertise</h3><span class="pastille p-cours">Fait</span><span class="sous">Une vingtaine d'erreurs ou d'affirmations non sourcées relevées dans les rapports ; 5 expériences classées.</span></li>
+    <li class="carte"><span class="rang">Étape 3</span><h3>Programme d'expériences</h3><span class="pastille p-cours">Décidé pour 1 à 3</span><span class="sous">Tu as choisi de lancer les expériences 1 à 3 d'abord ; les expériences 4 et 5 restent à décider.</span></li>
+    <li class="carte"><span class="rang">Étape 4</span><h3>Expériences et bilan</h3><span class="pastille p-cours">Fait</span><span class="sous">Expériences 1 à 3 mesurées sur la carte le 17 novembre entre 07:17 et 08:02.</span></li>
+  </ol>
+</section>
+
+<section>
+  <h2>Équipe</h2>
+  <div class="grille g2">
+    <div class="carte pole">
+      <div class="entete-ligne"><h3>Veille entraînement</h3><span class="pastille p-attente">Rapport remis</span></div>
+      <p class="sous">Recense les méthodes de 2025 et 2026 qui donnent plus de qualité par token vu, par seconde de GPU ou par Go de VRAM : optimiseurs, distillation, choix des données, précision réduite.</p>
+      <span class="fichier">Livrable : rd/veille_entrainement.md et rd/veille_moe_chine.md (remis)</span>
+    </div>
+    <div class="carte pole">
+      <div class="entete-ligne"><h3>Veille inférence</h3><span class="pastille p-attente">Rapport remis</span></div>
+      <p class="sous">Recense les méthodes d'inférence et de compression sur 8 Go. Priorité au défaut dominant de l'assistant v2 : l'information attendue manque dans la réponse (139 des 151 échecs).</p>
+      <span class="fichier">Livrable : rd/veille_inference.md (remis)</span>
+    </div>
+    <div class="carte pole">
+      <div class="entete-ligne"><h3>Mathématiques</h3><span class="pastille p-attente">Rapport remis</span></div>
+      <p class="sous">Chiffre où part le budget actuel (bits appris par token et par paramètre), propose 5 à 8 idées nouvelles avec leur dérivation, et les teste par de petits calculs sur CPU.</p>
+      <span class="fichier">Livrable : rd/pole_mathematiques.md (remis)</span>
+    </div>
+    <div class="carte pole">
+      <div class="entete-ligne"><h3>Critique</h3><span class="pastille p-attente">Rapport remis</span></div>
+      <p class="sous">Vérifie les sources, repère les gains non reproduits ou non transposables à 336M paramètres, puis retient les 5 premières expériences avec leur coût GPU.</p>
+      <span class="fichier">Livrable : rd/selection.md (remis)</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Pistes</h2>
+  <div class="carte deroule">
+    <table>
+      <thead><tr><th>Piste</th><th>Pôle</th><th>Niveau de preuve</th><th>Gain attendu</th><th>Coût sur la carte</th><th>Verdict</th></tr></thead>
+      <tbody><tr><td>Diagnostic RAG : donner le bon passage au modèle</td><td>Inférence</td><td>Prépublication</td><td>Plafond des pistes à documents</td><td>6 min de GPU</td><td>Plafond confirmé (+ 22 avec un passage relu) ; pas de gain avec la recherche automatique</td></tr><tr><td>Guidage sans classifieur (CFG)</td><td>Inférence</td><td>Prépublication</td><td>Meilleur suivi des consignes</td><td>7 min de GPU</td><td>Testée : critère non atteint</td></tr><tr><td>Adaptation au moment du test (TTT-NN)</td><td>Inférence</td><td>Établi pour la perplexité seulement</td><td>Plus de faits corrects</td><td>35 min de GPU</td><td>Testée : dégrade</td></tr><tr><td>Refroidissement final prolongé et moyenne des poids</td><td>Mathématiques, entraînement</td><td>Hypothèse</td><td>0,05 à 0,18 nat, estimé sur 2 runs</td><td>Environ 12 h, en fin de run</td><td>À décider</td></tr><tr><td>Résidu de valeurs (ResFormer) sur témoin</td><td>Entraînement</td><td>Prépublication</td><td>Non chiffré à cette taille</td><td>12 à 21 h, 369M en pause</td><td>À décider</td></tr><tr><td>Fenêtres alignées sur les débuts de documents</td><td>Mathématiques</td><td>Mesure locale</td><td>Borné à 2,3 %</td><td>Modification de train.py</td><td>À tester, basse priorité</td></tr><tr><td>Mélange d'experts à 939M paramètres</td><td>Entraînement</td><td>Hypothèse</td><td>Sans objet</td><td>Environ 16 Go de VRAM</td><td>Rejetée pour 8 Go</td></tr><tr><td>Quantification ternaire, sortie anticipée, distillation de logits</td><td>Inférence, entraînement</td><td>Prépublication</td><td>Sans objet</td><td>Nouveau pré-entraînement</td><td>Rejetées</td></tr></tbody>
+    </table>
+  </div>
+  <p class="sous" style="margin-top:8px">Extrait : les pistes testées, à décider ou rejetées pour une raison de fond. Les 43 verdicts sont dans rd/selection.md. Niveaux de preuve : établi (publié et reproduit), prépublication, hypothèse de la cellule.</p>
+</section>
+
+<section>
+  <h2>Expériences</h2>
+  <div class="carte deroule">
+    <table>
+      <thead><tr><th>Expérience</th><th>Hypothèse testée</th><th>Critère d'échec</th><th>Coût GPU</th><th>Résultat</th></tr></thead>
+      <tbody><tr><td>1. Diagnostic RAG sur l'assistant v2</td><td>Un passage de Vikidia placé avant la question fait monter les réponses correctes sur les faits.</td><td>Passage oracle sans gain sur la référence</td><td>4 min</td><td>Premier essai non concluant (passage choisi automatiquement, souvent hors sujet) : 48 / 90 contre 49 / 90 sans passage. Essai refait avec 30 passages relus un par un : 71 / 90 contre 49 / 90 (31 gagnés, 9 perdus). Le modèle sait lire un passage pertinent. Avec les 3 passages de la recherche lexicale : 28 / 90, la recherche est le maillon faible. Recherche améliorée sur CPU : en limitant l'index aux débuts d'articles et en combinant mots-clés et petit encodeur dense, le premier passage contient la réponse pour 22 questions sur 30 (environ 17 à 18 vraiment pertinents à la relecture), contre 15 sur 30 au départ. Environ 8 questions (calcul, grammaire) n'ont pas de réponse dans Vikidia. Essai de bout en bout avec cette recherche : 47 / 90 avec 1 passage, 54 / 90 avec 3 passages, contre 49 / 90 sans passage (écart dans le bruit).</td></tr><tr><td>2. Guidage sans classifieur sur v2</td><td>Amplifier l'effet de la consigne améliore son respect.</td><td>Moins de 5 items gagnés sur 45 consignes</td><td>7 min</td><td>Consignes : 18, 18 puis 16 sur 45 pour une force de 1, 1,25 et 1,5. Faits : 49, 50 puis 54 sur 90 (9 gagnés, 4 perdus à 1,5, écart dans le bruit). Critère non atteint.</td></tr><tr><td>3. Adaptation au moment du test sur v2</td><td>Un pas d'apprentissage sur 20 passages voisins avant de répondre améliore les faits.</td><td>Moins de 5 items gagnés sur 90, ou plus de boucles</td><td>35 min</td><td>49 / 90 sans adaptation, puis 46, 37 et 25 selon le taux d'apprentissage ; les réponses en boucle passent de 1 à 7, 26 et 41. Échec.</td></tr><tr><td>4. Refroidissement final et moyenne des poids sur le 369M</td><td>Une fin de run plus froide abaisse la perte de validation.</td><td>Écart inférieur à 0,005 nat face au bras de contrôle</td><td>Environ 12 h (hypothèse)</td><td>Non lancée : possible seulement en fin de pré-entraînement.</td></tr><tr><td>5. ResFormer sur un témoin 12 × 512</td><td>Le résidu de valeurs abaisse la perte à budget égal.</td><td>Écart inférieur à l'écart entre graines ou à 0,01 nat</td><td>12 à 21 h (hypothèse)</td><td>Non lancée : demande une pause du 369M.</td></tr></tbody>
+    </table>
+  </div>
+  <p class="sous" style="margin-top:8px">Chaque condition porte sur les mêmes questions et les mêmes 3 graines que la référence. Scripts et résultats bruts : rd/experiences/.</p>
+</section>
+
+<section>
+  <h2>Décisions qui t'attendent</h2>
+  <div class="pile">
+    <div class="carte decision"><h3>Cycle 2</h3><p class="sous">Reportés : RAFT (entraîner l'assistant à lire des passages imparfaits), expérience 4 en fin de pré-entraînement, expérience 5 (ResFormer). Bilan complet : rd/bilan_cycle1.md.</p></div>
+    <div class="carte decision"><h3>Expériences 4 et 5</h3><p class="sous">L'expérience 4 attend la fin du pré-entraînement. L'expérience 5 retarde le 369M de 12 à 21 h (hypothèse de débit non mesurée).</p></div>
+    <div class="carte decision"><h3>Fenêtres d'entraînement du 369M</h3><p class="sous">Le pré-entraînement tire ses fenêtres sans les aligner sur les débuts de documents et sans masque entre documents. Gain borné à 2,3 % selon le pôle mathématiques ; corriger en cours de run change les conditions de la comparaison.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Pré-entraînement du 369M, le modèle de référence</h2>
+  <div class="carte pile">
+    <div class="entete-ligne">
+      <span>Pas <span class="num">23 590</span> sur <span class="num">113 000</span></span>
+      <span class="pastille p-cours">Relancé le 17 novembre à 08:47</span>
+    </div>
+    <div class="barre" role="img" aria-label="Avancement 20,9 %"><span style="width:20.9%"></span></div>
+    <div class="grille g4">
+      <div class="tuile"><span class="sous">Perte de validation, pas 23 000</span><span class="val num">2,843</span></div>
+      <div class="tuile"><span class="sous">v9 au même pas</span><span class="val num">2,937</span></div>
+      <div class="tuile"><span class="sous">Débit moyen récent</span><span class="val num">6 600 tok/s</span></div>
+      <div class="tuile"><span class="sous">Cible de la phase 2</span><span class="val num">&lt; 2,5445</span></div>
+    </div>
+    <div>
+      <h3>Perte de validation selon le pas d'entraînement</h3>
+      <p class="sous">Plus bas est meilleur. La comparaison n'est pas à armes égales : taille, réglage du taux d'apprentissage et jeu de validation diffèrent.</p>
+      <div id="courbe"></div>
+      <div class="legende"><span><i style="background:var(--accent)"></i>369M (24 × 1024, embeddings liés)</span><span><i style="background:var(--ref)"></i>v9 (192M), modèle précédent</span></div>
+    </div>
+    <p class="sous">Source : checkpoints_369m/log.csv et checkpoints_v9/log.csv, relevés tous les 1 000 pas.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Journal</h2>
+  <div class="carte">
+    <ul class="liste">
+      <li><span class="quand">17 nov. 14:35</span><span>Cycle 1 clos. Le pré-entraînement du 369M n'est plus interrompu par la R&D.</span></li>
+      <li><span class="quand">17 nov. 14:12</span><span>Recherche améliorée testée sur l'assistant : 54 / 90 avec 3 passages contre 49 / 90 sans, écart dans le bruit.</span></li>
+      <li><span class="quand">17 nov. 13:50</span><span>Recherche de passages améliorée sur CPU : 22 / 30 contre 15 / 30 au premier rang (critère automatique). Aucun GPU utilisé.</span></li>
+      <li><span class="quand">17 nov. 08:47</span><span>Diagnostic RAG refait avec des passages relus : 71 / 90 contre 49 / 90. Pré-entraînement relancé après 3 minutes de pause.</span></li>
+      <li><span class="quand">17 nov. 08:02</span><span>Expériences 1 à 3 terminées sur l'assistant v2 : aucune n'atteint son critère de succès. Pré-entraînement relancé.</span></li>
+      <li><span class="quand">17 nov. 07:17</span><span>Pré-entraînement arrêté au pas 23 363, juste après une sauvegarde, pour prêter le GPU aux expériences.</span></li>
+      <li><span class="quand">17 nov. matin</span><span>Contre-expertise remise : rd/selection.md, 5 expériences classées.</span></li>
+      <li><span class="quand">17 nov. 05:20</span><span>Rapports mathématiques et mélange d'experts remis. Le mélange d'experts est écarté pour 8 Go de VRAM.</span></li>
+      <li><span class="quand">17 nov. 00:40</span><span>Rapports de veille entraînement et inférence remis.</span></li>
+      <li><span class="quand">16 nov. 23:58</span><span>Cycle 1 lancé : veille entraînement, veille inférence et mathématiques travaillent en parallèle.</span></li>
+      <li><span class="quand">16 nov. 23:55</span><span>Cellule R&D créée : charte dans rd/README.md, fiches de poste dans .claude/agents/.</span></li>
+      <li><span class="quand">16 nov. 23:42</span><span>Pré-entraînement mis en pause au pas 20 929 pour prêter le GPU ; il reprendra seul depuis son dernier point de sauvegarde.</span></li>
+      <li><span class="quand">13 nov. 12:58</span><span>Pré-entraînement du 369M lancé après un rodage réussi.</span></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+<script>
+(function(){
+  var m369=[[1000,3.5172],[2000,3.1997],[3000,3.0902],[4000,3.0306],[5000,2.9926],[6000,2.9648],[7000,2.9518],[8000,2.9361],[9000,2.9233],[10000,2.9155],[11000,2.9067],[12000,2.8929],[13000,2.8913],[14000,2.8851],[15000,2.8866],[16000,2.8790],[17000,2.8712],[18000,2.8617],[19000,2.8683],[20000,2.8591],[21000,2.8495],[22000,2.8441],[23000,2.8433]];
+  var v9=[[1000,3.7030],[2000,3.3359],[3000,3.2191],[4000,3.1583],[5000,3.1168],[6000,3.0911],[7000,3.0644],[8000,3.0552],[9000,3.0372],[10000,3.0283],[11000,3.0137],[12000,2.9983],[13000,2.9951],[14000,2.9873],[15000,2.9858],[16000,2.9810],[17000,2.9742],[18000,2.9658],[19000,2.9642],[20000,2.9532],[21000,2.9417],[22000,2.9391],[23000,2.9367]];
+  var W=720,H=300,L=48,R=64,T=14,B=34,x0=0,x1=23000,y0=2.8,y1=3.8;
+  function X(v){return L+(v-x0)/(x1-x0)*(W-L-R)}
+  function Y(v){return T+(y1-v)/(y1-y0)*(H-T-B)}
+  function fr(n,d){return n.toFixed(d).replace(".",",")}
+  var s='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Perte de validation du 369M et de la v9 du pas 1 000 au pas 23 000">';
+  [2.8,3.0,3.2,3.4,3.6,3.8].forEach(function(v){
+    s+='<line x1="'+L+'" x2="'+(W-R)+'" y1="'+Y(v)+'" y2="'+Y(v)+'" stroke="var(--trait)" stroke-width="1"/>';
+    s+='<text x="'+(L-8)+'" y="'+(Y(v)+4)+'" text-anchor="end">'+fr(v,1)+'</text>';
+  });
+  [0,5000,10000,15000,20000].forEach(function(v){
+    s+='<text x="'+X(v)+'" y="'+(H-12)+'" text-anchor="middle">'+(v===0?"0":(v/1000)+" 000")+'</text>';
+  });
+  function ligne(d,c,w){
+    return '<polyline fill="none" stroke="'+c+'" stroke-width="'+w+'" stroke-linejoin="round" stroke-linecap="round" points="'+d.map(function(p){return X(p[0]).toFixed(1)+","+Y(p[1]).toFixed(1)}).join(" ")+'"/>';
+  }
+  function bout(d,c,dy){
+    var p=d[d.length-1];
+    return '<circle cx="'+X(p[0])+'" cy="'+Y(p[1])+'" r="4" fill="'+c+'"/><text x="'+(X(p[0])+9)+'" y="'+(Y(p[1])+dy)+'" style="fill:'+c+';font-weight:500">'+fr(p[1],3)+'</text>';
+  }
+  s+=ligne(v9,"var(--ref)",2)+ligne(m369,"var(--accent)",2.5)+bout(v9,"var(--ref)",-2)+bout(m369,"var(--accent)",12);
+  s+='</svg>';
+  document.getElementById("courbe").innerHTML=s;
+})();
+</script>
+</body>
+</html>

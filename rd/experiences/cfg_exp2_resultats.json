@@ -1,0 +1,4145 @@
+{
+ "ckpt": "D:\\ServOMorph\\creation_llm\\checkpoints_sft_v2\\ckpt.pt",
+ "pas": 2606,
+ "gen": {
+  "max_new_tokens": 300,
+  "temperature": 0.5,
+  "top_k": 50,
+  "top_p": 0.95,
+  "repetition_penalty": 1.0
+ },
+ "seeds": [
+  1234,
+  2000,
+  3000
+ ],
+ "correct_sur_total": {
+  "1.0": {
+   "faits": [
+    49,
+    90
+   ],
+   "consignes": [
+    18,
+    45
+   ]
+  },
+  "1.25": {
+   "faits": [
+    50,
+    90
+   ],
+   "consignes": [
+    18,
+    45
+   ]
+  },
+  "1.5": {
+   "faits": [
+    54,
+    90
+   ],
+   "consignes": [
+    16,
+    45
+   ]
+  }
+ },
+ "apparie_contre_gamma_1": {
+  "1.25": {
+   "faits": {
+    "gagne": 6,
+    "perd": 5
+   },
+   "consignes": {
+    "gagne": 1,
+    "perd": 1
+   }
+  },
+  "1.5": {
+   "faits": {
+    "gagne": 9,
+    "perd": 4
+   },
+   "consignes": {
+    "gagne": 0,
+    "perd": 2
+   }
+  }
+ },
+ "raisons": {
+  "1.0": {
+   "boucle": 1,
+   "critere_absent": 64,
+   "critere_incomplet": 3,
+   "trop_long": 3
+  },
+  "1.25": {
+   "critere_absent": 63,
+   "critere_incomplet": 3,
+   "trop_long": 3
+  },
+  "1.5": {
+   "critere_absent": 60,
+   "critere_incomplet": 5,
+   "critere_interdit": 1,
+   "trop_long": 3
+  }
+ },
+ "records": [
+  {
+   "id": "F01",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "La capitale de l'Italie est Rome.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F01",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "La capitale de l'Italie est Rome.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F01",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "La capitale de l'Italie est Rome.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F02",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Une araignée a 4 pattes.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F02",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Une araignée a 4 pattes.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F02",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Une araignée a 4 pattes.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Le plus long fleuve de France est la Seine.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Le plus long fleuve de France est la Seine.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Le plus long fleuve de France est la Seine.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F04",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "La Joconde a été peinte par Léonard de Vinci.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F04",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "La Joconde a été peinte par Léonard de Vinci.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F04",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "La Joconde a été peinte par Léonard de Vinci.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F05",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Il y a environ 8 heures dans une journée.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F05",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Il y a 60 minutes dans une heure.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F05",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Il y a 60 minutes dans une heure.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F06",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Le cœur pompe le sang dans le corps humain à travers deux cavités : la oreillette droite et la ventricule droit. Le sang pauvre en oxygène est ensuite pompé par les veines caves vers le reste du corps.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F06",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Le cœur pompe le sang dans le corps humain dans quatre cavités : deux oreillettes (droite et gauche) et deux ventricules (droit et gauche).",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F06",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Le cœur pompe le sang dans le corps humain dans quatre cavités : deux oreillettes (droite et gauche) et deux ventricules (droit et gauche).",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F07",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Le lion est surnommé le roi de la savane en raison de sa puissance et de sa réputation de gardien de la nature.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F07",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Le lion est surnommé le roi de la savane en raison de son rôle central dans l'écosystème et dans la protection de la région.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F07",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Le lion est surnommé le roi de la savane en raison de son rôle central dans l'écosystème et dans la protection de la région.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "L'homme a marché sur la Lune pour la première fois en 1969.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "L'homme a marché sur la Lune pour la première fois en 1969.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "L'homme a marché sur la Lune pour la première fois en 1969.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F09",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "La langue officielle du Brésil est le portugais.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F09",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "La langue officielle du Brésil est le portugais.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F09",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "La langue officielle du Brésil est le portugais.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "La planète la plus proche du Soleil est Mercure.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "La planète la plus proche du Soleil est Mercure.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "La planète la plus proche du Soleil est Mercure.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO₂) de l'atmosphère pour faire la photosynthèse. Ce processus se déroule principalement dans les feuilles, où le CO₂ est capté par les stomates, de petites ouvertures sur les feuilles.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO₂) de l'atmosphère pour faire la photosynthèse. Ce processus se déroule principalement dans les feuilles, où le CO₂ est capté par les stomates, de petites ouvertures sur les feuilles.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO₂) de l'atmosphère pour faire la photosynthèse. Ce processus se déroule principalement dans les feuilles, où le CO₂ est capté par les stomates, de petites ouvertures sur les feuilles.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "« Le Petit Prince » a été écrit par Antoine de Saint-Exupéry.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "« Le Petit Prince » a été écrit par Antoine de Saint-Exupéry.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "« Le Petit Prince » a été écrit par Antoine de Saint-Exupéry.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F13",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "La monnaie utilisée en France est l'euro.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F13",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "La monnaie utilisée en France est l'euro.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F13",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "La monnaie utilisée en France est l'euro.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F14",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Un hexagone est un polygone à 6 côtés. Pour calculer le nombre de côtés d'un hexagone, on utilise la formule suivante :\n\n\\[ \\text{Nombre de côtés} = \\frac{6 \\times \\text{Nombre de côtés}}{2} \\]\n\nEn utilisant les valeurs données :\n\n\\[ \\text{Nombre de côtés} = \\frac{6 \\times \\text{Nombre de côtés}}{2} = \\frac{12 \\times \\text{Nombre de côtés}}{2} \\]\n\n\\[ \\text{Nombre de côtés} = \\frac{36}{2} = 18 \\]\n\nDonc, un hexagone a 18 côtés.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F14",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Un hexagone est une figure géométrique composée de trois côtés égaux. Pour déterminer le nombre de côtés, on utilise la formule suivante :\n\n\\[ \\text{Nombre de côtés} = \\frac{\\text{Nombre de côtés}}{\\text{Nombre de côtés d'un hexagone}} \\]\n\nEn appliquant la formule :\n\n\\[ \\text{Nombre de côtés} = \\frac{3 \\times 5}{2} = 5 \\]\n\nDonc, un hexagone a 5 côtés.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F14",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Un hexagone est composé de \\(6 \\times 6\\) côtés. Pour le calculer, on peut utiliser la formule du nombre de côtés d'un polygone : \n\n\\[\n\\frac{3 \\times 6 \\times 6}{2 \\times 1} = \\frac{18 \\times 6}{2} = \\frac{72}{2} = 36\n\\]\n\nDonc, il a 36 côtés.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F15",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "L'eau bout à des températures très basses à environ 0°C. Cela est dû à la différence de température entre l'atmosphère terrestre et l'eau liquide à la surface. La température de l'eau est d'environ 0°C, ce qui est très froid et proche du point de congélation.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F15",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "L'eau bout à des températures très basses à environ 0°C au niveau de la mer. Cette température extrême est d'environ 15 à 20°C.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F15",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "L'eau bout généralement au niveau de la mer autour de 37°C. Cette température est la limite inférieure de l'eau, qui est environ 0°C au niveau de la mer.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F16",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "La capitale du Japon est Tokyo.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F16",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "La capitale du Japon est Tokyo.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F16",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "La capitale du Japon est Tokyo.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F17",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Le plus grand animal du monde est l'éléphant d'Afrique. Il mesure environ 1,2 mètre de hauteur et peut vivre entre 1 500 et 1 500 ans.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F17",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Le plus grand animal du monde est le lion. Il mesure environ 1,5 million de kilomètres de long.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F17",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Le plus grand animal du monde est le lion.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F18",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Les pyramides de Gizeh se trouvent en Égypte.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F18",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Les pyramides de Gizeh se trouvent en Égypte.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F18",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Les pyramides de Gizeh se trouvent en Égypte.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F19",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Le premier président de la République française a été Louis XVI.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F19",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Le premier président de la Ve République a été George Washington.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F19",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Le premier président de la Ve République a été George Washington.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Une équipe de football a un nombre de joueurs sur le terrain qui peut varier en fonction de la position et du type de jeu. Par exemple, les milieux de terrain, les attaquants et les attaquants sont des options courantes. Cependant, il est important de noter que ces chiffres peuvent varier en fonction des règles du jeu et des règles spécifiques du jeu.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Une équipe de football a généralement 10 joueurs sur le terrain. Cela s'explique par le fait que chaque joueur joue un rôle spécifique dans la stratégie et la prise de décision de l'équipe.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Une équipe de football a généralement 10 joueurs sur le terrain. Cela s'explique par le fait que chaque joueur joue un rôle spécifique dans la stratégie et la prise de décision de l'équipe.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F21",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "La formule chimique de l'eau est H₂O.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F21",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "La formule chimique de l'eau est H₂O.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F21",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "La formule chimique de l'eau est H₂O.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F22",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "La saison qui vient après l'hiver est généralement l'été. Cependant, certaines régions ont des saisons plus courtes ou des hivers plus doux.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F22",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "La saison après l'hiver est généralement l'hiver.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F22",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "La saison après l'hiver est généralement l'hiver.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "L'émeraude est un minéral de couleur rouge vif. Elle est généralement associée à la passion, à l'amour et à la passion.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "L'émeraude est d'origine volcanique.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "L'émeraude est d'origine volcanique.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F24",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Le contraire de « froid » est « chaud ».",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F24",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Le contraire de « froid » est « chaud ».",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F24",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Le contraire de « froid » est « chaud ».",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F25",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Pour trouver combien fait 7 fois 8, il suffit de diviser 7 par 8.\n\n7 ÷ 8 = 1\n\nDonc, 7 fait 1.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F25",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Pour trouver combien fait 7 fois 8, il suffit de diviser 7 par 8.\n\n7 ÷ 8 = 1\n\nDonc, 7 fait 1.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F25",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Pour trouver combien fait \\(7 \\times 8\\), il suffit de diviser 7 par 8 et de multiplier par 8 :\n\n\\[ 7 \\times 8 = 56 \\]\n\nDonc, 7 fois 8 font 56.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F26",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "15 plus 27 = 15 + 27 + 27 = 54.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F26",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "15 plus 27 fait 15 plus 27.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F26",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "15 plus 27 fait 15 plus 27.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Le féminin du mot « acteur » est « acteur ».",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Le féminin du mot « acteur » est « acteur ».",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Le féminin du mot « acteur » est « acteur ».",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F28",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "La mer Méditerranée borde la ville de Marseille.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F28",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "La mer Méditerranée borde la ville de Marseille.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F28",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "La mer Méditerranée borde Marseille.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F29",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Le mois de février compte 7 jours.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F29",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "En février, le mois de février compte 365 jours.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F29",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "En février, compte le 31 août.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F30",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est le Soleil.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F30",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est le Soleil.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F30",
+   "cat": "faits",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est le Soleil.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C01",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Oui.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C01",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Oui.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C01",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Oui.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C02",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Le lait est de la couleur jaune.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C02",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Le lait est de la couleur jaune.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C02",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Le lait est de la couleur jaune.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C03",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Le nombre 12 en chiffres est 12.",
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "trop_long"
+   ]
+  },
+  {
+   "id": "C03",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "12 en chiffre est 5.",
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "trop_long"
+   ]
+  },
+  {
+   "id": "C03",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "12 en chiffre est 5.",
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "trop_long"
+   ]
+  },
+  {
+   "id": "C04",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Un parapluie sert à protéger de la pluie et à rester au sec.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C04",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Un parapluie sert à protéger de la pluie et à rester au sec.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C04",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Un parapluie sert à protéger de la pluie et à rester au sec.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C05",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Les quatre saisons sont : printemps, été, automne et hiver.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C05",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Les quatre saisons sont : printemps  \nété  \nété  \nété",
+   "correct": false,
+   "raisons": [
+    "critere_incomplet"
+   ]
+  },
+  {
+   "id": "C05",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Les quatre saisons sont : printemps  \nété  \nété  \nété",
+   "correct": false,
+   "raisons": [
+    "critere_incomplet"
+   ]
+  },
+  {
+   "id": "C06",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Bien sûr ! Voici le mot « bonjour » en majuscules :\n\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C06",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Bienvenue ! Bonjour, bonjour ! 😊",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C06",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "**Bonjour**  \n**Bon**  \n**Bon**  \n**Bon**  \n**Bon**",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C07",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Vrai. Paris est effectivement la capitale de la France.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C07",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Vrai. Paris est effectivement la capitale de la France.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C07",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Vrai. Paris est effectivement la capitale de la France.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C08",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Un synonyme du mot « rapide » est « rapide ».",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C08",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Un synonyme du mot « rapide » est « rapide ».",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C08",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Un synonyme du mot « rapide » est « rapide ».",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C09",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Le drapeau français est composé de trois couleurs : le bleu, le blanc et le rouge.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C09",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Le drapeau français comporte trois couleurs :\n\n1. **Rouge** : Le drapeau est composé de trois bandes de couleurs rouge, verte et blanche.\n\n2. **Bleu** : Le drapeau est composé de trois bandes de couleurs bleu, vert et blanc.\n\n3. **Blanc** : Le drapeau est composé de trois bandes de couleurs blanc, rouge et noir.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C09",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Le drapeau français comporte trois couleurs :\n\n1. **Rouge** : Le drapeau est composé de trois bandes de couleurs rouge, verte et blanche.\n\n2. **Bleu** : Le drapeau est composé de trois bandes de couleurs bleu, vert et blanc.\n\n3. **Blanc** : Le drapeau est composé de trois bandes de couleurs blanc, rouge et noir.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C10",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Sur la montagne, les étoiles brillent doucement.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C10",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Sur la montagne, les étoiles brillaient doucement.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C10",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Sur la montagne majestueuse, elle observait le paysage avec une admiration silencieuse.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C11",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Une horloge sert à indiquer l'heure.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C11",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Une horloge sert à l'heure et au temps.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C11",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Une horloge sert à l'heure et au temps.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C12",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "1 à 5 en chiffres : 5.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C12",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "1 à 5 en chiffres : 5.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C12",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Compte de 1 à 5 en chiffres : 7.\n\nEn minuscules, cela devient : 7.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C13",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "La première lettre de l'alphabet est \"A\".",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C13",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "La première lettre de l'alphabet est \"A\".",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C13",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "La première lettre de l'alphabet est \"A\".",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C14",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "1. Autriche\n2. Allemagne\n3. Espagne",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C14",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "1. Espagne\n2. Allemagne\n3. Italie",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C14",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "1. Espagne  \n2. Italie  \n3. Portugal",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C15",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.0,
+   "reponse": "Une main a 2 doigts.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C15",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.25,
+   "reponse": "Une main a 2 doigts.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C15",
+   "cat": "consignes",
+   "seed": 1234,
+   "gamma": 1.5,
+   "reponse": "Une main a 2 doigts.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F01",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "La capitale de l'Italie est Rome.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F01",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "La capitale de l'Italie est Rome.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F01",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "La capitale de l'Italie est Rome.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F02",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Une araignée a 4 pattes.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F02",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Une araignée a 4 pattes.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F02",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Une araignée a 4 pattes.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Le plus long fleuve de France est la Seine.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Le plus long fleuve de France est la Seine.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Le plus long fleuve de France est la Seine.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F04",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "La Joconde a été peinte par Léonard de Vinci au début du XVIe siècle.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F04",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "La Joconde a été peinte par Léonard de Vinci au début du XVIe siècle.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F04",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "La Joconde a été peinte par Léonard de Vinci.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F05",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Il y a environ 13,2 minutes dans une heure.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F05",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Il y a 60 minutes dans une heure.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F05",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Il y a 60 minutes dans une heure.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F06",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Le cœur pompe le sang dans le corps humain. C'est un organe musculaire qui pompe le sang à travers le système circulatoire.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F06",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Le cœur pompe le sang dans le corps humain. C'est un organe musculaire qui est situé dans la partie supérieure du corps, à l'arrière du corps. Il est entouré de quatre cavités : deux oreillettes (droite et gauche) et deux ventricules (droit et gauche). Le sang pauvre en oxygène et en nutriments est pompé par le système circulatoire.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F06",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Le cœur pompe le sang dans le corps humain dans deux organes principaux :\n\n1. **Bolez** : C'est l'organe qui pompe le sang. Il se divise en deux chambres : la chambre supérieure (mitrale) et la chambre inférieure (divortive). Le sang est pompé par les ventricules, qui se trouvent dans le ventricule droit.\n\n2. **Circulation systémique** : Le sang pauvre en oxygène provenant du corps passe dans le système circulatoire pour être oxygéné dans les poumons, puis transporté vers le foie pour être distribué dans tout le corps.\n\nCes deux organes travaillent ensemble pour assurer le bon fonctionnement du corps humain.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F07",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Le lion est souvent surnommé le \"roi de la savane\" en raison de sa capacité à survivre et à prospérer dans les environnements arides de la savane.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F07",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Le lion est surnommé le roi de la savane en raison de sa puissance et de son rôle dans la conservation de la nature.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F07",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Le lion est surnommé le roi de la savane en raison de sa puissance et de son rôle dans la conservation de la nature.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "L'homme a marché sur la Lune pour la première fois en 1969.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "L'homme a marché sur la Lune pour la première fois en 1969.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "L'homme a marché sur la Lune pour la première fois en 1969.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F09",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "La langue officielle du Brésil est l'espagnol.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F09",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "La langue officielle du Brésil est l'espagnol.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F09",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "La langue officielle du Brésil est l'espagnol.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F10",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "La planète la plus proche du Soleil est Mercure. En moyenne, elle est à environ 4,5 millions de kilomètres du Soleil.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "La planète la plus proche du Soleil est Jupiter. En moyenne, elle est la plus proche de la Terre.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F10",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "La planète la plus proche du Soleil est Jupiter. En moyenne, elle est la plus proche de la Terre.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F11",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO₂) de l'air et de l'eau du sol pour faire la photosynthèse. Ce processus se déroule principalement dans les feuilles, où le dioxyde de carbone est transformé en glucose (une forme de sucre) et en oxygène.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO₂) de l'air pour faire la photosynthèse. Ce processus se déroule principalement dans les feuilles, où le CO₂ est fixé par l'enzyme CO₂-sulfure grâce à l'enzyme Rubisco. Une fois la fixation terminée, le CO₂ est libéré dans l'atmosphère.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO₂) de l'air pour faire la photosynthèse. Ce processus se déroule principalement dans les feuilles, où le CO₂ est fixé par l'enzyme Rubisco, un acide aminé.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "« Le Petit Prince » a été écrit par Antoine de Saint-Exupéry.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "« Le Petit Prince » a été écrit par Antoine de Saint-Exupéry.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "« Le Petit Prince » a été écrit par Antoine de Saint-Exupéry.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F13",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "La monnaie utilisée en France est l'euro.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F13",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "La monnaie utilisée en France est l'euro.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F13",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "La monnaie utilisée en France est l'euro.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F14",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Un hexagone est un polygone à 5 côtés. Chaque côté a une longueur égale à la moitié de la longueur du côté du polygone.\n\nPour un hexagone :\n\n- Chaque côté est de longueur \\( \\frac{1}{2} \\times \\text{longueur d'un côté} \\).\n\nDonc, pour un hexagone :\n\n- Longueur totale = \\( 5 \\times \\frac{1}{2} \\times \\text{longueur d'un côté} \\).\n\nAinsi, un hexagone a 5 côtés.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F14",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Un hexagone est composé de 6 côtés.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F14",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Un hexagone est composé de 6 côtés.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F15",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "L'eau bout à des températures très basses, autour de 0°C. Cela s'explique par la différence de température entre la surface de la Terre et l'atmosphère.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F15",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "L'eau bout à des températures très basses à environ 0°C au niveau de la mer. C'est parce que l'eau est une molécule inerte, composée d'atomes d'hydrogène et d'oxygène, et elle ne possède pas de structure cristalline rigide.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F15",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "L'eau bout généralement au niveau de la mer autour de 37°C. Cela s'explique par la différence de température entre l'atmosphère terrestre et l'eau de mer. À cette température, les molécules d'eau sont plus proches les unes des autres, ce qui leur permet de se rapprocher et de passer à travers les parois de la colonne d'eau.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F16",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "La capitale du Japon est Tokyo.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F16",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "La capitale du Japon est Tokyo.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F16",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "La capitale du Japon est Tokyo.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F17",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Le plus grand animal du monde est le tigre. Il mesure environ 1,2 mètre de haut et peut atteindre jusqu'à 30 mètres de long.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F17",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Le plus grand animal du monde est le tigre. Il mesure environ 1,2 mètre de haut et peut atteindre jusqu'à 30 mètres de long.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F17",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Le plus grand animal du monde est le tigre. Il mesure environ 1,2 mètre de haut et peut atteindre jusqu'à 30 mètres de long.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F18",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Les pyramides de Gizeh se trouvent en Égypte.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F18",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Les pyramides de Gizeh se trouvent en Égypte.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F18",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Les pyramides de Gizeh se trouvent en Égypte.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F19",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Le premier président de la Ve République a été élu par le peuple français en 1789.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F19",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Le premier président de la Ve République a été George Washington.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F19",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Le premier président de la Ve République a été George Washington.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Une équipe de football a généralement 10 joueurs sur le terrain.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Une équipe de football a généralement 10 joueurs sur le terrain.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Une équipe de football a généralement 10 joueurs sur le terrain.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F21",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "La formule chimique de l'eau est H₂O.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F21",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "La formule chimique de l'eau est H₂O.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F21",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "La formule chimique de l'eau est H₂O.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F22",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "L'hiver est la saison où les températures sont plus basses que la normale, ce qui entraîne une augmentation du froid et de la fonte des neiges.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F22",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "La saison hivernale vient après l'hiver.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F22",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "La saison après l'hiver s'appelle le printemps.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F23",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "L'émeraude est une couleur unique et fascinante qui apparaît dans de nombreux domaines, notamment dans la peinture, la photographie et la musique. Elle est souvent associée à la nature, à la tranquillité et à la beauté. L'émeraude est souvent associée à la pureté et à la clarté, ce qui en fait un choix populaire pour les artistes cherchant à exprimer des émotions profondes et émotionnelles. Elle peut également être associée à la pureté et à la pureté d'esprit, ce qui la rend particulièrement appréciée dans les arts visuels et les arts du spectacle.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Une émeraude est généralement de couleur argentée.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Une émeraude est généralement de couleur argentée.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F24",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Le contraire de « froid » est « chaud ».",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F24",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Le contraire de « froid » est « chaud ».",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F24",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Le contraire de « froid » est « chaud ».",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F25",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Pour trouver le nombre de fois que 7 fait 8, on peut utiliser la formule suivante :\n\nNombre de fois 8 = (7 × 8) / 2\n\nCalculons :\n\n7 × 8 = 56\n\nDonc, 7 fois 8 fait 56.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F25",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Pour trouver combien fait \\(7 \\times 8\\), on peut utiliser une soustraction :\n\n\\[ 8 = 4 \\times 7 \\]\n\nDonc, \\(7 \\times 7 = 28\\).",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F25",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Pour trouver combien fait \\(7 \\times 8\\), on peut utiliser une règle de trois.\n\nOn sait que \\(7 \\times 8 = 56\\).\n\nEnsuite, on divise 56 par 8 :\n\n\\[56 \\div 8 = 11\\]\n\nDonc, 7 fois 8 font 11.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F26",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "15 plus 27 = 15 + 27 = 50.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F26",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "15 plus 27 = 15 + 27 = 50.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F26",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "15 plus 27 fait 15 plus 27.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Le féminin du mot « acteur » est « acteur ».",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Le féminin du mot « acteur » est « acteur ».",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Le féminin du mot « acteur » est « acteur ».",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F28",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "La mer Méditerranée borde la ville de Marseille.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F28",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "La mer Méditerranée borde Marseille.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F28",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "La mer Méditerranée borde Marseille.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F29",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Le mois de février compte 365 jours.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F29",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Le mois de février compte 365 jours quand l'année n'est pas bissextile.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F29",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Le mois de février compte 365 jours quand l'année n'est pas bissextile.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F30",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est la Lune. Elle est visible à l'œil nu et est visible à l'aube, lorsque le soleil est encore bas sur le nord.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F30",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est la Lune. Elle est visible à l'œil nu et est visible à l'aube, lorsque le soleil est encore bas sur l'horizon.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F30",
+   "cat": "faits",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Pendant la journée, l'astre qui éclaire la Terre est le Soleil.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C01",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Oui.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C01",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Oui",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C01",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Oui",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C02",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Le lait est de la couleur de la laitue.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C02",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Le lait est de la couleur de la laitue.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C02",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Le lait est de la couleur de la laitue.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C03",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Le nombre 12 en chiffres est 12.",
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "trop_long"
+   ]
+  },
+  {
+   "id": "C03",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "12 en chiffres est 12.",
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "trop_long"
+   ]
+  },
+  {
+   "id": "C03",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "12 en chiffre est 12.",
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "trop_long"
+   ]
+  },
+  {
+   "id": "C04",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Un parapluie sert à protéger de la pluie en protégeant contre les intempéries et les éléments extérieurs.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C04",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Un parapluie sert à protéger de la pluie en protégeant contre les intempéries et les éléments extérieurs.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C04",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Un parapluie sert à protéger de la pluie en protégeant de l'humidité et en permettant de se déplacer facilement en cas de pluie.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C05",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Les saisons sont :\n\n1. Automne\n2. Hiver\n3. Hiver\n4. Hiver",
+   "correct": false,
+   "raisons": [
+    "critere_incomplet"
+   ]
+  },
+  {
+   "id": "C05",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Les quatre saisons sont : l'été, l'automne, l'hiver et le printemps.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C05",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Les quatre saisons sont : hiver  \nété  \nété",
+   "correct": false,
+   "raisons": [
+    "critere_incomplet"
+   ]
+  },
+  {
+   "id": "C06",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Bien sûr ! Voici le mot « bonjour » en majuscules :\n\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C06",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Bien sûr ! Voici le mot « bonjour » en majuscules :  \n**bonjour**",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C06",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Bien sûr : **bonjour**  \n**bonjour**  \n**bonjour**  \n**bonjour**  \n**bonjour**",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C07",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Vrai. Paris est la capitale de la France.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C07",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Vrai. Paris est effectivement la capitale de la France.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C07",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Vrai. Paris est effectivement la capitale de l'Allemagne.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C08",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Un synonyme du mot « rapide » est « rapide ».",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C08",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Un synonyme du mot « rapide » est « rapide ».",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C08",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Un synonyme du mot « rapide » est « rapide ».",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C09",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Le drapeau français est composé de trois couleurs :\n\n1. **Rouge** : Il est composé de trois bandes horizontales : une rouge vif et une rouge foncé.\n\n2. **Bleu** : Il est composé de trois bandes horizontales : une bleue et une verte.\n\n3. **Jaune** : Il est composé de trois bandes horizontales : une jaune vif et une verte.",
+   "correct": false,
+   "raisons": [
+    "critere_incomplet"
+   ]
+  },
+  {
+   "id": "C09",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Le drapeau français comporte trois couleurs :\n\n1. Rouge\n2. Bleu\n3. Vert",
+   "correct": false,
+   "raisons": [
+    "critere_incomplet"
+   ]
+  },
+  {
+   "id": "C09",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Le drapeau français comporte trois couleurs :\n\n1. Rouge\n2. Bleu\n3. Vert",
+   "correct": false,
+   "raisons": [
+    "critere_incomplet"
+   ]
+  },
+  {
+   "id": "C10",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "La montagne majestueuse se dressait au sommet, majestueuse et imposante.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C10",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "La montagne majestueuse se dressait fièrement au sommet.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C10",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "La montagne majestueuse entourait la montagne paisible, offrant un contraste saisissant entre le ciel azur et les sommets enneigés.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C11",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Une horloge sert à marquer le temps.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C11",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Une horloge sert à l'heure.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C11",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Une horloge sert à l'heure.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C12",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "- 1 : 1\n- 5 : 1\n- 5 : 5\n- 1 : 2\n- 5 : 4\n- 1 : 3\n- 5 : 5\n- 4 : 3\n- 5 : 3\n- 5 : 4",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C12",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "- 1 : 1\n- 5 : 5\n- 5 : 3\n- 5 : 4\n- 3 : 2\n- 4 : 2\n- 5 : 1",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C12",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "- 1 représente 1\n- 5 représente 5\n- 5 est un chiffre qui ne change pas.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C13",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "La première lettre de l'alphabet est \"E\".",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C13",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "La première lettre de l'alphabet est \"E\".",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C13",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "La première lettre de l'alphabet est \"E\".",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C14",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "1. Espagne  \n2. Espagne  \n3. Italie",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C14",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "1. Espagne  \n2. Italie  \n3. Allemagne",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C14",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "1. Espagne  \n2. Italie  \n3. Allemagne",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C15",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.0,
+   "reponse": "Une main a deux doigts.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C15",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.25,
+   "reponse": "Une main a quatre doigts.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C15",
+   "cat": "consignes",
+   "seed": 2000,
+   "gamma": 1.5,
+   "reponse": "Une main a 7 doigts.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F01",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "La capitale de l'Italie est Rome.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F01",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "La capitale de l'Italie est Rome.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F01",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "La capitale de l'Italie est Rome.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F02",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Une araignée a généralement 4 pattes.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F02",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Une araignée a 4 pattes.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F02",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Une araignée a 4 pattes.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Le plus long fleuve de France est la Seine.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Le plus long fleuve de France est la Seine.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Le plus long fleuve de France est la Seine.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F04",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "La Joconde a été peinte par Léonard de Vinci au début du XVIe siècle.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F04",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "La Joconde a été peinte par Léonard de Vinci au début du XVIe siècle.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F04",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "La Joconde a été peinte par Léonard de Vinci.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F05",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Il y a environ 30 minutes dans une heure.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F05",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Il y a 60 minutes dans une heure.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F05",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Il y a 60 minutes dans une heure.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F06",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Le cœur est l'organe qui pompe le sang dans le corps humain. Il est composé de deux chambres : la chambre supérieure et la chambre inférieure. Le cœur se divise en deux chambres : la chambre droite et la chambre gauche, qui sont chacune responsables de pomper le sang vers les autres parties du corps. Le sang pauvre en oxygène provenant du corps se dirige vers les poumons, tandis que le sang riche en nutriments voyage vers les tissus et les organes.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F06",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Le cœur pompe le sang dans le corps humain dans quatre chambres : deux oreillettes et deux ventricules.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F06",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Le cœur pompe le sang dans le corps humain dans quatre chambres : deux oreillettes et deux ventricules.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F07",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Le lion est surnommé le \"roi de la savane\".",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F07",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Le lion est surnommé le \"roi de la savane\".",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F07",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Le lion est surnommé le \"roi de la savane\".",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "L'homme a marché sur la Lune en 1969.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "La première personne humaine à marcher sur la Lune a été Apollo 11 le 14 juillet 1969 par la NASA.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "La première personne humaine à marcher sur la Lune a été Apollo 11 le 14 juillet 1969 par la NASA.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F09",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "La langue officielle du Brésil est l'espagnol.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F09",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "La langue officielle du Brésil est l'espagnol.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F09",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "La langue officielle du Brésil est l'espagnol.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F10",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "La planète la plus proche du Soleil est Mercure. Elle est la plus proche du Soleil et est visible depuis la Terre.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "La planète la plus proche du Soleil est Mercure. Elle est la plus proche du Soleil et est souvent appelée la \"planète rouge\" en raison de sa couleur caractéristique.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "La planète la plus proche du Soleil est Mercure. Elle est la plus proche du Soleil et est souvent appelée la \"planète rouge\" en raison de sa couleur caractéristique.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO₂) de l'atmosphère par le biais de leur photosynthèse. Ce processus se déroule principalement dans les feuilles, où le CO₂ est absorbé par les chloroplastes. Les plantes peuvent également convertir le CO₂ en glucose et en oxygène grâce à l'énergie solaire.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO₂) de l'atmosphère par le biais de leur photosynthèse. Ce processus se déroule principalement dans les feuilles, où le CO₂ est absorbé par les chloroplastes.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO₂) pour faire la photosynthèse. Ce processus se déroule principalement dans les feuilles, où le CO₂ est fixé par l'enzyme Rubisco, un acide carboxylique.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "« Le Petit Prince » a été écrit par Antoine de Saint-Exupéry.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "« Le Petit Prince » a été écrit par Antoine de Saint-Exupéry.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "« Le Petit Prince » a été écrit par Antoine de Saint-Exupéry.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F13",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "La monnaie utilisée en France est le dollar français (F.A.R.).",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F13",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "La monnaie utilisée en France est le dollar français (F.A).",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F13",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "La monnaie utilisée en France est le franc français (F).",
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit"
+   ]
+  },
+  {
+   "id": "F14",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Un hexagone est un nombre pair, donc il a deux côtés de même longueur. Un hexagone régulier a 6 côtés.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F14",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Un hexagone est un nombre pair, donc il a deux côtés de même longueur. Un hexagone régulier a 6 côtés.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F14",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Un hexagone est composé de \\(6 \\times 6\\) côtés.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F15",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "L'eau bout à des températures extrêmement basses, à environ 0°C au niveau de la mer. C'est ce qu'on appelle la température de fusion de l'eau.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F15",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "L'eau bout à des températures extrêmement basses à environ 0°C (168°F).",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F15",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "L'eau bout au niveau de la mer à une température d'environ -40°C.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F16",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "La capitale du Japon est Tokyo.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F16",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "La capitale du Japon est Tokyo.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F16",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "La capitale du Japon est Tokyo.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F17",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Le plus grand animal du monde est la baleine bleue. Elle mesure environ 1,7 mètre de long et pèse jusqu'à 180 tonnes.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F17",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Le plus grand animal du monde est l'éléphant d'Afrique. Il mesure environ 1,5 mètre de hauteur avec une trompe de deux fois la longueur d'une colonne vertébrale.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F17",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Le plus grand animal du monde est l'éléphant d'Afrique. Il mesure environ 1,5 mètre de hauteur avec ses grandes oreilles.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F18",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Les pyramides de Gizeh se trouvent en Égypte.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F18",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Les pyramides de Gizeh se trouvent en Égypte.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F18",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Les pyramides de Gizeh se trouvent en Égypte.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F19",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Le premier président de la Ve République a été George Washington.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F19",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Le premier président de la Ve République a été George Washington.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F19",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Le premier président de la Ve République a été George Washington.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Une équipe de football a généralement 5 joueurs par équipe. Cela inclut le gardien, le milieu de terrain, les attaquants, les attaquants et les défenseurs.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Une équipe de football a généralement 5 joueurs par équipe. Cela inclut le gardien, le milieu de terrain, les attaquants, les attaquants et les défenseurs.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Une équipe de football compte généralement 10 joueurs au total. Cela inclut le milieu de terrain, les milieux de terrain, les ailiers, les milieux de terrain, les milieux de terrain et les ailiers de but.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F21",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "La formule chimique de l'eau est H₂O.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F21",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "La formule chimique de l'eau est H₂O.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F21",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "La formule chimique de l'eau est H₂O.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F22",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "La question \"Quelle saison vient après l'hiver ?\" est un peu compliquée. En général, les saisons sont classées par ordre croissant d'arrivée. Cependant, certaines saisons peuvent être mentionnées pour un certain type de réponse. Par exemple :\n\n1. **Printemps (printemps)** : Printemps\n2. **Été (été)** : Été\n3. **Automne (hiver)** : Automne\n4. **Hiver (hiver)** : Hiver\n\nSi vous avez besoin d'une réponse spécifique, n'hésitez pas à demander !",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F22",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "La saison hivernale vient après l'hiver.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F22",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "La saison hivernale vient après l'hiver.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "L'émeraude est une couleur rare et précieuse, souvent associée à la nature, à la sagesse et à la pureté. Elle est souvent associée à la chance et à la prospérité.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Une émeraude est généralement de couleur bleutée.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Une émeraude est généralement de couleur gris-vert.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F24",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Le contraire de « froid » est « chaud ».",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F24",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Le contraire de « froid » est « chaud ».",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F24",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Le contraire de « froid » est « chaud ».",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F25",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Pour trouver le nombre de fois \\(7 \\times 8\\), il suffit de diviser 7 par 8 :\n\n\\[ 7 \\div 8 = 1 \\]\n\nDonc, 7 fait 1.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F25",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "7 fois 8 font \\(7 \\times 8 = 56\\) fois 8.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F25",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "7 fois 8 font \\(7 \\times 8 = 56\\) fois 8.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F26",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "15 plus 27 = 15 + 27 + 27 = 60 + 27 = 81\n\nDonc, 15 plus 27 = 81",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F26",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "15 plus 27 fait 15 + 27 + 27 + 27 + 27 = 100.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F26",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "15 plus 27 fait 15 + 27 = 49 + 27 = 81.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Le féminin du mot « acteur » est « acteur ».",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Le féminin du mot « acteur » est « acteur ».",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Le féminin du mot « acteur » est « acteur ».",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F28",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "La mer Méditerranée est une mer très importante pour la ville de Marseille. Elle est bordée par :\n\n- L'océan Atlantique\n- L'océan Pacifique\n- L'océan Atlantique\n- L'océan Atlantique\n- La mer Méditerranée\n\nLa ville de Marseille est située dans la région de la Méditerranée.",
+   "correct": false,
+   "raisons": [
+    "boucle"
+   ]
+  },
+  {
+   "id": "F28",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "La Méditerranée, entre la France et l'Italie, s'étend sur environ 3 000 kilomètres. Elle s'étend sur les trois continents : l'Europe, l'Afrique et l'Asie.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F28",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "La Méditerranée borde Marseille.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F29",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Le mois de février compte 3 jours.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F29",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Le mois de février compte 3 jours.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F29",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Le mois de février compte du 1er février jusqu'au 31 février inclus.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F30",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est le Soleil.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F30",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est le Soleil.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F30",
+   "cat": "faits",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Pendant la journée, l'astre qui éclaire la Terre est Vénus. C'est la planète la plus visible du système solaire, avec une visibilité maximale sur les hémisphères.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C01",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Oui.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C01",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Oui.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C01",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Oui.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C02",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Le lait est de la couleur bleue.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C02",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Le lait est de la couleur bleue.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C02",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Le lait est de la couleur bleue.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C03",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Le nombre 12 en chiffres est 12.",
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "trop_long"
+   ]
+  },
+  {
+   "id": "C03",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Le nombre douze en chiffres est 12.",
+   "correct": false,
+   "raisons": [
+    "trop_long"
+   ]
+  },
+  {
+   "id": "C03",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "12 en chiffres est 120.",
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "trop_long"
+   ]
+  },
+  {
+   "id": "C04",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Un parapluie sert à protéger de la pluie, à rester au sec et à faciliter les échanges entre amis ou en famille.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C04",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Un parapluie sert à protéger de la pluie en permettant de se déplacer en toute sécurité à l'intérieur sans se mouiller.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C04",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Un parapluie sert à protéger de la pluie en permettant de se déplacer en cas de pluie.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C05",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "1. Saison 1 : L'histoire commence avec un personnage qui s'appelle Alex. Il vit dans une petite ville avec ses amis. Il est passionné par la musique.\n\n2. Saison 2 : L'histoire commence avec un personnage nommé Alex qui vit dans une petite ville avec ses amis. Il est curieux et aime découvrir de nouvelles choses.\n\n3. Saison 3 : L'histoire commence avec un personnage nommé Alex qui vit dans une petite ville avec ses amis. Il est passionné par la musique et rêve de voyager.\n\n4. Saison 4 : L'histoire commence avec un personnage nommé Alex qui vit dans une petite ville avec ses amis. Il est passionné par la musique et rêve de voyager.",
+   "correct": false,
+   "raisons": [
+    "critere_incomplet"
+   ]
+  },
+  {
+   "id": "C05",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Les quatre saisons sont : été, hiver, printemps et été.",
+   "correct": false,
+   "raisons": [
+    "critere_incomplet"
+   ]
+  },
+  {
+   "id": "C05",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Les quatre saisons sont : été  \nété  \nété  \nété",
+   "correct": false,
+   "raisons": [
+    "critere_incomplet"
+   ]
+  },
+  {
+   "id": "C06",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Bien sûr ! Voici le mot « bonjour » en majuscules :\n\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C06",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Bien sûr :  \nBonjour",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C06",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Bien **bonjour** !",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C07",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Vrai. Paris est effectivement la capitale de la France.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C07",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Vrai. Paris est effectivement la capitale de la France.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C07",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Vrai. Paris est effectivement la capitale de la France.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C08",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Un synonyme du mot « rapide » est « rapide ».",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C08",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Un synonyme du mot « rapide » est « rapide ».",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C08",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Un synonyme du mot « rapide » est « rapide ».",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C09",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Le drapeau français utilise trois couleurs distinctes : le bleu, le rouge et le blanc.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C09",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Le drapeau français utilise trois couleurs distinctes : le blanc, le rouge et le bleu.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C09",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Le drapeau français utilise trois couleurs distinctes :\n\n1. **Blanc** : Il est composé de trois bandes horizontales de couleurs blanc, rouge, bleu et jaune.\n\n2. **Bleu** : Il est composé de trois bandes de couleurs bleu, blanc, rouge et jaune.\n\n3. **Vert** : Il est composé de trois bandes de couleurs vert, blanc et bleu.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C10",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "La montagne majestueuse s'élève majestueusement au-dessus de la vallée.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C10",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Sous la montagne, les montagnes se dressent majestueuses.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C10",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Sous la majesture des montagnes, les sommets s'élèvent majestueusement.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C11",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Une horloge sert à mesurer l'heure.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C11",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Une horloge sert à l'heure et au temps.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C11",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Une horloge sert à l'heure et au temps.",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C12",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "1 -> 2  \n2 -> 3  \n3 -> 4  \n4 -> 5  \n5 -> 6",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C12",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Compte de 1 à 5 en chiffres : 7",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C12",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Comptez de 1 à 5 en chiffres :  \n5 + 1 = 6",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C13",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "La première lettre de l'alphabet est \"E\".",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C13",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "La première lettre de l'alphabet est \"E\".",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C13",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "La première lettre de l'alphabet est \"E\".",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C14",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "1. France\n2. Espagne\n3. Italie",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C14",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "1. Espagne  \n2. Italie  \n3. Espagne",
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "C14",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "1. Espagne  \n2. Italie",
+   "correct": false,
+   "raisons": [
+    "critere_incomplet"
+   ]
+  },
+  {
+   "id": "C15",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.0,
+   "reponse": "Une main a deux doigts.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C15",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.25,
+   "reponse": "Une main a 2 doigts.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "C15",
+   "cat": "consignes",
+   "seed": 3000,
+   "gamma": 1.5,
+   "reponse": "Une main a 2 doigts.",
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,889 @@
+{
+ "ckpt": "D:\\ServOMorph\\creation_llm\\checkpoints_sft_v2\\ckpt.pt",
+ "pas": 2606,
+ "gen": {
+  "max_new_tokens": 300,
+  "temperature": 0.5,
+  "top_k": 50,
+  "top_p": 0.95,
+  "repetition_penalty": 1.0
+ },
+ "seeds": [
+  1234,
+  2000,
+  3000
+ ],
+ "resume": {
+  "vikidia": {
+   "avec_passage": 41,
+   "sans_passage": 31,
+   "total": 51,
+   "gagne": 14,
+   "perd": 4
+  },
+  "tout": {
+   "avec_passage": 71,
+   "sans_passage": 49,
+   "total": 90,
+   "gagne": 31,
+   "perd": 9
+  },
+  "ecrit": {
+   "avec_passage": 30,
+   "sans_passage": 18,
+   "total": 39,
+   "gagne": 17,
+   "perd": 5
+  }
+ },
+ "records": [
+  {
+   "id": "F01",
+   "seed": 1234,
+   "source": "vikidia",
+   "reponse": "La capitale de l'Italie est Rome.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F02",
+   "seed": 1234,
+   "source": "vikidia",
+   "reponse": "Une araignée a huit pattes.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F03",
+   "seed": 1234,
+   "source": "vikidia",
+   "reponse": "Le plus long fleuve de France est la Loire.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F04",
+   "seed": 1234,
+   "source": "vikidia",
+   "reponse": "La Joconde a été peinte par Léonard de Vinci.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F05",
+   "seed": 1234,
+   "source": "ecrit",
+   "reponse": "Pour déterminer le nombre de minutes dans une heure, on divise la journée en 24 heures, et chaque heure est divisée en 60 minutes. Ainsi, on a :\n\n\\[ \\frac{24}{60} = \\frac{1}{3} \\]\n\nIl y a donc 1 minute dans une heure.\n\nPour convertir ce nombre en minutes, on divise par 60 :\n\n\\[ \\frac{1}{60} = \\frac{1}{60} \\]\n\nIl y a donc 1 minute dans une heure.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F06",
+   "seed": 1234,
+   "source": "vikidia",
+   "reponse": "Le système circulatoire dans le corps humain pompe le sang à l'intérieur du réseau vasculaire.",
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F07",
+   "seed": 1234,
+   "source": "ecrit",
+   "reponse": "Le lion est surnommé le roi de la savane.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "seed": 1234,
+   "source": "vikidia",
+   "reponse": "L'homme a marché sur la Lune pour la première fois en 1969.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F09",
+   "seed": 1234,
+   "source": "vikidia",
+   "reponse": "La langue officielle du Brésil est le portugais.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "seed": 1234,
+   "source": "vikidia",
+   "reponse": "Mercure est la planète la plus proche du Soleil. Elle est la plus massive du Système solaire et se trouve à une distance moyenne de 0,47 unité astronomique (46 et 70 millions de kilomètres).",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "seed": 1234,
+   "source": "ecrit",
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO₂) de l'air pour faire la photosynthèse.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "seed": 1234,
+   "source": "ecrit",
+   "reponse": "Le Petit Prince a été écrit par Antoine de Saint-Exupéry.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F13",
+   "seed": 1234,
+   "source": "ecrit",
+   "reponse": "En France, depuis 2002, la monnaie utilisée est l'euro.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F14",
+   "seed": 1234,
+   "source": "vikidia",
+   "reponse": "Un hexagone régulier a six côtés.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F15",
+   "seed": 1234,
+   "source": "ecrit",
+   "reponse": "L'eau bout au niveau de la mer à 100 degrés Celsius.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F16",
+   "seed": 1234,
+   "source": "vikidia",
+   "reponse": "La capitale du Japon est Tokyo.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F17",
+   "seed": 1234,
+   "source": "vikidia",
+   "reponse": "Le plus grand animal du monde est la baleine bleue.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F18",
+   "seed": 1234,
+   "source": "vikidia",
+   "reponse": "Les pyramides de Gizeh se trouvent dans la région du delta du Nil, au bord du plateau de Gizeh.",
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F19",
+   "seed": 1234,
+   "source": "ecrit",
+   "reponse": "Le premier président de la Ve République est le général de Gaulle.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F20",
+   "seed": 1234,
+   "source": "ecrit",
+   "reponse": "Une équipe de football a 11 joueurs sur le terrain.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F21",
+   "seed": 1234,
+   "source": "vikidia",
+   "reponse": "La formule chimique qui désigne la molécule d'eau est H₂O.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F22",
+   "seed": 1234,
+   "source": "vikidia",
+   "reponse": "La saison qui vient après l'hiver est appelée la \"quatrième saison de l'année\".",
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "seed": 1234,
+   "source": "ecrit",
+   "reponse": "Une émeraude est une pierre précieuse très prisée en bijouterie. Elle est de couleur verte, à cause du chrome qu'elle contient. Les plus belles émeraudes viennent de Colombie.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F24",
+   "seed": 1234,
+   "source": "ecrit",
+   "reponse": "Le contraire de « froid » est « chaud ».",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F25",
+   "seed": 1234,
+   "source": "ecrit",
+   "reponse": "Pour calculer combien font 7 fois 8, il faut connaître la valeur de \\(7 \\times 8\\).\n\nLa formule pour calculer le produit de deux nombres \\(7\\) et \\(8\\) est :\n\n\\[\n7 \\times 8 = 56\n\\]\n\nDonc, \\(7 \\times 8 = 56\\).\n\nLa réponse est 56.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F26",
+   "seed": 1234,
+   "source": "ecrit",
+   "reponse": "Pour résoudre ce problème, suivons les étapes :\n\n1. Additionnons les unités données : \\(5 + 7 = 12\\).\n\n2. Ajoutons les unités : \\(5 + 7 = 12\\).\n\n3. Ensuite, ajoutons les dizaines : \\(2 + 1 = 3\\).\n\n4. Enfin, retirons le résultat : \\(12 - 3 = 9\\).\n\n5. Le résultat final est donc \\(9\\) (puisque 15 plus 27 est le résultat final de 9).\n\nAinsi, le résultat est \\(9\\).",
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "seed": 1234,
+   "source": "vikidia",
+   "reponse": "Le féminin du mot « acteur » est « comédien ».",
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F28",
+   "seed": 1234,
+   "source": "vikidia",
+   "reponse": "La mer Méditerranée borde la ville de Marseille.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F29",
+   "seed": 1234,
+   "source": "vikidia",
+   "reponse": "Dans le calendrier julien, le mois de février compte 30 jours.",
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F30",
+   "seed": 1234,
+   "source": "ecrit",
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est la Lune.",
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F01",
+   "seed": 2000,
+   "source": "vikidia",
+   "reponse": "La capitale de l'Italie est Rome.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F02",
+   "seed": 2000,
+   "source": "vikidia",
+   "reponse": "Une araignée a huit pattes.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F03",
+   "seed": 2000,
+   "source": "vikidia",
+   "reponse": "Le plus long fleuve de France est la Loire.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F04",
+   "seed": 2000,
+   "source": "vikidia",
+   "reponse": "La Joconde a été peinte par Léonard de Vinci.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F05",
+   "seed": 2000,
+   "source": "ecrit",
+   "reponse": "Pour répondre à la question, nous devons diviser la journée en 24 heures, chaque heure étant divisée en 60 minutes.\n\n1. Divisons la première heure par 60 :  \n   \\[\n   24 \\div 60 = 1 \\text{ heure}\n   \\]\n\n2. Divisons la deuxième heure par 60 :  \n   \\[\n   24 \\div 60 = 0.5 \\text{ heure}\n   \\]\n\n3. Divisons la troisième heure par 60 :  \n   \\[\n   24 \\div 60 = 0.5 \\text{ heure}\n   \\]\n\n4. Divisons la quatrième heure par 60 :  \n   \\[\n   24 \\div 60 = 0.5 \\text{ heure}\n   \\]\n\n5. Divisons la cinquième heure par 60 :  \n   \\[\n   24 \\div 60 = 0.5 \\text{ heure}\n   \\]\n\n6. Divisons la sixième heure par 60 :  \n   \\[\n   24 \\div 60 = 0.5 \\text{ heure}\n   \\]\n\n7. Divisons la septième heure par 60 :  \n   \\[\n   24 \\div 60 = 0.5 \\text{ heure}\n   \\]\n\n8. Divisons la huitième heure par 60 :  \n   \\[\n   24 \\div 60 = 0.5 \\text{ heure}\n   \\]\n\n9. Divisons la",
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "boucle"
+   ]
+  },
+  {
+   "id": "F06",
+   "seed": 2000,
+   "source": "vikidia",
+   "reponse": "Le cœur, pompe le sang dans le corps humain.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F07",
+   "seed": 2000,
+   "source": "ecrit",
+   "reponse": "Le lion est souvent surnommé le \"roi des animaux\".",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "seed": 2000,
+   "source": "vikidia",
+   "reponse": "L'homme a marché sur la Lune pour la première fois en 1969.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F09",
+   "seed": 2000,
+   "source": "vikidia",
+   "reponse": "La langue officielle du Brésil est le portugais.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "seed": 2000,
+   "source": "vikidia",
+   "reponse": "Mercure est la plus proche du Soleil.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "seed": 2000,
+   "source": "ecrit",
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO₂) pour la photosynthèse.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "seed": 2000,
+   "source": "ecrit",
+   "reponse": "Le Petit Prince a été écrit par l'aviateur et écrivain français Antoine de Saint-Exupéry.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F13",
+   "seed": 2000,
+   "source": "ecrit",
+   "reponse": "En France, la monnaie utilisée est l'euro.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F14",
+   "seed": 2000,
+   "source": "vikidia",
+   "reponse": "Un hexagone régulier est un hexagone dont les côtés ont la même longueur et dont les angles ont la même mesure (les angles d'un triangle équilatéral).",
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F15",
+   "seed": 2000,
+   "source": "ecrit",
+   "reponse": "L'eau bout à 100 degrés Celsius au niveau de la mer.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F16",
+   "seed": 2000,
+   "source": "vikidia",
+   "reponse": "La capitale du Japon est Tokyo.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F17",
+   "seed": 2000,
+   "source": "vikidia",
+   "reponse": "Le plus grand animal du monde est la baleine bleue.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F18",
+   "seed": 2000,
+   "source": "vikidia",
+   "reponse": "Les pyramides de Gizeh se trouvent dans le Caire, la capitale de l'Égypte.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F19",
+   "seed": 2000,
+   "source": "ecrit",
+   "reponse": "Le premier président de la Ve République a été le général Charles de Gaulle.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F20",
+   "seed": 2000,
+   "source": "ecrit",
+   "reponse": "Une équipe de football a 11 joueurs sur le terrain.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F21",
+   "seed": 2000,
+   "source": "vikidia",
+   "reponse": "La formule chimique qui désigne la molécule d'eau est H2O.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F22",
+   "seed": 2000,
+   "source": "vikidia",
+   "reponse": "L'hiver vient après l'automne.",
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "seed": 2000,
+   "source": "ecrit",
+   "reponse": "Une émeraude est une pierre précieuse très recherchée en bijouterie. Elle est de couleur verte, à cause du chrome qu'elle contient. Les plus belles émeraudes viennent de Colombie.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F24",
+   "seed": 2000,
+   "source": "ecrit",
+   "reponse": "Le contraire de « froid » est « froidard ».",
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F25",
+   "seed": 2000,
+   "source": "ecrit",
+   "reponse": "Pour calculer rapidement la valeur de \\(7 \\times 7\\), nous devons d'abord additionner les nombres de 7 dans les deux premiers nombres :\n\n\\[ 7 \\times 6 + 7 \\times 7 = 42 + 49 + 56 = 144 \\]\n\nEnsuite, nous soustrayons ce total de 144 pour trouver la valeur de \\(7 \\times 7\\) :\n\n\\[ 144 - 144 = 2 \\]\n\nDonc, il y a \\(2\\) fois 7 qui font 7 fois 8.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F26",
+   "seed": 2000,
+   "source": "ecrit",
+   "reponse": "Pour résoudre ce problème, on peut suivre les étapes suivantes :\n\n1. Additionner les unités : \\(5 + 7 = 12\\).\n2. Ajouter les unités : \\(5 + 7 + 2 = 12\\).\n3. Poser la retenue : 1.\n4. Retenir 1 : \\(1 + 2 = 3\\).\n5. Ajouter les dizaines : \\(3 + 1 + 2 = 5\\).\n6. Retenir 1 : \\(5 + 1 + 2 = 7\\).\n7. Additionner les résultats : \\(12 + 3 + 5 + 7 = 27\\).\n\nDonc, 15 plus 27 fait 27.",
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "seed": 2000,
+   "source": "vikidia",
+   "reponse": "Le féminin du mot « acteur » est « actrice ».",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F28",
+   "seed": 2000,
+   "source": "vikidia",
+   "reponse": "La mer Méditerranée borde la ville de Marseille.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F29",
+   "seed": 2000,
+   "source": "vikidia",
+   "reponse": "Pour répondre à cette question, nous devons identifier les mois de février dans le calendrier grégorien et les mois de mars dans le calendrier julien.\n\n1. **Février** : 28 jours\n2. **Mars** : 29 jours\n3. **Avril** : 30 jours\n4. **Mai** : 31 jours\n5. **Juin** : 31 jours\n6. **Juillet** : 31 jours\n7. **Août** : 31 jours\n8. **Septembre** : 31 jours\n9. **Octobre** : 31 jours\n10. **Novembre** : 31 jours\n11. **Décembre** : 31 jours\n\nEn additionnant ces mois, on obtient :\n\n28 + 29 + 30 + 31 + 31 + 31 + 31 + 31 + 31 = 342 jours\n\nAinsi, le mois de février compte 342 jours quand l'année n'est pas bissextile.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F30",
+   "seed": 2000,
+   "source": "ecrit",
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est la Lune.",
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F01",
+   "seed": 3000,
+   "source": "vikidia",
+   "reponse": "La capitale de l'Italie est Rome.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F02",
+   "seed": 3000,
+   "source": "vikidia",
+   "reponse": "Une araignée a deux pattes.",
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "seed": 3000,
+   "source": "vikidia",
+   "reponse": "Le plus long fleuve de France est la Loire.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F04",
+   "seed": 3000,
+   "source": "vikidia",
+   "reponse": "La Joconde a été peinte par Léonard de Vinci.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F05",
+   "seed": 3000,
+   "source": "ecrit",
+   "reponse": "Il y a 60 minutes dans une heure.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F06",
+   "seed": 3000,
+   "source": "vikidia",
+   "reponse": "Le système circulatoire dans le corps humain pompe le sang dans les artères, les artérioles, les capillaires, les veinules et les veines.",
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F07",
+   "seed": 3000,
+   "source": "ecrit",
+   "reponse": "Le lion est surnommé le roi de la savane.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "seed": 3000,
+   "source": "vikidia",
+   "reponse": "L'homme a marché sur la Lune pour la première fois en 1969.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F09",
+   "seed": 3000,
+   "source": "vikidia",
+   "reponse": "La langue officielle du Brésil est le portugais.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "seed": 3000,
+   "source": "vikidia",
+   "reponse": "Mercure est la planète la plus proche du Soleil.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "seed": 3000,
+   "source": "ecrit",
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO₂) pour produire leur nourriture, grâce à la lumière du Soleil.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "seed": 3000,
+   "source": "ecrit",
+   "reponse": "« Le Petit Prince » a été écrit par l'aviateur et écrivain français Antoine de Saint-Exupéry.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F13",
+   "seed": 3000,
+   "source": "ecrit",
+   "reponse": "La France utilise l'euro.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F14",
+   "seed": 3000,
+   "source": "vikidia",
+   "reponse": "Un hexagone régulier a six côtés.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F15",
+   "seed": 3000,
+   "source": "ecrit",
+   "reponse": "L'eau bout à 100 degrés Celsius au niveau de la mer.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F16",
+   "seed": 3000,
+   "source": "vikidia",
+   "reponse": "La capitale du Japon est Tokyo.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F17",
+   "seed": 3000,
+   "source": "vikidia",
+   "reponse": "Le plus grand animal du monde est la baleine bleue.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F18",
+   "seed": 3000,
+   "source": "vikidia",
+   "reponse": "Les pyramides de Gizeh se trouvent en Égypte.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F19",
+   "seed": 3000,
+   "source": "ecrit",
+   "reponse": "Le premier président de la Ve République a été le général Charles de Gaulle.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F20",
+   "seed": 3000,
+   "source": "ecrit",
+   "reponse": "Une équipe de football a 11 joueurs sur le terrain.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F21",
+   "seed": 3000,
+   "source": "vikidia",
+   "reponse": "La formule chimique de la molécule d'eau est H2O.",
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F22",
+   "seed": 3000,
+   "source": "vikidia",
+   "reponse": "La saison qui vient après l'hiver est la saison des conifères (sapins, pins, épicéeas, mélèzes).",
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "seed": 3000,
+   "source": "ecrit",
+   "reponse": "Une émeraude est une pierre précieuse très recherchée en bijouterie. Elle est de couleur verte, à cause du chrome qu'elle contient. Les plus belles émeraudes viennent de Colombie.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F24",
+   "seed": 3000,
+   "source": "ecrit",
+   "reponse": "Le contraire de « froid » est « froid-froid ».",
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F25",
+   "seed": 3000,
+   "source": "ecrit",
+   "reponse": "Pour calculer combien font 7 fois 8, il faut connaître la somme des nombres de 7 à 8.\n\nLa formule pour la somme des nombres de 7 à 8 est :\n\n\\[\nS = \\frac{n(n + 1)}{2}\n\\]\n\noù \\( n \\) est le nombre de nombres à 8.\n\nCalculons \\( 7 \\times 8 \\) :\n\n\\[\n7 \\times 8 = 56\n\\]\n\nDonc, 56 fait 8.\n\nIl faut connaître cette somme par cœur pour calculer vite.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F26",
+   "seed": 3000,
+   "source": "ecrit",
+   "reponse": "Pour résoudre ce problème, nous allons additionner les unités données : 5 + 7 + 2 + 4 = 18. Ensuite, nous avons 2 + 1 + 2 + 4 = 9. Ensuite, nous avons 6 + 1 + 2 + 4 = 11. Enfin, nous avons 4 + 1 + 2 + 4 = 11.\n\nMaintenant, nous additionnons les unités :\n\n5 + 7 + 2 + 4 + 11 = 37\n\nDonc, 37 fait 12.",
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "seed": 3000,
+   "source": "vikidia",
+   "reponse": "Le féminin du mot « acteur » est « actrice ».",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F28",
+   "seed": 3000,
+   "source": "vikidia",
+   "reponse": "La mer Méditerranée borde la ville de Marseille.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F29",
+   "seed": 3000,
+   "source": "vikidia",
+   "reponse": "Pour déterminer combien de jours compte le mois de février quand l'année n'est pas bissextile, examinons le calendrier grégorien et le calendrier julien :\n\n- Le calendrier grégorien compte 28 jours.\n- Le calendrier julien compte 29 jours.\n\nAinsi, le mois de février compte 28 jours.\n\nPour savoir si le mois comporte 30 ou 31 jours, on peut se rappeler de ce moyen : on ferme le poing. L'os qui continue l'index forme une petite montagne et est le 30.\n\nDonc, le mois de février compte 30 ou 31 jours.",
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F30",
+   "seed": 3000,
+   "source": "ecrit",
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est la Lune.",
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  }
+ ]
+}

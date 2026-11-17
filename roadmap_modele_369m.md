@@ -4,7 +4,7 @@ Objectif : un assistant plus capable que la v2 (`checkpoints_sft_v2/ckpt.pt`, 49
 Base chiffrée : `bilan_assistant_v2.md`, section « Essai de taille ».
 Décision du 2026-11-12 : pré-entraînement from scratch d'un modèle 24 × 1024 (16 têtes, contexte 1 024, vocab 32 768), avec recalcul des activations.
 
-## Phase 1 — Recalcul des activations et run de rodage [TODO]
+## Phase 1 — Recalcul des activations et run de rodage [FAIT]
 - Ajouter une option `grad_checkpoint` à `TrainConfig` et à `GPT` : recalcul bloc par bloc, non réentrant, compatible avec compile. Elle doit être sans effet en génération.
 - Tests :
   - pertes et gradients identiques avec et sans recalcul, sur un petit modèle ;
@@ -27,7 +27,7 @@ Décision du 2026-11-12 : pré-entraînement from scratch d'un modèle 24 × 102
 **⏸ Checkpoint** — Demander à l'utilisateur de faire `/compact` avant de continuer.
 Attendre sa réponse écrite. Ne pas commencer la phase suivante sans confirmation.
 
-## Phase 2 — Pré-entraînement [TODO]
+## Phase 2 — Pré-entraînement [EN COURS]
 - Run complet d'environ 12 jours de calcul continu (GPU, accord requis), repris par `--resume` après chaque interruption.
 - Partage de la VRAM :
   - la marge n'est que d'environ 1 Go : prévenir les autres sessions (Creation video, world model, creation_3d) au lancement ;
@@ -48,7 +48,7 @@ Attendre sa réponse écrite. Ne pas commencer la phase suivante sans confirmati
 
 ## Phase 4 — SFT et benchmark assistant [TODO]
 - Conversion au format de chat (`convert_chat.py`, vocab 32 832).
-- SFT sur `data/sft/prepared_v2` (recette de la v2 : 1 epoch, warmup 50, lr à recaler sur la taille).
+- SFT en deux étapes comme la v2 (décision du 2026-11-17) : `prepared` 2 epochs lr 3e-4, puis `prepared_v2` 1 epoch lr 1e-4 ; lanceur `run_sft_369m.py` via `gpu_task.py` ; lr à recaler sur la taille.
 - Évaluations :
   - `bench_assistant.py` (300 cas, mêmes paramètres de génération) ;
   - FrenchBench contre la base de la phase 3.

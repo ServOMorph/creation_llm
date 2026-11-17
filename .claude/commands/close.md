@@ -217,4 +217,7 @@ Lire `.claude/zones.md` pour obtenir la table des alias → dossiers réels.
 <!-- Convention : toute règle liée à une étape précise de la Procédure ci-dessus doit la
      référencer explicitement par son numéro (ex: "Étape 6 : ..."), plutôt que compter sur la
      position physique de cette zone (toujours en fin de fichier). -->
+- Étapes 4 et 5 : lire `_contexte/journal_session.md` et intégrer chacune de ses lignes à `signals.md` (actions, contexte chaud, dernière session) et à `contexte.md` (état actuel, décisions structurantes). Le journal ne touche jamais aux roadmaps.
+- Étape 13 : une fois le commit réussi, et jamais avant, vider `_contexte/journal_session.md` (fichier conservé, vide).
+- Étape 15 : ne pas signaler `_contexte/journal_session.md` parmi les fichiers ignorés ; son état ignoré est voulu.
 <!-- SPECIFICITES PROJET : FIN -->

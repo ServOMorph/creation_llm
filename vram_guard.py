@@ -12,8 +12,30 @@ import time
 from pathlib import Path
 
 LOCK = Path(r"D:\ServOMorph\VertIA_v3\_orchestration\vram_lock.py")
+LOCK_STATE = LOCK.parent / "state" / "lock.json"
+SESSION = "creation_llm"
 PAUSE_CODE = 75
 ACQUIRE_TIMEOUT_MIN = 240
+
+
+class NoGpuToken(RuntimeError):
+    pass
+
+
+def token_holder(state=None, clock=time.time):
+    try:
+        lock = json.loads(Path(state or LOCK_STATE).read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return None
+    return lock.get("holder") if lock.get("expires", 0) > clock() else None
+
+
+def require_gpu_token(device, state=None, clock=time.time):
+    if not str(device).startswith("cuda"):
+        return
+    holder = token_holder(state, clock)
+    if holder != SESSION:
+        raise NoGpuToken(f"jeton GPU VertIA absent (détenteur : {holder or 'aucun'}) : passer par gpu_task.py")
 
 
 def lock_cmd(*args):

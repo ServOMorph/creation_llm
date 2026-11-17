@@ -96,3 +96,18 @@ def test_run_guarded_stops_after_max_cycles():
                      rel=lambda s: events.append("release") or 0, log=lambda m: None)
     assert rc == PAUSE_CODE
     assert events == ["run", "release"] * 2
+
+
+def test_require_gpu_token(tmp_path):
+    state = tmp_path / "lock.json"
+    vram_guard.require_gpu_token("cpu", state)
+    with pytest.raises(vram_guard.NoGpuToken):
+        vram_guard.require_gpu_token("cuda", state)
+    state.write_text(json.dumps({"holder": "vertia", "expires": 2e9}), encoding="utf-8")
+    with pytest.raises(vram_guard.NoGpuToken):
+        vram_guard.require_gpu_token("cuda:0", state)
+    state.write_text(json.dumps({"holder": "creation_llm", "expires": 10}), encoding="utf-8")
+    with pytest.raises(vram_guard.NoGpuToken):
+        vram_guard.require_gpu_token("cuda", state, clock=lambda: 20)
+    state.write_text(json.dumps({"holder": "creation_llm", "expires": 2e9}), encoding="utf-8")
+    vram_guard.require_gpu_token("cuda", state)

@@ -18,4 +18,6 @@ Python, PyTorch (bf16, torch.compile), tokenizers HF (BPE 32k), Muon + AdamW, lm
 - v9 (~150M, contexte 1024) : base généraliste ; assistant v1 puis v2 par SFT.
 - Assistant v2 retenu (`checkpoints_sft_v2/ckpt.pt`) : 49,7 % au benchmark `bench_assistant.py` contre 35,7 % pour la v1 ; lancer `python run_assistant.py`.
 - Réserves : conversation -2/30, FrenchBench vocabulaire -9,2 points par rapport à la v9, multi-tours à 50 %. Détail dans `bilan_assistant_v2.md`.
-- Prochaine étape : modèle 369M from scratch (`roadmap_modele_369m.md`), phase 1 (recalcul des activations et rodage).
+- En cours : pré-entraînement du modèle 369M (`roadmap_modele_369m.md`, phase 2), en avance sur la v9 à pas égal ; phases 3-4 préparées (`compare_frenchbench.py`, `run_sft_369m.py`).
+- GPU partagé sous jeton VertIA : toute tâche GPU passe par `python gpu_task.py --gb <Go> --minutes <min> -- <commande>`.
+- R&D : `rd/` (cycle 1 clos, bilan dans `rd/bilan_cycle1.md`).

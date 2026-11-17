@@ -11,7 +11,8 @@ import torch.nn.functional as F
 
 from model import GPT, GPTConfig
 from prepare_sft import load_split
-from train import build_optimizer, save_checkpoint
+from train import build_optimizer, cap_vram, save_checkpoint
+from vram_guard import PauseMonitor, TrainingPaused, require_gpu_token, write_state
 
 ROOT = Path(__file__).parent
 IGNORE = -100
@@ -41,6 +42,11 @@ class SFTConfig:
     optimizer: str = "muon"
     compile: bool = False
     tokenizer: str = str(ROOT / "tokenizer_fr32k_chat.json")
+    grad_checkpoint: bool = False
+    vram_cap_gb: float = 0.0
+    vram_session: str = ""
+    pause_check_s: float = 60.0
+    token_hours: float = 23.0
 
 
 def pack(lengths, cap, seed):
@@ -157,7 +163,9 @@ def evaluate(model, val, cfg, autocast):
 def train(cfg):
     torch.manual_seed(cfg.seed)
     use_cuda = cfg.device.startswith("cuda")
+    require_gpu_token(cfg.device)
     autocast = torch.autocast(cfg.device.split(":")[0], dtype=torch.bfloat16, enabled=use_cuda)
+    cap_vram(cfg.device, cfg.vram_cap_gb)
     ckpt_dir = Path(cfg.ckpt_dir)
     ckpt_dir.mkdir(parents=True, exist_ok=True)
     ckpt_path = ckpt_dir / "ckpt.pt"
@@ -167,6 +175,7 @@ def train(cfg):
     mcfg = GPTConfig(**src["model_cfg"])
     model = GPT(mcfg).to(cfg.device)
     model.load_state_dict(src["model"])
+    model.grad_checkpoint = cfg.grad_checkpoint
     opt = build_optimizer(model, cfg, use_cuda)
     step = 0
     if resuming:
@@ -198,6 +207,9 @@ def train(cfg):
 
     last_train, last_val = float("nan"), float("nan")
     t0, tokens_since = time.time(), 0
+    saved_step = step
+    monitor = PauseMonitor(cfg.vram_session, cfg.pause_check_s, cfg.token_hours) if cfg.vram_session else None
+    state_path = ckpt_dir / "etat.json"
     model.train()
     while step < sched.total:
         lr = get_lr(step, cfg, sched.lr_total)
@@ -231,6 +243,16 @@ def train(cfg):
             print(f"step {step}/{sched.total} train {acc:.4f} val {val or '-'} lr {lr:.2e} {tps:.0f} tok/s", flush=True)
         if step % cfg.save_interval == 0 or step == sched.total:
             save_checkpoint(ckpt_path, raw_model, opt, step, mcfg, cfg)
+            saved_step = step
+            write_state(state_path, step, "termine" if step == sched.total else "en_cours")
+        reason = monitor.reason() if monitor and step < sched.total else None
+        if reason:
+            if saved_step != step:
+                save_checkpoint(ckpt_path, raw_model, opt, step, mcfg, cfg)
+            write_state(state_path, step, reason)
+            log_file.close()
+            print(f"pause au pas {step} : {reason}", flush=True)
+            raise TrainingPaused(reason)
 
     log_file.close()
     return last_train, last_val

@@ -117,6 +117,26 @@ def test_expanded_model_trains_on_new_tokens():
     assert big.lm_head.weight.grad[65].abs().sum() > 0
 
 
+def test_convert_tied_checkpoint(tmp_path):
+    from dataclasses import asdict
+
+    from convert_chat import convert_checkpoint
+
+    cfg = replace(CFG, tie_embeddings=True)
+    torch.manual_seed(0)
+    m = GPT(cfg).eval()
+    torch.save({"model": m.state_dict(), "model_cfg": asdict(cfg), "step": 7}, tmp_path / "src.pt")
+    convert_checkpoint(tmp_path / "src.pt", tmp_path / "dst.pt", 128)
+    ckpt = torch.load(tmp_path / "dst.pt")
+    big = GPT(GPTConfig(**ckpt["model_cfg"])).eval()
+    big.load_state_dict(ckpt["model"])
+    assert big.cfg.tie_embeddings and big.lm_head.weight is big.wte.weight
+    assert ckpt["source_step"] == 7
+    x = torch.randint(0, CFG.vocab_size, (2, 20))
+    with torch.no_grad():
+        assert torch.equal(m(x)[0], big(x)[0][..., : CFG.vocab_size])
+
+
 def test_expand_vocab_rejects_shrink():
     with pytest.raises(ValueError):
         expand_vocab(make_model().state_dict(), 32)

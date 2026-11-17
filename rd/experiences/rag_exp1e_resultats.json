@@ -1,0 +1,1993 @@
+{
+ "pas": 2606,
+ "gen": {
+  "max_new_tokens": 300,
+  "temperature": 0.5,
+  "top_k": 50,
+  "top_p": 0.95,
+  "repetition_penalty": 1.0
+ },
+ "seeds": [
+  1234,
+  2000,
+  3000
+ ],
+ "resume": {
+  "hybride_1": {
+   "avec": 47,
+   "sans": 49,
+   "total": 90,
+   "gagne": 12,
+   "perd": 14
+  },
+  "hybride_3": {
+   "avec": 54,
+   "sans": 49,
+   "total": 90,
+   "gagne": 17,
+   "perd": 12
+  }
+ },
+ "records": [
+  {
+   "id": "F01",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "La capitale de l'Italie est Rome.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F01",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "La capitale de l'Italie est Milan.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F02",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "Une araignée a huit pattes.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F02",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "Une araignée a huit pattes.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F03",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "Le plus long fleuve de France est la Loire.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F03",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "Le plus long fleuve de France est la Loire.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F04",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "La Joconde a été peinte par Léonard de Vinci.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F04",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "La Joconde a été peinte par Léonard de Vinci.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F05",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "Il y a une heure dans le jour solaire moyen.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F05",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "Il y a 3600 secondes dans une heure.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F06",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "Le cœur est un organe qui pompe le sang dans le corps humain.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F06",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "Le cœur est un organe qui pompe le sang dans les veines et les artères.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F07",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "Le roi de la savane est surnommé le roi des animaux.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F07",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "Le lion mâle est surnommé « le roi des animaux ».",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "L'homme a marché sur la Lune pour la première fois en 1969.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "L'homme a marché sur la Lune pour la première fois en 1969.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F09",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "La langue officielle du Brésil est le portugais.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F09",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "La langue officielle du Brésil est le portugais.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "La planète la plus proche du Soleil est Mercure.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "La planète la plus proche du Soleil est Mercure.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "Les plantes absorbent le CO2 pour faire la photosynthèse.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO2) pour faire monter la sève dans la plante.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "L'Île-du-Prince-Édouard a été écrite par Charles Perrault.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F12",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "L'auteur qui a écrit « Le Petit Prince » est Antoine de Saint-Exupéry.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F13",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "La monnaie utilisée en France est l'or.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F13",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "La monnaie utilisée en France est le franc suisse.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F14",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "Un hexagone régulier a six côtés.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F14",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "Un hexagone régulier a six côtés et six côtés.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F15",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "L'eau bout au niveau de la mer à 50 °C.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F15",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "À un degré Fahrenheit, l'eau bout au niveau de la mer à environ +100 °C.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F16",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "La capitale du Japon est Tokyo.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F16",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "La capitale du Japon est Tokyo.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F17",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "Le plus grand animal du monde est l'autruche.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F17",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "Le plus grand animal du monde est l'autruche.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F18",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "Les pyramides de Gizeh se trouvent en Égypte.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F18",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "Les pyramides de Gizeh se trouvent en Égypte.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F19",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "Le premier président de la Ve République a été François Hollande.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F19",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "Le premier président de la Ve République est François Hollande.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "Une équipe de football a un seul joueur sur le terrain, qui est le gardien de but.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "Une équipe de football a un seul joueur sur le terrain, appelé le gardien de but.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F21",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "La formule chimique de l'eau est H₂O.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F21",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "La formule chimique de l'eau est H2O.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F22",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "La saison qui vient après l'hiver est appelée la \"quatrième saison de l'année\".",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F22",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "L'hiver vient après l'automne.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "Le texte mentionne une \"émeraude\" comme couleur.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "La couleur de l'ébène est un beige s'il est d'une clarté moyenne ou un kaki s'il est d'une clarté faible.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F24",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "Le contraire de « froid » est « chaud ».",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F24",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "Le contraire de « froid » est « chaud ».",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F25",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "La multiplication de 4 par 7 donne 28. Pour trouver le nombre de fois 8, on peut utiliser la formule :\n\n\\[ \\text{Nombre de fois 8} = \\frac{28}{4} = 7 \\]\n\nDonc, 7 fois 8 font 7 fois 8.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F25",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "Pour répondre à la question \"Combien font 7 fois 8 ?\", on peut utiliser le chiffre de Dieu (trois fois sept soit 7 en chiffres romains) et le préfixe \"heptagone\" (en chiffres romains) pour trouver le nombre 7.\n\nLe chiffre de Dieu (trois fois sept soit 7 en chiffres romains) est 7.\n\nDonc, 7 fois 8 font 7 fois 7.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F26",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "Pour résoudre ce problème, nous devons d'abord comprendre ce que signifie \"15 plus 27\".\n\n1. **Calculer la différence de 13 :**\n\n   - 13 - 7 = 4\n   - 4 + 27 = 31\n\n2. **Calculer la différence de 13 :**\n\n   - 13 - 4 = 11\n\n3. **Calculer la différence de 27 :**\n\n   - 27 - 11 = 17\n\n4. **Calculer la différence de 15 :**\n\n   - 15 - 17 = 1\n\n5. **Calculer la différence de 15 :**\n\n   - 15 - 17 = 1\n\n6. **Calculer la différence de 15 :**\n\n   - 15 - 1 = 17\n\n7. **Calculer la différence de 15 :**\n\n   - 17 - 17 = 1\n\n8. **Calculer la différence de 15 :**\n\n   - 1 - 15 = 1\n\n9. **Calculer la différence de 15 :**\n\n   - 15 - 1 = 17\n\n10. **Calculer la différence de 15 :**\n\n   - 17 - 17 = 0\n\n11. **Calculer la différence de 15 :**\n\n   - 0 - 15 = 0\n\n12. **Calculer la différence de 15 :**\n\n   - 15 - 15",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F26",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "Pour résoudre ce problème, nous devons d'abord comprendre ce que signifie \"15\" dans ce contexte. Le nombre 15 fait référence à la valeur de la multiplication par 2, qui est le produit de deux nombres pairs.\n\n1. Calculons la multiplication :\n   - Multiplication par 2 : \\(2 \\times 3 = 6\\)\n   - Multiplication par 3 : \\(3 \\times 9 = 27\\)\n   - Multiplication par 2 : \\(6 \\times 7 = 42\\)\n\n   Donc, 15 = 6 × 27 + 42 = 324\n\n2. Calculons la différence de 324 :\n   - Différence de 324 : \\(324 - 324 = 16\\)\n\nAinsi, 15 fait 16.\n\nDonc, 15 plus 27 fait 16.\n\nLa réponse est 16.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F27",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "Le féminin du mot « acteur » est « comédien ».",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "Le mot « acteur » est un nom masculin.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F28",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "La mer Méditerranée borde la ville de Marseille.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F28",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "La mer Méditerranée borde la ville de Marseille.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F29",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "Le mois de février compte 366 jours au lieu de 365 jours pour une année régulière.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F29",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "Le mois de février compte 365 jours.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F30",
+   "seed": 1234,
+   "cond": "hybride_1",
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est la Lune.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F30",
+   "seed": 1234,
+   "cond": "hybride_3",
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est la Lune.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F01",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "La capitale de l'Italie est Rome.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F01",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "La capitale de l'Italie est Milan.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F02",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "Une araignée a huit pattes.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F02",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "Une araignée a huit pattes.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F03",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "Le plus long fleuve de France est la Loire.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F03",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "Le plus long fleuve de France est la Loire.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F04",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "La Joconde a été peinte par Léonard de Vinci.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F04",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "La Joconde a été peinte par Léonard de Vinci.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F05",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "Il y a environ 13,5 minutes dans une heure.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F05",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "Il y a environ 13 heures dans une heure.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F06",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "Le cœur est un organe qui pompe le sang dans le corps humain.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F06",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "Le cœur est un organe qui pompe le sang dans les veines et les artères.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F07",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "Le roi de la savane est surnommé le roi des animaux.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F07",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "Le lion mâle est surnommé « le roi des animaux ».",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "L'homme a marché sur la Lune pour la première fois en 1969.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "Neil Armstrong a marché sur la Lune pour la première fois en 1969.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F09",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "La langue officielle du Brésil est le portugais.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F09",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "La langue officielle du Brésil est le portugais.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "La planète la plus proche du Soleil est Jupiter.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F10",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "La plus proche du Soleil est Mercure.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO2) de l'air pour faire de la photosynthèse.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO2) de l'air pour faire de la photosynthèse.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "Le Petit Prince a été écrit par George Orwell.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F12",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "Le Petit Prince a été écrit par George Orwell.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F13",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "La monnaie utilisée en France est la monnaie d'argent.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F13",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "La monnaie utilisée en France est le franc français.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit"
+   ]
+  },
+  {
+   "id": "F14",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "Un hexagone régulier est un hexagone dont les côtés ont la même longueur et dont les angles ont la même mesure (les angles d'un triangle équilatéral).",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F14",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "Un hexagone régulier a six côtés et six côtés.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F15",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "Au niveau de la mer, l'eau bout à une température de 100 degrés Celsius.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F15",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "Au niveau de la mer, l'eau bout à une température de +100 °C.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F16",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "La capitale du Japon est Tokyo.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F16",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "La capitale du Japon est Tokyo.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F17",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "Le plus grand animal du monde est l'autruche.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F17",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "Le plus grand animal du monde est l'autruche.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F18",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "Les pyramides de Gizeh se trouvent en Égypte.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F18",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "Les pyramides de Gizeh se trouvent en Égypte.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F19",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "Le premier président de la Ve République a été élu par le peuple français lors de l'élection présidentielle de 2017, onzième élection présidentielle de la Ve République.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F19",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "Le premier président de la Ve République a été François Hollande.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "Une équipe de football a environ 264 millions de joueurs sur le terrain.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "Une équipe de football a quatre joueurs sur le terrain.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F21",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "La formule chimique de la molécule d'eau est H₂O.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F21",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "La formule chimique de l'eau est H2O.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F22",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "L'hiver vient après l'automne.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F22",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "L'hiver vient après l'automne.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "La pierre mentionnée dans le texte est une émeraude.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "La couleur de l'émeraude est noire.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F24",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "Le contraire de « froid » est « chaud ».",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F24",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "Le contraire de « froid » est « chaud ».",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F25",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "Pour résoudre ce problème, nous allons utiliser la définition de la multiplication et la relation entre les opérations élémentaires.\n\n1. **Calcul des aires :**\n   - Soit \\( x \\) le nombre de boîtes de même dimension.\n   - On a \\( x \\cdot 7 \\) boîtes de même dimension, donc \\( 7x \\) boîtes de même dimension.\n   - On sait que \\( x \\cdot 7 = 28 \\).\n   - En résolvant pour \\( x \\), on obtient \\( x = 28/7 \\).\n\n2. **Calcul des volumes :**\n   - Le volume \\( V \\) d'une boîte est donné par \\( V = \\frac{1}{3} \\cdot x^3 \\).\n   - On sait que \\( x^3 = 28 \\).\n   - En utilisant \\( x^3 = 28 \\), on trouve \\( x = \\frac{1}{3} \\cdot 28^3 \\).\n   - Donc, \\( x = \\frac{1}{3} \\cdot 28 = 8 \\).\n\n3. **Calcul de la multiplication :**\n   - La multiplication de 4 par 7 donne 28.\n   - On lit : \\( 4 \\times 7 = 28 \\).\n   - On peut calculer \\( 28 \\times 7 = 28 \\).",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F25",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "Pour répondre à la question, nous devons identifier le nombre 7 dans le nombre 7. Selon les informations fournies, 7 fait partie d'un nombre magique. Voici comment nous pouvons procéder :\n\n1. **Comprendre le nombre 7** : Le nombre 7 est mentionné comme étant le porte-bonheur.\n2. **Trouver le chiffre de Dieu** : Selon le texte, 7 est le chiffre de Dieu (Trois fois sept fois soit béni son nom).\n3. **Trouver le nombre magique** : Le nombre 7 est mentionné comme étant le chiffre de Dieu, ce qui signifie que 7 est le chiffre de Dieu.\n4. **Vérification** : Le texte indique que 7 fait partie d'un nombre magique, ce qui confirme que 7 fait bien partie du nombre magique 7.\n\nAinsi, 7 fait bien partie du nombre magique 7.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F26",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "Pour résoudre ce problème, nous devons d'abord comprendre ce que signifie \"15 plus 27\". Cela signifie que nous ajoutons 12 à 15 pour obtenir 12 plus 27.\n\n1. Calculons 12 :\n   \\[\n   12 \\times 7 = 84\n   \\]\n   Donc, 84 + 27 = 134.\n\n2. Calculons 27 :\n   \\[\n   27 \\times 13 = 134\n   \\]\n   Donc, 134 + 27 = 134.\n\n3. Ensuite, nous ajoutons 12 :\n   \\[\n   12 \\times 13 = 134 + 12 = 134\n   \\]\n   Donc, 134 + 12 = 134.\n\n4. Enfin, nous ajoutons 134 à 13 :\n   \\[\n   134 + 13 = 134 + 13 = 134 + 27\n   \\]\n   Donc, 134 + 27 = 134 + 27 = 134 + 42 = 136.\n\nLa différence de 136 entre 134 et 136 est donc 136.\n\nLa réponse est 136.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F26",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "Pour résoudre ce problème, nous devons d'abord comprendre ce que signifie \"15\" dans le contexte donné.\n\n1. **Comprendre le signe du nombre** : Le nombre \"15\" est égal à 27. Cela signifie que si nous prenons 15 boîtes rouges, nous pouvons en prendre 27.\n\n2. **Calcul du nombre de boîtes** : Nous savons que 15 boîtes rouges font 13. Si nous prenons 27 boîtes bleues, nous pouvons en prendre 27.\n\n3. **Calcul du nombre de boîtes restantes** : Nous avons déjà pris 27 boîtes rouges. Donc, nous avons :\n   \\[\n   27 - 27 = 2 \\text{ boîtes restantes}\n   \\]\n\n4. **Calcul du nombre de boîtes restantes** : Nous savons que 2 boîtes restantes font 13. Donc, nous avons :\n   \\[\n   \\frac{2}{2} = 1 \\text{ boîte restante}\n   \\]\n\n5. **Calcul de la différence** : La différence de 2 boîtes restantes est :\n   \\[\n   1 - 2 = 1\n   \\]\n\nDonc, la multiplication de 4 fois 7 fait 15 plus 27 boîtes.\n\n6. **Calcul de la différence** : Nous devons maintenant trouver combien de boîtes font 15 plus 27. Cela signifie que nous multiplions par 4 pour obtenir 15 plus 27.\n\n7. **Cal",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "Le féminin du mot « acteur » est « actrice ».",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F27",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "Le féminin du mot « acteur » est « actrice ».",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F28",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "La mer Méditerranée borde la ville de Marseille.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F28",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "La mer Méditerranée borde la ville de Marseille.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F29",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "Le mois de février compte 366 jours au lieu de 365 jours pour une année régulière.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F29",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "Le mois de février compte 365 jours.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F30",
+   "seed": 2000,
+   "cond": "hybride_1",
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est la Lune.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F30",
+   "seed": 2000,
+   "cond": "hybride_3",
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est la Lune.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F01",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "La capitale de l'Italie est Rome.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F01",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "La capitale de l'Italie est Milan.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F02",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "Une araignée a deux pattes.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F02",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "Une araignée a deux pattes.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "Le plus long fleuve de France est la Loire.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F03",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "Le plus long fleuve de France est la Loire.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F04",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "La Joconde a été peinte par Léonard de Vinci.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F04",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "La Joconde a été peinte par Léonard de Vinci.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F05",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "Il n'y a pas de temps dans une heure, car les étoiles fixes (le jour solaire moyen) sont les unités qui ont une durée de vie de 24 heures. Cependant, nous savons que le jour solaire moyen est divisé en 24 heures.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F05",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "Il y a environ 13 secondes dans une heure.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F06",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "Le cœur est un organe qui pompe le sang dans le corps humain.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F06",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "Le cœur est un organe qui pompe le sang dans les veines et les artères.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F07",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "Le roi de la savane est appelé le lion.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F07",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "Le lion mâle est surnommé le roi des animaux.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "L'homme a marché sur la Lune pour la première fois en 1969.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "Neil Armstrong a marché sur la Lune pour la première fois le 21 juillet 1969.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F09",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "La langue officielle du Brésil est le portugais.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F09",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "La langue officielle du Brésil est le portugais.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "La planète la plus proche du Soleil est Mercure.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "Mercure est la planète la plus proche du Soleil.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO2) pour faire la photosynthèse.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO2) pour faire la photosynthèse.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "L'île-du-Prince-Édouard a écrit « Le Petit Prince ».",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F12",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "L'auteur qui a écrit « Le Petit Prince » est Antoine de Saint-Exupéry.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F13",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "La monnaie utilisée en France est la monnaie de la République de Ligurie.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F13",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "La monnaie utilisée en France est le franc suisse.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F14",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "Un hexagone régulier a six côtés.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F14",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "Un hexagone régulier a six côtés et six côtés.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F15",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "L'eau bout au niveau de la mer à une température de 50 °C.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F15",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "À +100 °C dans les pays utilisant le système impérial (anglo-saxon) d'unités.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F16",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "La capitale du Japon est Tokyo.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F16",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "La capitale du Japon est Tokyo.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F17",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "Le plus grand animal du monde est l'autruche.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F17",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "Le plus grand animal du monde est l'autruche.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F18",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "Les pyramides de Gizeh se trouvent en Égypte.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F18",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "Les pyramides de Gizeh se trouvent en Égypte.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F19",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "Le premier président de la Ve République a été François Hollande.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F19",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "Le premier président de la Ve République a été François Hollande.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "Une équipe de football a environ 264 millions de joueurs sur le terrain.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "Une équipe de football a environ 11 joueurs sur le terrain.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F21",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "La formule chimique de la molécule d'eau est H₂O.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F21",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "La formule chimique de l'eau est H2O.",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F22",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "La saison qui vient après l'hiver est la saison des conifères (sapins, pins, épicéeas, mélèzes).",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F22",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "La saison qui vient après l'hiver est l'hiver.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "La pierre décrite dans le texte est une émeraude.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "Les couleurs primaires rouges et vertes, et les plumes d'hirondelle, sont respectivement rouges et vertes.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F24",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "Le contraire de « froid » est « chaud ».",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F24",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "Le contraire de « froid » est « chaud ».",
+   "tronque": 0,
+   "sans": true,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F25",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "Pour résoudre ce problème, nous allons utiliser les informations données et les formules de multiplication.\n\n1. **Calcul de l'aire :**\n   - On sait que l'aire d'un rectangle est donnée par la formule \\( A = 2 \\times \\text{longueur} \\).\n   - Donc, l'aire est \\( 2 \\times 7 = 14 \\) unités carrées.\n\n2. **Calcul du volume :**\n   - On sait que le volume d'un rectangle est donné par la formule \\( V = \\text{longueur} \\times \\text{largeur} \\).\n   - Donc, le volume est \\( V = \\text{longueur} \\times \\text{largeur} = 14 \\times 7 = 84 \\) unités carrées.\n\n3. **Calcul de la multiplication :**\n   - On sait que la multiplication de 4 par 7 donne 28.\n   - Donc, la multiplication de 7 par 7 fait \\( 7 \\times 28 = 196 \\) unités carrées.\n\n4. **Calcul final :**\n   - Le nombre total d'opérations est 28.\n   - Donc, on divise le résultat par 7 pour obtenir le nombre de fois 8 : \\( \\frac{14}{7} = 2 \\).\n\nAinsi, la multiplication de 4 par 7 fait bien 14 fois 8.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F25",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "7 fait 8.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F26",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "Pour résoudre ce problème, nous devons comprendre que 15 + 27 est la différence entre 12 et 15.\n\n1. **Calcul de la différence :**\n\n   \\[\n   15 - 12 = 3\n   \\]\n\n2. **Calcul de la différence :**\n\n   \\[\n   3 - 12 = -2\n   \\]\n\n3. **Calcul de la différence :**\n\n   \\[\n   -2 - 15 = -19\n   \\]\n\n4. **Calcul de la différence :**\n\n   \\[\n   -19 - 15 = -19\n   \\]\n\n5. **Calcul de la différence :**\n\n   \\[\n   -19 - 15 = -29\n   \\]\n\n6. **Calcul de la différence :**\n\n   \\[\n   -29 - 15 = -29\n   \\]\n\n7. **Vérification de la différence :**\n\n   \\[\n   -29 - 15 = -29\n   \\]\n\n   Donc, la différence est \\(-29\\).\n\nLa réponse est \\(-29\\).",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F26",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "Pour résoudre ce problème, nous allons suivre les étapes logiques :\n\n1. **Trouver la multiplication de 4 par 7** :\n   - On sait que 4 fois 7 font vingt-huit.\n   - Donc, 4 × 7 = 28.\n\n2. **Calculer la multiplication de 27 par 7** :\n   - On sait que 27 fois 7 fait vingt-huit.\n   - Donc, 27 × 7 = 288.\n\n3. **Trouver la multiplication de 28 par 7** :\n   - On sait que 28 fois 7 fait vingt-huit.\n   - Donc, 28 × 7 = 288.\n\n4. **Calculer la multiplication de 27 par 7** :\n   - On sait que 27 fois 7 fait vingt-huit.\n   - Donc, 27 × 7 = 288.\n\n5. **Calculer la multiplication de 28 par 7** :\n   - On sait que 28 fois 7 fait vingt-huit.\n   - Donc, 28 × 7 = 288.\n\n6. **Calculer la différence de 288 par 7** :\n   - La différence de 288 par 7 est égale à 288 / 7 = 288 / 7 = 56.\n\nDonc, 15 plus 27 fait 56.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent",
+    "boucle"
+   ]
+  },
+  {
+   "id": "F27",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "Le féminin du mot « acteur » est « actrice ».",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F27",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "Le féminin du mot « acteur » est « actrice ».",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F28",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "La mer Méditerranée borde la ville de Marseille.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F28",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "La mer Méditerranée, ou mer Méditerranée, borde la ville de Marseille.",
+   "tronque": 0,
+   "sans": false,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F29",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "Le mois de février compte 366 jours au lieu de 365.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F29",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "Le mois de février compte 366 jours.",
+   "tronque": 0,
+   "sans": false,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F30",
+   "seed": 3000,
+   "cond": "hybride_1",
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est la Lune.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F30",
+   "seed": 3000,
+   "cond": "hybride_3",
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est la Lune.",
+   "tronque": 0,
+   "sans": true,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  }
+ ]
+}

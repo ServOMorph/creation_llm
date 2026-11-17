@@ -10,7 +10,7 @@ import numpy as np
 import torch
 
 from model import GPT, GPTConfig
-from vram_guard import PauseMonitor, TrainingPaused, write_state
+from vram_guard import PauseMonitor, TrainingPaused, require_gpu_token, write_state
 
 ROOT = Path(__file__).parent
 DATA = ROOT / "data"
@@ -171,15 +171,21 @@ def save_checkpoint(path, model, opt, step, mcfg, cfg):
     os.replace(tmp, path)
 
 
+def cap_vram(device, gb):
+    if not str(device).startswith("cuda") or gb <= 0:
+        return
+    dev = torch.device(device)
+    index = dev.index if dev.index is not None else torch.cuda.current_device()
+    total = torch.cuda.get_device_properties(index).total_memory
+    torch.cuda.set_per_process_memory_fraction(min(1.0, gb * 2**30 / total), index)
+
+
 def train(cfg, mcfg):
     torch.manual_seed(cfg.seed)
     use_cuda = cfg.device.startswith("cuda")
+    require_gpu_token(cfg.device)
     autocast = torch.autocast(cfg.device.split(":")[0], dtype=torch.bfloat16, enabled=use_cuda)
-    if use_cuda and cfg.vram_cap_gb > 0:
-        dev = torch.device(cfg.device)
-        index = dev.index if dev.index is not None else torch.cuda.current_device()
-        total = torch.cuda.get_device_properties(index).total_memory
-        torch.cuda.set_per_process_memory_fraction(min(1.0, cfg.vram_cap_gb * 2**30 / total), index)
+    cap_vram(cfg.device, cfg.vram_cap_gb)
     ckpt_dir = Path(cfg.ckpt_dir)
     ckpt_dir.mkdir(parents=True, exist_ok=True)
     ckpt_path = ckpt_dir / "ckpt.pt"

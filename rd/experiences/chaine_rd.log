@@ -1,0 +1,40 @@
+2026-11-17 07:17:11 arret 369M apres sauvegarde : {  "step": 23363,  "raison": "en_cours",  "date": "2026-11-17 07:17:04",  "reprise": "relancer la mÃªme commande avec --resume"}
+Op‚ration r‚ussieÿ: le processus avec PID 23792 a ‚t‚ termin‚.
+Op‚ration r‚ussieÿ: le processus avec PID 40304 a ‚t‚ termin‚.
+Op‚ration r‚ussieÿ: le processus avec PID 40520 a ‚t‚ termin‚.
+Op‚ration r‚ussieÿ: le processus avec PID 37428 a ‚t‚ termin‚.
+2026-11-17 07:17:12 VRAM 703 MiB
+2026-11-17 07:17:12 debut rag_exp1.py run
+{"pas": 2606, "total": 90, "correct": {"sans": 49, "oracle": 48, "bm25": 28}, "apparie_contre_sans": {"oracle": {"gagne": 15, "perd": 16}, "bm25": {"gagne": 8, "perd": 29}}}
+2026-11-17 07:20:59 fin rag_exp1.py run code 0 ; VRAM max non mesuree ; actuelle 691 MiB
+2026-11-17 07:20:59 debut cfg_exp2.py
+{"pas": 2606, "correct_sur_total": {"1.0": {"faits": [49, 90], "consignes": [18, 45]}, "1.25": {"faits": [50, 90], "consignes": [18, 45]}, "1.5": {"faits": [54, 90], "consignes": [16, 45]}}, "apparie_contre_gamma_1": {"1.25": {"faits": {"gagne": 6, "perd": 5}, "consignes": {"gagne": 1, "perd": 1}}, "1.5": {"faits": {"gagne": 9, "perd": 4}, "consignes": {"gagne": 0, "perd": 2}}}, "raisons": {"1.0": {"boucle": 1, "critere_absent": 64, "critere_incomplet": 3, "trop_long": 3}, "1.25": {"critere_absent": 63, "critere_incomplet": 3, "trop_long": 3}, "1.5": {"critere_absent": 60, "critere_incomplet": 5, "critere_interdit": 1, "trop_long": 3}}}
+2026-11-17 07:27:43 fin cfg_exp2.py code 0 ; VRAM max non mesuree ; actuelle 691 MiB
+2026-11-17 07:27:43 debut ttt_exp3.py
+{"pas": 2606, "total": 90, "correct": {"0.0": 49, "1e-05": 46, "3e-05": 37, "0.0001": 25}, "apparie_contre_lr_0": {"1e-05": {"gagne": 6, "perd": 9}, "3e-05": {"gagne": 8, "perd": 20}, "0.0001": {"gagne": 5, "perd": 29}}, "boucle_vide": {"0.0": {"boucle": 1, "vide": 0}, "1e-05": {"boucle": 7, "vide": 0}, "3e-05": {"boucle": 26, "vide": 0}, "0.0001": {"boucle": 41, "vide": 0}}}
+2026-11-17 08:02:38 fin ttt_exp3.py code 0 ; VRAM max non mesuree ; actuelle 702 MiB
+LIBERE used=702MiB
+2026-11-17 08:02:38 release code 0
+2026-11-17 08:02:39 369M relance
+2026-11-17 08:44:55 arret 369M apres sauvegarde : {  "step": 23583,  "raison": "en_cours",  "date": "2026-11-17 08:44:51",  "reprise": "relancer la mÃªme commande avec --resume"}
+arrete 14524
+arrete 45340
+arrete 14412
+arrete 32360
+2026-11-17 08:44:56 VRAM 703 MiB ; debut rag_exp1b.py run
+{"vikidia": {"avec_passage": 41, "sans_passage": 31, "total": 51, "gagne": 14, "perd": 4}, "tout": {"avec_passage": 71, "sans_passage": 49, "total": 90, "gagne": 31, "perd": 9}, "ecrit": {"avec_passage": 30, "sans_passage": 18, "total": 39, "gagne": 17, "perd": 5}}
+2026-11-17 08:47:20 fin rag_exp1b.py code 0
+LIBERE used=697MiB
+2026-11-17 08:47:21 release code 0
+2026-11-17 08:47:21 369M relance
+2026-11-17 08:51:22 369M dernier pas journalise : 23590,2.7190,,0.002738,2312
+2026-11-17 14:04:37 arret 369M apres sauvegarde : {  "step": 25139,  "raison": "pause_demandee",  "date": "2026-11-17 14:04:34",  "reprise": "relancer la mÃªme commande avec --resume"}
+arrete 35196
+arrete 14540
+2026-11-17 14:04:38 VRAM 737 MiB ; debut rag_exp1e.py
+{"hybride_1": {"avec": 47, "sans": 49, "total": 90, "gagne": 12, "perd": 14}, "hybride_3": {"avec": 54, "sans": 49, "total": 90, "gagne": 17, "perd": 12}}
+2026-11-17 14:12:44 fin rag_exp1e.py code 0
+REFUS pas detenteur
+2026-11-17 14:12:44 release code 0
+2026-11-17 14:12:45 369M relance
+2026-11-17 14:19:19 369M dernier pas journalise : 25140,2.6790,,0.002702,783

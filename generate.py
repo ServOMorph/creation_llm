@@ -4,12 +4,14 @@ import torch
 from tokenizers import Tokenizer
 
 from model import GPT, GPTConfig
+from vram_guard import require_gpu_token
 
 ROOT = Path(__file__).parent
 EOT_ID = 0
 
 
 def load_model(ckpt_path, device):
+    require_gpu_token(device)
     ckpt = torch.load(ckpt_path, map_location=device)
     model = GPT(GPTConfig(**ckpt["model_cfg"])).to(device)
     model.load_state_dict(ckpt["model"])

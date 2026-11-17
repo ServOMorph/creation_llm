@@ -152,6 +152,28 @@ def test_resume_is_identical(tmp_path):
         assert torch.equal(a["model"][k], b["model"][k]), k
 
 
+def test_grad_checkpoint_gives_same_weights(tmp_path):
+    make_data(tmp_path)
+    kw = dict(epochs=2, save_interval=1000)
+    train(make_cfg(tmp_path, ckpt_dir=str(tmp_path / "plain"), **kw))
+    train(make_cfg(tmp_path, ckpt_dir=str(tmp_path / "recompute"), grad_checkpoint=True, **kw))
+    a = torch.load(tmp_path / "plain" / "ckpt.pt")["model"]
+    b = torch.load(tmp_path / "recompute" / "ckpt.pt")["model"]
+    assert all(torch.allclose(a[k], b[k], atol=1e-5) for k in a)
+
+
+def test_run_sft_369m_chains_stages():
+    from run_sft_369m import build_args
+    from train_sft import parse_args
+
+    one, two = parse_args(build_args(1)), parse_args(build_args(2))
+    assert one.grad_checkpoint and two.grad_checkpoint and one.resume and two.resume
+    assert (one.epochs, one.lr, one.data_dir) == (2, 3e-4, "data/sft/prepared")
+    assert (two.epochs, two.lr, two.data_dir) == (1, 1e-4, "data/sft/prepared_v2")
+    assert two.init_from == f"{one.ckpt_dir}/ckpt.pt"
+    assert two.ckpt_dir == "checkpoints_sft_369m"
+
+
 def test_resume_identical_with_muon(tmp_path):
     make_data(tmp_path)
     kw = dict(epochs=3, optimizer="muon", lr=1e-2, save_interval=1000)
@@ -161,3 +183,27 @@ def test_resume_identical_with_muon(tmp_path):
     a = torch.load(tmp_path / "full" / "ckpt.pt")["model"]
     b = torch.load(tmp_path / "part" / "ckpt.pt")["model"]
     assert all(torch.equal(a[k], b[k]) for k in a)
+
+
+def test_pause_saves_and_resumes_identically(tmp_path, monkeypatch):
+    import json
+
+    import vram_guard
+    from vram_guard import TrainingPaused
+
+    make_data(tmp_path)
+    kw = dict(epochs=3, save_interval=1000)
+    train(make_cfg(tmp_path, ckpt_dir=str(tmp_path / "full"), **kw))
+    answers = iter([False, False, True])
+    monkeypatch.setattr(vram_guard, "should_pause", lambda s: next(answers, False))
+    part = make_cfg(tmp_path, ckpt_dir=str(tmp_path / "part"), vram_session="creation_llm", pause_check_s=0, **kw)
+    with pytest.raises(TrainingPaused):
+        train(part)
+    etat = json.loads((tmp_path / "part" / "etat.json").read_text(encoding="utf-8"))
+    assert etat["raison"] == "pause_demandee" and etat["step"] == 3
+    assert torch.load(tmp_path / "part" / "ckpt.pt")["step"] == 3
+    train(make_cfg(tmp_path, ckpt_dir=str(tmp_path / "part"), resume=True, **kw))
+    a = torch.load(tmp_path / "full" / "ckpt.pt")["model"]
+    b = torch.load(tmp_path / "part" / "ckpt.pt")["model"]
+    assert all(torch.equal(a[k], b[k]) for k in a)
+    assert json.loads((tmp_path / "part" / "etat.json").read_text(encoding="utf-8"))["raison"] == "termine"

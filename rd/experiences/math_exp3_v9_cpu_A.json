@@ -1,0 +1,210 @@
+{
+ "config": {
+  "vocab_size": 32768,
+  "block_size": 1024,
+  "n_layer": 20,
+  "n_head": 12,
+  "n_embd": 768,
+  "logit_cap": 30.0,
+  "tie_embeddings": false,
+  "step": 91500,
+  "params": 191889408
+ },
+ "sources": {
+  "fw2hq": {
+   "n_sequences": 48,
+   "perte": 2.755784273147583,
+   "erreur_type_entre_sequences": 0.05362927168607712,
+   "entropie_predite": 2.8681650161743164,
+   "V_bruit_etiquette_1-sum_q2": 0.6830081939697266,
+   "energie_gradient_logits_E|q-e_y|2": 0.6898093819618225,
+   "part_tokens_q_y>0.9": 0.1395467072725296,
+   "part_perte_tokens_q_y>0.9": 0.0013166590360924602,
+   "part_tokens_q_y<0.01": 0.22210693359375,
+   "part_perte_tokens_q_y<0.01": 0.5541494488716125,
+   "par_position": {
+    "0-4": 4.521439075469971,
+    "4-16": 3.649747133255005,
+    "16-64": 3.003056526184082,
+    "64-256": 2.765509843826294,
+    "256-512": 2.729146957397461,
+    "512-768": 2.69779896736145,
+    "768-1024": 2.717256784439087
+   },
+   "par_classe": {
+    "debut_de_mot": {
+     "part_tokens": 0.6501871943473816,
+     "perte_moyenne": 3.3387563228607178,
+     "part_perte": 0.7877309322357178
+    },
+    "suite_de_mot": {
+     "part_tokens": 0.18780517578125,
+     "perte_moyenne": 1.8304028511047363,
+     "part_perte": 0.12474094331264496
+    },
+    "nombre": {
+     "part_tokens": 0.0198974609375,
+     "perte_moyenne": 3.531494140625,
+     "part_perte": 0.02549828216433525
+    },
+    "ponctuation_et_autres": {
+     "part_tokens": 0.1421101838350296,
+     "perte_moyenne": 1.202874779701233,
+     "part_perte": 0.062029801309108734
+    }
+   }
+  },
+  "wiki_fr": {
+   "n_sequences": 32,
+   "perte": 2.694880723953247,
+   "erreur_type_entre_sequences": 0.05813777819275856,
+   "entropie_predite": 2.8728020191192627,
+   "V_bruit_etiquette_1-sum_q2": 0.6691709756851196,
+   "energie_gradient_logits_E|q-e_y|2": 0.6727088689804077,
+   "part_tokens_q_y>0.9": 0.147613525390625,
+   "part_perte_tokens_q_y>0.9": 0.0017100571421906352,
+   "part_tokens_q_y<0.01": 0.217071533203125,
+   "part_perte_tokens_q_y<0.01": 0.5574561357498169,
+   "par_position": {
+    "0-4": 4.609344959259033,
+    "4-16": 3.8275203704833984,
+    "16-64": 2.7346372604370117,
+    "64-256": 2.7372610569000244,
+    "256-512": 2.6641721725463867,
+    "512-768": 2.615381956100464,
+    "768-1024": 2.68284273147583
+   },
+   "par_classe": {
+    "debut_de_mot": {
+     "part_tokens": 0.586029052734375,
+     "perte_moyenne": 3.4109506607055664,
+     "part_perte": 0.7417457103729248
+    },
+    "suite_de_mot": {
+     "part_tokens": 0.203369140625,
+     "perte_moyenne": 1.9767560958862305,
+     "part_perte": 0.14917586743831635
+    },
+    "nombre": {
+     "part_tokens": 0.024169921875,
+     "perte_moyenne": 3.644571542739868,
+     "part_perte": 0.032687537372112274
+    },
+    "ponctuation_et_autres": {
+     "part_tokens": 0.186431884765625,
+     "perte_moyenne": 1.104233980178833,
+     "part_perte": 0.07639092206954956
+    }
+   }
+  },
+  "lecarnet": {
+   "n_sequences": 16,
+   "perte": 0.8782720565795898,
+   "erreur_type_entre_sequences": 0.011341376230120659,
+   "entropie_predite": 0.9638288617134094,
+   "V_bruit_etiquette_1-sum_q2": 0.3504737615585327,
+   "energie_gradient_logits_E|q-e_y|2": 0.35208889842033386,
+   "part_tokens_q_y>0.9": 0.39654541015625,
+   "part_perte_tokens_q_y>0.9": 0.00973518192768097,
+   "part_tokens_q_y<0.01": 0.03216552734375,
+   "part_perte_tokens_q_y<0.01": 0.22859475016593933,
+   "par_position": {
+    "0-4": 3.6422743797302246,
+    "4-16": 1.455396056175232,
+    "16-64": 1.0751830339431763,
+    "64-256": 0.894036591053009,
+    "256-512": 0.8735809922218323,
+    "512-768": 0.8222107291221619,
+    "768-1024": 0.8200398087501526
+   },
+   "par_classe": {
+    "debut_de_mot": {
+     "part_tokens": 0.74530029296875,
+     "perte_moyenne": 1.0561412572860718,
+     "part_perte": 0.8962398171424866
+    },
+    "suite_de_mot": {
+     "part_tokens": 0.08599853515625,
+     "perte_moyenne": 0.36086738109588623,
+     "part_perte": 0.035335369408130646
+    },
+    "nombre": {
+     "part_tokens": 0.0,
+     "perte_moyenne": NaN,
+     "part_perte": 0.0
+    },
+    "ponctuation_et_autres": {
+     "part_tokens": 0.168701171875,
+     "perte_moyenne": 0.356224924325943,
+     "part_perte": 0.0684247687458992
+    }
+   }
+  },
+  "vikidia": {
+   "n_sequences": 16,
+   "perte": 2.6029064655303955,
+   "erreur_type_entre_sequences": 0.05471328645944595,
+   "entropie_predite": 2.7966902256011963,
+   "V_bruit_etiquette_1-sum_q2": 0.6784952878952026,
+   "energie_gradient_logits_E|q-e_y|2": 0.6800450682640076,
+   "part_tokens_q_y>0.9": 0.13995361328125,
+   "part_perte_tokens_q_y>0.9": 0.0015375135699287057,
+   "part_tokens_q_y<0.01": 0.20135498046875,
+   "part_perte_tokens_q_y<0.01": 0.519182026386261,
+   "par_position": {
+    "0-4": 4.741739273071289,
+    "4-16": 3.5794761180877686,
+    "16-64": 2.8657596111297607,
+    "64-256": 2.711582899093628,
+    "256-512": 2.5980236530303955,
+    "512-768": 2.5311641693115234,
+    "768-1024": 2.4695441722869873
+   },
+   "par_classe": {
+    "debut_de_mot": {
+     "part_tokens": 0.6234130859375,
+     "perte_moyenne": 3.257598638534546,
+     "part_perte": 0.7802161574363708
+    },
+    "suite_de_mot": {
+     "part_tokens": 0.19818115234375,
+     "perte_moyenne": 1.5839816331863403,
+     "part_perte": 0.1206018403172493
+    },
+    "nombre": {
+     "part_tokens": 0.0296630859375,
+     "perte_moyenne": 3.126910924911499,
+     "part_perte": 0.03563471511006355
+    },
+    "ponctuation_et_autres": {
+     "part_tokens": 0.14874267578125,
+     "perte_moyenne": 1.1120390892028809,
+     "part_perte": 0.0635472983121872
+    }
+   }
+  }
+ },
+ "melange": {
+  "perte": 2.455873997211456,
+  "entropie_predite": 2.582244347929955,
+  "V_bruit_etiquette_1-sum_q2": 0.6295784664154052,
+  "energie_gradient_logits_E|q-e_y|2": 0.6346808949112892,
+  "part_tokens_q_y>0.9": 0.18012135535478593,
+  "part_tokens_q_y<0.01": 0.19194183349609376,
+  "par_position": {
+   "0-4": 4.415946846008301,
+   "4-16": 3.363632360696793,
+   "16-64": 2.644024747610092,
+   "64-256": 2.4766481202840804,
+   "256-512": 2.4319459003210064,
+   "512-768": 2.3925237828493113,
+   "768-1024": 2.4191164726018903
+  },
+  "part_perte_par_classe": {
+   "debut_de_mot": 0.7807772802075222,
+   "suite_de_mot": 0.1265604465712768,
+   "nombre": 0.026317569698882874,
+   "ponctuation_et_autres": 0.06634470352231811
+  }
+ }
+}

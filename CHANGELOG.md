@@ -1,5 +1,17 @@
 # Changelog
 
+## v0.4 — 2026-11-17
+
+### Ajouté
+- Modèle 369M : `run_369m.py`, recalcul des activations et embeddings liés (`model.py`), jeton GPU VertIA (`vram_guard.py`, pause et reprise) ; pré-entraînement en cours.
+- `gpu_task.py` (seul lanceur GPU) et garde `require_gpu_token` (`NoGpuToken`) dans `generate.py`, `train.py`, `train_sft.py`.
+- Phases 3-4 du 369M : `run_sft_369m.py` (SFT en deux étapes), `compare_frenchbench.py` (gates), recalcul, plafond VRAM et pause VertIA dans `train_sft.py`.
+- Cellule R&D : `rd/` (veilles, pôle mathématique, sélection, expériences RAG/CFG/TTT-NN, `bilan_cycle1.md`), agents `.claude/agents/rd-*.md`.
+- Tests : `test_gpu_task.py`, `test_compare_frenchbench.py`, conversion liée, pause SFT (134 verts).
+
+### Modifié
+- `.claude/CLAUDE.md` (mode VertIA, règle GPU, journal de session), `start.md`, `close.md`, `.gitignore`, `eval_frenchbench.py`.
+
 ## v0.3 — 2026-11-12
 
 ### Ajouté

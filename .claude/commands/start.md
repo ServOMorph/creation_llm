@@ -76,4 +76,5 @@ Lire `.claude/zones.md` pour obtenir la table des alias → dossiers réels.
 <!-- Convention : toute règle liée à une étape précise de la Procédure ci-dessus doit la
      référencer explicitement par son numéro (ex: "Étape 3 : ..."), plutôt que compter sur la
      position physique de cette zone (toujours en fin de fichier). -->
+- Étape 3 : si `_contexte/journal_session.md` n'est pas vide, une session précédente n'a pas été close : afficher son contenu intégral et le signaler.
 <!-- SPECIFICITES PROJET : FIN -->

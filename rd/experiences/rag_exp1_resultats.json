@@ -1,0 +1,2754 @@
+{
+ "ckpt": "D:\\ServOMorph\\creation_llm\\checkpoints_sft_v2\\ckpt.pt",
+ "pas": 2606,
+ "gen": {
+  "max_new_tokens": 300,
+  "temperature": 0.5,
+  "top_k": 50,
+  "top_p": 0.95,
+  "repetition_penalty": 1.0
+ },
+ "seeds": [
+  1234,
+  2000,
+  3000
+ ],
+ "total": 90,
+ "correct": {
+  "sans": 49,
+  "oracle": 48,
+  "bm25": 28
+ },
+ "apparie_contre_sans": {
+  "oracle": {
+   "gagne": 15,
+   "perd": 16
+  },
+  "bm25": {
+   "gagne": 8,
+   "perd": 29
+  }
+ },
+ "records": [
+  {
+   "id": "F01",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "La capitale de l'Italie est Rome.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F01",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "La capitale de l'Italie est Rome.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F01",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "La capitale de l'Italie est Florence.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F02",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "Une araignée a 4 pattes.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F02",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "Dans le film \"Arac Attack\", une araignée a quatre pattes.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F02",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "Dans le film \"Enemy\", l'araignée possède une symbolique propre et permet de déchiffrer l'intrigue du film.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "Le plus long fleuve de France est la Seine.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "Le plus long fleuve de France est la Seine.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "Le plus long fleuve de France est le Rhin.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F04",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "La Joconde a été peinte par Léonard de Vinci.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F04",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "La Joconde a été peinte par Léonard de Vinci.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F04",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "La Joconde a été peinte par Léonard de Vinci.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F05",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "Il y a environ 8 heures dans une journée.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F05",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "Il y a cinq minutes dans une heure.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F05",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "Pour déterminer le nombre de minutes dans une heure, on peut utiliser la formule suivante :\n\n\\[ \\text{minute} = \\frac{60}{\\text{heure}} \\times 100 \\]\n\nEn remplaçant par les valeurs connues :\n\n\\[ \\text{minute} = \\frac{60}{100} \\times 100 = 60 \\]\n\nIl y a donc 60 minutes dans une heure.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F06",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "Le cœur pompe le sang dans le corps humain à travers deux cavités : la oreillette droite et la ventricule droit. Le sang pauvre en oxygène est ensuite pompé par les veines caves vers le reste du corps.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F06",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "Le système circulatoire dans le corps humain pompe le sang à l'intérieur du réseau vasculaire.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F06",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "Le foie est l'organe qui pompe le sang dans le corps humain.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F07",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "Le lion est surnommé le roi de la savane en raison de sa puissance et de sa réputation de gardien de la nature.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F07",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "Le roi de la savane est surnommé le roi des animaux.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F07",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "Le lion mâle est surnommé « le roi des animaux ».",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "L'homme a marché sur la Lune pour la première fois en 1969.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "L'homme a marché sur la Lune pour la première fois en 1969.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "L'homme a marché sur la Lune pour la première fois le 7 octobre 1959.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F09",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "La langue officielle du Brésil est le portugais.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F09",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "La langue officielle du Brésil est le portugais.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F09",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "La langue officielle du Brésil est le portugais.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "La planète la plus proche du Soleil est Mercure.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "La planète la plus proche du Soleil est Vénus. En moyenne, sa période synodique dure 584 jours.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F10",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "La planète la plus proche du Soleil est Pluton.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F11",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO₂) de l'atmosphère pour faire la photosynthèse. Ce processus se déroule principalement dans les feuilles, où le CO₂ est capté par les stomates, de petites ouvertures sur les feuilles.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "Les plantes absorbent le dioxyde de carbone de l’air par la photosynthèse.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "Les plantes absorbent le dioxyde de carbone de l'air, qui est un gaz à effet de serre, principalement émis par les activités humaines, comme la combustion de combustibles fossiles et la déforestation.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "« Le Petit Prince » a été écrit par Antoine de Saint-Exupéry.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "Le Petit Prince a été écrit par Antoine de Saint Exupery, un peintre français.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "L'auteur du texte « Le Petit Prince » est Sir Francis Scott Key.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F13",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "La monnaie utilisée en France est l'euro.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F13",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "La monnaie utilisée en France est le dollar.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F13",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "En France, la monnaie utilisée est la « monnaie classique ».",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F14",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "Un hexagone est un polygone à 6 côtés. Pour calculer le nombre de côtés d'un hexagone, on utilise la formule suivante :\n\n\\[ \\text{Nombre de côtés} = \\frac{6 \\times \\text{Nombre de côtés}}{2} \\]\n\nEn utilisant les valeurs données :\n\n\\[ \\text{Nombre de côtés} = \\frac{6 \\times \\text{Nombre de côtés}}{2} = \\frac{12 \\times \\text{Nombre de côtés}}{2} \\]\n\n\\[ \\text{Nombre de côtés} = \\frac{36}{2} = 18 \\]\n\nDonc, un hexagone a 18 côtés.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F14",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "Un hexagone régulier a six côtés.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F14",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "Un hexagone régulier a six côtés et trois angles.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F15",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "L'eau bout à des températures très basses à environ 0°C. Cela est dû à la différence de température entre l'atmosphère terrestre et l'eau liquide à la surface. La température de l'eau est d'environ 0°C, ce qui est très froid et proche du point de congélation.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F15",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "L'eau bout à environ 68 °C.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F15",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "À une température de 0 °C (25 °F) au-dessus du niveau de la mer, l'eau bout à environ 68 °C.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F16",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "La capitale du Japon est Tokyo.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F16",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "La capitale du Japon est Tokyo.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F16",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "La capitale du Japon est Tokyo.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F17",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "Le plus grand animal du monde est l'éléphant d'Afrique. Il mesure environ 1,2 mètre de hauteur et peut vivre entre 1 500 et 1 500 ans.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F17",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "Le plus grand animal du monde est la baleine bleue.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F17",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "Le plus grand animal du monde est l'autruche.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F18",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "Les pyramides de Gizeh se trouvent en Égypte.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F18",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "Les pyramides de Gizeh se trouvent dans la région du delta du Nil, au bord du plateau de Gizeh.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F18",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "Les pyramides de Gizeh se trouvent au Caire, au bord du Nil.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F19",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "Le premier président de la République française a été Louis XVI.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F19",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "Le premier président de la Ve République est François Hollande.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F19",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "Le premier président de la Ve République est Benoît XVI.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "Une équipe de football a un nombre de joueurs sur le terrain qui peut varier en fonction de la position et du type de jeu. Par exemple, les milieux de terrain, les attaquants et les attaquants sont des options courantes. Cependant, il est important de noter que ces chiffres peuvent varier en fonction des règles du jeu et des règles spécifiques du jeu.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "Une équipe de football américain compte plusieurs formations spécialisées adaptées aux différentes phases de jeu.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "Une équipe de football a un joueur sur le terrain.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F21",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "La formule chimique de l'eau est H₂O.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F21",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "La formule chimique qui désigne la molécule d'eau est H₂O.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F21",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "La formule chimique de l'eau est H2O.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F22",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "La saison qui vient après l'hiver est généralement l'été. Cependant, certaines régions ont des saisons plus courtes ou des hivers plus doux.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F22",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "La saison qui vient après l'hiver est appelée la \"quatrième saison de l'année\".",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F22",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "La saison qui vient après l'hiver est l'automne.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "L'émeraude est un minéral de couleur rouge vif. Elle est généralement associée à la passion, à l'amour et à la passion.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "Une émeraude est une couleur d'argent.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "L'émeraude est une couleur, pas une émeraude.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F24",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "Le contraire de « froid » est « chaud ».",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F24",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "Le contraire de « froid » est « humide ».",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F24",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "Le contraire de « froid » est « humide ».",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F25",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "Pour trouver combien fait 7 fois 8, il suffit de diviser 7 par 8.\n\n7 ÷ 8 = 1\n\nDonc, 7 fait 1.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F25",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "Pour résoudre ce problème, nous allons utiliser les informations fournies :\n\n1. La voiture ne fonctionne qu'à 15% de la capacité de la voiture.\n2. Les ventes de voitures sont en chute libre (- 54% sur un an).\n3. L'inflation atteint 54,7% sur un an.\n4. L'inflation atteint 54,7% sur un an[6].\n5. Le gouvernement sollicite un prêt du FMI pour débloquer le versement de 56 milliards de dollars en coupes budgétaires en 2018.\n6. Près de 300 000 emplois ont été perdus en trois ans.\n7. Sur une carte vénitienne de 1536, le nom Argentine est mentionné.\n8. Le terme Argentina est mentionné pour la première fois sur une carte dressée en 1840 par le linguiste français Antoine Houzé.\n\nLe problème se résout en utilisant le terme \"Argentine\" qui est mentionné pour la première fois sur une carte en 1840.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F25",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "Le nombre 7 fait 8 en chiffres romains.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F26",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "15 plus 27 = 15 + 27 + 27 = 54.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F26",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "15 plus 27 font 15 plus 27.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F26",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "Pour répondre à cette question, nous devons comparer le nombre de personnes faisant référence à un dieu dans le texte, 18 % dans l'ensemble des pays, et 27 % dans le « quartier européen » de Bruxelles.\n\n1. **Calcul du nombre de personnes ayant une croyance en un dieu :**\n   - 18 % de 15 pays : 15 × 15 = 225 personnes.\n   - 27 % de 15 pays : 27 × 15 = 730 personnes.\n\n2. **Calcul du nombre de personnes faisant référence à un dieu :**\n   - 15 + 27 = 37 personnes.\n\n3. **Calcul du nombre de personnes faisant référence à une force surnaturelle :**\n   - 730 - 37 = 477 personnes.\n\n4. **Calcul du nombre de personnes faisant référence à une force surnaturelle :**\n   - 730 - 477 = 480 personnes.\n\n5. **Calcul du nombre de personnes faisant référence à une force surnaturelle :**\n   - 480 - 480 = 390 personnes.\n\n6. **Calcul du nombre de personnes faisant référence à un dieu :**\n   - 15 + 27 = 36 personnes.\n\n7. **Calcul du nombre de personnes faisant référence à une force surnaturelle :**\n   - 390 - 36 = 390 personnes.\n\nDonc, **15 plus 27** font référence à 390 personnes.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "Le féminin du mot « acteur » est « acteur ».",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "Le féminin du mot « acteur » est « actrice ».",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F27",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "Le féminin du mot « acteur » est « moustique ».",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F28",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "La mer Méditerranée borde la ville de Marseille.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F28",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "La mer Méditerranée borde la ville de Marseille.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F28",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "La mer Caspienne borde la ville de Marseille.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F29",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "Le mois de février compte 7 jours.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F29",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "Dans le calendrier julien, le mois de février compte 30 jours.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F29",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "Le mois de février compte 28 jours.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F30",
+   "seed": 1234,
+   "cond": "sans",
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est le Soleil.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F30",
+   "seed": 1234,
+   "cond": "oracle",
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est la Lune.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F30",
+   "seed": 1234,
+   "cond": "bm25",
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est la Lune.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F01",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "La capitale de l'Italie est Rome.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F01",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "La capitale de l'Italie est Rome.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F01",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "La capitale de l'Italie est Florence.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F02",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "Une araignée a 4 pattes.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F02",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "L'araignée possède une symbolique propre et permet de déchiffrer l'intrigue du film \"Enemy\" de Denis Villeneuve.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F02",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "L'araignée possède une symbolique propre.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "Le plus long fleuve de France est la Seine.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "Le plus long fleuve de France est la Seine.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "Le plus long fleuve de France est le Rhin.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F04",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "La Joconde a été peinte par Léonard de Vinci au début du XVIe siècle.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F04",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "La Joconde a été peinte par Léonard de Vinci.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F04",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "La Joconde a été peinte par Léonard de Vinci.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F05",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "Il y a environ 13,2 minutes dans une heure.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F05",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "Il y a actuellement 60 minutes dans une heure.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F05",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "Pour répondre à la question, nous devons d'abord comprendre le contexte de la question. La question porte sur le temps qu'il faut pour que le soleil atteigne le zénith dans une journée d'équinoxe. Le soleil atteint son zénith à midi solaire, soit 90° d'altitude.\n\nEn examinant le texte, nous trouvons que le soleil atteint son zénith à 90° d'altitude le soir du zénith. Cela signifie que le soleil atteint son zénith à une heure de la journée, soit 90 + 0 + 0 = 90 minutes.\n\nEnsuite, nous devons déterminer combien de minutes il y a dans une heure. Si une heure de 90 minutes correspond à une heure de l'équateur, alors le soleil atteint son zénith à 90 + 0 + 90 = 90 minutes.\n\nAinsi, il y a 90 minutes dans une heure.\n\nEnfin, pour déterminer le nombre total de minutes dans une heure, nous multiplions le nombre de minutes dans une heure par le nombre d'heures dans une journée :\n\n90 minutes (heure) × 60 minutes (heure) = 1800 minutes.\n\nDonc, il y a 1800 minutes dans une heure.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F06",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "Le cœur pompe le sang dans le corps humain. C'est un organe musculaire qui pompe le sang à travers le système circulatoire.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F06",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "Le cœur, pompe le sang dans le corps humain.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F06",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "Le foie est l'organe qui pompe le sang dans le corps humain.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F07",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "Le lion est souvent surnommé le \"roi de la savane\" en raison de sa capacité à survivre et à prospérer dans les environnements arides de la savane.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F07",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "Le roi de la savane est surnommé le roi des animaux.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F07",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "Le lion mâle est surnommé « le roi des animaux ».",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "L'homme a marché sur la Lune pour la première fois en 1969.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "L'homme a marché sur la Lune pour la première fois en 1969.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "L’homme a marché sur la Lune pour la première fois le 7 octobre 1959.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F09",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "La langue officielle du Brésil est l'espagnol.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F09",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "La langue officielle du Brésil est le portugais.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F09",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "La langue officielle du Brésil est le portugais.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "La planète la plus proche du Soleil est Mercure. En moyenne, elle est à environ 4,5 millions de kilomètres du Soleil.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "La planète la plus proche du Soleil est Vénus. En moyenne, c'est Mercure et non Vénus la planète la plus proche du Soleil, ce qui signifie que Vénus est la planète la plus proche de la Terre.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "La plus proche du Soleil est Cérès.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F11",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO₂) de l'air et de l'eau du sol pour faire la photosynthèse. Ce processus se déroule principalement dans les feuilles, où le dioxyde de carbone est transformé en glucose (une forme de sucre) et en oxygène.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO₂) de l’air.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO₂) de l'air pour faire la photosynthèse.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "« Le Petit Prince » a été écrit par Antoine de Saint-Exupéry.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "Le Petit Prince a été écrit par Antoine de Saint Exupery.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "Le « Petit Prince » a été écrit par William Shakespeare.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F13",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "La monnaie utilisée en France est l'euro.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F13",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "La monnaie utilisée en France est le dollar.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F13",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "En France, la monnaie utilisée est le « monnaie classique ».",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F14",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "Un hexagone est un polygone à 5 côtés. Chaque côté a une longueur égale à la moitié de la longueur du côté du polygone.\n\nPour un hexagone :\n\n- Chaque côté est de longueur \\( \\frac{1}{2} \\times \\text{longueur d'un côté} \\).\n\nDonc, pour un hexagone :\n\n- Longueur totale = \\( 5 \\times \\frac{1}{2} \\times \\text{longueur d'un côté} \\).\n\nAinsi, un hexagone a 5 côtés.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F14",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "Un hexagone régulier est un hexagone dont les côtés ont la même longueur et dont les angles ont la même mesure (les angles d'un triangle équilatéral).",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F14",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "Un hexagone régulier a six côtés de longueur \\( L \\).\n\nPour calculer le nombre de côtés, on utilise la formule suivante :\n\n\\[\n\\text{Nombre de côtés} = \\frac{L}{6}\n\\]\n\nEn substituant les valeurs :\n\n\\[\n\\text{Nombre de côtés} = \\frac{6}{6} = 1\n\\]\n\nAinsi, un hexagone régulier a 1 côté.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F15",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "L'eau bout à des températures très basses, autour de 0°C. Cela s'explique par la différence de température entre la surface de la Terre et l'atmosphère.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F15",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "L'eau bout à environ 68 °C au niveau de la mer.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F15",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "Au niveau de la mer, l'eau bout à environ 68 °C.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F16",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "La capitale du Japon est Tokyo.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F16",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "La capitale du Japon est Tokyo.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F16",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "La capitale du Japon est Tokyo.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F17",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "Le plus grand animal du monde est le tigre. Il mesure environ 1,2 mètre de haut et peut atteindre jusqu'à 30 mètres de long.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F17",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "Le plus grand animal du monde est la baleine bleue.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F17",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "Le plus grand animal du monde est l'autruche.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F18",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "Les pyramides de Gizeh se trouvent en Égypte.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F18",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "Les pyramides de Gizeh se trouvent dans le Caire, la capitale de l'Égypte.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F18",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "Les pyramides de Gizeh se trouvent en Égypte.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F19",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "Le premier président de la Ve République a été élu par le peuple français en 1789.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F19",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "Le premier président de la Ve République a été Édouard Philippe.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F19",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "Le premier président de la Ve République a été Benoît XVI.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "Une équipe de football a généralement 10 joueurs sur le terrain.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "Une équipe de football américain compte trois formations spécialisées adaptées aux différentes phases de jeu.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "Une équipe de football a quatre joueurs sur le terrain.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F21",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "La formule chimique de l'eau est H₂O.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F21",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "La formule chimique qui désigne la molécule d'eau est H2O.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F21",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "La formule chimique de l'eau est H2O.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F22",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "L'hiver est la saison où les températures sont plus basses que la normale, ce qui entraîne une augmentation du froid et de la fonte des neiges.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F22",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "L'hiver vient après l'automne.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F22",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "L'hiver vient après l'automne.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "L'émeraude est une couleur unique et fascinante qui apparaît dans de nombreux domaines, notamment dans la peinture, la photographie et la musique. Elle est souvent associée à la nature, à la tranquillité et à la beauté. L'émeraude est souvent associée à la pureté et à la clarté, ce qui en fait un choix populaire pour les artistes cherchant à exprimer des émotions profondes et émotionnelles. Elle peut également être associée à la pureté et à la pureté d'esprit, ce qui la rend particulièrement appréciée dans les arts visuels et les arts du spectacle.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "Une émeraude est une pierre précieuse de couleur verte.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F23",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "Une émeraude est une couleur.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F24",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "Le contraire de « froid » est « chaud ».",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F24",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "Le contraire de « froid » est « humide ».",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F24",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "Le contraire de « froid » est « humide » ou « sec ».",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F25",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "Pour trouver le nombre de fois que 7 fait 8, on peut utiliser la formule suivante :\n\nNombre de fois 8 = (7 × 8) / 2\n\nCalculons :\n\n7 × 8 = 56\n\nDonc, 7 fois 8 fait 56.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F25",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "Pour résoudre ce problème, nous devons calculer la somme des chiffres de 7 en utilisant les informations fournies.\n\n1. La première année, 7 fois 8 sont :\n   - 8 * 15% = 158\n\n2. La deuxième année, 7 fois 8 sont :\n   - 7 * 8 = 56\n\n3. La troisième année, 7 fois 8 sont :\n   - 7 * 8 = 56\n\n4. La quatrième année, 7 fois 8 sont :\n   - 7 * 8 = 56\n\n5. La cinquième année, 7 fois 8 sont :\n   - 7 * 8 = 56\n\n6. La sixième année, 7 fois 8 sont :\n   - 7 * 8 = 56\n\n7. La septième année, 7 fois 8 sont :\n   - 7 * 8 = 56\n\n8. La huitième année, 7 fois 8 sont :\n   - 7 * 8 = 56\n\n9. La neuvième année, 7 fois 8 sont :\n   - 7 * 8 = 56\n\n10. La dixième année, 7 fois 8 sont :\n    - 7 * 8 = 56\n\n11. La onzième année, 7 fois 8 sont :\n    - 7 * 8 = 56\n\n12. La douzième année, 7 fois 8 sont :\n    - 7 * 8 = 56\n\n13. La douzième année, 7 fois 8 sont :\n    - 7 * 8 = 56\n\n14. La treizième année, 7 fois 8 sont :\n    - 7 *",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F25",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "Le nombre 7 fait 8 en chiffres romains. \n\nLe chiffre 7 se dit \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en chiffres romains, \"7\" en",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F26",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "15 plus 27 = 15 + 27 = 50.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F26",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "15 plus 27 font 15 plus 27.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F26",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "15 plus 27 font 15 plus 27.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "Le féminin du mot « acteur » est « acteur ».",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "Le féminin du mot « acteur » est \"actrice\".",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F27",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "Le féminin du mot « acteur » est « mbarigui ».",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F28",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "La mer Méditerranée borde la ville de Marseille.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F28",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "La mer Méditerranée borde la ville de Marseille.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F28",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "La mer Caspienne borde la ville de Marseille.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F29",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "Le mois de février compte 365 jours.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F29",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "Pour répondre à cette question, nous devons identifier les mois de février dans le calendrier grégorien et les mois de mars dans le calendrier julien.\n\n1. **Février** : 28 jours\n2. **Mars** : 29 jours\n3. **Avril** : 30 jours\n4. **Mai** : 31 jours\n5. **Juin** : 31 jours\n6. **Juillet** : 31 jours\n7. **Août** : 31 jours\n8. **Septembre** : 31 jours\n9. **Octobre** : 31 jours\n10. **Novembre** : 31 jours\n11. **Décembre** : 31 jours\n\nEn additionnant ces mois, on obtient :\n\n28 + 29 + 30 + 31 + 31 + 31 + 31 + 31 + 31 = 342 jours\n\nAinsi, le mois de février compte 342 jours quand l'année n'est pas bissextile.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F29",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "Le mois de février compte 28 jours dans une année normale.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F30",
+   "seed": 2000,
+   "cond": "sans",
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est la Lune. Elle est visible à l'œil nu et est visible à l'aube, lorsque le soleil est encore bas sur le nord.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F30",
+   "seed": 2000,
+   "cond": "oracle",
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est la Lune.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F30",
+   "seed": 2000,
+   "cond": "bm25",
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est la Lune.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F01",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "La capitale de l'Italie est Rome.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F01",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "La capitale de l'Italie est Rome.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F01",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "La capitale de l'Italie est Florence.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F02",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "Une araignée a généralement 4 pattes.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F02",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "L'araignée possède une symbolique propre.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F02",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "L'araignée a deux pattes.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "Le plus long fleuve de France est la Seine.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "Le plus long fleuve de France est la Seine.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F03",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "Le plus long fleuve de France est le Rhin.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F04",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "La Joconde a été peinte par Léonard de Vinci au début du XVIe siècle.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F04",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "La Joconde a été peinte par Léonard de Vinci.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F04",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "La Joconde a été peinte par Léonard de Vinci.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F05",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "Il y a environ 30 minutes dans une heure.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F05",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "Il y a cinq minutes dans une heure.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F05",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "Pour déterminer le nombre de minutes dans une heure, nous devons d'abord comprendre la structure de la journée et du coucher du soleil.\n\n1. **Heure du crépuscule** : Le soleil atteint son zénith dans l'horizon à 20° (60° par rapport à l'équateur).\n\n2. **Heure du crépuscule** : Le soleil atteint son zénith dans l'horizon à 60° (60° par rapport à l'équateur).\n\n3. **Heure du crépuscule** : Le soleil atteint son zénith dans l'horizon à 60° (60° par rapport à l'équateur).\n\nMaintenant, additionnons ces durées :\n\n- **Heure du crépuscule** : 60° (60° par rapport à l'équateur)\n- **Heure du zénith** : 60° (60° par rapport à l'équateur)\n\nEn additionnant ces durées, nous obtenons :\n\n- 60° (60° par rapport à l'équateur) + 60° (60° par rapport à l'équateur) + 60° (60° par rapport à l'équateur) = 180°\n\nAinsi, il y a 180 minutes dans une heure.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F06",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "Le cœur est l'organe qui pompe le sang dans le corps humain. Il est composé de deux chambres : la chambre supérieure et la chambre inférieure. Le cœur se divise en deux chambres : la chambre droite et la chambre gauche, qui sont chacune responsables de pomper le sang vers les autres parties du corps. Le sang pauvre en oxygène provenant du corps se dirige vers les poumons, tandis que le sang riche en nutriments voyage vers les tissus et les organes.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F06",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "Le système circulatoire dans le corps humain pompe le sang dans les artères, les artérioles, les capillaires, les veinules et les veines.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F06",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "Le foie est l'organe qui pompe le sang dans le corps humain.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F07",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "Le lion est surnommé le \"roi de la savane\".",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F07",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "Le roi de la savane est appelé le lion.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F07",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "Le lion mâle est surnommé le roi des animaux.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "L'homme a marché sur la Lune en 1969.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "L'homme a marché sur la Lune pour la première fois en 1969.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F08",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "L'homme a marché sur la Lune pour la première fois le 14 septembre 1959.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F09",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "La langue officielle du Brésil est l'espagnol.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F09",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "La langue officielle du Brésil est le portugais.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F09",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "La langue officielle du Brésil est le portugais.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "La planète la plus proche du Soleil est Mercure. Elle est la plus proche du Soleil et est visible depuis la Terre.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F10",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "La planète la plus proche du Soleil est Vénus. En moyenne, elle atteint sa conjonction inférieure tous les 584 jours, ce qui correspond à une période synodique de 584 jours.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F10",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "La planète la plus proche du Soleil est Pluton.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F11",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO₂) de l'atmosphère par le biais de leur photosynthèse. Ce processus se déroule principalement dans les feuilles, où le CO₂ est absorbé par les chloroplastes. Les plantes peuvent également convertir le CO₂ en glucose et en oxygène grâce à l'énergie solaire.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO₂) de l’air par la photosynthèse.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F11",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "Les plantes absorbent le dioxyde de carbone (CO₂) de l'air par la photosynthèse.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "« Le Petit Prince » a été écrit par Antoine de Saint-Exupéry.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "Le Petit Prince a été écrit par Antoine de Saint Exupery.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F12",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "La mère de la princesse Victoria, Victoria, a écrit « Le Petit Prince ».",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F13",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "La monnaie utilisée en France est le dollar français (F.A.R.).",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F13",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "La monnaie utilisée en France est le dollar.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F13",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "En France, la monnaie utilisée est la monnaie classique.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F14",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "Un hexagone est un nombre pair, donc il a deux côtés de même longueur. Un hexagone régulier a 6 côtés.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F14",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "Un hexagone régulier a six côtés.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F14",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "Un hexagone régulier a 6 côtés.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F15",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "L'eau bout à des températures extrêmement basses, à environ 0°C au niveau de la mer. C'est ce qu'on appelle la température de fusion de l'eau.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F15",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "L'eau bout à environ 68 °C au niveau de la mer.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F15",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "L'eau bout à une température de 68 °C au niveau de la mer.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F16",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "La capitale du Japon est Tokyo.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F16",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "La capitale du Japon est Tokyo.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F16",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "La capitale du Japon est Tokyo.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F17",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "Le plus grand animal du monde est la baleine bleue. Elle mesure environ 1,7 mètre de long et pèse jusqu'à 180 tonnes.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F17",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "Le plus grand animal du monde est la baleine bleue.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F17",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "Le plus grand animal du monde est l'autruche.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F18",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "Les pyramides de Gizeh se trouvent en Égypte.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F18",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "Les pyramides de Gizeh se trouvent en Égypte.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F18",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "Les pyramides de Gizeh se trouvent en Égypte.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F19",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "Le premier président de la Ve République a été George Washington.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F19",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "Le premier président de la Ve République est Charles de Gaulle.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F19",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "Le premier président de la Ve République a été Benoît XVI.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "Une équipe de football a généralement 5 joueurs par équipe. Cela inclut le gardien, le milieu de terrain, les attaquants, les attaquants et les défenseurs.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "Une équipe de football américain compte trois formations spécialisées adaptées aux différentes phases de jeu.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F20",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "Une équipe de football a un nombre égal de joueurs sur le terrain.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F21",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "La formule chimique de l'eau est H₂O.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F21",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "La formule chimique de la molécule d'eau est H2O.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F21",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "La formule chimique de la molécule d'eau est H2O.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F22",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "La question \"Quelle saison vient après l'hiver ?\" est un peu compliquée. En général, les saisons sont classées par ordre croissant d'arrivée. Cependant, certaines saisons peuvent être mentionnées pour un certain type de réponse. Par exemple :\n\n1. **Printemps (printemps)** : Printemps\n2. **Été (été)** : Été\n3. **Automne (hiver)** : Automne\n4. **Hiver (hiver)** : Hiver\n\nSi vous avez besoin d'une réponse spécifique, n'hésitez pas à demander !",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F22",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "La saison qui vient après l'hiver est la saison des conifères (sapins, pins, épicéeas, mélèzes).",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F22",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "La saison qui vient après l'hiver est la saison estivale.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "L'émeraude est une couleur rare et précieuse, souvent associée à la nature, à la sagesse et à la pureté. Elle est souvent associée à la chance et à la prospérité.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F23",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "Une émeraude est une pierre précieuse de couleur verte.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F23",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "Une émeraude est une couleur.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F24",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "Le contraire de « froid » est « chaud ».",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F24",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "Le contraire de « froid » est « sec ».",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F24",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "Le contraire de « froid » est « sec ».",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F25",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "Pour trouver le nombre de fois \\(7 \\times 8\\), il suffit de diviser 7 par 8 :\n\n\\[ 7 \\div 8 = 1 \\]\n\nDonc, 7 fait 1.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F25",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "7 fois 8 font 7 fois 8.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F25",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "7 fois 8 font 8.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F26",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "15 plus 27 = 15 + 27 + 27 = 60 + 27 = 81\n\nDonc, 15 plus 27 = 81",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F26",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "15 plus 27 font 15 plus 27.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F26",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "15 plus 27 font 15 + 27 = 41 + 27 = 81\n\nDonc, 81 fait 15 + 27 = 83",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "Le féminin du mot « acteur » est « acteur ».",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F27",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "Le féminin du mot « acteur » est « actrice ».",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F27",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "Le féminin du mot « acteur » est « mbarigui ».",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F28",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "La mer Méditerranée est une mer très importante pour la ville de Marseille. Elle est bordée par :\n\n- L'océan Atlantique\n- L'océan Pacifique\n- L'océan Atlantique\n- L'océan Atlantique\n- La mer Méditerranée\n\nLa ville de Marseille est située dans la région de la Méditerranée.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "boucle"
+   ]
+  },
+  {
+   "id": "F28",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "La mer Méditerranée borde la ville de Marseille.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F28",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "La mer Caspienne borde la ville de Marseille.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F29",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "Le mois de février compte 3 jours.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F29",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "Pour déterminer combien de jours compte le mois de février quand l'année n'est pas bissextile, examinons le calendrier grégorien et le calendrier julien :\n\n- Le calendrier grégorien compte 28 jours.\n- Le calendrier julien compte 29 jours.\n\nAinsi, le mois de février compte 28 jours.\n\nPour savoir si le mois comporte 30 ou 31 jours, on peut se rappeler de ce moyen : on ferme le poing. L'os qui continue l'index forme une petite montagne et est le 30.\n\nDonc, le mois de février compte 30 ou 31 jours.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F29",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "Pour déterminer combien de jours compte le mois de février quand l'année n'est pas bissextile, nous devons soustraire le mois de février de l'année.\n\n- février dans l'année non bissextile compte 30 jours.\n\nAinsi, le mois de février compte 30 - 1 = 31 jours.\n\nDonc, le mois de février compte 31 jours.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F30",
+   "seed": 3000,
+   "cond": "sans",
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est le Soleil.",
+   "tronque": 0,
+   "correct": true,
+   "raisons": []
+  },
+  {
+   "id": "F30",
+   "seed": 3000,
+   "cond": "oracle",
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est la Lune.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  },
+  {
+   "id": "F30",
+   "seed": 3000,
+   "cond": "bm25",
+   "reponse": "L'astre qui éclaire la Terre pendant la journée est la Lune.",
+   "tronque": 0,
+   "correct": false,
+   "raisons": [
+    "critere_absent"
+   ]
+  }
+ ]
+}
