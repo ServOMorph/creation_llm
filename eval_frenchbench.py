@@ -74,7 +74,7 @@ class LocalGPT(LM):
 def main(name, fewshot):
     lm = LocalGPT(MODELS[name])
     res = simple_evaluate(model=lm, tasks=MC_TASKS, num_fewshot=fewshot, bootstrap_iters=0)["results"]
-    path = ROOT / f"eval_frenchbench_{name}_{fewshot}shot.json"
+    path = ROOT / "resultats" / f"eval_frenchbench_{name}_{fewshot}shot.json"
     path.write_text(json.dumps(res, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
     for task, metrics in res.items():
         print(task, {k: v for k, v in metrics.items() if isinstance(v, float)})

@@ -8,7 +8,7 @@ from train import TrainConfig, all_starts, evaluate, load_data
 
 ROOT = Path(__file__).parent
 PROMPTS = ROOT / "prompts_eval.txt"
-REPORT = ROOT / "eval_report.md"
+REPORT = ROOT / "resultats" / "eval_report.md"
 SEED = 1234
 
 

@@ -13,8 +13,8 @@ ASSISTANT_CKPT = ROOT / "checkpoints_sft" / "ckpt.pt"
 BASE_CKPT = ROOT / "checkpoints_v9" / "ckpt.pt"
 PROMPTS = ROOT / "prompts_assistant_holdout.txt"
 SEEDS = [1234, 2000]
-BLIND = ROOT / "eval_assistant_blind.md"
-KEY = ROOT / "eval_assistant_key.json"
+BLIND = ROOT / "resultats" / "eval_assistant_blind.md"
+KEY = ROOT / "resultats" / "eval_assistant_key.json"
 GEN = dict(max_new_tokens=300, temperature=0.5, top_k=50, top_p=0.95)
 DEVICE = "cuda"
 

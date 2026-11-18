@@ -15,7 +15,7 @@ ROOT = Path(__file__).parent
 GATE_TASKS = ("french_bench_grammar", "french_bench_vocab")
 
 
-def load(name, root=ROOT, fewshot=0):
+def load(name, root=ROOT / "resultats", fewshot=0):
     return json.loads((root / f"eval_frenchbench_{name}_{fewshot}shot.json").read_text(encoding="utf-8"))
 
 

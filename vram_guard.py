@@ -1,4 +1,4 @@
-"""Jeton GPU VertIA (protocole version 1) pour les entraînements longs interruptibles.
+"""Jeton GPU VertIA (protocole version 2) pour les entraînements longs interruptibles.
 
 Usage : python vram_guard.py <session> --gb <Go> -- <commande d'entraînement avec --resume>
 Cycle : acquire --long --wait, lancement ; code PAUSE_CODE (pause demandée ou jeton à renouveler)

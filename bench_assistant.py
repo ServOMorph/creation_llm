@@ -9,7 +9,7 @@ from pathlib import Path
 ROOT = Path(__file__).parent
 BENCH = ROOT / "bench_assistant.jsonl"
 HOLDOUT = ROOT / "prompts_assistant_holdout.txt"
-RESULTS = ROOT / "bench_assistant_results"
+RESULTS = ROOT / "resultats" / "bench_assistant_results"
 CATS = ("faits", "consignes", "transformations", "conversation", "multi_tours")
 SEEDS = (1234, 2000, 3000)
 GEN = dict(max_new_tokens=300, temperature=0.5, top_k=50, top_p=0.95, repetition_penalty=1.0)

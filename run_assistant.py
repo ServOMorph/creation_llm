@@ -15,7 +15,7 @@ def main():
     from generate import load_model, load_tokenizer
 
     p = argparse.ArgumentParser(description="Assistant français en ligne de commande")
-    p.add_argument("--ckpt", default=str(ROOT / "checkpoints_sft" / "ckpt.pt"))
+    p.add_argument("--ckpt", default=str(ROOT / "checkpoints_sft_v2" / "ckpt.pt"))
     p.add_argument("--device", default="cuda" if torch.cuda.is_available() else "cpu")
     p.add_argument("--max-new-tokens", type=int, default=300)
     p.add_argument("--temperature", type=float, default=0.5)

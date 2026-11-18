@@ -33,3 +33,6 @@ rd/experiences/rag_exp1d_emb.npy
 rd/agents_codex/*.log
 rd/**/*.log
 **/_contexte/journal_session.md
+ui/.progress.json
+rd/agents_codex/.file.lock/
+ui/snapshot.html

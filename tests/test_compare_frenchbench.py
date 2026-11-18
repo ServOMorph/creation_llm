@@ -30,7 +30,7 @@ def test_margin():
 
 
 def test_real_v9_against_itself():
-    if not (Path(__file__).parent.parent / "eval_frenchbench_v9_0shot.json").exists():
+    if not (Path(__file__).parent.parent / "resultats" / "eval_frenchbench_v9_0shot.json").exists():
         return
     assert round(load("v9")["french_bench_grammar"]["acc,none"] * 100, 1) == 73.9
     assert main(["v9", "v9"]) == 0

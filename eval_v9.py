@@ -16,9 +16,9 @@ DOMAINS = ["fw2hq", "wiki_fr", "vikidia", "lecarnet"]
 STORIES = ROOT / "data" / "validation.jsonl"
 PROMPTS = ROOT / "prompts_holdout3.txt"
 SEEDS = [1234, 2000, 3000]
-BLIND = ROOT / "eval_v9_blind.md"
-KEY = ROOT / "eval_v9_key.json"
-PPL = ROOT / "eval_v9_ppl.json"
+BLIND = ROOT / "resultats" / "eval_v9_blind.md"
+KEY = ROOT / "resultats" / "eval_v9_key.json"
+PPL = ROOT / "resultats" / "eval_v9_ppl.json"
 DEVICE = "cuda"
 
 

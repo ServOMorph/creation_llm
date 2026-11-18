@@ -2,27 +2,30 @@ import argparse
 import sys
 from pathlib import Path
 
-import torch
-
 ROOT = Path(__file__).parent
-DEFAULT_CKPT = ROOT / "checkpoints_v8" / "ckpt.pt"
+DEFAULT_CKPT = ROOT / "checkpoints_v9" / "ckpt.pt"
 
 
 def default_device():
+    import torch
+
     return "cuda" if torch.cuda.is_available() else "cpu"
 
 
 def main():
     sys.stdout.reconfigure(encoding="utf-8")
     p = argparse.ArgumentParser(description="LLM français from scratch")
-    sub = p.add_subparsers(dest="cmd", required=True)
+    sub = p.add_subparsers(dest="cmd")
+    ui = sub.add_parser("ui", help="tableau de bord du projet (défaut sans argument)")
+    ui.add_argument("--port", type=int, default=8765)
+    ui.add_argument("--no-browser", action="store_true")
 
     sub.add_parser("train", help="entraînement (options de TrainConfig, ex. --max-steps 10000 --resume)", add_help=False)
 
     g = sub.add_parser("generate", help="complétion de texte")
     g.add_argument("prompt")
     g.add_argument("--ckpt", default=str(DEFAULT_CKPT))
-    g.add_argument("--device", default=default_device())
+    g.add_argument("--device", default=None)
     g.add_argument("--max-new-tokens", type=int, default=200)
     g.add_argument("--temperature", type=float, default=0.8)
     g.add_argument("--top-k", type=int, default=50)
@@ -30,19 +33,25 @@ def main():
     g.add_argument("--seed", type=int, default=None)
     g.add_argument("--best-of", type=int, default=1)
 
-    e = sub.add_parser("eval", help="perplexité + prompts verrouillés -> eval_report.md")
+    e = sub.add_parser("eval", help="perplexité + prompts verrouillés -> resultats/eval_report.md")
     e.add_argument("--ckpt", default=str(DEFAULT_CKPT))
-    e.add_argument("--device", default=default_device())
+    e.add_argument("--device", default=None)
     e.add_argument("--temperature", type=float, default=0.7)
     e.add_argument("--seed", type=int, default=1234)
     e.add_argument("--eval-batches", type=int, default=200)
-    e.add_argument("--report", default=str(ROOT / "eval_report.md"))
+    e.add_argument("--report", default=str(ROOT / "resultats" / "eval_report.md"))
     e.add_argument("--prefix-eot", action="store_true")
     e.add_argument("--best-of", type=int, default=1)
     e.add_argument("--prompts", default=str(ROOT / "prompts_eval.txt"))
 
     args, rest = p.parse_known_args()
-    if args.cmd == "train":
+    if getattr(args, "device", "") is None:
+        args.device = default_device()
+    if args.cmd in (None, "ui"):
+        from ui.server import serve
+
+        serve(getattr(args, "port", 8765), not getattr(args, "no_browser", False))
+    elif args.cmd == "train":
         from model import GPTConfig
         from train import parse_args, train
 
