@@ -52,6 +52,6 @@ Exécution en autonomie : accord VRAM donné par l'utilisateur, enchaînement de
 - Gate : meilleur que v8 sur les histoires nouvelles et perplexité FR générale en baisse continue
 - Résultat : gate non atteint sur les histoires (v8 conservée), v9 retenue comme base généraliste (`eval_final_v9.md`)
 
-## Phase 10+ — Suite [EN COURS]
+## Phase 10+ — Suite [FAIT]
 Pistes : annealing final sur données de haute qualité, SFT / forme assistant, contexte plus long, value embeddings / U-net (modded-nanogpt).
-SFT / forme assistant : suivi dans `roadmap_assistant.md`.
+SFT / forme assistant : suivi dans `_archives/roadmap_assistant.md` puis `_archives/roadmap_assistant_v2.md` (terminées). Suite du projet (modèle 369M) : `roadmap_modele_369m.md`.

@@ -1,5 +1,19 @@
 # Changelog
 
+## v0.5 — 2026-11-18
+
+### Ajouté
+- Tableau de bord local (`ui/server.py`, `ui/index.html`, lancement `python run.py`) et instantané mobile pour l'artefact (`ui/snapshot.py`) ; `tests/test_ui.py`.
+- Recherches R&D sur Codex : agents `rd/agents_codex/` (recherche, analyse, veille, file avec verrou, modèle unique `gpt-reserve`) ; rapports LeCun/JEPA, méthodes frugales, `rd/programme_cycle2.md`, sujets H-Net, NCM, LFM3, LexisLM, Tokenizer Myths, première veille d'actualité.
+- `ameliorations.md` : 14 incohérences et frictions avec leur état ; `eval_frenchbench.py --ckpt --nom`.
+
+### Modifié
+- Racine rangée : `resultats/` (rapports, JSON, benchmarks) et `logs/` ; chemins adaptés dans les scripts d'évaluation et le tableau de bord.
+- `run_assistant.py` (défaut v2), `run.py` (défaut v9, import torch paresseux), docstring `vram_guard.py` ; `roadmap_assistant_v2.md` archivée, phase 10+ de `roadmap_llm_fr.md` close.
+
+### Supprimé
+- Checkpoints obsolètes v3 à v7 et dossiers d'essais A/B (environ 13,7 Go, non versionnés).
+
 ## v0.4 — 2026-11-17
 
 ### Ajouté

@@ -1,0 +1,14 @@
+# Backlog — creation_llm
+
+- [dette] Détection du 369M par fichier PID écrit par `run_369m.py` au lieu du motif de ligne de commande (point 12 d'`ameliorations.md`, reporté après le run)
+  - fait quand: `gpu_task.py` lit un fichier PID et les tests passent.
+  - réf: `gpu_task.py`, `run_369m.py`, `ameliorations.md`
+- [piste] H-Net : prototype séparé, après les priorités du cycle 2 (verdict À TESTER)
+  - fait quand: décision de prototype prise ou piste écartée.
+  - réf: `rd/recherches/h-net/analyse.md`
+- [piste] LFM3-1.7B : référence française, puis enseignant RAFT conditionnel (verdict À TESTER)
+  - fait quand: comparaison au 369M faite ou piste écartée.
+  - réf: `rd/recherches/lfm3/analyse.md`
+- [piste] NCM (Next-Concept Modeling) et LexisLM : à surveiller, aucun changement du run ni du SFT
+  - fait quand: nouvelle publication ou reproduction qui change le verdict.
+  - réf: `rd/recherches/ncm/analyse.md`, `rd/recherches/lexislm/analyse.md`

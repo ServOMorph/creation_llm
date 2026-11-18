@@ -9,10 +9,10 @@ Création d'un LLM français from scratch sur mon PC, dont le but final est un a
 - Modèle GPT decoder-only maison (`model.py`) : RoPE, RMSNorm, QK-Norm, ReLU², soft-cap, cache KV ; optimiseur Muon + AdamW.
 
 ## État actuel (réécrit intégralement à chaque /close)
-- Pré-entraînement 369M (24 x 1024, embeddings liés) en cours sous jeton VertIA : pas 26 390 sur 113 000 au 2026-11-17, perte de validation 2,83 contre 2,93 pour la v9 au même pas.
-- Phases 3-4 préparées sur CPU : `compare_frenchbench.py`, `run_sft_369m.py` (SFT en deux étapes, pause VertIA), conversion au chat compatible embeddings liés.
-- GPU : seul lanceur `gpu_task.py` ; garde `require_gpu_token` dans le code.
-- Assistant retenu : `checkpoints_sft_v2/ckpt.pt` (49,7 %). R&D cycle 1 clos (`rd/bilan_cycle1.md`), cycle 2 à décider.
+- Pré-entraînement 369M en cours sous jeton VertIA : pas 34 230 sur 113 000 au 2026-11-18, perte de validation 2,80 contre 2,88 pour la v9 au même pas ; environ 11 à 12 jours restants (estimation au rythme réel).
+- Phases 3-4 prêtes : `compare_frenchbench.py`, `eval_frenchbench.py --ckpt`, `run_sft_369m.py` (SFT en deux étapes, pause VertIA).
+- Suivi : tableau de bord `python run.py`, artefact mobile sur demande ; R&D : programme du cycle 2 (`rd/programme_cycle2.md`) à valider, recherches et veille sur Codex (`gpt-reserve`).
+- Racine rangée (`resultats/`, `logs/`) ; `ameliorations.md` tient l'état des 14 points relevés.
 
 ## Décisions structurantes (append only — 10 entrées max, 5 lignes max/entrée, archiver au-delà)
 - 2026-10-22 : Initialisation du protocole vibecoding.
@@ -22,3 +22,4 @@ Création d'un LLM français from scratch sur mon PC, dont le but final est un a
 - 2026-11-12 : assistant v2 retenu avec réserves (SFT 1 epoch depuis la v1, lr 1e-4) ; modèle plus grand = 369M from scratch avec recalcul des activations ; DPO non prioritaire.
 - 2026-11-17 : mode orchestré VertIA (protocole v2) ; 369M à embeddings liés lancé ; GPU uniquement via `gpu_task.py` + garde `NoGpuToken` après un incident de protocole.
 - 2026-11-17 : cellule R&D créée, cycle 1 clos sans gain (RAG automatique, CFG, TTT-NN) ; SFT 369M en deux étapes comme la v2 ; gate FrenchBench phase 4 conservé, à rediscuter.
+- 2026-11-18 : recherches et veille R&D déléguées à Codex, modèle `gpt-reserve` uniquement (`gpt-6-astra` proscrit : abonnement) ; tableau de bord local par `run.py`, artefact mobile republié sur demande ; résultats rangés dans `resultats/`, journaux dans `logs/`.
