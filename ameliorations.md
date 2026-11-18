@@ -19,7 +19,7 @@ Relevé fait en construisant le tableau de bord. Chaque point : constat, effet, 
 | 6 **[fait le 2026-11-18 : resultats/ et logs/, journaux du run 369M laissés à la racine]** | Racine encombrée : environ 25 rapports `eval_report*.md`, des `.out`/`.err`, les JSON FrenchBench et d'évaluation à côté du code. | Difficile de distinguer code, résultats et journaux. | Dossier `resultats/` (rapports, JSON) et `logs/` ; adapter les chemins des scripts. |
 | 7 **[fait le 2026-11-18 : v3 à v7 et dossiers A/B supprimés, environ 13,7 Go]** | Environ 22 Go de checkpoints obsolètes sur D: (v3 à v8, `checkpoints_sft_ab` 4,9 Go, `checkpoints_sft_v2_ab` 3,3 Go). | Espace disque. | Supprimer après accord explicite (irréversible) ; garder v9, sft_v2, 369m. |
 | 8 **[en partie corrigé le 2026-11-18 : modèle unique `gpt-reserve` dans `rd/agents_codex/modele.sh`]** | Codex : le modèle de la configuration (`gpt-6.1-sol`) est refusé par le compte ; `gpt-6-astra` est codé en dur dans 3 scripts ; la limite d'usage bloque des files entières. | Échecs silencieux, relances manuelles. | Modèle dans une variable unique de `commun.md`/scripts ; corriger `~/.codex/config.toml` (hors projet, accord requis). |
-| 9 | `eval_frenchbench.py` : appareil `cuda` et dictionnaire `MODELS` en dur. | Chaque nouveau modèle demande d'éditer le code. | Accepter un chemin de checkpoint en argument. |
+| 9 **[corrigé le 2026-11-18 : --ckpt et --nom]** | `eval_frenchbench.py` : appareil `cuda` et dictionnaire `MODELS` en dur. | Chaque nouveau modèle demande d'éditer le code. | Accepter un chemin de checkpoint en argument. |
 | 10 **[corrigé le 2026-11-18]** | `run.py generate` et `run.py eval` ont `checkpoints_v8` comme défaut. | Défaut obsolète. | Défaut sur la v9 ou option obligatoire. |
 
 ## Priorité basse
@@ -27,6 +27,6 @@ Relevé fait en construisant le tableau de bord. Chaque point : constat, effet, 
 | # | Constat | Effet | Proposition |
 |---|---|---|---|
 | 11 **[corrigé le 2026-11-18]** | La docstring de `vram_guard.py` cite le « protocole version 1 », le projet applique la version 2. | Confusion à la lecture. | Corriger la docstring. |
-| 12 | `gpu_task.py` détecte le 369M par motif de ligne de commande (`run_369m.py`, `checkpoints_369m`). | Fragile si le lanceur change de nom. | Fichier PID écrit par `run_369m.py`. |
+| 12 **[reporté après le run 369M]** | `gpu_task.py` détecte le 369M par motif de ligne de commande (`run_369m.py`, `checkpoints_369m`). | Fragile si le lanceur change de nom. | Fichier PID écrit par `run_369m.py`. |
 | 13 | `signals.md` et `contexte.md` ne changent qu'au /close : entre deux clôtures, l'état est figé. | État « officiel » périmé. | Le tableau de bord lit aussi le journal de session et les fichiers vivants (déjà fait). |
 | 14 **[corrigé le 2026-11-18]** | `run.py` importe `torch` dès le démarrage, même pour le tableau de bord. | Ouverture de l'UI plus lente de quelques secondes. | Import paresseux de `torch` dans `run.py`. |

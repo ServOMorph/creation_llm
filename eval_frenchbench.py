@@ -71,8 +71,31 @@ class LocalGPT(LM):
         raise NotImplementedError
 
 
-def main(name, fewshot):
-    lm = LocalGPT(MODELS[name])
+def resolve(name, ckpt=None):
+    if ckpt:
+        return Path(ckpt)
+    if name not in MODELS:
+        raise SystemExit(f"modèle inconnu : {name} (connus : {', '.join(MODELS)}) ; sinon --ckpt <chemin> --nom <nom>")
+    return MODELS[name]
+
+
+def parse(argv=None):
+    import argparse
+
+    p = argparse.ArgumentParser(description="FrenchBench 0-shot ou few-shot d'un checkpoint")
+    p.add_argument("nom", nargs="?", help="nom connu (MODELS) ou nom du fichier de résultat avec --ckpt")
+    p.add_argument("fewshot", nargs="?", type=int, default=0)
+    p.add_argument("--ckpt", help="chemin d'un checkpoint quelconque")
+    p.add_argument("--nom", dest="nom_opt")
+    a = p.parse_args(argv)
+    name = a.nom_opt or a.nom or (Path(a.ckpt).parent.name if a.ckpt else None)
+    if not name:
+        p.error("donner un nom connu ou --ckpt")
+    return name, a.fewshot, resolve(name, a.ckpt)
+
+
+def main(name, fewshot, ckpt=None):
+    lm = LocalGPT(ckpt or resolve(name))
     res = simple_evaluate(model=lm, tasks=MC_TASKS, num_fewshot=fewshot, bootstrap_iters=0)["results"]
     path = ROOT / "resultats" / f"eval_frenchbench_{name}_{fewshot}shot.json"
     path.write_text(json.dumps(res, indent=2, ensure_ascii=False, default=str), encoding="utf-8")
@@ -81,4 +104,4 @@ def main(name, fewshot):
 
 
 if __name__ == "__main__":
-    main(sys.argv[1], int(sys.argv[2]) if len(sys.argv) > 2 else 0)
+    main(*parse())
