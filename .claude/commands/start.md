@@ -1,10 +1,10 @@
 ---
 description: Charge le contexte d'une zone en début de session
-argument-hint: [zone]
+argument-hint: [zone] [--complet]
 model: haiku
 ---
 
-# /start [zone]
+# /start [zone] [--complet]
 
 ## Zones valides et dossiers réels
 
@@ -14,6 +14,7 @@ Lire `.claude/zones.md` pour obtenir la table des alias → dossiers réels.
 ## Procédure
 
 1. Lire l'argument fourni ($ARGUMENTS).
+   - Si `--complet` y figure : le retirer de l'argument et activer le mode complet (étape 4).
    - Si absent : utiliser le working directory courant comme dossier cible (zone implicite).
    - Si présent mais non reconnu dans la table ci-dessus :
      répondre "Erreur : zone inconnue. Zones valides : <liste des alias>"
@@ -31,10 +32,14 @@ Lire `.claude/zones.md` pour obtenir la table des alias → dossiers réels.
 2c. Si `<dossier>/_contexte/memory.md` existe : le charger (mémoire propre à cette
     zone, écrite via `/create_memory <alias_zone> <contenu>`).
 
+2d. Si `<dossier>/_contexte/artifacts.md` existe : le charger (liens et sources des artifacts du
+    projet ; à lire avant de créer ou de modifier un artifact, qui se republie au même lien après relecture).
+
 3. Charger dans l'ordre :
    1. `_contexte/signals.md` — actions ouvertes, blocages, dernière session (priorité absolue)
    2. `_contexte/contexte.md` — contexte stable
    3. `roadmap*.md` — si un fichier correspondant existe dans `<dossier>`, le charger
+   4. `_contexte/journal_session.md` — si présent et non vide, le charger (session précédente non close)
 
    > **Économie tokens :** si `signals.md` suffit à répondre à la question immédiate,
    > `contexte.md` peut être chargé à la demande plutôt que systématiquement.
@@ -46,24 +51,48 @@ Lire `.claude/zones.md` pour obtenir la table des alias → dossiers réels.
    commande du hook, le signaler en une ligne et poursuivre `/start`. Contrat des sections :
    `on_start_TEMPLATE.md` du kit.
 
-4. Afficher le contenu intégral de `signals.md` (sans résumé ni reformulation).
+4. Afficher `signals.md`, toujours mot pour mot (sans résumé ni reformulation) :
+   - **Par défaut** : recopier les sections « Prochaine étape exacte » et « Question bloquante pour
+     la session suivante » de la dernière session. Le reste du fichier est donné sur demande de
+     l'utilisateur. Si l'une des deux sections est absente : afficher le contenu intégral, comme en
+     mode complet.
+   - **Mode complet** (`--complet`) : afficher le contenu intégral de `signals.md`.
+   Si `_contexte/journal_session.md` est non vide : l'afficher mot pour mot sous le titre « Journal non
+   intégré », avant la ligne de compteurs, et signaler en une ligne que le `/close` précédent n'a pas eu
+   lieu ou n'a pas intégré le journal.
+   Dans tous les cas, terminer par une ligne de compteurs :
+   `Actions ouvertes : N (dont P1 : x) · Backlog : B · Phase en cours : <titre>`.
+   N = actions de premier niveau des sections d'actions ouvertes (la ligne de renvoi du backlog
+   n'est pas une action) ; « dont P1 » seulement si une section P1 existe ; « Backlog : B » (B =
+   nombre de la ligne de renvoi du backlog) seulement si cette ligne existe ; « Phase en cours »
+   seulement si une roadmap est active. Une partie sans objet est retirée de la ligne avec son
+   séparateur, jamais remplacée par « omis » ou « aucune ».
 
-4b. Pour chaque action listée dans `signals.md` qui contient un champ `réf:`, lire les fichiers
-    référencés avant d'afficher la synthèse. Si une action semble ambiguë mais qu'une `réf:` existe,
-    lire la référence en priorité plutôt que de demander des précisions.
+4b. Lire les fichiers `réf:` des seules actions dont l'objet est cité dans « Prochaine étape
+    exacte », y compris en mode complet ou en affichage intégral. Les autres `réf:`
+    sont lues quand l'utilisateur ou la tâche en cours en a besoin. Si une action semble ambiguë
+    mais qu'une `réf:` existe, lire la référence en priorité plutôt que de demander des précisions.
 
-    Ajouter ensuite, à partir des autres fichiers chargés : la phase en cours si roadmap active,
-    et le point d'attention immédiat.
+    Ajouter ensuite, en une ligne chacun : la phase en cours si roadmap active, et le point
+    d'attention immédiat.
 
-4c. **Contrôle de classement.** Après l'affichage intégral de l'étape 4 (qui n'est jamais filtré
-    ni réduit), repérer les éléments manifestement mal classés dans `signals.md` :
+4c. **Contrôle de classement.** Après l'affichage de l'étape 4, analyser l'intégralité de
+    `signals.md` (jamais la seule partie affichée) et repérer les éléments manifestement mal classés :
     - une action dont tous les `réf:` pointent dans le dossier d'une autre zone de `zones.md` ;
     - à la racine, une action métier d'une zone (non transversale) ;
     - une action dont l'objet ou la `réf:` figure aussi dans le `signals.md` de la zone
-      propriétaire (lire seulement ce fichier, pour les cas candidats).
-    Les lister dans un bloc « Éléments possiblement mal classés » : élément, zone probable,
-    doublon constaté oui/non. Ne rien déplacer ni supprimer : le reclassement se fait par
-    `/close` (étape 3-bis) sur décision de l'utilisateur. Aucun candidat : ne pas afficher le bloc.
+      propriétaire.
+    Les éléments déjà marqués `[à transférer vers <alias>]` ne sont pas détaillés : leur transfert
+    est déjà tracé. Les compter dans une seule ligne « N élément(s) en attente de transfert
+    (déjà marqués) ».
+    Pour chaque autre candidat, lire effectivement `<dossier de la zone propriétaire>/_contexte/signals.md`
+    (dossier résolu par `zones.md`) avant de conclure sur le doublon : « oui » si l'objet ou une
+    `réf:` y figure, « non » sinon. Écrire « non vérifiable » seulement si ce fichier n'existe pas
+    après vérification de son chemin ; indiquer alors le chemin testé.
+    Lister les candidats dans un bloc « Éléments possiblement mal classés » : élément, zone
+    probable, doublon constaté oui/non. Ne rien déplacer ni supprimer : le reclassement se fait par
+    `/close` (étape 3-bis) sur décision de l'utilisateur. Aucun candidat ni élément marqué : ne
+    pas afficher le bloc.
 
 5. Afficher en fin de réponse : 🎉🎉🎉
 

@@ -30,3 +30,6 @@ checkpoints_369m/
 *.err
 _contexte/journal_session.md
 rd/experiences/rag_exp1d_emb.npy
+rd/agents_codex/*.log
+rd/**/*.log
+**/_contexte/journal_session.md
