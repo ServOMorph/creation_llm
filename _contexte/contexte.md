@@ -9,7 +9,7 @@ Création d'un LLM français from scratch sur mon PC, dont le but final est un a
 - Modèle GPT decoder-only maison (`model.py`) : RoPE, RMSNorm, QK-Norm, ReLU², soft-cap, cache KV ; optimiseur Muon + AdamW.
 
 ## État actuel (réécrit intégralement à chaque /close)
-- Pré-entraînement 369M en cours sous jeton VertIA : pas 34 230 sur 113 000 au 2026-11-18, perte de validation 2,80 contre 2,88 pour la v9 au même pas ; environ 11 à 12 jours restants (estimation au rythme réel).
+- Pré-entraînement 369M en cours sous jeton VertIA : pas 37 690 sur 113 000 au 2026-11-19 ; au pas 34 230, perte de validation 2,80 contre 2,88 pour la v9 ; environ 11 jours restants (estimation au rythme réel).
 - Phases 3-4 prêtes : `compare_frenchbench.py`, `eval_frenchbench.py --ckpt`, `run_sft_369m.py` (SFT en deux étapes, pause VertIA).
 - Suivi : tableau de bord `python run.py`, artefact mobile sur demande ; R&D : programme du cycle 2 (`rd/programme_cycle2.md`) à valider, recherches et veille sur Codex (`gpt-reserve`).
 - Racine rangée (`resultats/`, `logs/`) ; `ameliorations.md` tient l'état des 14 points relevés.

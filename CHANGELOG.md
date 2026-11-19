@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.6 — 2026-11-19
+
+### Modifié
+- `rd/agents_codex/veille_actu.md` : sources prioritaires de la veille.
+
 ## v0.5 — 2026-11-18
 
 ### Ajouté

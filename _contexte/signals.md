@@ -1,4 +1,4 @@
-# Signals — creation_llm   (MAJ 2026-11-18)
+# Signals — creation_llm   (MAJ 2026-11-19)
 
 ## Actions ouvertes
 - [P1|ouvert] Phase 2 de `roadmap_modele_369m.md` : pré-entraînement 369M jusqu'au pas 113 000
@@ -25,35 +25,34 @@
 - [P2|ouvert] Multi-tours synthétiques et DPO à réévaluer après le benchmark du 369M (phase 5)
   - fait quand: décision écrite après la phase 4.
   - réf: `bilan_assistant_v2.md`, `roadmap_modele_369m.md` (phase 5).
+- [P2|ouvert] Process Codex à régler avec VibeObs : binaire (npm 0.154 refuse gpt-6.1-sol, binaire application 0.167 l'accepte) et modèle (`AGENTS.md` : gpt-6.1-sol ; `rd/agents_codex/modele.sh` : gpt-reserve)
+  - fait quand: décision de l'utilisateur appliquée dans `modele.sh` et `AGENTS.md` finalisé par VibeObs ; commit local 2c4445e de VibeObs à ne pas pousser avant.
+  - réf: `AGENTS.md`, `rd/agents_codex/modele.sh`.
 - Backlog : 4 entrées (dette 1, piste 3) — `_contexte/backlog.md`
 
 ## Contexte chaud
-- 369M : pas 34 230 sur 113 000 le 2026-11-18 23:53, perte de validation 2,80 (v9 : 2,88 au pas 34 000) ; rythme réel environ 290 pas/h sur 24 h, soit environ 11 à 12 jours restants (estimation, pauses VertIA comprises).
+- 369M : pas 37 690 sur 113 000 le 2026-11-19 (perte d'entraînement 2,655) ; au pas 34 230 le 2026-11-18, perte de validation 2,80 (v9 : 2,88 au pas 34 000) ; rythme réel environ 290 pas/h sur 24 h, soit environ 11 à 12 jours restants (estimation, pauses VertIA comprises).
 - VRAM totale de la carte 7,1 à 7,7 Go pour une limite de 7,5 Go : le 369M reste à son plafond (réserve 6,10 Go), le surplus vient des applications de bureau (navigateurs, Docker Desktop, Parsec, RustDesk…).
 - Tableau de bord : `python run.py` (ou `run.py ui`) ; artefact mobile republié sur demande seulement (`python -m ui.snapshot` puis publication), registre `_contexte/artifacts.md`.
 - Recherches : file `rd/sujets_a_traiter.md`, `sh rd/agents_codex/file.sh` (verrou) ; veille `sh rd/agents_codex/veille.sh` ; modèle Codex `gpt-reserve` (`rd/agents_codex/modele.sh`), jamais `gpt-6-astra` (abonnement) ; le quota Codex peut bloquer une file.
 - Règle GPU : toute tâche GPU hors `run_369m.py` passe par `gpu_task.py` ; garde `NoGpuToken` dans le code.
 - Racine rangée : résultats dans `resultats/`, journaux dans `logs/` (sauf ceux du run 369M). `ameliorations.md` : 14 points, état par point.
 
-## Dernière session (2026-11-18)
-# Session du 2026-11-18
+## Dernière session (2026-11-19)
+# Session du 2026-11-19
 
 ## Décisions prises
-- Recherches R&D confiées à Codex (LeCun/JEPA, méthodes frugales, programme du cycle 2), puis système de recherches à la demande et de veille ; modèle `gpt-reserve`, plus jamais `gpt-6-astra`.
-- Tableau de bord local lancé par `run.py`, artefact mobile republié sur demande.
-- Améliorations : correctifs 3, 4, 6, 7, 9, 10, 11, 14 appliqués ; 12 et journaux du run reportés après le pré-entraînement ; roadmap assistant v2 archivée.
+- Veille : liste de sources prioritaires ajoutée au prompt (lancement toujours manuel).
+- Process Codex (binaire et modèle) laissé à l'utilisateur et VibeObs ; rien modifié en attendant.
 
 ## Livrables produits ou modifiés
-- `ui/` (server, index, snapshot), `run.py`, `ameliorations.md`, `rd/agents_codex/`, `rd/recherches/` (5 sujets), `rd/veille_actu/`, `rd/programme_cycle2.md` : créés.
-- `resultats/`, `logs/` (racine rangée), `eval_frenchbench.py` (`--ckpt`), `run_assistant.py`, `vram_guard.py` : modifiés ; 13,7 Go de checkpoints obsolètes supprimés.
+- `rd/agents_codex/veille_actu.md` : sources prioritaires ajoutées.
 
 ## Hypothèses validées / invalidées
-- VALIDE : 369M en avance sur la v9 à pas égal (2,80 contre 2,88 au pas 34 000).
-- INVALIDE : estimation de 10 jours restants (débit sans pause) -> rythme réel mesuré.
-- EN ATTENTE : qualité des rapports Codex avec `gpt-reserve`.
+- INVALIDE : « gpt-6.1-sol refusé à cause du compte » -> cause = Codex npm 0.154 ; le binaire application 0.167 l'accepte.
 
 ## Prochaine étape exacte
-Laisser finir le pré-entraînement ; valider `rd/programme_cycle2.md` et lancer son étape 1 sur CPU.
+Laisser finir le pré-entraînement ; appliquer le process Codex décidé avec VibeObs ; valider `rd/programme_cycle2.md`.
 
 ## Question bloquante pour la session suivante
 Aucune
