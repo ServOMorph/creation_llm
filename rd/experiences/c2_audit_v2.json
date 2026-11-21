@@ -1,0 +1,2346 @@
+{
+ "tag": "v2",
+ "score_historique_inchange": true,
+ "resume": {
+  "echecs": 151,
+  "par_etiquette": {
+   "omission_ou_reponse_differente": 106,
+   "motif_trop_strict_probable": 9,
+   "defaut_forme": 19,
+   "erreur_factuelle_probable": 15,
+   "contrainte_format": 2
+  },
+  "par_categorie": {
+   "faits": 41,
+   "consignes": 27,
+   "transformations": 36,
+   "conversation": 17,
+   "multi_tours": 30
+  }
+ },
+ "echecs": [
+  {
+   "id": "F02",
+   "cat": "faits",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b8\\b|huit"
+   ],
+   "question": "Combien de pattes a une araignée ?",
+   "reponse": "Une araignée a 4 pattes."
+  },
+  {
+   "id": "F03",
+   "cat": "faits",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "loire"
+   ],
+   "question": "Quel est le plus long fleuve de France ?",
+   "reponse": "Le plus long fleuve de France est la Seine."
+  },
+  {
+   "id": "F05",
+   "cat": "faits",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b60\\b|soixante"
+   ],
+   "question": "Combien y a-t-il de minutes dans une heure ?",
+   "reponse": "Il y a environ 8 heures dans une journée."
+  },
+  {
+   "id": "F15",
+   "cat": "faits",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b100\\b|cent degr"
+   ],
+   "question": "À quelle température l'eau bout-elle au niveau de la mer ?",
+   "reponse": "L'eau bout à des températures très basses à environ 0°C. Cela est dû à la différence de température entre l'atmosphère terrestre et l'eau liquide à la surface. La température de l'eau est d'environ 0°C, ce qui est très froid et proche du point de congélation."
+  },
+  {
+   "id": "F17",
+   "cat": "faits",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "baleine bleue|rorqual bleu"
+   ],
+   "question": "Quel est le plus grand animal du monde ?",
+   "reponse": "Le plus grand animal du monde est l'éléphant d'Afrique. Il mesure environ 1,2 mètre de hauteur et peut vivre entre 1 500 et 1 500 ans."
+  },
+  {
+   "id": "F19",
+   "cat": "faits",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "gaulle"
+   ],
+   "question": "Qui a été le premier président de la Ve République ?",
+   "reponse": "Le premier président de la République française a été Louis XVI."
+  },
+  {
+   "id": "F20",
+   "cat": "faits",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b11\\b|\\bonze\\b"
+   ],
+   "question": "Combien de joueurs une équipe de football a-t-elle sur le terrain ?",
+   "reponse": "Une équipe de football a un nombre de joueurs sur le terrain qui peut varier en fonction de la position et du type de jeu. Par exemple, les milieux de terrain, les attaquants et les attaquants sont des options courantes. Cependant, il est important de noter que ces chiffres peuvent varier en fonction des règles du jeu et des règles spécifiques du jeu."
+  },
+  {
+   "id": "F22",
+   "cat": "faits",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "printemps"
+   ],
+   "question": "Quelle saison vient après l'hiver ?",
+   "reponse": "La saison qui vient après l'hiver est généralement l'été. Cependant, certaines régions ont des saisons plus courtes ou des hivers plus doux."
+  },
+  {
+   "id": "F23",
+   "cat": "faits",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\bvert"
+   ],
+   "question": "De quelle couleur est une émeraude ?",
+   "reponse": "L'émeraude est un minéral de couleur rouge vif. Elle est généralement associée à la passion, à l'amour et à la passion."
+  },
+  {
+   "id": "F25",
+   "cat": "faits",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b56\\b|cinquante-six"
+   ],
+   "question": "Combien font 7 fois 8 ?",
+   "reponse": "Pour trouver combien fait 7 fois 8, il suffit de diviser 7 par 8.\n\n7 ÷ 8 = 1\n\nDonc, 7 fait 1."
+  },
+  {
+   "id": "F26",
+   "cat": "faits",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b42\\b|quarante-deux"
+   ],
+   "question": "Combien font 15 plus 27 ?",
+   "reponse": "15 plus 27 = 15 + 27 + 27 = 54."
+  },
+  {
+   "id": "F27",
+   "cat": "faits",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "actrice"
+   ],
+   "question": "Quel est le féminin du mot « acteur » ?",
+   "reponse": "Le féminin du mot « acteur » est « acteur »."
+  },
+  {
+   "id": "F29",
+   "cat": "faits",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b28\\b|vingt-huit"
+   ],
+   "question": "Combien de jours compte le mois de février quand l'année n'est pas bissextile ?",
+   "reponse": "Le mois de février compte 7 jours."
+  },
+  {
+   "id": "C02",
+   "cat": "consignes",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "^\\W*blanc\\W*$"
+   ],
+   "question": "Réponds par un seul mot : de quelle couleur est le lait ?",
+   "reponse": "Le lait est de la couleur jaune."
+  },
+  {
+   "id": "C03",
+   "cat": "consignes",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent",
+    "trop_long"
+   ],
+   "etiquette_auto": "motif_trop_strict_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "^\\D*12\\D*$"
+   ],
+   "question": "Écris le nombre douze en chiffres, sans rien d'autre.",
+   "reponse": "Le nombre 12 en chiffres est 12."
+  },
+  {
+   "id": "C06",
+   "cat": "consignes",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "^\\W*(?-i:BONJOUR)\\W*$"
+   ],
+   "question": "Écris uniquement le mot « bonjour » en majuscules.",
+   "reponse": "Bien sûr ! Voici le mot « bonjour » en majuscules :\n\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour"
+  },
+  {
+   "id": "C07",
+   "cat": "consignes",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "^\\W*faux\\b"
+   ],
+   "question": "Réponds par vrai ou faux : Paris est la capitale de l'Allemagne.",
+   "reponse": "Vrai. Paris est effectivement la capitale de la France."
+  },
+  {
+   "id": "C08",
+   "cat": "consignes",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "vite|v[ée]loce|prompt|preste|express|rapidement|leste|vif"
+   ],
+   "question": "Donne un synonyme du mot « rapide ».",
+   "reponse": "Un synonyme du mot « rapide » est « rapide »."
+  },
+  {
+   "id": "C12",
+   "cat": "consignes",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "1\\s+2\\s+3\\s+4\\s+5"
+   ],
+   "question": "Compte de 1 à 5 en chiffres, séparés par des espaces.",
+   "reponse": "1 à 5 en chiffres : 5."
+  },
+  {
+   "id": "C13",
+   "cat": "consignes",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "motif_trop_strict_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "^\\W*a\\W*$"
+   ],
+   "question": "Quelle est la première lettre de l'alphabet ? Réponds avec la lettre seule.",
+   "reponse": "La première lettre de l'alphabet est \"A\"."
+  },
+  {
+   "id": "C15",
+   "cat": "consignes",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "^\\W*(5|cinq)\\W*$"
+   ],
+   "question": "Réponds uniquement par un nombre : combien de doigts a une main ?",
+   "reponse": "Une main a 2 doigts."
+  },
+  {
+   "id": "T02",
+   "cat": "transformations",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "motif_trop_strict_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "pourri|s'il (te|vous) pla|voudr|merci|aimable|permett|silence"
+   ],
+   "question": "Reformule cette phrase de manière plus polie : « Tais-toi. »",
+   "reponse": "Pourrais-tu te calmer un peu ?"
+  },
+  {
+   "id": "T03",
+   "cat": "transformations",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "je n'ai pas|ne dispose pas|ne m'est pas possible"
+   ],
+   "question": "Reformule cette phrase dans un registre formel : « J'ai pas le temps. »",
+   "reponse": "Je suis en absence totale de temps."
+  },
+  {
+   "id": "T05",
+   "cat": "transformations",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "j'ai regard[ée]"
+   ],
+   "question": "Mets cette phrase au passé composé : « Je regarde la télévision. »",
+   "reponse": "Je regardai la télévision."
+  },
+  {
+   "id": "T06",
+   "cat": "transformations",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "nous sommes arriv[ée]"
+   ],
+   "question": "Mets cette phrase au passé composé : « Nous arrivons à la gare. »",
+   "reponse": "Nous avons atteint la gare."
+  },
+  {
+   "id": "T09",
+   "cat": "transformations",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ],
+   "etiquette_auto": "defaut_forme",
+   "etiquette_humaine": "",
+   "attendu": [
+    "nous irons"
+   ],
+   "question": "Mets cette phrase au futur simple : « Nous allons à la plage. »",
+   "reponse": "Nous allons à la plage."
+  },
+  {
+   "id": "T12",
+   "cat": "transformations",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "ces livres sont int[ée]ressants"
+   ],
+   "question": "Mets cette phrase au pluriel : « Ce livre est intéressant. »",
+   "reponse": "Bien sûr : Les livres sont intéressants."
+  },
+  {
+   "id": "T13",
+   "cat": "transformations",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ],
+   "etiquette_auto": "defaut_forme",
+   "etiquette_humaine": "",
+   "attendu": [
+    "l'enfant joue|un enfant joue"
+   ],
+   "question": "Mets cette phrase au singulier : « Les enfants jouent dans le parc. »",
+   "reponse": "Les enfants jouent dans le parc."
+  },
+  {
+   "id": "T18",
+   "cat": "transformations",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit",
+    "recopie"
+   ],
+   "etiquette_auto": "erreur_factuelle_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "^\\W*il pleut"
+   ],
+   "question": "Mets cette phrase à la forme affirmative : « Il ne pleut pas. »",
+   "reponse": "Il ne pleut pas."
+  },
+  {
+   "id": "T19",
+   "cat": "transformations",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit",
+    "recopie"
+   ],
+   "etiquette_auto": "erreur_factuelle_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\bchat"
+   ],
+   "question": "Simplifie cette phrase pour un enfant : « Le félin s'est assoupi sur le canapé. »",
+   "reponse": "Le félin s'est assoupi sur le canapé."
+  },
+  {
+   "id": "T20",
+   "cat": "transformations",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "voiture"
+   ],
+   "question": "Simplifie cette phrase pour un enfant : « L'automobile a percuté un réverbère. »",
+   "reponse": "Un véhicule a heurté un réverbère."
+  },
+  {
+   "id": "T22",
+   "cat": "transformations",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "revenu|rentr[ée]|retrouv|retour"
+   ],
+   "question": "Résume en une phrase : « Le chat de Léa a disparu pendant trois jours. Toute la famille l'a cherché. Il est revenu tout seul samedi. »",
+   "reponse": "Le chat de Léa a disparu pendant trois jours, laissant toute la famille en recherche."
+  },
+  {
+   "id": "T23",
+   "cat": "transformations",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ],
+   "etiquette_auto": "defaut_forme",
+   "etiquette_humaine": "",
+   "attendu": [
+    "[ée]puis[ée]|ext[ée]nu[ée]|crev[ée]|\\blas\\b|fatigue|sommeil|[àa] bout|vid[ée]|[ée]nergie|repos"
+   ],
+   "question": "Dis la même chose avec d'autres mots : « Je suis très fatigué. »",
+   "reponse": "Je suis très fatigué."
+  },
+  {
+   "id": "V03",
+   "cat": "conversation",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "f[ée]licit|bravo"
+   ],
+   "question": "Je suis content, j'ai réussi mon permis de conduire !",
+   "reponse": "C'est super ! Si tu as des questions ou besoin d'aide, n'hésite pas à demander !"
+  },
+  {
+   "id": "V04",
+   "cat": "conversation",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "voici|suggestion|id[ée]e|(?m:^\\s*\\d[.)])|max|rex|milo|filou|oscar|nala|luna"
+   ],
+   "question": "Tu peux m'aider à choisir un prénom pour mon chien ?",
+   "reponse": "Bien sûr, je serais ravi de t'aider ! Pour te donner des conseils, pourrais-tu me donner plus de détails sur ton chien ? Par exemple, quel est son âge, sa race, sa taille, ses habitudes, etc. ? Cela me permettra de te proposer un prénom qui te convient."
+  },
+  {
+   "id": "V07",
+   "cat": "conversation",
+   "seed": 1234,
+   "raisons": [
+    "critere_interdit"
+   ],
+   "etiquette_auto": "erreur_factuelle_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "sophie|enchant[ée]"
+   ],
+   "question": "Je m'appelle Sophie.",
+   "reponse": "Je m'appelle Sophie."
+  },
+  {
+   "id": "M05",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent",
+    "refus"
+   ],
+   "etiquette_auto": "defaut_forme",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b1\\b|une seule|une pomme|reste une|plus qu'une"
+   ],
+   "question": "J'en mange une. Combien m'en reste-t-il ?",
+   "reponse": "Je suis désolé, mais en tant qu'IA, je ne peux pas fournir de détails sur les pommes que tu as déjà. Il est possible que tu n'aies pas de pommes ou que tu n'en aies pas. Pourrais-tu me donner plus de détails sur les pommes que tu as déjà ?"
+  },
+  {
+   "id": "M06",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent",
+    "refus"
+   ],
+   "etiquette_auto": "defaut_forme",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\bvert"
+   ],
+   "question": "Quelle est ma couleur préférée ?",
+   "reponse": "Je suis désolé, mais je ne suis pas en mesure de trouver une réponse précise. Pourriez-vous me donner plus de détails sur votre couleur préférée ?"
+  },
+  {
+   "id": "M08",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "notre[- ]dame|quatre-vingt-treize|travailleurs de la mer|homme qui rit|dernier jour d'un condamn"
+   ],
+   "question": "Cite un autre roman du même auteur.",
+   "reponse": "« Les Misérables » est un roman de Victor Hugo publié en 1879."
+  },
+  {
+   "id": "M09",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b10\\b|\\bdix\\b"
+   ],
+   "question": "Et si on ajoute encore 3 ?",
+   "reponse": "Si on ajoute encore 3, on obtient :\n\n8 + 3 = 12\n\nDonc, 12 + 3 = 15\n\nIl y a donc 15 plus 4."
+  },
+  {
+   "id": "M12",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "thank"
+   ],
+   "question": "Et « merci » ?",
+   "reponse": "« merci »."
+  },
+  {
+   "id": "M15",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "arctique"
+   ],
+   "question": "Et lequel est le plus petit ?",
+   "reponse": "L'océan Atlantique est le plus petit océan de la planète."
+  },
+  {
+   "id": "M18",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\bvert"
+   ],
+   "question": "Et celle de l'herbe ?",
+   "reponse": "La couleur du ciel dépend de l'heure de la journée. Si le soleil est déjà haut dans le ciel, il est généralement de couleur orange. À l'inverse, si le soleil est déjà bas dans le ciel, il est généralement de couleur jaune. À l'aube, le ciel est généralement bleu, et le soleil est encore plus haut dans le ciel."
+  },
+  {
+   "id": "M19",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "raisons": [
+    "critere_absent",
+    "repete_tour"
+   ],
+   "etiquette_auto": "defaut_forme",
+   "etiquette_humaine": "",
+   "attendu": [
+    "j'ai mang[ée]"
+   ],
+   "question": "Et maintenant au passé composé ?",
+   "reponse": "Je mangerai."
+  },
+  {
+   "id": "M20",
+   "cat": "multi_tours",
+   "seed": 1234,
+   "raisons": [
+    "repete_tour"
+   ],
+   "etiquette_auto": "defaut_forme",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b10\\b|\\bdix\\b"
+   ],
+   "question": "Quel âge ai-je ?",
+   "reponse": "Bonjour Nadia ! Je m'appelle Nadia et j'ai dix ans."
+  },
+  {
+   "id": "F02",
+   "cat": "faits",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b8\\b|huit"
+   ],
+   "question": "Combien de pattes a une araignée ?",
+   "reponse": "Une araignée a 4 pattes."
+  },
+  {
+   "id": "F03",
+   "cat": "faits",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "loire"
+   ],
+   "question": "Quel est le plus long fleuve de France ?",
+   "reponse": "Le plus long fleuve de France est la Seine."
+  },
+  {
+   "id": "F05",
+   "cat": "faits",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b60\\b|soixante"
+   ],
+   "question": "Combien y a-t-il de minutes dans une heure ?",
+   "reponse": "Il y a environ 13,2 minutes dans une heure."
+  },
+  {
+   "id": "F09",
+   "cat": "faits",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "portugais"
+   ],
+   "question": "Quelle est la langue officielle du Brésil ?",
+   "reponse": "La langue officielle du Brésil est l'espagnol."
+  },
+  {
+   "id": "F14",
+   "cat": "faits",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b6\\b|\\bsix\\b"
+   ],
+   "question": "Combien de côtés a un hexagone ?",
+   "reponse": "Un hexagone est un polygone à 5 côtés. Chaque côté a une longueur égale à la moitié de la longueur du côté du polygone.\n\nPour un hexagone :\n\n- Chaque côté est de longueur \\( \\frac{1}{2} \\times \\text{longueur d'un côté} \\).\n\nDonc, pour un hexagone :\n\n- Longueur totale = \\( 5 \\times \\frac{1}{2} \\times \\text{longueur d'un côté} \\).\n\nAinsi, un hexagone a 5 côtés."
+  },
+  {
+   "id": "F15",
+   "cat": "faits",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b100\\b|cent degr"
+   ],
+   "question": "À quelle température l'eau bout-elle au niveau de la mer ?",
+   "reponse": "L'eau bout à des températures très basses, autour de 0°C. Cela s'explique par la différence de température entre la surface de la Terre et l'atmosphère."
+  },
+  {
+   "id": "F17",
+   "cat": "faits",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "baleine bleue|rorqual bleu"
+   ],
+   "question": "Quel est le plus grand animal du monde ?",
+   "reponse": "Le plus grand animal du monde est le tigre. Il mesure environ 1,2 mètre de haut et peut atteindre jusqu'à 30 mètres de long."
+  },
+  {
+   "id": "F19",
+   "cat": "faits",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "gaulle"
+   ],
+   "question": "Qui a été le premier président de la Ve République ?",
+   "reponse": "Le premier président de la Ve République a été élu par le peuple français en 1789."
+  },
+  {
+   "id": "F20",
+   "cat": "faits",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b11\\b|\\bonze\\b"
+   ],
+   "question": "Combien de joueurs une équipe de football a-t-elle sur le terrain ?",
+   "reponse": "Une équipe de football a généralement 10 joueurs sur le terrain."
+  },
+  {
+   "id": "F22",
+   "cat": "faits",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "printemps"
+   ],
+   "question": "Quelle saison vient après l'hiver ?",
+   "reponse": "L'hiver est la saison où les températures sont plus basses que la normale, ce qui entraîne une augmentation du froid et de la fonte des neiges."
+  },
+  {
+   "id": "F23",
+   "cat": "faits",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\bvert"
+   ],
+   "question": "De quelle couleur est une émeraude ?",
+   "reponse": "L'émeraude est une couleur unique et fascinante qui apparaît dans de nombreux domaines, notamment dans la peinture, la photographie et la musique. Elle est souvent associée à la nature, à la tranquillité et à la beauté. L'émeraude est souvent associée à la pureté et à la clarté, ce qui en fait un choix populaire pour les artistes cherchant à exprimer des émotions profondes et émotionnelles. Elle peut également être associée à la pureté et à la pureté d'esprit, ce qui la rend particulièrement appréciée dans les arts visuels et les arts du spectacle."
+  },
+  {
+   "id": "F26",
+   "cat": "faits",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b42\\b|quarante-deux"
+   ],
+   "question": "Combien font 15 plus 27 ?",
+   "reponse": "15 plus 27 = 15 + 27 = 50."
+  },
+  {
+   "id": "F27",
+   "cat": "faits",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "actrice"
+   ],
+   "question": "Quel est le féminin du mot « acteur » ?",
+   "reponse": "Le féminin du mot « acteur » est « acteur »."
+  },
+  {
+   "id": "F29",
+   "cat": "faits",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b28\\b|vingt-huit"
+   ],
+   "question": "Combien de jours compte le mois de février quand l'année n'est pas bissextile ?",
+   "reponse": "Le mois de février compte 365 jours."
+  },
+  {
+   "id": "C02",
+   "cat": "consignes",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "^\\W*blanc\\W*$"
+   ],
+   "question": "Réponds par un seul mot : de quelle couleur est le lait ?",
+   "reponse": "Le lait est de la couleur de la laitue."
+  },
+  {
+   "id": "C03",
+   "cat": "consignes",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent",
+    "trop_long"
+   ],
+   "etiquette_auto": "motif_trop_strict_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "^\\D*12\\D*$"
+   ],
+   "question": "Écris le nombre douze en chiffres, sans rien d'autre.",
+   "reponse": "Le nombre 12 en chiffres est 12."
+  },
+  {
+   "id": "C05",
+   "cat": "consignes",
+   "seed": 2000,
+   "raisons": [
+    "critere_incomplet"
+   ],
+   "etiquette_auto": "motif_trop_strict_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "printemps",
+    "[ée]t[ée]",
+    "automne",
+    "hiver",
+    ","
+   ],
+   "question": "Donne les quatre saisons, séparées par des virgules.",
+   "reponse": "Les saisons sont :\n\n1. Automne\n2. Hiver\n3. Hiver\n4. Hiver"
+  },
+  {
+   "id": "C06",
+   "cat": "consignes",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "^\\W*(?-i:BONJOUR)\\W*$"
+   ],
+   "question": "Écris uniquement le mot « bonjour » en majuscules.",
+   "reponse": "Bien sûr ! Voici le mot « bonjour » en majuscules :\n\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour"
+  },
+  {
+   "id": "C07",
+   "cat": "consignes",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "^\\W*faux\\b"
+   ],
+   "question": "Réponds par vrai ou faux : Paris est la capitale de l'Allemagne.",
+   "reponse": "Vrai. Paris est la capitale de la France."
+  },
+  {
+   "id": "C08",
+   "cat": "consignes",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "vite|v[ée]loce|prompt|preste|express|rapidement|leste|vif"
+   ],
+   "question": "Donne un synonyme du mot « rapide ».",
+   "reponse": "Un synonyme du mot « rapide » est « rapide »."
+  },
+  {
+   "id": "C09",
+   "cat": "consignes",
+   "seed": 2000,
+   "raisons": [
+    "critere_incomplet"
+   ],
+   "etiquette_auto": "motif_trop_strict_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "bleu",
+    "blanc",
+    "rouge"
+   ],
+   "question": "Cite les trois couleurs du drapeau français.",
+   "reponse": "Le drapeau français est composé de trois couleurs :\n\n1. **Rouge** : Il est composé de trois bandes horizontales : une rouge vif et une rouge foncé.\n\n2. **Bleu** : Il est composé de trois bandes horizontales : une bleue et une verte.\n\n3. **Jaune** : Il est composé de trois bandes horizontales : une jaune vif et une verte."
+  },
+  {
+   "id": "C12",
+   "cat": "consignes",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "1\\s+2\\s+3\\s+4\\s+5"
+   ],
+   "question": "Compte de 1 à 5 en chiffres, séparés par des espaces.",
+   "reponse": "- 1 : 1\n- 5 : 1\n- 5 : 5\n- 1 : 2\n- 5 : 4\n- 1 : 3\n- 5 : 5\n- 4 : 3\n- 5 : 3\n- 5 : 4"
+  },
+  {
+   "id": "C13",
+   "cat": "consignes",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "^\\W*a\\W*$"
+   ],
+   "question": "Quelle est la première lettre de l'alphabet ? Réponds avec la lettre seule.",
+   "reponse": "La première lettre de l'alphabet est \"E\"."
+  },
+  {
+   "id": "C15",
+   "cat": "consignes",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "^\\W*(5|cinq)\\W*$"
+   ],
+   "question": "Réponds uniquement par un nombre : combien de doigts a une main ?",
+   "reponse": "Une main a deux doigts."
+  },
+  {
+   "id": "T02",
+   "cat": "transformations",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "motif_trop_strict_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "pourri|s'il (te|vous) pla|voudr|merci|aimable|permett|silence"
+   ],
+   "question": "Reformule cette phrase de manière plus polie : « Tais-toi. »",
+   "reponse": "Pourrais-tu te reposer un instant ?"
+  },
+  {
+   "id": "T04",
+   "cat": "transformations",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit"
+   ],
+   "etiquette_auto": "erreur_factuelle_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "on[ée]reu|co[uû]teu|[ée]lev[ée]|prix|tarif"
+   ],
+   "question": "Reformule cette phrase dans un registre formel : « C'est trop cher, ce truc. »",
+   "reponse": "Voici la phrase reformulée : « Il est trop cher, ce truc. »"
+  },
+  {
+   "id": "T05",
+   "cat": "transformations",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "j'ai regard[ée]"
+   ],
+   "question": "Mets cette phrase au passé composé : « Je regarde la télévision. »",
+   "reponse": "Je regardais la télévision."
+  },
+  {
+   "id": "T06",
+   "cat": "transformations",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "nous sommes arriv[ée]"
+   ],
+   "question": "Mets cette phrase au passé composé : « Nous arrivons à la gare. »",
+   "reponse": "Nous avons atteint la gare."
+  },
+  {
+   "id": "T07",
+   "cat": "transformations",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "tu as fini\\b"
+   ],
+   "question": "Mets cette phrase au passé composé : « Tu finis ton repas. »",
+   "reponse": "Tu as terminé ton repas."
+  },
+  {
+   "id": "T09",
+   "cat": "transformations",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ],
+   "etiquette_auto": "defaut_forme",
+   "etiquette_humaine": "",
+   "attendu": [
+    "nous irons"
+   ],
+   "question": "Mets cette phrase au futur simple : « Nous allons à la plage. »",
+   "reponse": "Nous allons à la plage."
+  },
+  {
+   "id": "T13",
+   "cat": "transformations",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ],
+   "etiquette_auto": "defaut_forme",
+   "etiquette_humaine": "",
+   "attendu": [
+    "l'enfant joue|un enfant joue"
+   ],
+   "question": "Mets cette phrase au singulier : « Les enfants jouent dans le parc. »",
+   "reponse": "Les enfants jouent dans le parc."
+  },
+  {
+   "id": "T18",
+   "cat": "transformations",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit",
+    "recopie"
+   ],
+   "etiquette_auto": "erreur_factuelle_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "^\\W*il pleut"
+   ],
+   "question": "Mets cette phrase à la forme affirmative : « Il ne pleut pas. »",
+   "reponse": "Il ne pleut pas."
+  },
+  {
+   "id": "T19",
+   "cat": "transformations",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit"
+   ],
+   "etiquette_auto": "erreur_factuelle_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\bchat"
+   ],
+   "question": "Simplifie cette phrase pour un enfant : « Le félin s'est assoupi sur le canapé. »",
+   "reponse": "Le félin s'est endormi sur le canapé."
+  },
+  {
+   "id": "T20",
+   "cat": "transformations",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit"
+   ],
+   "etiquette_auto": "erreur_factuelle_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "voiture"
+   ],
+   "question": "Simplifie cette phrase pour un enfant : « L'automobile a percuté un réverbère. »",
+   "reponse": "Un automobile a heurté un réverbère."
+  },
+  {
+   "id": "T22",
+   "cat": "transformations",
+   "seed": 2000,
+   "raisons": [
+    "trop_de_phrases"
+   ],
+   "etiquette_auto": "contrainte_format",
+   "etiquette_humaine": "",
+   "attendu": [
+    "revenu|rentr[ée]|retrouv|retour"
+   ],
+   "question": "Résume en une phrase : « Le chat de Léa a disparu pendant trois jours. Toute la famille l'a cherché. Il est revenu tout seul samedi. »",
+   "reponse": "Léa, un chat solitaire, a disparu pendant trois jours. Sa famille l'a cherché et est revenue seule samedi."
+  },
+  {
+   "id": "T23",
+   "cat": "transformations",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ],
+   "etiquette_auto": "defaut_forme",
+   "etiquette_humaine": "",
+   "attendu": [
+    "[ée]puis[ée]|ext[ée]nu[ée]|crev[ée]|\\blas\\b|fatigue|sommeil|[àa] bout|vid[ée]|[ée]nergie|repos"
+   ],
+   "question": "Dis la même chose avec d'autres mots : « Je suis très fatigué. »",
+   "reponse": "Je suis très fatigué."
+  },
+  {
+   "id": "V01",
+   "cat": "conversation",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "bonjour|salut|hello|coucou|bien|ça va"
+   ],
+   "question": "Coucou, tu vas bien aujourd'hui ?",
+   "reponse": "Je suis en train de préparer un projet ou un événement. Comment puis-je t'aider aujourd'hui ?"
+  },
+  {
+   "id": "V02",
+   "cat": "conversation",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "de rien|avec plaisir|je (vous|t)'en prie|ravi|heureux|heureuse|content|plaisir|n'h[ée]site"
+   ],
+   "question": "Merci beaucoup pour ton aide.",
+   "reponse": "Je suis désolé(e) et je n'ai pas d'informations en temps réel. Pouvez-vous me dire si vous avez besoin de plus d'aide ou de plus de précisions ?"
+  },
+  {
+   "id": "V03",
+   "cat": "conversation",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "f[ée]licit|bravo"
+   ],
+   "question": "Je suis content, j'ai réussi mon permis de conduire !",
+   "reponse": "Je suis content ! Comment puis-je vous aider aujourd'hui ?"
+  },
+  {
+   "id": "V04",
+   "cat": "conversation",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "voici|suggestion|id[ée]e|(?m:^\\s*\\d[.)])|max|rex|milo|filou|oscar|nala|luna"
+   ],
+   "question": "Tu peux m'aider à choisir un prénom pour mon chien ?",
+   "reponse": "Bien sûr, je serais ravi de t'aider ! Peux-tu me donner plus de détails sur ton chien ?"
+  },
+  {
+   "id": "V07",
+   "cat": "conversation",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "sophie|enchant[ée]"
+   ],
+   "question": "Je m'appelle Sophie.",
+   "reponse": "Je suis une intelligence artificielle, donc je ne peux pas vous parler de vous. Cependant, je peux vous aider avec des informations générales. Pourriez-vous me donner plus de détails sur vous ?"
+  },
+  {
+   "id": "V08",
+   "cat": "conversation",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit"
+   ],
+   "etiquette_auto": "erreur_factuelle_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\bnon\\b|assistant|intelligence artificielle|\\bia\\b|programme|virtuel|mod[eè]le"
+   ],
+   "question": "Est-ce que tu es un humain ?",
+   "reponse": "Oui, je suis humain."
+  },
+  {
+   "id": "V09",
+   "cat": "conversation",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "motif_trop_strict_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "lire|lecture|jouer|jeu|promen|dessin|cuisin|film|sport|musique|marche|puzzle|[ée]cri"
+   ],
+   "question": "Je m'ennuie, propose-moi une activité.",
+   "reponse": "Bien sûr ! Par exemple, je pourrais te proposer une activité de jardinage. Tu pourrais planter des graines, arroser les plantes, arroser les fleurs, et même préparer un petit repas. L'important est de te sentir libre et de profiter de chaque moment !"
+  },
+  {
+   "id": "M03",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "fraise|cerise|framboise|pomme|groseille|grenade|tomate|past[èe]que|canneberge"
+   ],
+   "question": "Et maintenant un fruit rouge ?",
+   "reponse": "Un fruit rouge est le citron."
+  },
+  {
+   "id": "M05",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit"
+   ],
+   "etiquette_auto": "erreur_factuelle_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b1\\b|une seule|une pomme|reste une|plus qu'une"
+   ],
+   "question": "J'en mange une. Combien m'en reste-t-il ?",
+   "reponse": "Il est possible que tu aies deux pommes dans ton panier. Assure-toi de vérifier si elles sont déjà dans le panier et si tu as encore des pommes à manger. Si tu as déjà deux pommes dans ton panier, il te reste deux pommes."
+  },
+  {
+   "id": "M08",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "notre[- ]dame|quatre-vingt-treize|travailleurs de la mer|homme qui rit|dernier jour d'un condamn"
+   ],
+   "question": "Cite un autre roman du même auteur.",
+   "reponse": "« Les Misérables » est un roman de Victor Hugo publié en 1830."
+  },
+  {
+   "id": "M12",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "thank"
+   ],
+   "question": "Et « merci » ?",
+   "reponse": "« merci »"
+  },
+  {
+   "id": "M13",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "raisons": [
+    "critere_interdit"
+   ],
+   "etiquette_auto": "erreur_factuelle_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "tarte|fruit|glace|cr[èe]me|sorbet|salade|compote|clafoutis|crumble|yaourt|flan|meringue|g[âa]teau|panna|tiramisu"
+   ],
+   "question": "Je n'aime pas le chocolat, donne-m'en une autre.",
+   "reponse": "Je suis désolé, mais en tant qu'IA, je n'ai pas la capacité de donner des recettes de desserts. Je peux te donner des idées de desserts en fonction de tes goûts ou de tes préférences. Par exemple, si tu aimes le chocolat au lait, tu peux préparer un gâteau au chocolat au lait avec du lait, du sucre et des œufs. Si tu préfères le chocolat au lait, tu peux préparer un gâteau au chocolat avec du lait, du sucre et des œufs.\n\nSi tu as d'autres préférences ou des problèmes, n'hésite pas à me le dire !"
+  },
+  {
+   "id": "M14",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent",
+    "repete_tour"
+   ],
+   "etiquette_auto": "defaut_forme",
+   "etiquette_humaine": "",
+   "attendu": [
+    "julie"
+   ],
+   "question": "Comment s'appelle ma sœur ?",
+   "reponse": "C'est une belle histoire."
+  },
+  {
+   "id": "M15",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "arctique"
+   ],
+   "question": "Et lequel est le plus petit ?",
+   "reponse": "L'océan Pacifique est le plus petit."
+  },
+  {
+   "id": "M18",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\bvert"
+   ],
+   "question": "Et celle de l'herbe ?",
+   "reponse": "La couleur du ciel quand il fait beau est généralement d'un brun clair. Cela peut varier en fonction de la région et du type de ciel, mais en général, un brun clair peut être un bon point de départ pour l'observation."
+  },
+  {
+   "id": "M19",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "raisons": [
+    "critere_absent",
+    "repete_tour"
+   ],
+   "etiquette_auto": "defaut_forme",
+   "etiquette_humaine": "",
+   "attendu": [
+    "j'ai mang[ée]"
+   ],
+   "question": "Et maintenant au passé composé ?",
+   "reponse": "Je mangerai."
+  },
+  {
+   "id": "M20",
+   "cat": "multi_tours",
+   "seed": 2000,
+   "raisons": [
+    "repete_tour"
+   ],
+   "etiquette_auto": "defaut_forme",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b10\\b|\\bdix\\b"
+   ],
+   "question": "Quel âge ai-je ?",
+   "reponse": "Bonjour Nadia ! Je m'appelle Nadia et j'ai dix ans."
+  },
+  {
+   "id": "F02",
+   "cat": "faits",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b8\\b|huit"
+   ],
+   "question": "Combien de pattes a une araignée ?",
+   "reponse": "Une araignée a généralement 4 pattes."
+  },
+  {
+   "id": "F03",
+   "cat": "faits",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "loire"
+   ],
+   "question": "Quel est le plus long fleuve de France ?",
+   "reponse": "Le plus long fleuve de France est la Seine."
+  },
+  {
+   "id": "F05",
+   "cat": "faits",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b60\\b|soixante"
+   ],
+   "question": "Combien y a-t-il de minutes dans une heure ?",
+   "reponse": "Il y a environ 30 minutes dans une heure."
+  },
+  {
+   "id": "F09",
+   "cat": "faits",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "portugais"
+   ],
+   "question": "Quelle est la langue officielle du Brésil ?",
+   "reponse": "La langue officielle du Brésil est l'espagnol."
+  },
+  {
+   "id": "F13",
+   "cat": "faits",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\beuros?\\b"
+   ],
+   "question": "Quelle est la monnaie utilisée en France ?",
+   "reponse": "La monnaie utilisée en France est le dollar français (F.A.R.)."
+  },
+  {
+   "id": "F15",
+   "cat": "faits",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b100\\b|cent degr"
+   ],
+   "question": "À quelle température l'eau bout-elle au niveau de la mer ?",
+   "reponse": "L'eau bout à des températures extrêmement basses, à environ 0°C au niveau de la mer. C'est ce qu'on appelle la température de fusion de l'eau."
+  },
+  {
+   "id": "F19",
+   "cat": "faits",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "gaulle"
+   ],
+   "question": "Qui a été le premier président de la Ve République ?",
+   "reponse": "Le premier président de la Ve République a été George Washington."
+  },
+  {
+   "id": "F20",
+   "cat": "faits",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b11\\b|\\bonze\\b"
+   ],
+   "question": "Combien de joueurs une équipe de football a-t-elle sur le terrain ?",
+   "reponse": "Une équipe de football a généralement 5 joueurs par équipe. Cela inclut le gardien, le milieu de terrain, les attaquants, les attaquants et les défenseurs."
+  },
+  {
+   "id": "F23",
+   "cat": "faits",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\bvert"
+   ],
+   "question": "De quelle couleur est une émeraude ?",
+   "reponse": "L'émeraude est une couleur rare et précieuse, souvent associée à la nature, à la sagesse et à la pureté. Elle est souvent associée à la chance et à la prospérité."
+  },
+  {
+   "id": "F25",
+   "cat": "faits",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b56\\b|cinquante-six"
+   ],
+   "question": "Combien font 7 fois 8 ?",
+   "reponse": "Pour trouver le nombre de fois \\(7 \\times 8\\), il suffit de diviser 7 par 8 :\n\n\\[ 7 \\div 8 = 1 \\]\n\nDonc, 7 fait 1."
+  },
+  {
+   "id": "F26",
+   "cat": "faits",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b42\\b|quarante-deux"
+   ],
+   "question": "Combien font 15 plus 27 ?",
+   "reponse": "15 plus 27 = 15 + 27 + 27 = 60 + 27 = 81\n\nDonc, 15 plus 27 = 81"
+  },
+  {
+   "id": "F27",
+   "cat": "faits",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "actrice"
+   ],
+   "question": "Quel est le féminin du mot « acteur » ?",
+   "reponse": "Le féminin du mot « acteur » est « acteur »."
+  },
+  {
+   "id": "F28",
+   "cat": "faits",
+   "seed": 3000,
+   "raisons": [
+    "boucle"
+   ],
+   "etiquette_auto": "defaut_forme",
+   "etiquette_humaine": "",
+   "attendu": [
+    "m[ée]diterran"
+   ],
+   "question": "Quelle mer borde la ville de Marseille ?",
+   "reponse": "La mer Méditerranée est une mer très importante pour la ville de Marseille. Elle est bordée par :\n\n- L'océan Atlantique\n- L'océan Pacifique\n- L'océan Atlantique\n- L'océan Atlantique\n- La mer Méditerranée\n\nLa ville de Marseille est située dans la région de la Méditerranée."
+  },
+  {
+   "id": "F29",
+   "cat": "faits",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b28\\b|vingt-huit"
+   ],
+   "question": "Combien de jours compte le mois de février quand l'année n'est pas bissextile ?",
+   "reponse": "Le mois de février compte 3 jours."
+  },
+  {
+   "id": "C02",
+   "cat": "consignes",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "^\\W*blanc\\W*$"
+   ],
+   "question": "Réponds par un seul mot : de quelle couleur est le lait ?",
+   "reponse": "Le lait est de la couleur bleue."
+  },
+  {
+   "id": "C03",
+   "cat": "consignes",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent",
+    "trop_long"
+   ],
+   "etiquette_auto": "motif_trop_strict_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "^\\D*12\\D*$"
+   ],
+   "question": "Écris le nombre douze en chiffres, sans rien d'autre.",
+   "reponse": "Le nombre 12 en chiffres est 12."
+  },
+  {
+   "id": "C05",
+   "cat": "consignes",
+   "seed": 3000,
+   "raisons": [
+    "critere_incomplet"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "printemps",
+    "[ée]t[ée]",
+    "automne",
+    "hiver",
+    ","
+   ],
+   "question": "Donne les quatre saisons, séparées par des virgules.",
+   "reponse": "1. Saison 1 : L'histoire commence avec un personnage qui s'appelle Alex. Il vit dans une petite ville avec ses amis. Il est passionné par la musique.\n\n2. Saison 2 : L'histoire commence avec un personnage nommé Alex qui vit dans une petite ville avec ses amis. Il est curieux et aime découvrir de nouvelles choses.\n\n3. Saison 3 : L'histoire commence avec un personnage nommé Alex qui vit dans une petite ville avec ses amis. Il est passionné par la musique et rêve de voyager.\n\n4. Saison 4 : L'histoire commence avec un personnage nommé Alex qui vit dans une petite ville avec ses amis. Il est passionné par la musique et rêve de voyager."
+  },
+  {
+   "id": "C06",
+   "cat": "consignes",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "^\\W*(?-i:BONJOUR)\\W*$"
+   ],
+   "question": "Écris uniquement le mot « bonjour » en majuscules.",
+   "reponse": "Bien sûr ! Voici le mot « bonjour » en majuscules :\n\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour"
+  },
+  {
+   "id": "C07",
+   "cat": "consignes",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "^\\W*faux\\b"
+   ],
+   "question": "Réponds par vrai ou faux : Paris est la capitale de l'Allemagne.",
+   "reponse": "Vrai. Paris est effectivement la capitale de la France."
+  },
+  {
+   "id": "C08",
+   "cat": "consignes",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "vite|v[ée]loce|prompt|preste|express|rapidement|leste|vif"
+   ],
+   "question": "Donne un synonyme du mot « rapide ».",
+   "reponse": "Un synonyme du mot « rapide » est « rapide »."
+  },
+  {
+   "id": "C12",
+   "cat": "consignes",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "1\\s+2\\s+3\\s+4\\s+5"
+   ],
+   "question": "Compte de 1 à 5 en chiffres, séparés par des espaces.",
+   "reponse": "1 -> 2  \n2 -> 3  \n3 -> 4  \n4 -> 5  \n5 -> 6"
+  },
+  {
+   "id": "C13",
+   "cat": "consignes",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "^\\W*a\\W*$"
+   ],
+   "question": "Quelle est la première lettre de l'alphabet ? Réponds avec la lettre seule.",
+   "reponse": "La première lettre de l'alphabet est \"E\"."
+  },
+  {
+   "id": "C15",
+   "cat": "consignes",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "^\\W*(5|cinq)\\W*$"
+   ],
+   "question": "Réponds uniquement par un nombre : combien de doigts a une main ?",
+   "reponse": "Une main a deux doigts."
+  },
+  {
+   "id": "T02",
+   "cat": "transformations",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "pourri|s'il (te|vous) pla|voudr|merci|aimable|permett|silence"
+   ],
+   "question": "Reformule cette phrase de manière plus polie : « Tais-toi. »",
+   "reponse": "Bien sûr : Je te prie de te calmer."
+  },
+  {
+   "id": "T03",
+   "cat": "transformations",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "je n'ai pas|ne dispose pas|ne m'est pas possible"
+   ],
+   "question": "Reformule cette phrase dans un registre formel : « J'ai pas le temps. »",
+   "reponse": "Je suis absent."
+  },
+  {
+   "id": "T04",
+   "cat": "transformations",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "on[ée]reu|co[uû]teu|[ée]lev[ée]|prix|tarif"
+   ],
+   "question": "Reformule cette phrase dans un registre formel : « C'est trop cher, ce truc. »",
+   "reponse": "Cette offre est trop chère."
+  },
+  {
+   "id": "T05",
+   "cat": "transformations",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "j'ai regard[ée]"
+   ],
+   "question": "Mets cette phrase au passé composé : « Je regarde la télévision. »",
+   "reponse": "Je regardais la télévision."
+  },
+  {
+   "id": "T06",
+   "cat": "transformations",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "nous sommes arriv[ée]"
+   ],
+   "question": "Mets cette phrase au passé composé : « Nous arrivons à la gare. »",
+   "reponse": "Nous avons atteint la gare."
+  },
+  {
+   "id": "T09",
+   "cat": "transformations",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ],
+   "etiquette_auto": "defaut_forme",
+   "etiquette_humaine": "",
+   "attendu": [
+    "nous irons"
+   ],
+   "question": "Mets cette phrase au futur simple : « Nous allons à la plage. »",
+   "reponse": "Nous allons à la plage."
+  },
+  {
+   "id": "T13",
+   "cat": "transformations",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ],
+   "etiquette_auto": "defaut_forme",
+   "etiquette_humaine": "",
+   "attendu": [
+    "l'enfant joue|un enfant joue"
+   ],
+   "question": "Mets cette phrase au singulier : « Les enfants jouent dans le parc. »",
+   "reponse": "Les enfants jouent dans le parc."
+  },
+  {
+   "id": "T18",
+   "cat": "transformations",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit",
+    "recopie"
+   ],
+   "etiquette_auto": "erreur_factuelle_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "^\\W*il pleut"
+   ],
+   "question": "Mets cette phrase à la forme affirmative : « Il ne pleut pas. »",
+   "reponse": "Il ne pleut pas."
+  },
+  {
+   "id": "T20",
+   "cat": "transformations",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit"
+   ],
+   "etiquette_auto": "erreur_factuelle_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "voiture"
+   ],
+   "question": "Simplifie cette phrase pour un enfant : « L'automobile a percuté un réverbère. »",
+   "reponse": "L'automobile a heurté un réverbère."
+  },
+  {
+   "id": "T22",
+   "cat": "transformations",
+   "seed": 3000,
+   "raisons": [
+    "trop_de_phrases"
+   ],
+   "etiquette_auto": "contrainte_format",
+   "etiquette_humaine": "",
+   "attendu": [
+    "revenu|rentr[ée]|retrouv|retour"
+   ],
+   "question": "Résume en une phrase : « Le chat de Léa a disparu pendant trois jours. Toute la famille l'a cherché. Il est revenu tout seul samedi. »",
+   "reponse": "Lors d'une randonnée, un chat a disparu pendant trois jours. Sa famille l'a cherché et est finalement revenu seul samedi."
+  },
+  {
+   "id": "T23",
+   "cat": "transformations",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent",
+    "recopie"
+   ],
+   "etiquette_auto": "defaut_forme",
+   "etiquette_humaine": "",
+   "attendu": [
+    "[ée]puis[ée]|ext[ée]nu[ée]|crev[ée]|\\blas\\b|fatigue|sommeil|[àa] bout|vid[ée]|[ée]nergie|repos"
+   ],
+   "question": "Dis la même chose avec d'autres mots : « Je suis très fatigué. »",
+   "reponse": "Je suis très fatigué."
+  },
+  {
+   "id": "T25",
+   "cat": "transformations",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "nous sommes partis"
+   ],
+   "question": "Corrige les fautes de cette phrase : « Nous somme partit hier. »",
+   "reponse": "Nous sommes parti hier."
+  },
+  {
+   "id": "V01",
+   "cat": "conversation",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "bonjour|salut|hello|coucou|bien|ça va"
+   ],
+   "question": "Coucou, tu vas bien aujourd'hui ?",
+   "reponse": "Oui, je suis en train de m'améliorer pour mieux répondre à tes besoins. Peux-tu me dire ce qui te préoccupe le plus aujourd'hui ?"
+  },
+  {
+   "id": "V03",
+   "cat": "conversation",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "f[ée]licit|bravo"
+   ],
+   "question": "Je suis content, j'ai réussi mon permis de conduire !",
+   "reponse": "C'est super ! Je suis prêt à conduire. Comment puis-je vous aider ?"
+  },
+  {
+   "id": "V04",
+   "cat": "conversation",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "voici|suggestion|id[ée]e|(?m:^\\s*\\d[.)])|max|rex|milo|filou|oscar|nala|luna"
+   ],
+   "question": "Tu peux m'aider à choisir un prénom pour mon chien ?",
+   "reponse": "Bien sûr, je peux t'aider avec ça ! Peux-tu me donner plus de détails sur ton chien ?"
+  },
+  {
+   "id": "V07",
+   "cat": "conversation",
+   "seed": 3000,
+   "raisons": [
+    "critere_interdit"
+   ],
+   "etiquette_auto": "erreur_factuelle_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "sophie|enchant[ée]"
+   ],
+   "question": "Je m'appelle Sophie.",
+   "reponse": "Je m'appelle Sophie."
+  },
+  {
+   "id": "V08",
+   "cat": "conversation",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit"
+   ],
+   "etiquette_auto": "erreur_factuelle_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\bnon\\b|assistant|intelligence artificielle|\\bia\\b|programme|virtuel|mod[eè]le"
+   ],
+   "question": "Est-ce que tu es un humain ?",
+   "reponse": "Oui, je suis un humain."
+  },
+  {
+   "id": "V09",
+   "cat": "conversation",
+   "seed": 3000,
+   "raisons": [
+    "boucle"
+   ],
+   "etiquette_auto": "defaut_forme",
+   "etiquette_humaine": "",
+   "attendu": [
+    "lire|lecture|jouer|jeu|promen|dessin|cuisin|film|sport|musique|marche|puzzle|[ée]cri"
+   ],
+   "question": "Je m'ennuie, propose-moi une activité.",
+   "reponse": "Bien sûr ! Voici une idée d'activité :\n\n**Jeu de société en équipe : \"Le Choix de la Liberté\"**\n\n**Matériel :**\n- Un plateau de jeu avec des cases représentant différents choix (p choix, choix possibles, choix possibles, choix possibles, choix).\n- Une table avec des chaises.\n- Un dé.\n\n**Déroulement :**\n1. Chaque joueur choisit un personnage et choisit une case.\n2. Les joueurs doivent choisir un personnage parmi les options disponibles.\n3. Les choix sont ensuite réalisés en utilisant le dé.\n4. Si un joueur choisit un personnage, il reçoit un choix de \"choix de liberté\".\n5. Si un joueur choisit un personnage, il reçoit un choix de \"choix de liberté\".\n6. Si un joueur choisit un personnage, il reçoit un choix de \"choix de liberté\".\n7. Le jeu se termine lorsque un joueur choisit un personnage.\n\n**Variantes :**\n- Ajoutez des cartes \"Pouvoir\" pour chaque joueur.\n- Ajoutez des cartes \"Sécurité\" pour chaque joueur.\n\nAmusez-vous bien !"
+  },
+  {
+   "id": "V10",
+   "cat": "conversation",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "cherch|pas de panique|calme|serrurier|double|derni[eè]re fois|poche|retrac"
+   ],
+   "question": "J'ai perdu mes clés, je ne sais pas quoi faire.",
+   "reponse": "Je suis désolé d'apprendre que tu traverses cette situation. Il est important de se rappeler que tu as déjà fait des erreurs et que tu n'es pas seul. Parfois, les erreurs font partie de la vie et peuvent nous apprendre des leçons précieuses. Si tu veux vraiment aider quelqu'un à retrouver ses clés, fais-le moi savoir. Je suis là pour toi, toujours."
+  },
+  {
+   "id": "M03",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "fraise|cerise|framboise|pomme|groseille|grenade|tomate|past[èe]que|canneberge"
+   ],
+   "question": "Et maintenant un fruit rouge ?",
+   "reponse": "Un fruit rouge est le fruit de la passion."
+  },
+  {
+   "id": "M05",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent",
+    "critere_interdit"
+   ],
+   "etiquette_auto": "erreur_factuelle_probable",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b1\\b|une seule|une pomme|reste une|plus qu'une"
+   ],
+   "question": "J'en mange une. Combien m'en reste-t-il ?",
+   "reponse": "Il y a plusieurs pommes rouges dans mon jardin. Certaines sont rouges, d'autres sont rouges, et certaines sont rouges. Donc, il y a au moins deux pommes rouges."
+  },
+  {
+   "id": "M08",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "notre[- ]dame|quatre-vingt-treize|travailleurs de la mer|homme qui rit|dernier jour d'un condamn"
+   ],
+   "question": "Cite un autre roman du même auteur.",
+   "reponse": "Un autre roman de Victor Hugo est « Les Misérables » de Victor Hugo."
+  },
+  {
+   "id": "M09",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\b10\\b|\\bdix\\b"
+   ],
+   "question": "Et si on ajoute encore 3 ?",
+   "reponse": "Si on ajoute encore 3 à 4, on obtient : \\(4 + 3 = 7\\).\n\nDonc, 3 plus 4 font 7."
+  },
+  {
+   "id": "M11",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "chameau|dromadaire|scorpion|fennec|serpent|l[ée]zard|gerboise|vip[èe]re|crotale|coyote"
+   ],
+   "question": "Et un animal qui vit dans le désert ?",
+   "reponse": "La baleine bleue, également connue sous le nom de baleine à bosse, est un mammifère marin qui vit dans les océans du monde. Elle est connue pour sa grande taille, sa capacité à nager à grande vitesse et sa capacité à vivre dans des environnements très variés. La baleine bleue est un animal solitaire qui vit principalement dans les océans du monde, mais elle peut également être trouvée dans les régions polaires et les eaux froides."
+  },
+  {
+   "id": "M12",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "thank"
+   ],
+   "question": "Et « merci » ?",
+   "reponse": "La phrase « bonjour » est un pronom personnel qui peut être traduit par « hello » en anglais."
+  },
+  {
+   "id": "M14",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "julie"
+   ],
+   "question": "Comment s'appelle ma sœur ?",
+   "reponse": "Je suis désolé, mais en tant qu'IA, je n'ai pas accès à des informations en temps réel sur les personnes et les lieux. Je vous recommande de consulter des sources fiables pour obtenir des informations précises."
+  },
+  {
+   "id": "M15",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "arctique"
+   ],
+   "question": "Et lequel est le plus petit ?",
+   "reponse": "L'océan Indien est le plus petit des trois océans du monde."
+  },
+  {
+   "id": "M17",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "chaussures|v[êe]tements|manteau|pull|cr[èe]me|lunettes|gourde|sac|veste|b[âa]tons|gants|bonnet"
+   ],
+   "question": "Qu'est-ce que je dois emporter ?",
+   "reponse": "En tant qu'IA, je ne suis pas en mesure de déterminer si vous devez emporter quelque chose, car je suis programmé pour répondre à cette demande. Cependant, si tu veux des informations sur l'hébergement, les activités, les restaurants, et les attractions, il est préférable de contacter directement le service des ressources humaines ou la compagnie d'assurance."
+  },
+  {
+   "id": "M18",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent"
+   ],
+   "etiquette_auto": "omission_ou_reponse_differente",
+   "etiquette_humaine": "",
+   "attendu": [
+    "\\bvert"
+   ],
+   "question": "Et celle de l'herbe ?",
+   "reponse": "L'herbe peut être de différentes couleurs, mais les plus courantes sont le blanc et le gris. Le blanc est la couleur dominante de l'herbe et est souvent utilisé dans les produits de jardinage pour donner une apparence uniforme et attrayante. Le gris est la couleur principale de l'herbe et est souvent utilisé dans les produits de jardinage pour donner une apparence plus uniforme et attrayante."
+  },
+  {
+   "id": "M19",
+   "cat": "multi_tours",
+   "seed": 3000,
+   "raisons": [
+    "critere_absent",
+    "repete_tour"
+   ],
+   "etiquette_auto": "defaut_forme",
+   "etiquette_humaine": "",
+   "attendu": [
+    "j'ai mang[ée]"
+   ],
+   "question": "Et maintenant au passé composé ?",
+   "reponse": "Je mangerai."
+  }
+ ],
+ "comparaison": {
+  "a": "v2ab_from_v1",
+  "b": "v2",
+  "questions": 100,
+  "taux_a": 0.4833,
+  "taux_b": 0.4967,
+  "ecart": 0.0133,
+  "ic95": [
+   -0.0333,
+   0.0633
+  ],
+  "gagnees": 18,
+  "perdues": 13
+ }
+}

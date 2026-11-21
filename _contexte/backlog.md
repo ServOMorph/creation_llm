@@ -12,3 +12,6 @@
 - [piste] NCM (Next-Concept Modeling) et LexisLM : à surveiller, aucun changement du run ni du SFT
   - fait quand: nouvelle publication ou reproduction qui change le verdict.
   - réf: `rd/recherches/ncm/analyse.md`, `rd/recherches/lexislm/analyse.md`
+- [dette] Fins de ligne : `rd/agents_codex/file.sh` en CRLF (risque d'échec sous bash) et 88 fichiers en CRLF malgré `.gitattributes` ; renormalisation (`git add --renormalize`) non décidée
+  - fait quand: `file.sh` s'exécute sous bash et décision de renormalisation prise.
+  - réf: `rd/agents_codex/file.sh`, `.gitattributes`

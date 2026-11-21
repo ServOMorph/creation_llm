@@ -36,3 +36,4 @@ rd/**/*.log
 ui/.progress.json
 rd/agents_codex/.file.lock/
 ui/snapshot.html
+rd/experiences/data_c2/

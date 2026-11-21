@@ -1,0 +1,50 @@
+{
+ "masques": {
+  "causalite_passe_inchangee": true,
+  "causalite_futur_sensible": true,
+  "isolation_documents": true,
+  "isolation_document_sensible": true,
+  "controle_sans_masque_fuit": true,
+  "masque_reponses_et_decalage": true,
+  "frontiere_document_ignoree": true,
+  "segments_documents": true,
+  "gradients_finis": true,
+  "compte_cibles": true,
+  "cas_sans_cible": true
+ },
+ "reprise_muon": {
+  "optimiseur": "muon",
+  "ecart_max_parametres": 0.0,
+  "reprise_identique": true,
+  "pas_reprise": 4
+ },
+ "reprise_adamw": {
+  "optimiseur": "adamw",
+  "ecart_max_parametres": 0.0,
+  "reprise_identique": true,
+  "pas_reprise": 4
+ },
+ "schedule": {
+  "pretrain_debut_warmup": true,
+  "pretrain_fin_plancher": true,
+  "pretrain_decroissant_apres_warmup": true,
+  "pretrain_depend_de_max_steps": true,
+  "sft_pas_par_epoque": true,
+  "sft_frontiere_epoque": true,
+  "sft_hors_borne_leve": true,
+  "sft_lr_borne": true
+ },
+ "echantillonnage": {
+  "couverture_avec_remise_1x": 0.6331,
+  "couverture_permutation_1x": 1.0,
+  "couverture_avec_remise_2x": 0.8614,
+  "couverture_permutation_2x": 1.0,
+  "couverture_avec_remise_3x": 0.95,
+  "couverture_permutation_3x": 1.0,
+  "ecart_quota_max_points": {
+   "1000": 1.1,
+   "10000": 0.39,
+   "100000": 0.144
+  }
+ }
+}

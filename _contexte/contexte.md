@@ -9,9 +9,10 @@ Création d'un LLM français from scratch sur mon PC, dont le but final est un a
 - Modèle GPT decoder-only maison (`model.py`) : RoPE, RMSNorm, QK-Norm, ReLU², soft-cap, cache KV ; optimiseur Muon + AdamW.
 
 ## État actuel (réécrit intégralement à chaque /close)
-- Pré-entraînement 369M en cours sous jeton VertIA : pas 37 690 sur 113 000 au 2026-11-19 ; au pas 34 230, perte de validation 2,80 contre 2,88 pour la v9 ; environ 11 jours restants (estimation au rythme réel).
+- Pré-entraînement 369M en cours sous jeton VertIA : pas 54 230 sur 113 000 au 2026-11-21 ; environ 7 à 8 jours restants (estimation au rythme réel d'environ 6 000 tok/s).
 - Phases 3-4 prêtes : `compare_frenchbench.py`, `eval_frenchbench.py --ckpt`, `run_sft_369m.py` (SFT en deux étapes, pause VertIA).
-- Suivi : tableau de bord `python run.py`, artefact mobile sur demande ; R&D : programme du cycle 2 (`rd/programme_cycle2.md`) à valider, recherches et veille sur Codex (`gpt-reserve`).
+- R&D cycle 2 : étape a (CPU) livrée (`rd/experiences/c2_audit.py`, `c2_data.py`, `c2_checks.py`), relectures humaines A1/A2 à faire ; étapes b et c à valider après la base.
+- Suivi : tableau de bord `python run.py`, artefact mobile sur demande ; recherches et veille sur Codex, process binaire/modèle à régler avec VibeObs.
 - Racine rangée (`resultats/`, `logs/`) ; `ameliorations.md` tient l'état des 14 points relevés.
 
 ## Décisions structurantes (append only — 10 entrées max, 5 lignes max/entrée, archiver au-delà)
@@ -23,3 +24,4 @@ Création d'un LLM français from scratch sur mon PC, dont le but final est un a
 - 2026-11-17 : mode orchestré VertIA (protocole v2) ; 369M à embeddings liés lancé ; GPU uniquement via `gpu_task.py` + garde `NoGpuToken` après un incident de protocole.
 - 2026-11-17 : cellule R&D créée, cycle 1 clos sans gain (RAG automatique, CFG, TTT-NN) ; SFT 369M en deux étapes comme la v2 ; gate FrenchBench phase 4 conservé, à rediscuter.
 - 2026-11-18 : recherches et veille R&D déléguées à Codex, modèle `gpt-reserve` uniquement (`gpt-6-astra` proscrit : abonnement) ; tableau de bord local par `run.py`, artefact mobile republié sur demande ; résultats rangés dans `resultats/`, journaux dans `logs/`.
+- 2026-11-21 : programme du cycle 2 validé pour l'étape a seule (audit, données RAFT/H2 synthétiques, contrôles CPU) ; étapes b et c après la base ; `data_c2/` régénérable donc ignoré par git.

@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.7 — 2026-11-21
+
+### Ajouté
+- Cycle R&D 2, étape a (CPU) : `rd/experiences/c2_audit.py` (classement des échecs du benchmark, comparaison appariée), `c2_data.py` (familles RAFT/H2 synthétiques, pilote 2 000 exemples, dev, test), `c2_checks.py` (masques, reprise, schedule, échantillonnage) ; tests `tests/test_c2_*.py`.
+- `.gitattributes` (`* text=auto eol=lf`).
+
+### Modifié
+- `.gitignore` : `rd/experiences/data_c2/` ; `ameliorations.md` : point 5 périmé.
+
 ## v0.6 — 2026-11-19
 
 ### Modifié

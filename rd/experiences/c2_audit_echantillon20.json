@@ -1,0 +1,302 @@
+[
+ {
+  "id": "C02",
+  "cat": "consignes",
+  "seed": 1234,
+  "raisons": [
+   "critere_absent"
+  ],
+  "etiquette_auto": "omission_ou_reponse_differente",
+  "etiquette_humaine": "echec_reel",
+  "attendu": [
+   "^\\W*blanc\\W*$"
+  ],
+  "question": "Réponds par un seul mot : de quelle couleur est le lait ?",
+  "reponse": "Le lait est de la couleur jaune."
+ },
+ {
+  "id": "T20",
+  "cat": "transformations",
+  "seed": 1234,
+  "raisons": [
+   "critere_absent"
+  ],
+  "etiquette_auto": "omission_ou_reponse_differente",
+  "etiquette_humaine": "echec_reel",
+  "attendu": [
+   "voiture"
+  ],
+  "question": "Simplifie cette phrase pour un enfant : « L'automobile a percuté un réverbère. »",
+  "reponse": "Un véhicule a heurté un réverbère."
+ },
+ {
+  "id": "V01",
+  "cat": "conversation",
+  "seed": 3000,
+  "raisons": [
+   "critere_absent"
+  ],
+  "etiquette_auto": "omission_ou_reponse_differente",
+  "etiquette_humaine": "echec_reel",
+  "attendu": [
+   "bonjour|salut|hello|coucou|bien|ça va"
+  ],
+  "question": "Coucou, tu vas bien aujourd'hui ?",
+  "reponse": "Oui, je suis en train de m'améliorer pour mieux répondre à tes besoins. Peux-tu me dire ce qui te préoccupe le plus aujourd'hui ?"
+ },
+ {
+  "id": "T22",
+  "cat": "transformations",
+  "seed": 1234,
+  "raisons": [
+   "critere_absent"
+  ],
+  "etiquette_auto": "omission_ou_reponse_differente",
+  "etiquette_humaine": "echec_reel",
+  "attendu": [
+   "revenu|rentr[ée]|retrouv|retour"
+  ],
+  "question": "Résume en une phrase : « Le chat de Léa a disparu pendant trois jours. Toute la famille l'a cherché. Il est revenu tout seul samedi. »",
+  "reponse": "Le chat de Léa a disparu pendant trois jours, laissant toute la famille en recherche."
+ },
+ {
+  "id": "F23",
+  "cat": "faits",
+  "seed": 1234,
+  "raisons": [
+   "critere_absent"
+  ],
+  "etiquette_auto": "omission_ou_reponse_differente",
+  "etiquette_humaine": "echec_reel_avis_assistant",
+  "attendu": [
+   "\\bvert"
+  ],
+  "question": "De quelle couleur est une émeraude ?",
+  "reponse": "L'émeraude est un minéral de couleur rouge vif. Elle est généralement associée à la passion, à l'amour et à la passion."
+ },
+ {
+  "id": "F09",
+  "cat": "faits",
+  "seed": 3000,
+  "raisons": [
+   "critere_absent"
+  ],
+  "etiquette_auto": "omission_ou_reponse_differente",
+  "etiquette_humaine": "echec_reel_avis_assistant",
+  "attendu": [
+   "portugais"
+  ],
+  "question": "Quelle est la langue officielle du Brésil ?",
+  "reponse": "La langue officielle du Brésil est l'espagnol."
+ },
+ {
+  "id": "T25",
+  "cat": "transformations",
+  "seed": 3000,
+  "raisons": [
+   "critere_absent"
+  ],
+  "etiquette_auto": "omission_ou_reponse_differente",
+  "etiquette_humaine": "echec_reel_avis_assistant",
+  "attendu": [
+   "nous sommes partis"
+  ],
+  "question": "Corrige les fautes de cette phrase : « Nous somme partit hier. »",
+  "reponse": "Nous sommes parti hier."
+ },
+ {
+  "id": "M11",
+  "cat": "multi_tours",
+  "seed": 3000,
+  "raisons": [
+   "critere_absent"
+  ],
+  "etiquette_auto": "omission_ou_reponse_differente",
+  "etiquette_humaine": "echec_reel_avis_assistant",
+  "attendu": [
+   "chameau|dromadaire|scorpion|fennec|serpent|l[ée]zard|gerboise|vip[èe]re|crotale|coyote"
+  ],
+  "question": "Et un animal qui vit dans le désert ?",
+  "reponse": "La baleine bleue, également connue sous le nom de baleine à bosse, est un mammifère marin qui vit dans les océans du monde. Elle est connue pour sa grande taille, sa capacité à nager à grande vitesse et sa capacité à vivre dans des environnements très variés. La baleine bleue est un animal solitaire qui vit principalement dans les océans du monde, mais elle peut également être trouvée dans les régions polaires et les eaux froides."
+ },
+ {
+  "id": "C08",
+  "cat": "consignes",
+  "seed": 1234,
+  "raisons": [
+   "critere_absent"
+  ],
+  "etiquette_auto": "omission_ou_reponse_differente",
+  "etiquette_humaine": "echec_reel_avis_assistant",
+  "attendu": [
+   "vite|v[ée]loce|prompt|preste|express|rapidement|leste|vif"
+  ],
+  "question": "Donne un synonyme du mot « rapide ».",
+  "reponse": "Un synonyme du mot « rapide » est « rapide »."
+ },
+ {
+  "id": "C07",
+  "cat": "consignes",
+  "seed": 2000,
+  "raisons": [
+   "critere_absent"
+  ],
+  "etiquette_auto": "omission_ou_reponse_differente",
+  "etiquette_humaine": "echec_reel_avis_assistant",
+  "attendu": [
+   "^\\W*faux\\b"
+  ],
+  "question": "Réponds par vrai ou faux : Paris est la capitale de l'Allemagne.",
+  "reponse": "Vrai. Paris est la capitale de la France."
+ },
+ {
+  "id": "F27",
+  "cat": "faits",
+  "seed": 2000,
+  "raisons": [
+   "critere_absent"
+  ],
+  "etiquette_auto": "omission_ou_reponse_differente",
+  "etiquette_humaine": "echec_reel_avis_assistant",
+  "attendu": [
+   "actrice"
+  ],
+  "question": "Quel est le féminin du mot « acteur » ?",
+  "reponse": "Le féminin du mot « acteur » est « acteur »."
+ },
+ {
+  "id": "V02",
+  "cat": "conversation",
+  "seed": 2000,
+  "raisons": [
+   "critere_absent"
+  ],
+  "etiquette_auto": "omission_ou_reponse_differente",
+  "etiquette_humaine": "echec_reel_avis_assistant",
+  "attendu": [
+   "de rien|avec plaisir|je (vous|t)'en prie|ravi|heureux|heureuse|content|plaisir|n'h[ée]site"
+  ],
+  "question": "Merci beaucoup pour ton aide.",
+  "reponse": "Je suis désolé(e) et je n'ai pas d'informations en temps réel. Pouvez-vous me dire si vous avez besoin de plus d'aide ou de plus de précisions ?"
+ },
+ {
+  "id": "M12",
+  "cat": "multi_tours",
+  "seed": 2000,
+  "raisons": [
+   "critere_absent"
+  ],
+  "etiquette_auto": "omission_ou_reponse_differente",
+  "etiquette_humaine": "echec_reel_avis_assistant",
+  "attendu": [
+   "thank"
+  ],
+  "question": "Et « merci » ?",
+  "reponse": "« merci »"
+ },
+ {
+  "id": "F15",
+  "cat": "faits",
+  "seed": 1234,
+  "raisons": [
+   "critere_absent"
+  ],
+  "etiquette_auto": "omission_ou_reponse_differente",
+  "etiquette_humaine": "echec_reel_avis_assistant",
+  "attendu": [
+   "\\b100\\b|cent degr"
+  ],
+  "question": "À quelle température l'eau bout-elle au niveau de la mer ?",
+  "reponse": "L'eau bout à des températures très basses à environ 0°C. Cela est dû à la différence de température entre l'atmosphère terrestre et l'eau liquide à la surface. La température de l'eau est d'environ 0°C, ce qui est très froid et proche du point de congélation."
+ },
+ {
+  "id": "M17",
+  "cat": "multi_tours",
+  "seed": 3000,
+  "raisons": [
+   "critere_absent"
+  ],
+  "etiquette_auto": "omission_ou_reponse_differente",
+  "etiquette_humaine": "echec_reel_avis_assistant",
+  "attendu": [
+   "chaussures|v[êe]tements|manteau|pull|cr[èe]me|lunettes|gourde|sac|veste|b[âa]tons|gants|bonnet"
+  ],
+  "question": "Qu'est-ce que je dois emporter ?",
+  "reponse": "En tant qu'IA, je ne suis pas en mesure de déterminer si vous devez emporter quelque chose, car je suis programmé pour répondre à cette demande. Cependant, si tu veux des informations sur l'hébergement, les activités, les restaurants, et les attractions, il est préférable de contacter directement le service des ressources humaines ou la compagnie d'assurance."
+ },
+ {
+  "id": "T12",
+  "cat": "transformations",
+  "seed": 1234,
+  "raisons": [
+   "critere_absent"
+  ],
+  "etiquette_auto": "omission_ou_reponse_differente",
+  "etiquette_humaine": "echec_reel",
+  "attendu": [
+   "ces livres sont int[ée]ressants"
+  ],
+  "question": "Mets cette phrase au pluriel : « Ce livre est intéressant. »",
+  "reponse": "Bien sûr : Les livres sont intéressants."
+ },
+ {
+  "id": "F15",
+  "cat": "faits",
+  "seed": 2000,
+  "raisons": [
+   "critere_absent"
+  ],
+  "etiquette_auto": "omission_ou_reponse_differente",
+  "etiquette_humaine": "echec_reel_avis_assistant",
+  "attendu": [
+   "\\b100\\b|cent degr"
+  ],
+  "question": "À quelle température l'eau bout-elle au niveau de la mer ?",
+  "reponse": "L'eau bout à des températures très basses, autour de 0°C. Cela s'explique par la différence de température entre la surface de la Terre et l'atmosphère."
+ },
+ {
+  "id": "F26",
+  "cat": "faits",
+  "seed": 1234,
+  "raisons": [
+   "critere_absent"
+  ],
+  "etiquette_auto": "omission_ou_reponse_differente",
+  "etiquette_humaine": "echec_reel_avis_assistant",
+  "attendu": [
+   "\\b42\\b|quarante-deux"
+  ],
+  "question": "Combien font 15 plus 27 ?",
+  "reponse": "15 plus 27 = 15 + 27 + 27 = 54."
+ },
+ {
+  "id": "C06",
+  "cat": "consignes",
+  "seed": 2000,
+  "raisons": [
+   "critere_absent"
+  ],
+  "etiquette_auto": "omission_ou_reponse_differente",
+  "etiquette_humaine": "echec_reel_avis_assistant",
+  "attendu": [
+   "^\\W*(?-i:BONJOUR)\\W*$"
+  ],
+  "question": "Écris uniquement le mot « bonjour » en majuscules.",
+  "reponse": "Bien sûr ! Voici le mot « bonjour » en majuscules :\n\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour\n- bonjour"
+ },
+ {
+  "id": "M15",
+  "cat": "multi_tours",
+  "seed": 1234,
+  "raisons": [
+   "critere_absent"
+  ],
+  "etiquette_auto": "omission_ou_reponse_differente",
+  "etiquette_humaine": "echec_reel_avis_assistant",
+  "attendu": [
+   "arctique"
+  ],
+  "question": "Et lequel est le plus petit ?",
+  "reponse": "L'océan Atlantique est le plus petit océan de la planète."
+ }
+]
