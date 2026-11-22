@@ -11,7 +11,7 @@ Création d'un LLM français from scratch sur mon PC, dont le but final est un a
 ## État actuel (réécrit intégralement à chaque /close)
 - Pré-entraînement 369M en pause au pas 54 349 sur 113 000 (`etat.json`, 2026-11-21 21:25) ; reprise sur ordre de l'utilisateur ; VRAM libre (941 Mio utilisés le 2026-11-22).
 - Phases 3-4 prêtes : `compare_frenchbench.py`, `eval_frenchbench.py --ckpt`, `run_sft_369m.py` (SFT en deux étapes, pause VertIA).
-- R&D cycle 2 : étape a (CPU) livrée ; relecture A1 en cours (67 cas sur la page « Relecture A1 », `rd/experiences/relecture_a1/`), A2 non commencée ; étapes b et c à valider après la base.
+- R&D cycle 2 : étape a (CPU) livrée ; relecture A1 terminée (106 cas étiquetés, `rd/experiences/relecture_a1/resultats_a1.json`), A2 non commencée ; étapes b et c à valider après la base.
 - Codex : modèle imposé par la politique centrale, binaire de l'application ; plus d'action ouverte.
 - Suivi : `python run.py` ; artefacts listés dans `_contexte/artifacts.md` ; `ameliorations.md` tient l'état des 14 points.
 

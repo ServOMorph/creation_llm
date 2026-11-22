@@ -3,9 +3,10 @@
 ## v0.8 — 2026-11-22
 
 ### Ajouté
-- `rd/experiences/relecture_a1/` (`gen.py`, `tpl.html`, `relecture_a1.html`) : page de relecture humaine des échecs A1 (dialogue complet, export par copier-coller), publiée en artefact.
+- `rd/experiences/relecture_a1/` (`gen.py`, `tpl.html`, `relecture_a1.html`) : page de relecture humaine des échecs A1 (dialogue complet, sauvegarde en base), publiée en artefact ; `resultats_a1.json` (106 étiquettes).
 
 ### Modifié
+- `rd/experiences/c2_audit_v2.json` : `etiquette_humaine` renseignée pour les 106 omissions.
 - Process Codex réglé sans modification de code (modèle par la politique centrale, binaire de l'application) ; `_contexte/` mis à jour.
 
 ## v0.7 — 2026-11-21

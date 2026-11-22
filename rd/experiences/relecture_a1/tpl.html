@@ -56,6 +56,7 @@ textarea,input[type=text]{width:100%;font:inherit;padding:8px;border:1px solid v
 <div class="lbl">Résultats à me renvoyer</div>
 <div class="nav"><button class="small" id="copy">Copier les résultats</button><button class="small" id="show">Afficher le texte</button></div>
 <textarea id="out" rows="8" hidden readonly></textarea>
+<div class="msg" id="dbs">Sauvegarde : vérification…</div>
 <div class="msg" id="cmsg">Copiez puis collez le texte dans la conversation Claude Code. Les choix sont aussi gardés dans ce navigateur (si disponible).</div>
 </div>
 <script>
@@ -70,7 +71,7 @@ function save(){try{localStorage.setItem(KEY,JSON.stringify(store))}catch(e){}}
 function esc(s){return String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
 function haut(){window.scrollTo(0,0)}
 function jug(i){const s=store[key(DATA[i])];return !!(s&&s.lab)}
-const VIEW=DATA.map((c,i)=>i).filter(i=>!jug(i));
+let VIEW=[];
 function render(){
  if(!VIEW.length){document.getElementById('card').textContent='Aucun cas non jugé.';document.getElementById('stat').textContent='Tous les cas sont jugés.';updOut();return}
  const c=DATA[VIEW[cur]],s=store[key(c)]||{};
@@ -94,8 +95,8 @@ function render(){
  Object.keys(L).forEach(k=>{h+='<button data-l="'+k+'" class="'+L[k][1]+(s.lab===k?' sel':'')+'">'+(s.lab===k?'&#10003; ':'')+L[k][0]+'</button>'});
  h+='</div><div class="lbl">Remarque (facultatif)</div><input type="text" id="note" value="'+esc(s.note||'')+'" placeholder="ex : contexte manquant">';
  document.getElementById('card').innerHTML=h;
- document.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>{const k=key(c);store[k]={lab:b.dataset.l,note:(store[k]||{}).note||'',pre:false};save();if(cur<VIEW.length-1)cur++;render();haut()});
- document.getElementById('note').onchange=e=>{const k=key(c);store[k]=Object.assign({lab:'',pre:false},store[k],{note:e.target.value});save();updOut()};
+ document.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>{const k=key(c);store[k]={lab:b.dataset.l,note:(store[k]||{}).note||'',pre:false};save();pers(k);if(cur<VIEW.length-1)cur++;render();haut()});
+ document.getElementById('note').onchange=e=>{const k=key(c);store[k]=Object.assign({lab:'',pre:false},store[k],{note:e.target.value});save();pers(k);updOut()};
  renderGrid();updOut();
 }
 function renderGrid(){
@@ -115,7 +116,31 @@ document.getElementById('nextun').onclick=()=>{for(let k=1;k<=VIEW.length;k++){c
 document.getElementById('listtog').onclick=()=>{const g=document.getElementById('grid');g.hidden=!g.hidden};
 document.getElementById('show').onclick=()=>{const o=document.getElementById('out');o.hidden=!o.hidden;updOut()};
 document.getElementById('copy').onclick=async()=>{updOut();const o=document.getElementById('out');try{await navigator.clipboard.writeText(o.value);document.getElementById('cmsg').textContent='Copié. Collez-le dans la conversation.'}catch(e){o.hidden=false;o.select();document.getElementById('cmsg').textContent='Copie refusée : le texte est affiché, sélectionnez-le et copiez-le à la main.'}};
-render();
+let DB=null,chain=Promise.resolve();
+function setStatus(m){document.getElementById('dbs').textContent=m}
+function pers(k){
+ if(!DB)return;
+ const s=store[k];
+ chain=chain.then(()=>DB.collection('a1').doc(k.replace('|','_')).set({lab:s.lab||'',note:s.note||'',pre:!!s.pre,t:Date.now()})).catch(()=>setStatus('Sauvegarde : écriture en base refusée, navigateur seulement'));
+}
+function timeout(ms){return new Promise((_,j)=>setTimeout(()=>j(new Error('delai')),ms))}
+async function init(){
+ document.getElementById('card').textContent='Chargement…';
+ try{
+  const db=await Promise.race([claude.use('db'),new Promise(r=>setTimeout(()=>r(null),10000))]);
+  if(db){
+   const snap=await Promise.race([db.collection('a1').get(),timeout(10000)]);
+   const vus=new Set();
+   snap.docs.forEach(d=>{const x=d.data();if(x&&x.lab){const k=d.id.replace('_','|');vus.add(k);store[k]={lab:x.lab,note:x.note||'',pre:!!x.pre}}});
+   DB=db;save();
+   Object.keys(store).forEach(k=>{if(store[k].lab&&!store[k].pre&&!vus.has(k))pers(k)});
+   setStatus('Sauvegarde : base de données active ('+vus.size+' cas déjà enregistrés)');
+  }else setStatus('Sauvegarde : navigateur seulement (base indisponible)');
+ }catch(e){setStatus('Sauvegarde : navigateur seulement (base injoignable)')}
+ VIEW=DATA.map((c,i)=>i).filter(i=>!jug(i));
+ render();
+}
+init();
 </script>
 </body>
 </html>

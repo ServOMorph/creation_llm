@@ -27,7 +27,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\b8\\b|huit"
    ],
@@ -42,7 +42,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "loire"
    ],
@@ -57,7 +57,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\b60\\b|soixante"
    ],
@@ -72,7 +72,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel_avis_assistant",
    "attendu": [
     "\\b100\\b|cent degr"
    ],
@@ -87,7 +87,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "baleine bleue|rorqual bleu"
    ],
@@ -102,7 +102,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "gaulle"
    ],
@@ -117,7 +117,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\b11\\b|\\bonze\\b"
    ],
@@ -132,7 +132,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "printemps"
    ],
@@ -147,7 +147,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel_avis_assistant",
    "attendu": [
     "\\bvert"
    ],
@@ -162,7 +162,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\b56\\b|cinquante-six"
    ],
@@ -177,7 +177,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel_avis_assistant",
    "attendu": [
     "\\b42\\b|quarante-deux"
    ],
@@ -192,7 +192,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "actrice"
    ],
@@ -207,7 +207,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\b28\\b|vingt-huit"
    ],
@@ -222,7 +222,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "^\\W*blanc\\W*$"
    ],
@@ -253,7 +253,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "^\\W*(?-i:BONJOUR)\\W*$"
    ],
@@ -268,7 +268,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "^\\W*faux\\b"
    ],
@@ -283,7 +283,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel_avis_assistant",
    "attendu": [
     "vite|v[ée]loce|prompt|preste|express|rapidement|leste|vif"
    ],
@@ -298,7 +298,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "1\\s+2\\s+3\\s+4\\s+5"
    ],
@@ -328,7 +328,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "^\\W*(5|cinq)\\W*$"
    ],
@@ -358,7 +358,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "motif_trop_strict",
    "attendu": [
     "je n'ai pas|ne dispose pas|ne m'est pas possible"
    ],
@@ -373,7 +373,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "j'ai regard[ée]"
    ],
@@ -388,7 +388,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "motif_trop_strict",
    "attendu": [
     "nous sommes arriv[ée]"
    ],
@@ -419,7 +419,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "ces livres sont int[ée]ressants"
    ],
@@ -484,7 +484,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "voiture"
    ],
@@ -499,7 +499,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "revenu|rentr[ée]|retrouv|retour"
    ],
@@ -530,7 +530,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "motif_trop_strict",
    "attendu": [
     "f[ée]licit|bravo"
    ],
@@ -545,7 +545,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "motif_trop_strict",
    "attendu": [
     "voici|suggestion|id[ée]e|(?m:^\\s*\\d[.)])|max|rex|milo|filou|oscar|nala|luna"
    ],
@@ -607,7 +607,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "notre[- ]dame|quatre-vingt-treize|travailleurs de la mer|homme qui rit|dernier jour d'un condamn"
    ],
@@ -622,7 +622,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\b10\\b|\\bdix\\b"
    ],
@@ -637,7 +637,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "thank"
    ],
@@ -652,7 +652,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel_avis_assistant",
    "attendu": [
     "arctique"
    ],
@@ -667,7 +667,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\bvert"
    ],
@@ -713,7 +713,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\b8\\b|huit"
    ],
@@ -728,7 +728,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "loire"
    ],
@@ -743,7 +743,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\b60\\b|soixante"
    ],
@@ -758,7 +758,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "portugais"
    ],
@@ -773,7 +773,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\b6\\b|\\bsix\\b"
    ],
@@ -788,7 +788,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel_avis_assistant",
    "attendu": [
     "\\b100\\b|cent degr"
    ],
@@ -803,7 +803,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "baleine bleue|rorqual bleu"
    ],
@@ -818,7 +818,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "gaulle"
    ],
@@ -833,7 +833,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\b11\\b|\\bonze\\b"
    ],
@@ -848,7 +848,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "printemps"
    ],
@@ -863,7 +863,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\bvert"
    ],
@@ -878,7 +878,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\b42\\b|quarante-deux"
    ],
@@ -893,7 +893,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel_avis_assistant",
    "attendu": [
     "actrice"
    ],
@@ -908,7 +908,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\b28\\b|vingt-huit"
    ],
@@ -923,7 +923,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "^\\W*blanc\\W*$"
    ],
@@ -973,7 +973,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel_avis_assistant",
    "attendu": [
     "^\\W*(?-i:BONJOUR)\\W*$"
    ],
@@ -988,7 +988,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel_avis_assistant",
    "attendu": [
     "^\\W*faux\\b"
    ],
@@ -1003,7 +1003,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "vite|v[ée]loce|prompt|preste|express|rapidement|leste|vif"
    ],
@@ -1035,7 +1035,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "1\\s+2\\s+3\\s+4\\s+5"
    ],
@@ -1050,7 +1050,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "^\\W*a\\W*$"
    ],
@@ -1065,7 +1065,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "^\\W*(5|cinq)\\W*$"
    ],
@@ -1111,7 +1111,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "j'ai regard[ée]"
    ],
@@ -1126,7 +1126,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "nous sommes arriv[ée]"
    ],
@@ -1141,7 +1141,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "tu as fini\\b"
    ],
@@ -1268,7 +1268,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "bonjour|salut|hello|coucou|bien|ça va"
    ],
@@ -1283,7 +1283,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel_avis_assistant",
    "attendu": [
     "de rien|avec plaisir|je (vous|t)'en prie|ravi|heureux|heureuse|content|plaisir|n'h[ée]site"
    ],
@@ -1298,7 +1298,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "f[ée]licit|bravo"
    ],
@@ -1313,7 +1313,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "motif_trop_strict",
    "attendu": [
     "voici|suggestion|id[ée]e|(?m:^\\s*\\d[.)])|max|rex|milo|filou|oscar|nala|luna"
    ],
@@ -1328,7 +1328,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "sophie|enchant[ée]"
    ],
@@ -1374,7 +1374,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "fraise|cerise|framboise|pomme|groseille|grenade|tomate|past[èe]que|canneberge"
    ],
@@ -1405,7 +1405,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "notre[- ]dame|quatre-vingt-treize|travailleurs de la mer|homme qui rit|dernier jour d'un condamn"
    ],
@@ -1420,7 +1420,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel_avis_assistant",
    "attendu": [
     "thank"
    ],
@@ -1466,7 +1466,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "arctique"
    ],
@@ -1481,7 +1481,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\bvert"
    ],
@@ -1527,7 +1527,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\b8\\b|huit"
    ],
@@ -1542,7 +1542,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "loire"
    ],
@@ -1557,7 +1557,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\b60\\b|soixante"
    ],
@@ -1572,7 +1572,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel_avis_assistant",
    "attendu": [
     "portugais"
    ],
@@ -1587,7 +1587,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\beuros?\\b"
    ],
@@ -1602,7 +1602,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\b100\\b|cent degr"
    ],
@@ -1617,7 +1617,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "gaulle"
    ],
@@ -1632,7 +1632,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\b11\\b|\\bonze\\b"
    ],
@@ -1647,7 +1647,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\bvert"
    ],
@@ -1662,7 +1662,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\b56\\b|cinquante-six"
    ],
@@ -1677,7 +1677,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\b42\\b|quarante-deux"
    ],
@@ -1692,7 +1692,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "actrice"
    ],
@@ -1722,7 +1722,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\b28\\b|vingt-huit"
    ],
@@ -1737,7 +1737,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "^\\W*blanc\\W*$"
    ],
@@ -1768,7 +1768,7 @@
     "critere_incomplet"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "printemps",
     "[ée]t[ée]",
@@ -1787,7 +1787,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "^\\W*(?-i:BONJOUR)\\W*$"
    ],
@@ -1802,7 +1802,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "^\\W*faux\\b"
    ],
@@ -1817,7 +1817,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "vite|v[ée]loce|prompt|preste|express|rapidement|leste|vif"
    ],
@@ -1832,7 +1832,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "1\\s+2\\s+3\\s+4\\s+5"
    ],
@@ -1847,7 +1847,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "^\\W*a\\W*$"
    ],
@@ -1862,7 +1862,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "^\\W*(5|cinq)\\W*$"
    ],
@@ -1877,7 +1877,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "pourri|s'il (te|vous) pla|voudr|merci|aimable|permett|silence"
    ],
@@ -1892,7 +1892,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "je n'ai pas|ne dispose pas|ne m'est pas possible"
    ],
@@ -1907,7 +1907,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "motif_trop_strict",
    "attendu": [
     "on[ée]reu|co[uû]teu|[ée]lev[ée]|prix|tarif"
    ],
@@ -1922,7 +1922,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "j'ai regard[ée]"
    ],
@@ -1937,7 +1937,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "nous sommes arriv[ée]"
    ],
@@ -2048,7 +2048,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel_avis_assistant",
    "attendu": [
     "nous sommes partis"
    ],
@@ -2063,7 +2063,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "bonjour|salut|hello|coucou|bien|ça va"
    ],
@@ -2078,7 +2078,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "f[ée]licit|bravo"
    ],
@@ -2093,7 +2093,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "motif_trop_strict",
    "attendu": [
     "voici|suggestion|id[ée]e|(?m:^\\s*\\d[.)])|max|rex|milo|filou|oscar|nala|luna"
    ],
@@ -2154,7 +2154,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "cherch|pas de panique|calme|serrurier|double|derni[eè]re fois|poche|retrac"
    ],
@@ -2169,7 +2169,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "fraise|cerise|framboise|pomme|groseille|grenade|tomate|past[èe]que|canneberge"
    ],
@@ -2200,7 +2200,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "notre[- ]dame|quatre-vingt-treize|travailleurs de la mer|homme qui rit|dernier jour d'un condamn"
    ],
@@ -2215,7 +2215,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\b10\\b|\\bdix\\b"
    ],
@@ -2230,7 +2230,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel_avis_assistant",
    "attendu": [
     "chameau|dromadaire|scorpion|fennec|serpent|l[ée]zard|gerboise|vip[èe]re|crotale|coyote"
    ],
@@ -2245,7 +2245,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "thank"
    ],
@@ -2260,7 +2260,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "julie"
    ],
@@ -2275,7 +2275,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "arctique"
    ],
@@ -2290,7 +2290,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel_avis_assistant",
    "attendu": [
     "chaussures|v[êe]tements|manteau|pull|cr[èe]me|lunettes|gourde|sac|veste|b[âa]tons|gants|bonnet"
    ],
@@ -2305,7 +2305,7 @@
     "critere_absent"
    ],
    "etiquette_auto": "omission_ou_reponse_differente",
-   "etiquette_humaine": "",
+   "etiquette_humaine": "echec_reel",
    "attendu": [
     "\\bvert"
    ],
