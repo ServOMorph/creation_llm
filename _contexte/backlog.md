@@ -15,3 +15,6 @@
 - [dette] Fins de ligne : `rd/agents_codex/file.sh` en CRLF (risque d'échec sous bash) et 88 fichiers en CRLF malgré `.gitattributes` ; renormalisation (`git add --renormalize`) non décidée
   - fait quand: `file.sh` s'exécute sous bash et décision de renormalisation prise.
   - réf: `rd/agents_codex/file.sh`, `.gitattributes`
+- [dette] `classify_failures` n'enregistre que le dernier tour des cas multi-tours (question et réponse) : sortie d'audit sans dialogue complet
+  - fait quand: les enregistrements d'`c2_audit_v2.json` portent tous les tours et les tests passent.
+  - réf: `rd/experiences/c2_audit.py`, `rd/experiences/relecture_a1/gen.py`

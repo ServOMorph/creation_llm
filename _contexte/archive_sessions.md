@@ -45,3 +45,28 @@ Laisser finir le pré-entraînement ; puis FrenchBench et échantillons via `gpu
 
 ## Question bloquante pour la session suivante
 Aucune
+
+---
+# Session du 2026-11-21
+
+## Décisions prises
+- Programme du cycle 2 validé pour l'étape a seule (A1 à A3, CPU) ; étapes b et c à valider après la base.
+- Échantillon A1 : 20 cas relus, tous de vrais échecs (cas 1-4 et 16 par l'utilisateur, les autres par l'assistant).
+- Commit : scripts c2 et `.gitattributes` ; `data_c2/` ignoré par git (régénérable).
+
+## Livrables produits ou modifiés
+- `rd/experiences/c2_audit.py`, `c2_data.py`, `c2_checks.py` et leurs tests : livrés, 13 tests OK.
+- `rd/experiences/data_c2/` : pilote 2 000, dev 120, test 900 ; 0 fuite, 0 erreur de validation.
+- `.gitattributes` : créé par VibeObs, commité.
+
+## Hypothèses validées / invalidées
+- VALIDE : reprise identique (Muon et AdamW), masques et isolation des documents corrects sur petit GPT.
+- INVALIDE : « les 106 omissions seraient surtout un motif trop strict » -> échantillon de 20 : aucun.
+- INVALIDE : « phase 10+ de `roadmap_llm_fr.md` encore en cours » (affirmation de session, tirée d'`ameliorations.md` périmé) -> elle est [FAIT].
+- EN ATTENTE : effet des calculs CPU sur le débit du run (-4 % observé, cause non établie).
+
+## Prochaine étape exacte
+Laisser finir le pré-entraînement ; relire A1 et A2 au PC ; décider le process Codex avec VibeObs.
+
+## Question bloquante pour la session suivante
+Aucune

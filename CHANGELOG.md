@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.8 — 2026-11-22
+
+### Ajouté
+- `rd/experiences/relecture_a1/` (`gen.py`, `tpl.html`, `relecture_a1.html`) : page de relecture humaine des échecs A1 (dialogue complet, export par copier-coller), publiée en artefact.
+
+### Modifié
+- Process Codex réglé sans modification de code (modèle par la politique centrale, binaire de l'application) ; `_contexte/` mis à jour.
+
 ## v0.7 — 2026-11-21
 
 ### Ajouté
