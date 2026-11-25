@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Relecture A2 — familles RAFT/H2</title>
+<style>
+:root{--bg:#f6f5f1;--card:#fff;--ink:#1d1d1b;--mut:#6b6a63;--line:#dedcd3;--ok:#1f7a45;--warn:#a65a00;--ind:#4b5563;--rep:#fdf0d5}
+@media(prefers-color-scheme:dark){:root{--bg:#161614;--card:#1f1f1c;--ink:#efede6;--mut:#a3a197;--line:#35342f;--ok:#4ac283;--warn:#f0a247;--ind:#aab2bf;--rep:#3a3120}}
+*{box-sizing:border-box}
+body{margin:0 auto;background:var(--bg);color:var(--ink);font:17px/1.45 system-ui,sans-serif;padding:12px;max-width:640px}
+h1{font-size:18px;margin:4px 0 8px}
+.bar{height:8px;background:var(--line);border-radius:4px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--ok);width:0}
+.stat{color:var(--mut);font-size:14px;margin:6px 0 10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:10px}
+.tag{font-size:13px;color:var(--mut)}
+.lbl{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin:12px 0 3px}
+.q{font-size:19px;font-weight:600}
+.rep{background:var(--rep);border-radius:8px;padding:10px;white-space:pre-wrap;word-break:break-word}
+.att{font-family:ui-monospace,monospace;font-size:14px;word-break:break-all;white-space:pre-wrap}
+.who{font-size:12px;color:var(--mut);margin:8px 0 2px;font-weight:600}
+.turn{border-left:3px solid var(--line);padding-left:10px;margin-top:6px}
+.rep.old{background:transparent;border:1px dashed var(--line);color:var(--mut)}
+.row{display:grid;gap:8px;margin-top:10px}
+button{font:inherit;border:2px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:14px 10px;cursor:pointer;text-align:left}
+button.sel{border-color:currentColor;font-weight:700}
+.b-echec{color:var(--ok)} .b-strict{color:var(--warn)} .b-ind{color:var(--ind)}
+.nav{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.nav button{text-align:center}
+textarea,input[type=text]{width:100%;font:inherit;padding:8px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink)}
+.small{font-size:14px;padding:8px 10px}
+.pre{font-size:12px;color:var(--mut)}
+.grid{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.grid[hidden]{display:none}
+.dot{width:34px;height:34px;padding:0;text-align:center;font-size:12px;border-radius:8px}
+.dot.cur{outline:3px solid var(--ink)}
+.dot.e{background:var(--ok);color:#fff;border-color:var(--ok)}
+.dot.s{background:var(--warn);color:#fff;border-color:var(--warn)}
+.dot.i{background:var(--ind);color:#fff;border-color:var(--ind)}
+.msg{color:var(--mut);font-size:14px;margin-top:6px}
+</style>
+</head>
+<body>
+<h1>Relecture A2 : familles limites</h1>
+<div class="bar"><i id="pb"></i></div>
+<div class="stat" id="stat"></div>
+<div class="card" id="card"></div>
+<div class="nav"><button id="prev">&larr; Précédent</button><button id="next">Suivant &rarr;</button></div>
+<div class="card" style="margin-top:10px">
+<div class="lbl">Navigation</div>
+<div class="nav"><button class="small" id="nextun">Prochaine non jugée</button><button class="small" id="listtog">Liste des familles</button></div>
+<div class="grid" id="grid" hidden></div>
+</div>
+<div class="card">
+<div class="lbl">Résultats à me renvoyer</div>
+<div class="nav"><button class="small" id="copy">Copier les résultats</button><button class="small" id="show">Afficher le texte</button></div>
+<textarea id="out" rows="8" hidden readonly></textarea>
+<div class="msg" id="dbs">Sauvegarde : vérification…</div>
+<div class="msg" id="cmsg">Copiez puis collez le texte dans la conversation Claude Code. Les choix sont aussi gardés dans ce navigateur (si disponible).</div>
+</div>
+<script>
+const DATA=__DATA__;
+const KEY='a2_relecture_v1';
+const L={ok:['Famille correcte (aucun défaut)','b-echec','e'],defaut:['Défaut ou contradiction','b-strict','s'],indetermine:['Indéterminé','b-ind','i']};
+const VN={gold:'Variante 1 : avec preuve (la réponse attendue est la valeur du passage)',sans_preuve:'Variante 2 : sans preuve (le modèle doit refuser de répondre)',contrefactuel:'Variante 3 : preuve contrefactuelle (valeur différente de la variante 1)'};
+let cur=0,store={};
+try{store=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){store={}}
+function key(c){return c.id}
+function save(){try{localStorage.setItem(KEY,JSON.stringify(store))}catch(e){}}
+function esc(s){return String(s).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]))}
+function haut(){window.scrollTo(0,0)}
+function jug(i){const s=store[key(DATA[i])];return !!(s&&s.lab)}
+let VIEW=[];
+function render(){
+ if(!VIEW.length){document.getElementById('card').textContent='Aucune famille non jugée.';document.getElementById('stat').textContent='Toutes les familles sont jugées.';updOut();return}
+ const c=DATA[VIEW[cur]],s=store[key(c)]||{};
+ const done=VIEW.filter(jug).length;
+ document.getElementById('pb').style.width=(100*done/VIEW.length)+'%';
+ document.getElementById('stat').textContent='Famille '+(cur+1)+' sur '+VIEW.length+' (non jugées au départ) · jugées : '+done+' · restantes : '+(VIEW.length-done);
+ let h='<div class="tag">'+esc(c.id)+' · gabarit '+esc(c.gab)+' · entité '+esc(c.ent)+' · valeur '+esc(c.val)+' · contrefactuelle '+esc(c.cf)+'</div><div class="msg">Signalée par le contrôle automatique : '+esc(c.flag)+'</div>';
+ h+='<div class="lbl">À juger : les 3 exemples disent-ils le même fait, sans contradiction, avec une question à réponse unique ?</div>';
+ c.vs.forEach((t,i)=>{
+  h+='<div class="turn"><div class="who">'+esc(VN[t.v])+'</div><div class="att">'+esc(t.u)+'</div>';
+  h+='<div class="who">Réponse attendue</div><div class="rep">'+esc(t.m)+'</div></div>';
+ });
+ h+='<div class="row">';
+ Object.keys(L).forEach(k=>{h+='<button data-l="'+k+'" class="'+L[k][1]+(s.lab===k?' sel':'')+'">'+(s.lab===k?'&#10003; ':'')+L[k][0]+'</button>'});
+ h+='</div><div class="lbl">Remarque (facultatif)</div><input type="text" id="note" value="'+esc(s.note||'')+'" placeholder="ex : valeur peu plausible">';
+ document.getElementById('card').innerHTML=h;
+ document.querySelectorAll('[data-l]').forEach(b=>b.onclick=()=>{const k=key(c);store[k]={lab:b.dataset.l,note:(store[k]||{}).note||'',pre:false};save();pers(k);if(cur<VIEW.length-1)cur++;render();haut()});
+ document.getElementById('note').onchange=e=>{const k=key(c);store[k]=Object.assign({lab:'',pre:false},store[k],{note:e.target.value});save();pers(k);updOut()};
+ renderGrid();updOut();
+}
+function renderGrid(){
+ const g=document.getElementById('grid');
+ g.innerHTML=VIEW.map((di,i)=>{const s=store[key(DATA[di])];const cl=s&&s.lab?L[s.lab][2]:'';return '<button class="dot '+cl+(i===cur?' cur':'')+'" data-i="'+i+'">'+(i+1)+'</button>'}).join('');
+ g.querySelectorAll('.dot').forEach(b=>b.onclick=()=>{cur=+b.dataset.i;render();haut()});
+}
+function text(){
+ const n={ok:0,defaut:0,indetermine:0,non_juge:0};
+ const lines=DATA.map(c=>{const s=store[key(c)]||{};const l=s.lab||'non_juge';n[l]++;return c.id+' : '+l+(s.note?' ('+s.note.replace(/\s+/g,' ')+')':'')});
+ const NL=String.fromCharCode(10);
+ return 'RELECTURE A2 — '+DATA.length+' familles'+NL+'Bilan : correctes '+n.ok+', défaut '+n.defaut+', indéterminé '+n.indetermine+', non jugé '+n.non_juge+NL+lines.join(NL);
+}
+function updOut(){document.getElementById('out').value=text()}
+document.getElementById('prev').onclick=()=>{if(cur>0){cur--;render();haut()}};
+document.getElementById('next').onclick=()=>{if(cur<VIEW.length-1){cur++;render();haut()}};
+document.getElementById('nextun').onclick=()=>{for(let k=1;k<=VIEW.length;k++){const i=(cur+k)%VIEW.length;if(!jug(VIEW[i])){cur=i;render();haut();return}}document.getElementById('cmsg').textContent='Tous les cas sont jugés.'};
+document.getElementById('listtog').onclick=()=>{const g=document.getElementById('grid');g.hidden=!g.hidden};
+document.getElementById('show').onclick=()=>{const o=document.getElementById('out');o.hidden=!o.hidden;updOut()};
+document.getElementById('copy').onclick=async()=>{updOut();const o=document.getElementById('out');try{await navigator.clipboard.writeText(o.value);document.getElementById('cmsg').textContent='Copié. Collez-le dans la conversation.'}catch(e){o.hidden=false;o.select();document.getElementById('cmsg').textContent='Copie refusée : le texte est affiché, sélectionnez-le et copiez-le à la main.'}};
+let DB=null,chain=Promise.resolve();
+function setStatus(m){document.getElementById('dbs').textContent=m}
+function pers(k){
+ if(!DB)return;
+ const s=store[k];
+ chain=chain.then(()=>DB.collection('a2').doc(k.replace('|','_')).set({lab:s.lab||'',note:s.note||'',pre:!!s.pre,t:Date.now()})).catch(()=>setStatus('Sauvegarde : écriture en base refusée, navigateur seulement'));
+}
+function timeout(ms){return new Promise((_,j)=>setTimeout(()=>j(new Error('delai')),ms))}
+async function init(){
+ document.getElementById('card').textContent='Chargement…';
+ try{
+  const db=await Promise.race([claude.use('db'),new Promise(r=>setTimeout(()=>r(null),10000))]);
+  if(db){
+   const snap=await Promise.race([db.collection('a2').get(),timeout(10000)]);
+   const vus=new Set();
+   snap.docs.forEach(d=>{const x=d.data();if(x&&x.lab){const k=d.id.replace('_','|');vus.add(k);store[k]={lab:x.lab,note:x.note||'',pre:!!x.pre}}});
+   DB=db;save();
+   Object.keys(store).forEach(k=>{if(store[k].lab&&!store[k].pre&&!vus.has(k))pers(k)});
+   setStatus('Sauvegarde : base de données active ('+vus.size+' cas déjà enregistrés)');
+  }else setStatus('Sauvegarde : navigateur seulement (base indisponible)');
+ }catch(e){setStatus('Sauvegarde : navigateur seulement (base injoignable)')}
+ VIEW=DATA.map((c,i)=>i).filter(i=>!jug(i));
+ render();
+}
+init();
+</script>
+</body>
+</html>

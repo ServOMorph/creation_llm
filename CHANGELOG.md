@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.9 — 2026-11-25
+
+### Ajouté
+- `rd/experiences/relecture_a2/` : contrôle automatique des familles A2 (`auto_checks.py`, `flags_a2.json`, 14 familles limites) et page de relecture (`gen.py`, `tpl.html`, `relecture_a2.html`), publiée en artefact.
+
+### Modifié
+- `_contexte/` : état du 369M (pas 63 085), A2, proposition kit v8.1.
+
 ## v0.8 — 2026-11-22
 
 ### Ajouté

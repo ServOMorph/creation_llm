@@ -70,3 +70,28 @@ Laisser finir le pré-entraînement ; relire A1 et A2 au PC ; décider le proces
 
 ## Question bloquante pour la session suivante
 Aucune
+
+---
+# Session du 2026-11-22
+
+## Décisions prises
+- Process Codex réglé par le code (modèle par la politique centrale, binaire de l'application) ; action close.
+- Relecture A1 : 19 cas jugés par l'utilisateur au téléphone, puis page dédiée (« Relecture A1 », dialogue complet, sauvegarde en base) pour les 67 autres ; 106 cas étiquetés au total.
+- VRAM libérée par arrêt de ComfyUI-Qwen à la demande ; 369M laissé en pause, VRAM gardée libre.
+
+## Livrables produits ou modifiés
+- `rd/experiences/relecture_a1/` (`gen.py`, `tpl.html`, `relecture_a1.html`, `resultats_a1.json`) et artefact publié : livrés ; `c2_audit_v2.json` : étiquettes humaines écrites.
+- `_contexte/artifacts.md` : ligne Relecture A1 ajoutée.
+
+## Hypothèses validées / invalidées
+- VALIDE : modèle et binaire Codex déterminés par `_codex/run_codex.ps1` et la politique centrale.
+- INVALIDE : « `modele.sh` à relire » -> le fichier n'existe plus (commit 7f71e65).
+- INVALIDE : les cas A1 présentés avec leur question complète -> 15 sur 86 sont multi-tours, contexte absent de `c2_audit_v2.json`.
+- VALIDE : A1 relue, 99 vrais échecs sur 106 (15 sans validation de l'utilisateur), 7 motif trop strict.
+- EN ATTENTE : A2 non commencée ; cause de la pause du 369M.
+
+## Prochaine étape exacte
+Relire A2 (200 familles RAFT/H2) ; décider la reprise du 369M (en pause, VRAM libre, demande de VertIA en attente).
+
+## Question bloquante pour la session suivante
+Quand relancer le 369M, en pause au pas 54 349 avec la VRAM libre ?
